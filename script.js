@@ -1,9 +1,9 @@
 document.getElementById('copyButton').addEventListener('click', function() {
     var email = 'danieleke@live.no';
     navigator.clipboard.writeText(email).then(function() {
-        alert('Email address copied to clipboard!');
+        customAlert('Email address copied to clipboard!');
     }).catch(function(error) {
-        alert('Failed to copy email address: ', error);
+        customAlert('Failed to copy email address: ' + error);
     });
 });
 
@@ -13,3 +13,12 @@ document.getElementById('emailButton').addEventListener('click', function() {
     var body = 'Please hire me 🥺';
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
+
+function customAlert(message) {
+    document.getElementById('alertMessage').innerText = message;
+    document.getElementById('customAlert').style.display = 'flex';
+}
+
+function closeAlert() {
+    document.getElementById('customAlert').style.display = 'none';
+}
