@@ -406,11 +406,9 @@ footer .socials a {
         font-size: 13px;
     }
 
-    footer > a {
-        font-size: 14px;
-    }
-
-    footer .socials  a{
+    nav .links a,
+    footer > a,
+    footer .socials a {
         font-size: 14px;
     }
 }
