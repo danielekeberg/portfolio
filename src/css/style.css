@@ -405,4 +405,8 @@ footer .socials a {
     .works .right .item:not(:first-child) p {
         font-size: 13px;
     }
+
+    footer a {
+        font-size: 14px;
+    }
 }
