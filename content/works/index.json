@@ -1,23 +1,20 @@
 [
   {
     "title": "Jadada",
-    "start_date": "01.05.1999",
-    "end_date": "02.05.1999",
-    "company": "Niceey",
-    "description": "Dette er en test"
+    "start_date": "2023",
+    "end_date": "2024",
+    "company": "Niceey"
   },
   {
     "title": "Maskin v2",
-    "start_date": "02.02.2020",
-    "end_date": "Present",
-    "company": "daniruShrek",
-    "description": "ta va itte lurt"
+    "start_date": "2022",
+    "end_date": "2023",
+    "company": "daniruShrek"
   },
   {
     "title": "Prøver igjen!",
-    "start_date": "10.10.1010",
-    "end_date": "Present",
-    "company": "Pog",
-    "description": "Nice"
+    "start_date": "2020",
+    "end_date": "2022",
+    "company": "Pog"
   }
 ]
