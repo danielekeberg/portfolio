@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const blogContainer = document.getElementById('blog-posts');
+    const blogContainer = document.getElementById('blog'); // This ID should match the <main> element
 
-    // Function to fetch and display posts
     async function loadPosts() {
         try {
-            // Fetch list of blog posts (you may need to update this part to fetch your posts)
-            const response = await fetch('/content/blog/index.json'); // Example JSON index
+            const response = await fetch('/content/blog/index.json'); // Update the path based on your setup
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             const posts = await response.json();
 
-            // Iterate and display each post
             posts.forEach(post => {
                 const postElement = document.createElement('article');
                 postElement.innerHTML = `
@@ -24,6 +24,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Load posts on page load
     loadPosts();
 });
