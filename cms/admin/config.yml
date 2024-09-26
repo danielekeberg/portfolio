@@ -44,7 +44,6 @@ collections:
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Start Date", name: "start_date", widget: "string" }
       - { label: "End Date", name: "end_date", widget: "string", default: "Present" }
-      - { label: "Description", name: "description", widget: "text", required: false }
 
   - name: "events"
     label: "Events"
