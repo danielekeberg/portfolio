@@ -1,0 +1,12 @@
+[
+    {
+        "title": "First Blog Post",
+        "excerpt": "This is the first blog post.",
+        "url": "/content/blog/post-1.html"
+    },
+    {
+        "title": "Second Blog Post",
+        "excerpt": "Another exciting post.",
+        "url": "/content/blog/post-2.html"
+    }
+]
