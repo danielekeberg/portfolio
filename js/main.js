@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // Load blog posts
-    const blogContainer = document.getElementById('blog-post'); // Ensure this ID matches your <main> element for blog posts
+    const blogContainer = document.getElementById('blog-post');
   
     async function loadBlogPosts() {
       try {
-        const response = await fetch('/content/blog/index.json'); // Update the path based on your setup
+        const response = await fetch('/content/blog/index.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadBlogPosts();
   
     // Load recent works
-    const worksContainer = document.getElementById('recent-works'); // Ensure this ID matches your <main> element for recent works
+    const worksContainer = document.getElementById('recent-works');
   
     async function loadRecentWorks() {
       try {
-        const response = await fetch('/content/works/index.json'); // Update the path based on your setup
+        const response = await fetch('/content/works/index.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
