@@ -5,13 +5,14 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run generate-index && your-site-build-command",
+    "build": "npm run generate-index && your-build-command",
     "generate-index": "node generate-index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "gray-matter": "^4.0.3"
   }
 }
