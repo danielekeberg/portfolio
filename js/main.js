@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const blogContainer = document.getElementById('recent-works'); // This ID should match the <main> element
+  const workContainer = document.getElementById('recent-works'); // This ID should match the <main> element
 
   async function loadPosts() {
       try {
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <p>${work.company}</p>
                   <p>${work.description || ''}</p>
               `;
-              blogContainer.appendChild(postElement);
+              workContainer.appendChild(postElement);
           });
       } catch (error) {
-          console.error('Error loading blog posts:', error);
-          blogContainer.innerHTML = '<p>Failed to load blog posts. Please try again later.</p>';
+          console.error('Error loading recent work posts:', error);
+          workContainer.innerHTML = '<p>Failed to load recent work posts. Please try again later.</p>';
       }
   }
 
