@@ -346,6 +346,30 @@ footer .socials a {
     color: #BDBDBD;
 }
 
+#recent-works {
+    padding: 20px;
+    background-color: #18181B;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+#recent-works div {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #18181B;
+}
+
+#recent-works h3 {
+    font-size: 1.3em;
+    color: #BDBDBD;
+}
+
+#recent-works p {
+    margin: 5px 0;
+    color: #BDBDBD;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
