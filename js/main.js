@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const blogContainer = document.getElementById('blog'); // This ID should match the <main> element
+    const blogContainer = document.getElementById('blog-post'); // This ID should match the <main> element
 
     async function loadPosts() {
         try {
