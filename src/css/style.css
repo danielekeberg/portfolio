@@ -371,6 +371,26 @@ footer .socials a {
     color: #BDBDBD;
 }
 
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #18181B;
+    border: 1px solid #27272A;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    width: 200px;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
