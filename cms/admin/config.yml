@@ -52,13 +52,14 @@ collections:
     editor:
       preview: false
     description: >
-      List upcoming events. Make sure to provide all necessary details for attendees.
+      List new products. Make sure to provide all necessary details.
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Price", name: "price", widget: "number" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Must be lowercase and hyphenated."] }
+      - { label: "Price", name: "price", widget: "number", required: true }
       - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Image", name: "image", widget: "image", required: true }
 
   - name: "gallery"
     label: "Gallery"
