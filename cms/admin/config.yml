@@ -47,7 +47,7 @@ collections:
 
   - name: "product"
     label: "Product"
-    folder: "content/product.json"
+    folder: "content/product"
     create: true
     format: "json"
     editor:
