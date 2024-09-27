@@ -47,10 +47,8 @@ collections:
 
   - name: "product"
     label: "Product"
-    folder: "content/product"
+    folder: "content/product.json"
     create: true
-    format: "json"
-    extension: "json"
     editor:
       preview: false
     description: >
