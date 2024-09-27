@@ -351,6 +351,7 @@ footer .socials a {
     background-color: #18181B;
     border-radius: 8px;
     margin: 20px 0;
+    border: 1px solid #27272A;
 }
 
 #recent-works div {
