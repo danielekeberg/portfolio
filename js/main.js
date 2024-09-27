@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     async function loadBlogPosts() {
       try {
-        const response = await fetch('/content/blog/index.json');
+        const response = await fetch('/content/blog/blog.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     async function loadRecentWorks() {
       try {
-        const response = await fetch('/content/works/index.json');
+        const response = await fetch('/content/works/works.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -59,3 +59,41 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadRecentWorks();
   });
   
+
+  // Assuming the data is available at a specific URL or local JSON file
+const fetchProducts = async () => {
+  try {
+    // Replace 'your-data-url.json' with the path to your JSON data
+    const response = await fetch('/content/product/index.json');
+    const products = await response.json();
+    renderProducts(products);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
+};
+
+// Function to render products on the webpage
+const renderProducts = (products) => {
+  const productList = document.getElementById('product-list');
+  productList.innerHTML = ''; // Clear any existing content
+
+  products.forEach((product) => {
+    // Create a new product card
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+
+    // Create the product HTML
+    productCard.innerHTML = `
+      <h2>${product.title}</h2>
+      <p>Price: $${product.price.toFixed(2)}</p>
+      <div class="product-description">${product.description}</div>
+      <img src="${product.image}" alt="${product.title}" />
+    `;
+
+    // Append the product card to the product list
+    productList.appendChild(productCard);
+  });
+};
+
+// Call the function to fetch and display products
+fetchProducts();
