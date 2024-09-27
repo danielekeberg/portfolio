@@ -56,7 +56,7 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Price", name: "price", widget: "number" }
       - { label: "Description", name: "description", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
 
