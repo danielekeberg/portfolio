@@ -49,7 +49,6 @@ collections:
     label: "Product"
     folder: "content/product"
     create: true
-    format: "json"
     editor:
       preview: false
     description: >
