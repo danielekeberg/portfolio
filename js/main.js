@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 const fetchProducts = async () => {
   try {
     // Replace 'your-data-url.json' with the path to your JSON data
-    const response = await fetch('/content/product/index.json');
+    const response = await fetch('/content/product/prouct.json');
     const products = await response.json();
     renderProducts(products);
   } catch (error) {
