@@ -49,6 +49,8 @@ collections:
     label: "Product"
     folder: "content/product"
     create: true
+    slug: "{{slug}}"
+    format: "yaml-frontmatter"
     editor:
       preview: false
     description: >
