@@ -10,7 +10,6 @@
     <script src="generate-index.js"></script>
     <script src="js/main.js"></script>
     <script src="script.js"></script>
-    <script src="js/renderMarkdown.js"></script>
     <script src="js/getMarkdownData.js"></script>
 </head>
 
@@ -53,7 +52,14 @@
         </div>
     </div>
 
+
+    <div id="content"></div>
     <div id="product-list"></div>
+    <script src="js/renderMarkdown.js"></script>
+    <script>
+        const slug = getSlugFromUrl();
+        renderMarkdown(`/content/product/${slug}.md`);
+    </script>
 
     <footer>
         <a href="#">My Portfolio</a>
