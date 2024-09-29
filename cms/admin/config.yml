@@ -54,7 +54,7 @@ collections:
     editor:
       preview: false
     description: >
-      List new products. Make sure to provide all necessary details.
+      Add or update your work experience entries here.
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Company", name: "company", widget: "string" }
