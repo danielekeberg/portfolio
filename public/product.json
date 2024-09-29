@@ -1,44 +1,46 @@
 {
   "products": [
     {
-      "title": "Sjef",
-      "company": "Hapro",
-      "slug": "asdasd",
-      "start": 2015,
-      "end": "Present"
+      "title": "Halla kompus",
+      "company": "",
+      "slug": "lkkokoksd",
+      "start": "",
+      "end": ""
     },
     {
       "title": "Headset",
+      "company": "",
       "slug": "headset",
-      "price": 99,
-      "description": "Halla",
-      "content": "",
-      "image": {
-        "url": "https://i.ibb.co/w6y9bjt/images.jpg",
-        "alt": "Headset"
-      }
+      "start": "",
+      "end": ""
     },
     {
       "title": "Hello",
+      "company": "",
       "slug": "hellointheluke",
-      "price": 69,
-      "description": "Dette er nice",
-      "content": "",
-      "image": {
-        "url": "https://i.ibb.co/gdtk51d/German-Shepherds-dans-pet-care.jpg",
-        "alt": "Hello"
-      }
+      "start": "",
+      "end": ""
+    },
+    {
+      "title": "Sjef1",
+      "company": "Mekonomen1",
+      "slug": "",
+      "start": "2020",
+      "end": "Present"
+    },
+    {
+      "title": "Sjefen",
+      "company": "Mekonomen",
+      "slug": "sluggern",
+      "start": "2022",
+      "end": "Present"
     },
     {
       "title": "Yeah",
+      "company": "",
       "slug": "yeahyeahokayyeah",
-      "price": 1337,
-      "description": "asdasdasdasdadsdasdasdsadasdasasdasdadsadsads",
-      "content": "",
-      "image": {
-        "url": "https://i.ibb.co/kxxPg6p/6935730a31316cf3d199e981973e3f5d.jpg",
-        "alt": "Yeah"
-      }
+      "start": "",
+      "end": ""
     }
   ]
 }
