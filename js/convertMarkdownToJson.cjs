@@ -23,14 +23,10 @@ function getProducts() {
 
       return {
         title: data.title || '',
+        company: data.company || '',
         slug: data.slug || '',
-        price: data.price || 0,
-        description: data.description || '',
-        content: content || '',
-        image: {
-          url: data.image || '',
-          alt: data.title || 'Product Image',
-        },
+        start: data.start_date || '',
+        end: data.end_date || ''
       };
     });
 }
