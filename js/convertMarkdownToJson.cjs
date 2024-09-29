@@ -1,11 +1,13 @@
-// Use ES module syntax
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
 
-// Define the folder where your .md files are stored
+// Define the folder where your .md files are stored (Markdown files for products)
 const contentDir = path.join(process.cwd(), 'content/product');
-const outputFile = path.join(process.cwd(), 'public', 'product.json'); // Path where the JSON file will be generated
+
+// Define the output directory and file path (for product.json)
+const outputDir = path.join(process.cwd(), 'public'); // The public directory for output files
+const outputFile = path.join(outputDir, 'product.json'); // The full path to product.json
 
 // Function to read and parse all .md files
 function getProducts() {
@@ -37,6 +39,12 @@ function generateJsonFile() {
   const products = getProducts();
   const jsonData = { products };
 
+  // Ensure the output directory (public) exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Write the JSON file to public/product.json
   fs.writeFileSync(outputFile, JSON.stringify(jsonData, null, 2));
   console.log('product.json has been updated!');
 }
