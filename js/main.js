@@ -2,7 +2,7 @@
 async function fetchProductData() {
   try {
     // Fetch the product data from your JSON file
-    const response = await fetch('/content/product/product.json'); // Adjust the path if necessary
+    const response = await fetch('/public/product.json'); // Adjust the path if necessary
     const data = await response.json();
 
     // Render all products
