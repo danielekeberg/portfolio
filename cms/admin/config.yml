@@ -59,8 +59,8 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Must be lowercase and hyphenated."] }
-      - { label: "Start Date", name: "start_date", widget: "string" }
-      - { label: "End Date", name: "end_date", widget: "string", default: "Present" }
+      - { label: "Start Date", name: "start_date", widget: number }
+      - { label: "End Date", name: "end_date", widget: number, default: "Present" }
 
   - name: "gallery"
     label: "Gallery"
