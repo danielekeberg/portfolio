@@ -389,6 +389,12 @@ footer .socials a {
     max-width: 100%;
     height: auto;
   }
+
+  .item img {
+    height: 250px;
+    width: 170px;
+    margin: 0 25px 10px 25px;
+  }
   
 
 @keyframes fadeInAnimation {
