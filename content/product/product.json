@@ -1,0 +1,25 @@
+{
+    "products": [
+      {
+        "title": "Wireless Bluetooth Headphones",
+        "slug": "wireless-bluetooth-headphones",
+        "price": 79.99,
+        "description": "Experience high-quality sound with our wireless Bluetooth headphones. Featuring noise-cancellation, long battery life, and comfortable ear cups, these headphones are perfect for music lovers on the go.",
+        "image": {
+          "url": "https://i.ibb.co/Vw1Ky1b/61-g7m-90e-L-AC-SL1500.jpg",
+          "alt": "Wireless Bluetooth Headphones - Front View"
+        }
+      },
+      {
+        "title": "Portable Bluetooth Speaker",
+        "slug": "portable-bluetooth-speaker",
+        "price": 49.99,
+        "description": "Take your music anywhere with our portable Bluetooth speaker. Compact, lightweight, and waterproof, it's perfect for outdoor adventures or small gatherings.",
+        "image": {
+          "url": "https://example.com/images/product2.jpg",
+          "alt": "Portable Bluetooth Speaker - Black"
+        }
+      }
+    ]
+  }
+  
