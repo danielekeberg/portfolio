@@ -1,13 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const chokidar = require('chokidar');
 
-// Define the folder where your .md files are stored (Markdown files for products)
+// Define the folder where your .md files are stored
 const contentDir = path.join(process.cwd(), 'content/product');
 
-// Define the output directory and file path (for product.json)
-const outputDir = path.join(process.cwd(), 'public'); // The public directory for output files
-const outputFile = path.join(outputDir, 'product.json'); // The full path to product.json
+// Define the output directory and file path
+const outputDir = path.join(process.cwd(), 'public');
+const outputFile = path.join(outputDir, 'product.json');
 
 // Function to read and parse all .md files
 function getProducts() {
@@ -18,7 +19,7 @@ function getProducts() {
     .map(file => {
       const fullPath = path.join(contentDir, file);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents); // Parse front matter and content
+      const { data, content } = matter(fileContents);
 
       return {
         title: data.title || '',
@@ -34,20 +35,24 @@ function getProducts() {
     });
 }
 
-// Write parsed data to product.json
+// Function to generate product.json file
 function generateJsonFile() {
   const products = getProducts();
   const jsonData = { products };
 
-  // Ensure the output directory (public) exists
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  // Write the JSON file to public/product.json
   fs.writeFileSync(outputFile, JSON.stringify(jsonData, null, 2));
   console.log('product.json has been updated!');
 }
 
-// Run the script
+// Watch for changes in the content directory
+chokidar.watch(contentDir).on('all', (event, path) => {
+  console.log(`File ${path} has been ${event}`);
+  generateJsonFile();
+});
+
+// Initial generation of product.json
 generateJsonFile();

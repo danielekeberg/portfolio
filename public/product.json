@@ -7,8 +7,19 @@
       "description": "Halla",
       "content": "",
       "image": {
-        "url": "/uploads/2deee9f1dfae978b422d135e3acc41e7.jpg",
+        "url": "https://i.ibb.co/w6y9bjt/images.jpg",
         "alt": "Headset"
+      }
+    },
+    {
+      "title": "Hello",
+      "slug": "hellointheluke",
+      "price": 69,
+      "description": "Dette er nice",
+      "content": "",
+      "image": {
+        "url": "https://i.ibb.co/gdtk51d/German-Shepherds-dans-pet-care.jpg",
+        "alt": "Hello"
       }
     }
   ]
