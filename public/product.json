@@ -10,9 +10,23 @@
     {
       "title": "Sjef1",
       "company": "Mekonomen1",
-      "slug": "",
+      "slug": "aaaaaaaaaaa",
       "start": "2020",
-      "end": "Present"
+      "end": 2323
+    },
+    {
+      "title": "Sjefen",
+      "company": "Mekonomen",
+      "slug": "sluggern",
+      "start": 2022,
+      "end": 2023
+    },
+    {
+      "title": "Telefonselger",
+      "company": "Kiwi Jaren",
+      "slug": "kiwi-jaren",
+      "start": 1950,
+      "end": 1960
     }
   ]
 }
