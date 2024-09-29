@@ -20,10 +20,10 @@ function renderProduct(product) {
     <div class="item">
     <div class="work-info">
     <h5 class="active">${product.title}</h5>
-    <p>${product.description}</p>
+    <p>${product.company}</p>
+    <p>${product.start}</p>
     </div>
-    <p>Price: $${product.price}</p>
-    <img src="${product.image.url}" alt="${product.image.alt}" style="max-width: 300px;">
+    <p>${product.end}</p>
     </div>
   `;
 
