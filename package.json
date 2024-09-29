@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run generate-index && your-build-command",
+    "build": "node js/convertMarkdownToJson.js && next build",
     "generate-index": "node generate-index.js"
   },
   "keywords": [],
@@ -13,8 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.0",
+    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "marked": "^14.1.2",
+    "path": "^0.12.7",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   }
