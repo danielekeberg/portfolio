@@ -22,6 +22,13 @@
       "end": ""
     },
     {
+      "title": "Mekaniker",
+      "company": "1881",
+      "slug": "attenaattien",
+      "start": 1999,
+      "end": 2018
+    },
+    {
       "title": "Sjef1",
       "company": "Mekonomen1",
       "slug": "",
@@ -32,8 +39,8 @@
       "title": "Sjefen",
       "company": "Mekonomen",
       "slug": "sluggern",
-      "start": "2022",
-      "end": "Present"
+      "start": 2022,
+      "end": 2023
     },
     {
       "title": "Yeah",
