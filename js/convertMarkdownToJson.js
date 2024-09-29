@@ -1,27 +1,29 @@
-const fs = require('fs');
-const path = require('path');
-const matter = require('gray-matter');
+// Use ES module syntax
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-// Define the folder containing your .md files and the output JSON file path
-const contentDir = path.join(__dirname, '/content/product'); // Adjust this path to your .md files folder
-const outputFile = path.join(__dirname, 'public', '/content/product/product.json'); // Path where you want your JSON file
+// Define the folder where your .md files are stored
+const contentDir = path.join(process.cwd(), 'content/product');
+const outputFile = path.join(process.cwd(), 'public', 'product.json'); // Path where the JSON file will be generated
 
-// Function to read and parse .md files
+// Function to read and parse all .md files
 function getProducts() {
   const files = fs.readdirSync(contentDir);
 
   return files
     .filter(file => file.endsWith('.md'))
     .map(file => {
-      const filePath = path.join(contentDir, file);
-      const fileContents = fs.readFileSync(filePath, 'utf-8');
-      const { data, content } = matter(fileContents); // Parses front matter and content
+      const fullPath = path.join(contentDir, file);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents); // Parse front matter and content
 
       return {
         title: data.title || '',
         slug: data.slug || '',
         price: data.price || 0,
-        description: content || '',
+        description: data.description || '',
+        content: content || '',
         image: {
           url: data.image || '',
           alt: data.title || 'Product Image',
@@ -30,7 +32,7 @@ function getProducts() {
     });
 }
 
-// Function to write the products to product.json
+// Write parsed data to product.json
 function generateJsonFile() {
   const products = getProducts();
   const jsonData = { products };
