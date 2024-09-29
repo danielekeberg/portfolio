@@ -3,7 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 
 // Define the folder containing your .md files and the output JSON file path
-const contentDir = path.join(__dirname, 'content/product'); // Adjust this path to your .md files folder
+const contentDir = path.join(__dirname, '/content/product'); // Adjust this path to your .md files folder
 const outputFile = path.join(__dirname, 'public', '/content/product/product.json'); // Path where you want your JSON file
 
 // Function to read and parse .md files
