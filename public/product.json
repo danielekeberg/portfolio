@@ -1,27 +1,6 @@
 {
   "products": [
     {
-      "title": "Halla kompus",
-      "company": "",
-      "slug": "lkkokoksd",
-      "start": "",
-      "end": ""
-    },
-    {
-      "title": "Headset",
-      "company": "",
-      "slug": "headset",
-      "start": "",
-      "end": ""
-    },
-    {
-      "title": "Hello",
-      "company": "",
-      "slug": "hellointheluke",
-      "start": "",
-      "end": ""
-    },
-    {
       "title": "Mekaniker",
       "company": "1881",
       "slug": "attenaattien",
@@ -34,20 +13,6 @@
       "slug": "",
       "start": "2020",
       "end": "Present"
-    },
-    {
-      "title": "Sjefen",
-      "company": "Mekonomen",
-      "slug": "sluggern",
-      "start": 2022,
-      "end": 2023
-    },
-    {
-      "title": "Yeah",
-      "company": "",
-      "slug": "yeahyeahokayyeah",
-      "start": "",
-      "end": ""
     }
   ]
 }
