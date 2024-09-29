@@ -1,15 +1,12 @@
-// script.js - Fetch and render product data from index.json
+// script.js - Fetch and render all products from index.json
 async function fetchProductData() {
   try {
     // Fetch the product data from your JSON file
-    const response = await fetch('/content/product/product.json'); // Adjust path if necessary
+    const response = await fetch('/content/product/product.json'); // Adjust the path if necessary
     const data = await response.json();
 
-    // Get the first product (or loop if multiple products)
-    const product = data.products[0]; 
-
-    // Render the product to the page
-    renderProduct(product);
+    // Render all products
+    data.products.forEach(renderProduct);
   } catch (error) {
     console.error('Error fetching product data:', error);
   }
@@ -18,7 +15,7 @@ async function fetchProductData() {
 function renderProduct(product) {
   const productContainer = document.getElementById('product-container');
 
-  // Create the HTML structure for the product
+  // Create the HTML structure for each product
   const productHTML = `
     <div class="item">
     <div class="work-info">
@@ -30,9 +27,9 @@ function renderProduct(product) {
     </div>
   `;
 
-  // Inject the HTML into the product container
-  productContainer.innerHTML = productHTML;
+  // Append the HTML to the product container
+  productContainer.innerHTML += productHTML;
 }
 
-// Call the function to fetch and display the product
+// Call the function to fetch and display the products
 fetchProductData();
