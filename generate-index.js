@@ -4,8 +4,8 @@ const matter = require('gray-matter'); // Parses front matter from Markdown file
 
 // Define the directories and output paths
 const directories = [
-  { dir: path.join(__dirname, 'content', 'works'), output: path.join(__dirname, 'content', 'works', 'index.json') },
-  { dir: path.join(__dirname, 'content', 'blog'), output: path.join(__dirname, 'content', 'blog', 'index.json') }
+  { dir: path.join(__dirname, 'content', 'works'), output: path.join(__dirname, 'content', 'works', 'works.json') },
+  { dir: path.join(__dirname, 'content', 'blog'), output: path.join(__dirname, 'content', 'blog', 'blog.json') }
 ];
 
 // Function to generate index.json for a specified directory
