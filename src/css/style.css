@@ -65,6 +65,32 @@ nav .links a.active {
     color: #288E3C;
 }
 
+#mc_embed_shell {
+    display: flex;
+    justify-content: center;
+}
+
+.contactus {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.epicform {
+    display: flex;
+    justify-content: center;
+}
+
+.contactus2 {
+    height: 960px;
+    width: 600px;
+}
+
 .about {
     display: flex;
     align-items: center;
