@@ -68,6 +68,22 @@ nav .links a.active {
 #mc_embed_shell {
     display: flex;
     justify-content: center;
+    margin: 20px;
+}
+
+#mc_embed_signup {
+    background: #EE6352;
+    border-radius: 5px;
+    font: 14px Helvetica,Arial,sans-serif;
+    width: 600px;
+}
+
+#mc_embedded_subscribe {
+    background-color: #fff !important;
+    color: #ef476f !important;
+    font-size: 20px !important;
+    padding: 20px 30px !important;
+    height: 70px !important;
 }
 
 .contactus {
