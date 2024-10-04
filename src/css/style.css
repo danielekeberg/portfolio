@@ -72,25 +72,19 @@ nav .links a.active {
 }
 
 #mc_embed_signup {
-    background: #EE6352;
+    background: #18181B;
+    color: #fff;
+    border: 1px solid #27272A;
     border-radius: 5px;
     font: 14px Helvetica,Arial,sans-serif;
     width: 600px;
-}
-
-#mc_embedded_subscribe {
-    background-color: #fff !important;
-    color: #ef476f !important;
-    font-size: 20px !important;
-    padding: 20px 30px !important;
-    height: 70px !important;
 }
 
 .contactus {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
@@ -421,18 +415,18 @@ footer .socials a {
     border: 1px solid #27272A;
   }
   
-  .product-card {
+.product-card {
     border: 1px solid #ccc;
     padding: 16px;
     width: 200px;
   }
   
-  .product-card img {
+.product-card img {
     max-width: 100%;
     height: auto;
   }
 
-  .item img {
+.item img {
     height: 250px;
     width: 170px;
     margin: 0 25px 10px 25px;
