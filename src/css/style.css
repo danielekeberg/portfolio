@@ -75,7 +75,7 @@ nav .links a.active {
     background: #18181B;
     color: #fff;
     border: 1px solid #27272A;
-    border-radius: 5px;
+    border-radius: 14px;
     font: 14px Helvetica,Arial,sans-serif;
     width: 600px;
 }
@@ -94,6 +94,11 @@ nav .links a.active {
 .epicform {
     display: flex;
     justify-content: center;
+    margin: 50px 0;
+}
+
+.epicform iframe {
+    border-radius: 14px;
 }
 
 .contactus2 {
