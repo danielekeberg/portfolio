@@ -44,24 +44,6 @@ collections:
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Start Date", name: "start_date", widget: "string" }
       - { label: "End Date", name: "end_date", widget: "string", default: "Present" }
-  
-  
-  - name: "aisudhad"
-    label: "asd"
-    folder: "content/product"
-    create: true
-    slug: "{{slug}}"
-    format: "yaml-frontmatter"
-    editor:
-      preview: false
-    description: >
-      Add or update your work experience entries here.
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Company", name: "company", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", required: true, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Must be lowercase and hyphenated."] }
-      - { label: "Start Date", name: "start_date", widget: number }
-      - { label: "End Date", name: "end_date", widget: number, default: "Present" }
 
   - name: "product"
     label: "Product"
