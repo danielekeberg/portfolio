@@ -20,10 +20,10 @@ function renderProduct(product) {
     <div class="item">
     <div class="work-info">
     <h5 class="active">${product.title}</h5>
-    <p>${product.company}</p>
-    </div>
     <p>${product.start}</p>
     <p>${product.end}</p>
+    </div>
+    <p>${product.company}</p>
     </div>
   `;
 
