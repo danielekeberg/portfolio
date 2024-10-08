@@ -21,8 +21,8 @@ function renderProduct(product) {
     <div class="work-info">
     <h5 class="active">${product.title}</h5>
     <p>${product.company}</p>
-    <p>${product.start}</p>
     </div>
+    <p>${product.start}</p>
     <p>${product.end}</p>
     </div>
   `;
