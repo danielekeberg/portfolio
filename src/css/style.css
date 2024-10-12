@@ -66,15 +66,19 @@ nav .links a.active {
 }
 
 #mc_embed_shell {
+    margin-top: 20px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin: 20px;
+    background: #18181B;
+    border: 1px solid #27272A;
+    border-radius: 14px;
+    padding: 45px;
 }
 
 #mc_embed_signup {
     background: #18181B;
     color: #fff;
-    border: 1px solid #27272A;
     border-radius: 14px;
     font: 14px Helvetica,Arial,sans-serif;
     width: 600px;
@@ -91,19 +95,9 @@ nav .links a.active {
     cursor: pointer;
 }
 
-.epicform {
+#mc_embed_signup_scroll h2 {
     display: flex;
     justify-content: center;
-    margin: 50px 0;
-}
-
-.epicform iframe {
-    border-radius: 14px;
-}
-
-.contactus2 {
-    height: 960px;
-    width: 600px;
 }
 
 .about {
