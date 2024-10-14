@@ -18,12 +18,11 @@ function renderProduct(product) {
   // Create the HTML structure for each product
   const productHTML = `
     <div class="item">
-    <div class="work-info">
-    <h5 class="active">${product.title}</h5>
-    <p>${product.company}</p>
-    <p>${product.start}</p>
-    </div>
-    <p>${product.end}</p>
+      <div class="work-info">
+        <h5 class="active">${product.title}</h5>
+        <p>${product.start} - ${product.end}</p>
+      </div>
+      <p>${product.company}</p>
     </div>
   `;
 
