@@ -230,6 +230,10 @@ footer a.online i {
     font-size: 9px;
 }
 
+#test {
+    color: #d14646;
+}
+
 .about .right img {
     width: 200px;
     height: 200px;
