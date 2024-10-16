@@ -155,11 +155,15 @@ nav .links a.active {
     transition: all 0.3s ease;
 }
 
+#margin {
+    margin-bottom: 105px;
+}
+
 .about .left .info .buttons button.hire {
     color: #fff;
     background-color: #388E3C;
     border: 1px solid #171717;
-    margin-bottom: 100px;
+
 }
 
 .about .left .info .buttons button.hire:hover {
