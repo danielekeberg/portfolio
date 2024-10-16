@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/version')
+fetch('../package.json')
   .then(response => response.json())
   .then(data => {
     console.log(data);
