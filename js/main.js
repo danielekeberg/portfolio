@@ -32,10 +32,3 @@ function renderProduct(product) {
 
 // Call the function to fetch and display the products
 fetchProductData();
-
-fetch('http://localhost:3000/version')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('version').innerText = `Version: ${data.version}`;
-  })
-  .catch(error => console.error('Error fetching version:', error));
