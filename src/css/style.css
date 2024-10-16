@@ -401,6 +401,10 @@ footer .socials a {
     color: #BDBDBD;
 }
 
+.version {
+    color: #fff;
+}
+
 #recent-works {
     padding: 20px;
     background-color: #18181B;
