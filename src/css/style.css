@@ -122,6 +122,7 @@ nav .links a.active {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
 }
 
 .about .left .info h2 {
@@ -133,6 +134,7 @@ nav .links a.active {
 .about .left .info p {
     font-size: 20px;
     color: #BDBDBD;
+    margin-bottom: 100px;
 }
 
 .about .left .info .buttons {
@@ -401,8 +403,8 @@ footer .socials a {
     color: #BDBDBD;
 }
 
-.version {
-    color: #fff;
+#version {
+    color: #BDBDBD;
 }
 
 #recent-works {
