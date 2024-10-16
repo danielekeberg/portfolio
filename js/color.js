@@ -2,9 +2,9 @@ var changeColor = document.querySelector("#changeColor");
 var invisible = document.querySelector("#invisible");
 
 function change() {
-    changeColor.style.background = "#388E3C";
+    changeColor.style.background = "#03396c";
     changeColor.style.color = "#fff";
-    changeColor.innerHTML = "The color har been changed to green!";
+    changeColor.innerHTML = "The color har been changed to blue!";
     invisible.style.display = "block";
 }
 

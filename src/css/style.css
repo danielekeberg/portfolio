@@ -102,12 +102,17 @@ nav .links a.active {
 
 .about {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 60px 42px;
     background: #18181B;
     border: 1px solid #27272A;
     margin-top: 20px;
     border-radius: 14px;
+}
+
+.test {
+    align-items: flex-start !important;
     height: 80vh;
 }
 
