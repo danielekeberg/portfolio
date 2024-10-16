@@ -111,11 +111,6 @@ nav .links a.active {
     border-radius: 14px;
 }
 
-.test {
-    align-items: flex-start !important;
-    height: 80vh;
-}
-
 .about .left h3 {
     color: #BDBDBD;
     font-size: 24px;
