@@ -122,7 +122,10 @@ nav .links a.active {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
 
+.welcome-test {
+    font-size: 30px !important;
 }
 
 .about .left .info h2 {
@@ -134,7 +137,6 @@ nav .links a.active {
 .about .left .info p {
     font-size: 20px;
     color: #BDBDBD;
-    margin-bottom: 100px;
 }
 
 .about .left .info .buttons {
@@ -157,6 +159,7 @@ nav .links a.active {
     color: #fff;
     background-color: #388E3C;
     border: 1px solid #171717;
+    margin-bottom: 100px;
 }
 
 .about .left .info .buttons button.hire:hover {
