@@ -12,6 +12,7 @@
     <script src="script.js"></script>
     <script src="/js/getMarkdownData.js"></script>
     <script src="/js/convertMarkdownToJson.js"></script>
+    
 </head>
 
 <body>
@@ -36,7 +37,7 @@
                     <button class="hire">Hire me <i class="fas fa-plus"></i></button>
                     <button class="email" id="copyButton">Copy Email <i class="far fa-copy"></i></button>
                     <a href="/index.html"><button class="email">Go To Homepage<i class="fas fa-plus" id="testing"></i></button></a>
-
+                    
                     <div id="customAlert" class="custom-alert">
                         <div class="custom-alert-content">
                             <span class="closebtn" onclick="closeAlert()">&times;</span>
@@ -44,72 +45,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="buttons">
+                    <button onclick="change()" class="email" id="changeColor">Change the color of this button!</button>
+                    <button onclick="revert()" class="email" id="invisible">Click here to revert the changes!</button>
+                </div>
             </div>
         </div>
+        
 
         <div class="right">
             <a class="online" id="test" href="#"><i class="fas fa-circle"></i> Live Testing Website</a>
             <img src="https://i.ibb.co/xXZHPqJ/cfa4739f2a3ab3bf712b8843471c1758.jpg"></img>
         </div>
     </div>
-    <!-- <p><?php echo "Hello, world"; ?></p> -->
-    <div class="works">
-        <div class="left">
-            <h3><i class="fas fa-circle"></i> Recent Works</h3>
-            
-            <div class="works-list">
-                <div id="product-container"></div>
-            </div>
-        </div>
-        
-        <div class="right">
-            <div class="item">
-                <a href="#">About My Work</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dignissimos quas delectus illum! Necessitatibus impedit mollitia nobis dicta, facilis fugit perspiciatis omnis quis iure id ipsa soluta ex at voluptas.</p>
-            </div>
-            <div class="item">
-                <a href="#">Design Solutions</a>
-                <p>Ways to solve design challenges with creative approaches.</p>
-            </div>
-            <div class="item">
-                <a href="#">Responsive Design</a>
-                <p>Ensuring a seamless user experience across all devices.</p>
-            </div>
-            <div class="item">
-                <a href="#">Research and Testing</a>
-                <p>Using data-driven insights to inform design decisions.</p>
-            </div>
-            <div class="item">
-                <a href="#">Collaborative Projects</a>
-                <p>Working with cross-functional teams to bring ideas to life.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="mc_embed_shell">
-        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-        <div id="mc_embed_signup">
-            <form action="https://live.us17.list-manage.com/subscribe/post?u=376b0598757715c872ca7a49e&amp;id=df8092101d&amp;f_id=00bc66e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                <div id="mc_embed_signup_scroll"><h2>Subscribe to our newsletter!</h2>
-                    <div class="mc-field-group"><label for="mce-EMAIL"><span class="asterisk"></span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" placeholder="example@example.com"></div>
-                <div id="mce-responses" class="clear foot">
-                    <div class="response" id="mce-error-response" style="display: none;"></div>
-                    <div class="response" id="mce-success-response" style="display: none;"></div>
-                </div>
-            <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                <!-- Real people should not fill this in - Do not remove this or risk form bot signups -->
-                <input type="text" name="b_376b0598757715c872ca7a49e_df8092101d" tabindex="-1" value="">
-            </div>
-                <div class="optionalParent">
-                    <div class="clear foot">
-                        <input type="submit" name="subscribe" id="mc_embedded_subscribe" class="button" value="Subscribe">
-                    </div>
-                </div>
-            </div>
-        </form>
-        </div>
-        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-    </div>
+    
     
     <footer>
         <a href="#">My Portfolio</a>
@@ -120,6 +69,6 @@
         </div>
         <a class="online" href="#"><i class="fas fa-circle"></i> Available For Job</a>
     </footer>
-
+    <script src="/js/color.js"></script>
 </body>
 </html>
