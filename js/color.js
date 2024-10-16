@@ -1,5 +1,8 @@
 var changeColor = document.querySelector("#changeColor");
 var invisible = document.querySelector("#invisible");
+var invisibleTwo = document.querySelector("#invisibleText");
+var versionC = document.querySelector("#version");
+var changeColorTwo = document.querySelector("#changeColorTwo");
 
 function change() {
     changeColor.style.background = "#03396c";
@@ -12,6 +15,18 @@ function revert() {
     changeColor.style.background = "#171717";
     changeColor.style.color = "#BDBDBD";
     changeColor.style.border = "1px solid #28282A";
-    changeColor.innerHTML = "The color har been reverted!";
+    changeColor.innerHTML = "The color has been reverted!";
     invisible.style.display = "none";
+}
+
+function versionColor() {
+    versionC.style.color = "pink";
+    invisibleTwo.style.display = "block";
+    changeColorTwo.innerHTML = "The color has been changed!"
+}
+
+function revertColor() {
+    changeColorTwo.innerHTML = "The color har been reverted!"
+    versionC.style.color = "#a8e794";
+    invisibleTwo.style.display = "none";
 }
