@@ -33,7 +33,7 @@ function versionColor() {
 }
 
 function revertColor() {
-    changeColorTwo.innerHTML = "The color har been reverted!"
+    changeColorTwo.innerHTML = "The color has been reverted!"
     versionC.style.color = "#a8e794";
     invisibleTwo.style.display = "none";
 }
