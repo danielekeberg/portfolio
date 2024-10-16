@@ -102,13 +102,13 @@ nav .links a.active {
 
 .about {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 60px 42px;
     background: #18181B;
     border: 1px solid #27272A;
     margin-top: 20px;
     border-radius: 14px;
+    height: 80vh;
 }
 
 .about .left h3 {
@@ -169,6 +169,10 @@ nav .links a.active {
 
 .about .left .info .buttons button.email:hover {
     background: #000;
+}
+
+#invisible {
+    display: none;
 }
 
 .custom-alert {
@@ -442,7 +446,10 @@ footer .socials a {
     width: 170px;
     margin: 0 25px 10px 25px;
   }
-  
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
 
 @keyframes fadeInAnimation {
     0% {
