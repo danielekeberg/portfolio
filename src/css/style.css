@@ -251,6 +251,10 @@ footer a.online i {
     color: #d14646;
 }
 
+#test:hover {
+    color: #a02929 !important;
+}
+
 .about .right img {
     width: 200px;
     height: 200px;
