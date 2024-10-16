@@ -180,7 +180,8 @@ nav .links a.active {
     background: #000;
 }
 
-#invisible {
+#invisible,
+#invisibleText {
     display: none;
 }
 
