@@ -510,6 +510,8 @@ body::-webkit-scrollbar {
     border: 1px solid #28282A;
     background: #18181B;
     margin: 25px;
+    margin-left: 80px;
+    margin-right: 80px;
 } 
 
 .leaderboard-container {
