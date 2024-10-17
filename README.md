@@ -14,13 +14,13 @@ Currently, my focus is on mastering **JavaScript**, and I plan to expand my skil
 
 ## Technologies
 
-- **HTML5**:
-- **CSS3**:
-- **JavaScript**:
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
 ### Future Technologies (To Be Added)
 
-- **React**:
-- **TypeScript**:
-- **Next.js**:
-- **TailwindCSS**:
+- **React**
+- **TypeScript**
+- **Next.js**
+- **TailwindCSS**
