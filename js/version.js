@@ -6,11 +6,11 @@ fetch('../package.json')
   })
   .catch(error => console.error('Error fetching version:', error));
 
-// fetch('../package.json')  
-//   .then(response => response.json())
-//   .then(data => {
-//     const versionElements = document.querySelectorAll('.version');
-//     versionElements.forEach(element => {
-//       element.textContent = data.version;
-//     });
-//   });
+fetch('../package.json')  
+  .then(response => response.json())
+  .then(data => {
+    const versionElements = document.querySelectorAll('.version');
+    versionElements.forEach(element => {
+      element.textContent = `Version: ${data.version}`;
+    });
+  });
