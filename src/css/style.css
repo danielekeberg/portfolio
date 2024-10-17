@@ -419,6 +419,10 @@ footer .socials a {
     color: #a8e794;
 }
 
+.version {
+    color: #BDBDBD;
+}
+
 #recent-works {
     padding: 20px;
     background-color: #18181B;
@@ -483,12 +487,28 @@ body::-webkit-scrollbar {
     background: #18181B;
     border-radius: 5px;
     border: 1px solid #27272A;
-    margin-top: 30px;
+    margin: 30px 0 0 10px;
 }
 
-body .wrapper {
+.snakegame {
     display: flex;
+    justify-content: center;
 }
+
+#goback {
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #BDBDBD;
+    border: 1px solid #28282A;
+    background: #171717;  
+    margin: 30px 0 0 10px;
+} 
 
 .game-details {
     color: #BDBDBD;
