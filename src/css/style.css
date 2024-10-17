@@ -496,9 +496,11 @@ body::-webkit-scrollbar {
 }
 
 #goback {
-    font-size: 16px;
-    padding: 6px 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 30px 27px;
     border-radius: 5px;
+    height: 27px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -506,7 +508,7 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease;
     color: #BDBDBD;
     border: 1px solid #28282A;
-    background: #171717;  
+    background: #18181B;  
     margin: 30px 0 0 10px;
 } 
 
