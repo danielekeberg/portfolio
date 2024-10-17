@@ -22,5 +22,4 @@ Currently, my focus is on mastering **JavaScript**, and I plan to expand my skil
 
 - **React**
 - **TypeScript**
-- **Next.js**
 - **TailwindCSS**
