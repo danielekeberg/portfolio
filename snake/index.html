@@ -22,22 +22,29 @@
         </div>
     </nav>
 
-    <div class="wrapper">
-        <div class="game-details">
-            <span class="score">Score: 0</span>
-            <span class="high-score">High Score: 0</span>
+    <div class="snakegame">
+        <div class="goback">
+            <a href="/test/index.html"><button id="goback">Go back</button></a>
         </div>
+        <div class="wrapper">
+            <div class="game-details">
+                <span class="score">Score: 0</span>
+                <span class="high-score">High Score: 0</span>
+            </div>
 
-        <div class="play-board"></div>
+            <div class="play-board"></div>
 
-        <div class="controls">
-            <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
-            <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
-            <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
-            <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+            <div class="controls">
+                <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+                <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+                <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+                <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+            </div>
+        </div>
+        <div class="goback">
+            <a href="#"><button id="goback">Coming soon</button></a>
         </div>
     </div>
-    <script src="../js/snake.js"></script>
     
     
     <footer>
@@ -47,7 +54,9 @@
             <a href="https://www.instagram.com/danielekeberg/" class="socialz">Instagram</a>
             <a href="https://www.linkedin.com/in/daniel-lehre-ekeberg-04a7b1178/" class="socialz">LinkedIn</a>
         </div>
-        <a class="online" href="#"><i class="fas fa-circle"></i> Available For Job</a>
+        <span class="version"></span>
     </footer>
+    <script src="../js/snake.js"></script>
+    <script src="../js/version.js"></script>
 </body>
 </html>
