@@ -124,6 +124,10 @@ nav .links a.active {
     gap: 20px;
 }
 
+.info p {
+    width: 55%;
+}
+
 .welcome-test {
     font-size: 30px !important;
 }
