@@ -729,4 +729,8 @@ body::-webkit-scrollbar {
     footer .socials a {
         font-size: 14px;
     }
+
+    .goback {
+        display: none;
+    }
 }
