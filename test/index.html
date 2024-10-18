@@ -29,7 +29,7 @@
 
     <div class="about" id="margin">
         <div class="left">
-            <h3>Daniel Ekeberg</h3>
+            <h3 id="name">Daniel Ekeberg</h3>
             <div class="info">
                 <h2 class="welcome-test">Welcome to <span id="version"></span> of my Test Page</h2>
                 <p>This is where I'm experimenting with JavaScript to learn how it works and
@@ -47,9 +47,21 @@
                 <div class="buttons">
                     <button onclick="versionColor()" class="email" id="changeColorTwo">Change the color of the current Version!</button>
                     <button onclick="revertColor()" class="email" id="invisibleText">Click here to revert the changes!</button>
+                </div><div class="buttons">
+                    <button id="openPopup" class="email">Click me!</button>
                 </div>
             </div>
+            <div id="overlay" class="overlay"></div>
+                <div id="popup" class="popup">
+                    <h2>Popup Window</h2>
+                    <p>This is a simple popup window!</p>
+                    <div class="close">
+                        <button id="closePopup">Close Popup</button>
+                    </div>
+                </div>
         </div>
+
+        
         
         <!-- 1.0.1 -> 1.0.2 = npm version patch
         1.0.1 -> 1.1.1 = npm version minor
@@ -74,5 +86,6 @@
     <script src="../js/color.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/version.js"></script>
+    <script src="../js/popup.js"></script>
 </body>
 </html>
