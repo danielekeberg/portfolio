@@ -603,6 +603,11 @@ body::-webkit-scrollbar {
     border-right: 1px solid #171b26;
 }
 
+.snakeMobile {
+    display: none;
+    color: #BDBDBD;
+}
+
 .popup {
     display: none;
     position: fixed;
@@ -748,6 +753,32 @@ body::-webkit-scrollbar {
     }
 
     footer a.online {
+        display: none;
+    }
+
+    .snakeMobile {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        color: #BDBDBD;
+        margin-top: 150px;
+    }
+
+    .snakegame {
+        display: none;
+    }
+
+    .leaderboard-container {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        margin-top: 300px;
+    }
+
+    #hideOnMobile {
         display: none;
     }
 }
