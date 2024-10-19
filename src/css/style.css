@@ -614,6 +614,12 @@ body::-webkit-scrollbar {
     border-radius: 14px;
 }
 
+.diverse .buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .snakeMobile {
     display: flex;
     justify-content: center;
