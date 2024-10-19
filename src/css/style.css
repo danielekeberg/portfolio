@@ -603,9 +603,41 @@ body::-webkit-scrollbar {
     border-right: 1px solid #171b26;
 }
 
-.snakeMobile {
+.snakeMobile-container {
     display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 42px;
+    background-color: #18181B;
+    border: 1px solid #27272A;
+    margin-top: 20px;
+    border-radius: 14px;
+}
+
+.snakeMobile {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
     color: #BDBDBD;
+}
+
+.snakeMobile-container button {
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #BDBDBD;
+    border: 1px solid #28282A;
+    background: #171717;
+}
+
+.snakeMobile-container button:hover {
+    background: #000;
 }
 
 .popup {
@@ -756,13 +788,8 @@ body::-webkit-scrollbar {
         display: none;
     }
 
-    .snakeMobile {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-size: 14px;
-        color: #BDBDBD;
-        margin-top: 150px;
+    .snakeMobile-container {
+        display: block;
     }
 
     .snakegame {
