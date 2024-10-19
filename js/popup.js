@@ -23,6 +23,8 @@ const openPopupButton = document.getElementById("openPopup");
 const closePopupButton = document.getElementById("closePopup");
 const popup = document.getElementById("popup");
 const overlay = document.getElementById("overlay");
+const kesha = document.getElementById("kesha");
+const keshabtn = document.getElementById("keshabtn");
 
 function openPopup() {
     popup.style.display = "block";
@@ -34,7 +36,37 @@ function closePopup() {
     overlay.style.display = "none";
 }
 
+function keshajumpscare() {
+    kesha.style.display = "block";
+}
+
+function keshaleave() {
+    kesha.style.display = "none";
+}
+
 openPopupButton.addEventListener("click", openPopup);
 closePopupButton.addEventListener("click", closePopup);
+keshabtn.addEventListener("mouseover", keshajumpscare);
+keshabtn.addEventListener("mouseleave", keshaleave);
+
 
 overlay.addEventListener("click", closePopup);
+
+const pb = document.getElementById("kanskje");
+const byttPb = document.getElementById("byttPb");
+
+
+function byttBilde() {
+    var image = document.getElementById("kanskje");
+    image.src = "../src/edcmivxiqupb1.jpg";
+}
+
+function defaultPb() {
+    var image = document.getElementById("kanskje");
+    image.src = "https://i.ibb.co/xXZHPqJ/cfa4739f2a3ab3bf712b8843471c1758.jpg";
+}
+
+byttPb.addEventListener("mouseover", byttBilde);
+byttPb.addEventListener("mouseleave", defaultPb);
+
+
