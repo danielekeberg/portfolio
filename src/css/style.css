@@ -633,6 +633,10 @@ body::-webkit-scrollbar {
     margin-top: 10px;
 }
 
+#kesha {
+    display: none;
+}
+
 #closePopup {
     font-size: 16px;
     padding: 6px 10px;
