@@ -159,9 +159,7 @@ nav .links a.active {
     transition: all 0.3s ease;
 }
 
-#margin {
-    margin-bottom: 105px;
-}
+
 
 .about .left .info .buttons button.hire {
     color: #fff;
@@ -612,6 +610,14 @@ body::-webkit-scrollbar {
     border: 1px solid #27272A;
     margin-top: 20px;
     border-radius: 14px;
+}
+
+#kesha {
+    justify-content: center;
+}
+
+#kesha img {
+    border-radius: 50%;
 }
 
 .diverse .buttons{
