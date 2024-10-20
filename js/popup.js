@@ -58,7 +58,7 @@ const byttPb = document.getElementById("byttPb");
 
 function byttBilde() {
     var image = document.getElementById("kanskje");
-    image.src = "../src/edcmivxiqupb1.jpg";
+    image.src = "../src/imgz39qsje6b1.png";
 }
 
 function defaultPb() {
