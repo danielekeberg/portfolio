@@ -37,7 +37,7 @@ function closePopup() {
 }
 
 function keshajumpscare() {
-    kesha.style.display = "block";
+    kesha.style.display = "flex";
 }
 
 function keshaleave() {
