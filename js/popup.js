@@ -77,4 +77,7 @@ function defaultPb() {
 byttPb.addEventListener("mouseover", byttBilde);
 byttPb.addEventListener("mouseleave", defaultPb);
 
-
+function updateParagaph() {
+    const inputValue = document.getElementById('myInput').value;
+    document.getElementById('output').innerText = "Hello " + inputValue + "!";
+}
