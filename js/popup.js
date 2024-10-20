@@ -25,6 +25,10 @@ const popup = document.getElementById("popup");
 const overlay = document.getElementById("overlay");
 const kesha = document.getElementById("kesha");
 const keshabtn = document.getElementById("keshabtn");
+const keshaBtnMob = document.getElementById("keshaBtnMob");
+const byttPbMob = document.getElementById("byttPbMob");
+const keshaBtnMobLeave = document.getElementById("keshaBtnMobLeave");
+const byttPbMobReset = document.getElementById("byttPbMobReset");
 
 function openPopup() {
     popup.style.display = "block";
@@ -48,6 +52,10 @@ openPopupButton.addEventListener("click", openPopup);
 closePopupButton.addEventListener("click", closePopup);
 keshabtn.addEventListener("mouseover", keshajumpscare);
 keshabtn.addEventListener("mouseleave", keshaleave);
+keshaBtnMob.addEventListener("click", keshajumpscare);
+keshaBtnMobLeave.addEventListener("click", keshaleave);
+byttPbMob.addEventListener("click", byttBilde);
+byttPbMobReset.addEventListener("click", defaultPb);
 
 
 overlay.addEventListener("click", closePopup);
