@@ -159,7 +159,12 @@ nav .links a.active {
     transition: all 0.3s ease;
 }
 
-
+#byttPbMob,
+#keshaBtnMob,
+#keshaBtnMobLeave,
+#byttPbMobReset {
+    display: none;
+}
 
 .about .left .info .buttons button.hire {
     color: #fff;
@@ -818,6 +823,18 @@ body::-webkit-scrollbar {
     }
 
     #hideOnMobile {
+        display: none;
+    }
+
+    #byttPbMob,
+    #keshaBtnMob,
+    #keshaBtnMobLeave,
+    #byttPbMobReset {
+    display: block;
+    }
+
+    #keshabtn,
+    #byttPb {
         display: none;
     }
 }
