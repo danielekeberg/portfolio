@@ -166,6 +166,13 @@ nav .links a.active {
     display: none;
 }
 
+.enterName {
+    border-radius: 10px;
+    border: 1px solid #27272A;
+    padding: 10px;
+    background: #171717;
+}
+
 .about .left .info .buttons button.hire {
     color: #fff;
     background-color: #388E3C;
