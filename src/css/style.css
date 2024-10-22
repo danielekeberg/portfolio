@@ -23,6 +23,10 @@ body {
     animation: fadeInAnimation ease 2s;
 }
 
+#darkMode {
+    display: none;
+}
+
 nav {
     display: flex;
     gap: 20px;
