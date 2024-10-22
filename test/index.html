@@ -18,21 +18,21 @@
 <body>
     <nav>
         <div class="logo">
-            <i class="fas fa-code"></i>
+            <i class="fas fa-code" id="logoLight"></i>
         </div>
-        <div class="links">
+        <div class="links" id="nav">
             <a href="#" class="active">About</a>
-            <a href="https://danielportfoliotest.netlify.app/cms/admin">Portfolio</a>
-            <a href="#" id="emailButton">Contact Me</a>
+            <a href="https://danielportfoliotest.netlify.app/cms/admin" class="navLinks">Portfolio</a>
+            <a href="#" id="emailButton" class="navLinksContact">Contact Me</a>
         </div>
     </nav>
 
-    <div class="about">
+    <div class="about" id="about">
         <div class="left">
             <h3 id="name">Daniel Ekeberg</h3>
             <div class="info">
-                <h2 class="welcome-test">Welcome to <span id="version"></span> of my Test Page</h2>
-                <p>This is where I'm experimenting with JavaScript to learn how it works and
+                <h2 class="welcome-test" id="welcome">Welcome to <span id="version"></span> of my Test Page</h2>
+                <p id="mode">This is where I'm experimenting with JavaScript to learn how it works and
                 implement new features. Since I'm continually testing and developing, this
                 page might not always be complete or fully functional. Thank you for
                 understanding as I work through my learning process!</p>
@@ -60,6 +60,10 @@
                     <button id="byttPb" class="email">Profilbilde</button>
                     <button id="byttPbMob" class="email">Profilbilde</button>
                     <button id="byttPbMobReset" class="email">Profilbilde</button>
+                </div>
+                <div class="buttons">
+                    <button id="lightMode" class="email">Light Mode</button>
+                    <button id="darkMode" class="email">Dark Mode</button>
                 </div>
 
                 <div class="buttons">
@@ -98,8 +102,8 @@
         <img src="../src/smujr0ee5qgc1.jpeg">
     </div>
 
-    <canvas id="canvas"></canvas>
-    <script src="../js/bounce.js"></script>
+    <!-- <canvas id="canvas"></canvas>
+    <script src="../js/bounce.js"></script> -->
     
     <footer>
         <a href="#">My Portfolio</a>
@@ -110,6 +114,7 @@
         </div>
         <span class="version"></span>
     </footer>
+    <script src="../js/darkmode.js"></script>
     <script src="../js/color.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/version.js"></script>
