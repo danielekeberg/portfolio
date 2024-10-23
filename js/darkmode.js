@@ -25,6 +25,7 @@ function lightMode() {
     links.style.color = "#171717";
     contact.style.color = "#171717";
     logoLight.style.background = "c7c7c7";
+    socials.style.color = "#171717";
 }
 
 function darkMode() {
