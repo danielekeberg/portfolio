@@ -10,8 +10,15 @@ let nav = document.getElementById('nav');
 let links = document.querySelector('.navLinks');
 let contact = document.querySelector('.navLinksContact');
 let footer = document.querySelector('footer');
-let version = document.querySelector('.version');
-let socials = document.querySelectorAll('.socialz');
+let versionFooter = document.querySelector('.version');
+let socialsFooter = document.querySelector('.socials');
+let portfolioFooter = document.getElementById("portfolioFooter");
+let github = document.querySelector(".github");
+let instagram = document.querySelector(".instagram");
+let linkedIn = document.querySelector(".linkedIn");
+let right = document.querySelector(".right");
+let online = document.querySelector(".online");
+
 
 function lightMode() {
     body.style.background = "#fff";
@@ -24,7 +31,16 @@ function lightMode() {
     nav.style.background = "#c7c7c7";
     links.style.color = "#171717";
     contact.style.color = "#171717";
-    logoLight.style.background = "c7c7c7";
+    logoLight.style.background = "#c7c7c7";
+    footer.style.background = "#c7c7c7";
+    socialsFooter.style.color = "#171717";
+    versionFooter.style.color = "#171717";
+    portfolioFooter.style.color = "#171717";
+    versionC.style.color = "#a8e794";
+    github.style.color = "#171717";
+    instagram.style.color = "#171717";
+    linkedIn.style.color = "#171717";
+    online.style.background = "#c7c7c7";
 }
 
 function darkMode() {
@@ -38,7 +54,15 @@ function darkMode() {
     nav.style.background = "#18181B";
     links.style.color = "#BDBDBD";
     contact.style.color = "#BDBDBD";
-    logoLight.style.background = "c7c7c7";
+    logoLight.style.background = "#18181B";
+    footer.style.background = "#18181B";
+    versionFooter.style.color = "#BDBDBD";
+    portfolioFooter.style.color = "#BDBDBD";
+    versionC.style.color = "#FFFDD0";
+    github.style.color = "#BDBDBD";
+    instagram.style.color = "#BDBDBD";
+    linkedIn.style.color = "#BDBDBD";
+    online.style.background = "#18181B";
 }
 
 light.addEventListener("click", lightMode);
