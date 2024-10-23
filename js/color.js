@@ -3,7 +3,9 @@ var invisible = document.querySelector("#invisible");
 var invisibleTwo = document.querySelector("#invisibleText");
 var versionC = document.querySelector("#version");
 var changeColorTwo = document.querySelector("#changeColorTwo");
-// var socials = document.querySelectorAll(".socialz");
+
+// var socials = document.querySelectorAll(".socialz"); //
+
 
 function change() {
     changeColor.style.background = "#03396c";
