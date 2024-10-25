@@ -736,6 +736,10 @@ body::-webkit-scrollbar {
     z-index: 999;
 }
 
+#halloTo {
+    display: none;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
