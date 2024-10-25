@@ -4,6 +4,7 @@ let body = document.querySelector("body");
 let navn = document.getElementById("name");
 let about = document.getElementById("about");
 let button = document.querySelector(".email");
+let goNext = document.getElementById("goNextButtons");
 
 
 function sayHallo() {
@@ -12,10 +13,11 @@ function sayHallo() {
     body.style.background = "red";
     navn.innerHTML = "welp...";
     about.style.background = "blue";
-    button.style.color = "red";
-    button.style.background = "green";
-    hallo.style.display = "none";
+    halloTo.style.color = "red";
+    halloTo.style.background = "green";
     halloTo.style.display = "block";
+    hallo.style.display = "none";
+    goNext.style.display = "none";
 }
 
 function sayHalloReturn() {
@@ -26,8 +28,9 @@ function sayHalloReturn() {
     about.style.background = "#18181B";
     button.style.color = "#BDBDBD";
     button.style.background = "#171717";
-    hallo.style.display = "none";
-    halloTo.style.display = "block";
+    hallo.style.display = "block";
+    halloTo.style.display = "none";
+    goNext.style.display = "block";
 }
 
 hallo.addEventListener("click", sayHallo);
