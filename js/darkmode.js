@@ -20,6 +20,7 @@ let right = document.querySelector(".right");
 let online = document.querySelector(".online");
 
 
+
 function lightMode() {
     body.style.background = "#fff";
     about.style.background = "#c7c7c7";
@@ -67,3 +68,4 @@ function darkMode() {
 
 light.addEventListener("click", lightMode);
 dark.addEventListener("click", darkMode);
+
