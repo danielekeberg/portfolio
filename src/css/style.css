@@ -170,6 +170,27 @@ nav .links a.active {
     display: none;
 }
 
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-container label {
+    display: inline-block;
+    border: 1px solid #27272A;
+    background: #171717;
+    color: #BDBDBD;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label {
+    background-color: #288E3C;
+    color: #fff;
+    border-color: #0d8b46;
+  }
+
 .enterName {
     border-radius: 10px;
     border: 1px solid #27272A;
