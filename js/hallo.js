@@ -5,6 +5,9 @@ let navn = document.getElementById("name");
 let about = document.getElementById("about");
 let button = document.querySelector(".email");
 let goNext = document.getElementById("goNextButtons");
+let github = document.querySelector(".github");
+let instagram = document.querySelector(".instagram");
+let linkedIn = document.querySelector(".linkedIn");
 
 
 function sayHallo() {
@@ -30,8 +33,48 @@ function sayHalloReturn() {
     button.style.background = "#171717";
     hallo.style.display = "block";
     halloTo.style.display = "none";
-    goNext.style.display = "block";
+    goNext.style.display = "flex";
+}
+
+function githubHover() {
+    github.style.color = "pink";
+}
+
+function githubLeave() {
+    github.style.color = "#BDBDBD";
+}
+
+function instagramHover() {
+    instagram.style.color = "pink";
+}
+
+function instagramLeave() {
+    instagram.style.color = "#BDBDBD";
+}
+
+function linkedInHover() {
+    linkedIn.style.color = "pink";
+}
+
+function linkedInLeave() {
+    linkedIn.style.color = "#BDBDBD";
+}
+function portfolioHover() {
+    portfolioFooter.style.color = "pink";
+}
+
+function portfolioLeave() {
+    portfolioFooter.style.color = "#BDBDBD";
 }
 
 hallo.addEventListener("click", sayHallo);
 halloTo.addEventListener("click", sayHalloReturn);
+
+// github.addEventListener("mouseover", githubHover);
+// github.addEventListener("mouseleave", githubLeave);
+// instagram.addEventListener("mouseover", instagramHover);
+// instagram.addEventListener("mouseleave", instagramLeave);
+// linkedIn.addEventListener("mouseover", linkedInHover);
+// linkedIn.addEventListener("mouseleave", linkedInLeave);
+// portfolioFooter.addEventListener("mouseover", portfolioHover);
+// portfolioFooter.addEventListener("mouseleave", portfolioLeave);
