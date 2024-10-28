@@ -863,7 +863,7 @@ body::-webkit-scrollbar {
 #diceFour,
 #diceFive,
 #diceSix {
-    display: none;
+    /* display: none; */
     border-radius: 10px;
 }
 
