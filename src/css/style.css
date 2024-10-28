@@ -847,6 +847,39 @@ body::-webkit-scrollbar {
     width: 527px;
 }
 
+#coinflipped {
+    border-radius: 50%;
+}
+
+#coinflipButton {
+    display: flex;
+    width: 219px;
+    justify-content: center;
+}
+
+.displayCoin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#coinflipResult {
+    display: flex;
+    justify-content: center;
+    color: #BDBDBD;
+}
+
+.displayCoin p {
+    display: flex;
+    color: #BDBDBD;
+}
+
+.displayCoin img {
+    height: 100px;
+    display: block;
+}
+
 .JSProject .JSButtons button {
     display: flex;
     justify-content: center;
