@@ -12,25 +12,26 @@ let diceP = document.getElementById("diceP");
 
 function dice() {
     const diceNumber = Math.floor(Math.random() * 6) + 1;
-    console.log(diceNumber);
-    if(diceNumber === 1) {
-        diceOne.src = "../src/dice-six-faces-one.png"
-    }
-    if(diceNumber === 2) {
-        diceOne.src = "../src/dice-six-faces-two.png"
-    }
-    if(diceNumber === 3) {
-        diceOne.src = "../src/dice-six-faces-three.png"
-    }
-    if(diceNumber === 4) {
-        diceOne.src = "../src/dice-six-faces-four.png"
-    }
-    if(diceNumber === 5) {
-        diceOne.src = "../src/dice-six-faces-five.png"
-    }
-    if(diceNumber === 6) {
-        diceOne.src = "../src/dice-six-faces-six.png"
-    }
+    diceOne.src = `../src/dice-six-faces-${diceNumber}.png`
+
+    // if(diceNumber === 1) {
+    //     diceOne.src = "../src/dice-six-faces-one.png"
+    // }
+    // if(diceNumber === 2) {
+    //     diceOne.src = "../src/dice-six-faces-two.png"
+    // }
+    // if(diceNumber === 3) {
+    //     diceOne.src = "../src/dice-six-faces-three.png"
+    // }
+    // if(diceNumber === 4) {
+    //     diceOne.src = "../src/dice-six-faces-four.png"
+    // }
+    // if(diceNumber === 5) {
+    //     diceOne.src = "../src/dice-six-faces-five.png"
+    // }
+    // if(diceNumber === 6) {
+    //     diceOne.src = "../src/dice-six-faces-six.png"
+    // }
 
     // if (diceNumber === 1) {
     //     diceOne.style.display = "flex";
@@ -83,5 +84,3 @@ function dice() {
 }
 
 diceButton.addEventListener("click", dice);
-
-dice();
