@@ -829,6 +829,24 @@ body::-webkit-scrollbar {
     border: 1px solid #27272A;
 }
 
+.displayQuote {
+    display: flex;
+    justify-content: right;
+    background: #acacac;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 25px;
+    color: #686868;
+    min-height: 49px;
+    align-items: center;
+    border: 1px solid #27272A;
+}
+
+.rngQuote {
+    width: 527px;
+}
+
 .JSProject .JSButtons button {
     display: flex;
     justify-content: center;
@@ -878,6 +896,20 @@ body::-webkit-scrollbar {
     display: flex;
     height: 50px;
     justify-content: center;
+}
+
+.quote {
+    display: flex;
+    justify-content: center;
+}
+
+#QOTD {
+    color: #BDBDBD;
+    margin-top: 10px;
+}
+
+.JSButtons .quoteButton button {
+    width: 500px;
 }
 
 #diceOne,
