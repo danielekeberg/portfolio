@@ -774,7 +774,6 @@ body::-webkit-scrollbar {
 }
 
 .JSProject {
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px 42px;
@@ -784,12 +783,36 @@ body::-webkit-scrollbar {
     border-radius: 14px;
 }
 
+.JSContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 .JSProject h3 {
     color: #BDBDBD;
     font-size: 24px;
     font-weight: 400;
     display: flex;
     justify-content: center;
+}
+
+.JSProject h1 {
+    color: #BDBDBD;
+    font-size: 34px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.testerRng {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.testerRng img {
+    height: 50px;
 }
 
 .display {
