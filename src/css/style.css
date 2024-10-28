@@ -989,6 +989,14 @@ body::-webkit-scrollbar {
     padding: 4px 5px;
 }
 
+.JSButtons input {
+    margin-top: 10px;
+}
+
+.JSButtons label {
+    color: #BDBDBD;
+}
+
 
 @keyframes fadeInAnimation {
     0% {
