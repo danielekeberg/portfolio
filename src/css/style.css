@@ -788,6 +788,8 @@ body::-webkit-scrollbar {
     color: #BDBDBD;
     font-size: 24px;
     font-weight: 400;
+    display: flex;
+    justify-content: center;
 }
 
 .display {
@@ -829,6 +831,7 @@ body::-webkit-scrollbar {
 .generate input {
     border-radius: 7px;
     text-align: right;
+    background: #acacac;
 }
 
 @keyframes fadeInAnimation {
