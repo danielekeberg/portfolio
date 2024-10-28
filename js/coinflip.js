@@ -18,7 +18,7 @@ function flipTwo() {
         <img id="coinflipped" src="../src/cf${coinflip}.png">
         `;
         cfResult.innerHTML = `
-        <p id="coinflipResult">The coin landed on Heads!</p>
+        <p id="coinflipResult">The coin has landed on Heads!</p>
         `;
     } else {
         coinImg.innerHTML = `
