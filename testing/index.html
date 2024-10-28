@@ -82,36 +82,52 @@
     </div>
 
     <div class="JSProject">
-        <div class="RNG">
-            <h3>Random Number Generator</h3>
-            <div class="display">
-                <p id="display">0</p>
-            </div>
-            <div class="JSButtons">
-                <div class="generate">
-                    <label for="min">Minumum:</label>
-                    <input type="number" id="min" placeholder="e.g., 1">
-                    <label for="max">Maximum:</label>
-                    <input type="number" id="max" placeholder="e.g., 999">
-                    <button id="rngButton">Generate a Random Number</button>
+        <h1>RNG Projects</h1>
+        <div class="JSContainer">
+            <div class="RNG">
+                <h3>Random Number Generator</h3>
+                <div class="display">
+                    <p id="display">0</p>
+                </div>
+                <div class="JSButtons">
+                    <div class="generate">
+                        <label for="min">Minumum:</label>
+                        <input type="number" id="min" placeholder="e.g., 1">
+                        <label for="max">Maximum:</label>
+                        <input type="number" id="max" placeholder="e.g., 999">
+                        <button id="rngButton">Generate a Random Number</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="JSProject">
-        <div class="diceRoller">
-            <h3>Dice</h3>
-            <div class="dice">
-                <img id="diceOne" src="../src/dice-six-faces-one.png">
-                <!-- <img id="diceTwo" src="../src/dice-six-faces-two.png">
-                <img id="diceThree" src="../src/dice-six-faces-three.png">
-                <img id="diceFour" src="../src/dice-six-faces-four.png">
-                <img id="diceFive" src="../src/dice-six-faces-five.png">
-                <img id="diceSix" src="../src/dice-six-faces-six.png"> -->
+        <div class="JSContainer">
+            <div class="diceRoller">
+                <h3>Dice</h3>
+                <div class="dice">
+                    <img id="diceOne" src="../src/dice-six-faces-6.png">
+                    <!-- <img id="diceTwo" src="../src/dice-six-faces-two.png">
+                    <img id="diceThree" src="../src/dice-six-faces-three.png">
+                    <img id="diceFour" src="../src/dice-six-faces-four.png">
+                    <img id="diceFive" src="../src/dice-six-faces-five.png">
+                    <img id="diceSix" src="../src/dice-six-faces-six.png"> -->
+                </div>
+                <div class="JSButtons">
+                    <button id="diceButton">Click to roll the dice!</button>
+                </div>
             </div>
-            <div class="JSButtons">
-                <button id="diceButton">Click to roll the dice!</button>
+        </div>
+
+        <div class="JSContainer">
+            <div class="rngEmoji">
+                <h3>Emoji</h3>
+                <div class="testerRng">
+                    <img id="emojiImg" src="../src/emoji/emoji1.png">
+                    <p id="emojiP"></p>
+                </div>
+                <div class="JSButtons">
+                    <button id="emojiButton">Click to generate a random emoji!</button>
+                </div>
             </div>
         </div>
     </div>
@@ -130,5 +146,6 @@
     <script src="../js/darkmode.js"></script>
     <script src="../js/rng.js"></script>
     <script src="../js/dice.js"></script>
+    <script src="../js/emoji.js"></script>
 </body>
 </html>
