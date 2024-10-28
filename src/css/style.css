@@ -803,6 +803,7 @@ body::-webkit-scrollbar {
     color: #686868;
     min-height: 49px;
     align-items: center;
+    border: 1px solid #27272A;
 }
 
 .JSProject .JSButtons button {
@@ -820,6 +821,14 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
+.JSProject .JSButtons button:hover {
+    background: #313131;
+}
+
+.JSProject .JSButtons button:active {
+    background: #555555;
+}
+
 .generate {
     margin-top: 10px;
 }
@@ -829,9 +838,33 @@ body::-webkit-scrollbar {
 }
 
 .generate input {
-    border-radius: 7px;
+    border-radius: 4px;
+    border: 1px solid #27272A;
     text-align: right;
     background: #acacac;
+    padding: 5px 0;
+}
+
+.dice {
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.dice img {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+}
+
+#diceOne,
+#diceTwo,
+#diceThree,
+#diceFour,
+#diceFive,
+#diceSix {
+    display: none;
+    border-radius: 10px;
 }
 
 @keyframes fadeInAnimation {
