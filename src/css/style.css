@@ -823,7 +823,7 @@ body::-webkit-scrollbar {
     padding: 10px;
     font-size: 24px;
     margin-top: 25px;
-    color: #686868;
+    color: #333;
     min-height: 49px;
     align-items: center;
     border: 1px solid #27272A;
