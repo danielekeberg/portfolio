@@ -998,6 +998,10 @@ body::-webkit-scrollbar {
     color: #BDBDBD;
 }
 
+.greeting .display {
+    justify-content: center;
+}
+
 
 @keyframes fadeInAnimation {
     0% {
