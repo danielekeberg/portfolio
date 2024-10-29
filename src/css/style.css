@@ -941,9 +941,6 @@ body::-webkit-scrollbar {
     margin-top: 10px;
 }
 
-.JSButtons .quoteButton button {
-    width: 500px;
-}
 
 #diceOne,
 #diceTwo,
