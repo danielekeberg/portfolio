@@ -870,6 +870,16 @@ body::-webkit-scrollbar {
     color: #BDBDBD;
 }
 
+#hotell {
+    color: #fff;
+    background: red;
+}
+
+.crimes .display {
+    min-width: 380px;
+    max-width: 380px;
+}
+
 .displayCoin p {
     display: flex;
     color: #BDBDBD;
