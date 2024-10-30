@@ -5,7 +5,7 @@ const crimes = document.querySelector(".crimes");
 const krim = document.querySelectorAll(".krim");
 const krimTekst = document.getElementById("krimTekst");
 
-let isInHotell = false;
+let isInHotell = true;
 let krimPre = ["Du stjeler fra en gammel dame.", "Du raner en brus automat", "Du raner Deli de Luca", "Politiet så deg pisse i gaten. De havner i fengsel!", "Du faller og brekker armen", "Jeg har ikke flere forslag", "Mannen i kassen stanser deg"];
 
 // hotellStatus();
