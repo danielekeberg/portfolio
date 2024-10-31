@@ -5,6 +5,21 @@ const crimes = document.querySelector(".crimes");
 const krim = document.querySelectorAll(".krim");
 const krimTekst = document.getElementById("krimTekst");
 
+const enkelKnapp = document.getElementById("enkelKnapp");
+const tungKnapp = document.getElementById("tungKnapp");
+
+const enkelCheckEn = document.getElementById("enkelEn");
+const enkelCheckTo = document.getElementById("enkelTo");
+const enkelCheckTre = document.getElementById("enkelTre");
+const enkelKrimEnTekst = document.getElementById("enkelEnTekst");
+const enkelKrimToTekst = document.getElementById("enkelToTekst");
+const enkelKrimTreTekst = document.getElementById("enkelTreTekst");
+
+const tungCheckEn = document.getElementById("tungEn");
+const tungCheckTo = document.getElementById("tungTo");
+const tungKrimEnTekst = document.getElementById("tungEnTekst");
+const tungKrimToTekst = document.getElementById("tungToTekst");
+
 let isInHotell = true;
 let previousIndex = -1;
 
@@ -40,28 +55,59 @@ function bookHotell() {
     isInHotell = !isInHotell;
 }
 
+
 function booker() {
     updateHotell();
     if(isInHotell) {
         hotell.style.color = "white";
         hotell.style.background = "green";
         hotell.innerText = "Du er i hotell";
+        enkelKnapp.textContent = "Gå ut av hotell for å gjennomføre";
+        tungKnapp.textContent = "Gå ut av hotell for å gjennomføre";
+        enkelKnapp.addEventListener("mouseover", function() {
+            enkelKnapp.style.cursor = "default";
+            enkelKnapp.style.background = "#171717";
+            enkelKnapp.disabled = true;
+        });
+        tungKnapp.addEventListener("mouseover", function() {
+            tungKnapp.style.cursor = "default";
+            tungKnapp.style.background = "#171717";
+            tungKnapp.disabled = true;
+        });
     } else {
         hotell.style.color = "white";
         hotell.style.background = "red";
         hotell.innerText = "Du er ikke i hotell";
+        enkelKnapp.textContent = "Utfør!";
+        tungKnapp.textContent = "Utfør!";
+        enkelKnapp.addEventListener("mouseover", function() {
+            enkelKnapp.style.cursor = "pointer";
+            enkelKnapp.style.background = "#313131";
+            enkelKnapp.disabled = false;
+        });
+        enkelKnapp.addEventListener("mouseleave", function() {
+            enkelKnapp.style.background = "#171717";
+        });
+        tungKnapp.addEventListener("mouseover", function() {
+            tungKnapp.style.cursor = "pointer";
+            tungKnapp.style.background = "#313131";
+            tungKnapp.disabled = false;
+        });
+        tungKnapp.addEventListener("mouseleave", function() {
+            tungKnapp.style.background = "#171717";
+        });
     }
 }
 
 hotell.addEventListener("click", booker);
 
-function krimFraHotell() {
-    krim.innerText = "Du må ut av hotell for å gjøre denne handlingen!";
-};
+// function krimFraHotell() {
+//     krim.innerText = "Du må ut av hotell for å gjøre denne handlingen!";
+// };
 
-function krimUten() {
-    krim.innerText = "Du stjeler noen kronasjer";
-}
+// function krimUten() {
+//     krim.innerText = "Du stjeler noen kronasjer";
+// }
 
 function enkelKrim() {
     const miniPenger = Math.floor(Math.random() * (900 - 500)) + 500;
@@ -115,3 +161,62 @@ krims.addEventListener("click", enkelKrim);
 // function randomKrimTekst() {
 //     const randomTall = Math.floor(Math.random() * krimPre.length);
 // }
+
+
+
+// function endreFargeRed() {
+//     enkelKnapp.style.color = "red";
+// };
+
+// function endreFargeGreen() {
+//     tungKnapp.style.color = "green";
+// }
+
+// enkelKnapp.addEventListener("click", endreFargeRed);
+// tungKnapp.addEventListener("click", endreFargeGreen);
+
+function enkelValgEn() {
+    enkelCheckEn.style.display = "none";
+    // enkelKrimEnTekst.style.display = "none";
+    enkelKrimEnTekst.textContent = "Du tæsjer 50 kroner brur";
+    enkelCheckTo.style.display = "none";
+    enkelKrimToTekst.style.display = "none";
+    enkelCheckTre.style.display = "none";
+    enkelKrimTreTekst.style.display = "none";
+    enkelKnapp.style.display = "none";
+}
+
+function enkelValgTo() {
+    enkelCheckEn.style.display = "none";
+    enkelKrimEnTekst.style.display = "none";
+    enkelCheckTo.style.display = "none";
+    enkelKrimToTekst.textContent = "Du tæsjer 500 kroner brur";
+    enkelCheckTre.style.display = "none";
+    enkelKrimTreTekst.style.display = "none";
+    enkelKnapp.style.display = "none";
+}
+
+function enkelValgTre() {
+    enkelCheckEn.style.display = "none";
+    enkelKrimEnTekst.style.display = "none";
+    enkelCheckTo.style.display = "none";
+    enkelKrimToTekst.style.display = "none";
+    enkelCheckTre.style.display = "none";
+    enkelKrimTreTekst.textContent = "Du tæsjer 5000 kroner brur";
+    enkelKnapp.style.display = "none";
+}
+
+enkelKnapp.addEventListener("click", doCrime);
+
+function doCrime() {
+    if(enkelCheckEn.checked) {
+        enkelValgEn();
+    }
+    if(enkelCheckTo.checked) {
+        enkelValgTo();
+    }
+    if(enkelCheckTre.checked) {
+        enkelValgTre();
+    }
+};
+
