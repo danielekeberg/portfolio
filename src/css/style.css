@@ -273,6 +273,11 @@ nav .links a.active {
     cursor: pointer;
 }
 
+.clock .display {
+    display: flex;
+    justify-content: center;
+}
+
 .custom-alert .closebtn:hover {
     color: #000;
 }
@@ -785,13 +790,22 @@ body::-webkit-scrollbar {
 
 .JSContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
 }
 
 .JSProject h3 {
     color: #BDBDBD;
     font-size: 24px;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+}
+
+.JSProject h4 {
+    color: #BDBDBD;
+    font-size: 18px;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -873,11 +887,16 @@ body::-webkit-scrollbar {
 #hotell {
     color: #fff;
     background: green;
+    padding: 10px 20px;
+    width: 250px;
 }
 
-.crimes .display {
+.crimes .display p {
     min-width: 380px;
     max-width: 380px;
+    height: 38px;
+    text-align: left;
+    font-size: 14px;
 }
 
 .displayCoin p {
@@ -1012,6 +1031,82 @@ body::-webkit-scrollbar {
     justify-content: center;
 }
 
+.ms .JSButtons {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.krimMain {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.JSButtons#hotell-container {
+    display: flex;
+    justify-content: center;
+}
+
+.enkel,
+.tung {
+    margin: 10px;
+    background: #121218;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.enkel h4,
+.tung h4 {
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+.hotellButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.enkelCheck,
+.tungCheck {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 5px;
+    color: #BDBDBD;
+    margin: 10px;
+}
+
+.enkelEn,
+.enkelTo,
+.enkelTre,
+.tungEn,
+.tungTo {
+    display: flex;
+    padding: 5px;
+}
+
+.enkelCheck .JSButtons,
+.tungCheck .JSButtons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tungCheck .JSButtons #tungKnapp {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.enkelCheck input,
+.tungCheck input {
+    display: flex;
+    margin-right: 8px;
+    justify-content: left;
+}
 
 @keyframes fadeInAnimation {
     0% {
