@@ -1043,15 +1043,11 @@ body::-webkit-scrollbar {
     margin-bottom: 20px;
 }
 
-.JSButtons#hotell-container {
-    display: flex;
-    justify-content: center;
-}
-
 .enkel,
 .tung {
     margin: 10px;
-    background: #121218;
+    background: #171717;
+    border: 1px solid #27272A;
     width: 300px;
     border-radius: 5px;
 }
@@ -1061,12 +1057,6 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: left;
     padding: 10px;
-}
-
-.hotellButtonContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 .enkelCheck,
