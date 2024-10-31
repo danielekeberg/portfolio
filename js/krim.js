@@ -35,7 +35,7 @@ function bookHotell() {
 
 function booker() {
     updateHotell();
-    if(isInHotell === true) {
+    if(isInHotell) {
         hotell.style.color = "white";
         hotell.style.background = "green";
         hotell.innerText = "Du er i hotell";
@@ -57,7 +57,7 @@ function krimUten() {
 }
 
 function enkelKrim() {
-    if(isInHotell === true) {
+    if(isInHotell) {
         krimTekst.innerText = "Du må ut av hotell for å gjøre denne handlingen!";
     } else {
         const randomTall = Math.floor(Math.random() * krimPre.length);
