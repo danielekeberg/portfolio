@@ -184,7 +184,19 @@ function enkelValgEn() {
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.style.display = "none";
     enkelKnapp.style.display = "none";
-}
+    setTimeout(() => {
+        enkelCheckEn.style.display = "flex";
+        enkelKrimEnTekst.style.display = "flex";
+        enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
+        enkelCheckTo.style.display = "flex";
+        enkelKrimToTekst.style.display = "flex";
+        enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
+        enkelCheckTre.style.display = "flex";
+        enkelKrimTreTekst.style.display = "flex";
+        enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
+        enkelKnapp.style.display = "block";
+    }, 1500);
+};
 
 function enkelValgTo() {
     enkelCheckEn.style.display = "none";
@@ -194,7 +206,19 @@ function enkelValgTo() {
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.style.display = "none";
     enkelKnapp.style.display = "none";
-}
+    setTimeout(() => {
+        enkelCheckEn.style.display = "flex";
+        enkelKrimEnTekst.style.display = "flex";
+        enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
+        enkelCheckTo.style.display = "flex";
+        enkelKrimToTekst.style.display = "flex";
+        enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
+        enkelCheckTre.style.display = "flex";
+        enkelKrimTreTekst.style.display = "flex";
+        enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
+        enkelKnapp.style.display = "block";
+    }, 1500);
+};
 
 function enkelValgTre() {
     enkelCheckEn.style.display = "none";
@@ -204,19 +228,74 @@ function enkelValgTre() {
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.textContent = "Du tæsjer 5000 kroner brur";
     enkelKnapp.style.display = "none";
-}
-
-enkelKnapp.addEventListener("click", doCrime);
-
-function doCrime() {
-    if(enkelCheckEn.checked) {
-        enkelValgEn();
-    }
-    if(enkelCheckTo.checked) {
-        enkelValgTo();
-    }
-    if(enkelCheckTre.checked) {
-        enkelValgTre();
-    }
+    setTimeout(() => {
+        enkelCheckEn.style.display = "flex";
+        enkelKrimEnTekst.style.display = "flex";
+        enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
+        enkelCheckTo.style.display = "flex";
+        enkelKrimToTekst.style.display = "flex";
+        enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
+        enkelCheckTre.style.display = "flex";
+        enkelKrimTreTekst.style.display = "flex";
+        enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
+        enkelKnapp.style.display = "block";
+    }, 1500);
 };
 
+enkelKnapp.addEventListener("click", doEnkelCrime);
+tungKnapp.addEventListener("click", doTungCrime);
+
+function doEnkelCrime() {
+    if(enkelCheckEn.checked) {
+        enkelValgEn();
+    };
+    if(enkelCheckTo.checked) {
+        enkelValgTo();
+    };
+    if(enkelCheckTre.checked) {
+        enkelValgTre();
+    };
+};
+
+function doTungCrime() {
+    if(tungCheckEn.checked) {
+        tungValgEn();
+    };
+    if(tungCheckTo.checked) {
+        tungValgTo();
+    };
+};
+
+function tungValgEn() {
+    tungCheckEn.style.display = "none";
+    tungKrimEnTekst.textContent = "Du stjeler 7834 kroner fra Gran Kebab";
+    tungCheckTo.style.display = "none";
+    tungKrimToTekst.style.display = "none";
+    tungKnapp.style.display = "none";
+    setTimeout(() => {
+        tungCheckEn.style.display = "flex";
+        tungKrimEnTekst.style.display = "flex";
+        tungKrimEnTekst.textContent = "Ran en kebab-kiosk";
+        tungCheckTo.style.display = "flex";
+        tungKrimToTekst.style.display = "flex";
+        tungKrimToTekst.textContent = "Ran Narvesen";
+        tungKnapp.style.display = "block";
+    }, 3000);
+};
+
+function tungValgTo() {
+    tungCheckEn.style.display = "none";
+    tungKrimEnTekst.style.display = "none";
+    tungCheckTo.style.display = "none";
+    tungKrimToTekst.textContent = "Du stjeler 13829 kroner fra Narvesen";
+    tungKnapp.style.display = "none";
+    setTimeout(() => {
+        tungCheckEn.style.display = "flex";
+        tungKrimEnTekst.style.display = "flex";
+        tungKrimEnTekst.textContent = "Ran en kebab-kiosk";
+        tungCheckTo.style.display = "flex";
+        tungKrimToTekst.style.display = "flex";
+        tungKrimToTekst.textContent = "Ran Narvesen";
+        tungKnapp.style.display = "block";
+    }, 3000);
+};
