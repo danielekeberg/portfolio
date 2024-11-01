@@ -1106,6 +1106,13 @@ body::-webkit-scrollbar {
     color: #BDBDBD;
 }
 
+#pengeCounter {
+    display: flex;
+    justify-content: left;
+    margin-left: 11px;
+    color: #BDBDBD;
+}
+
 #enkelVtP,
 #tungVtP {
     display: none;
