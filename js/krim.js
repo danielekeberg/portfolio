@@ -117,10 +117,6 @@ hotell.addEventListener("click", booker);
 // }
 
 function enkelKrim() {
-    const miniPenger = Math.floor(Math.random() * (900 - 500)) + 500;
-    const mediumPenger = Math.floor(Math.random() * (2000 - 500)) + 500;
-    const storePenger = Math.floor(Math.random() * (10000 - 5000)) + 5000;
-
     const krimPre = [
         `Du stjeler ${miniPenger} kroner fra en gammel dame.`,
         `Du raner en brus automat og får tak i ${mediumPenger} kroner.`,
@@ -182,10 +178,34 @@ krims.addEventListener("click", enkelKrim);
 // enkelKnapp.addEventListener("click", endreFargeRed);
 // tungKnapp.addEventListener("click", endreFargeGreen);
 
+function resetEnkel() {
+    enkelCheckEn.style.display = "flex";
+    enkelKrimEnTekst.style.display = "flex";
+    enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
+    enkelCheckTo.style.display = "flex";
+    enkelKrimToTekst.style.display = "flex";
+    enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
+    enkelCheckTre.style.display = "flex";
+    enkelKrimTreTekst.style.display = "flex";
+    enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
+    enkelKnapp.style.display = "block";
+}
+
+function resetTung() {
+    tungCheckEn.style.display = "flex";
+    tungKrimEnTekst.style.display = "flex";
+    tungKrimEnTekst.textContent = "Ran en kebab-kiosk";
+    tungCheckTo.style.display = "flex";
+    tungKrimToTekst.style.display = "flex";
+    tungKrimToTekst.textContent = "Ran Narvesen";
+    tungKnapp.style.display = "block";
+}
+
 function enkelValgEn() {
+    const enkelValgEn = Math.floor(Math.random() * (900 - 500)) + 500;
     enkelCheckEn.style.display = "none";
     // enkelKrimEnTekst.style.display = "none";
-    enkelKrimEnTekst.textContent = "Du tæsjer 50 kroner brur";
+    enkelKrimEnTekst.textContent = `Du tæsjer ${enkelValgEn} kroner brur`;
     enkelCheckTo.style.display = "none";
     enkelKrimToTekst.style.display = "none";
     enkelCheckTre.style.display = "none";
@@ -193,63 +213,66 @@ function enkelValgEn() {
     enkelKnapp.style.display = "none";
     enkelKrimVt();
     setTimeout(() => {
-        enkelCheckEn.style.display = "flex";
-        enkelKrimEnTekst.style.display = "flex";
-        enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
-        enkelCheckTo.style.display = "flex";
-        enkelKrimToTekst.style.display = "flex";
-        enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
-        enkelCheckTre.style.display = "flex";
-        enkelKrimTreTekst.style.display = "flex";
-        enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
-        enkelKnapp.style.display = "block";
+        resetEnkel();
     }, 6000);
 };
 
 function enkelValgTo() {
+    const enkelValgTo = Math.floor(Math.random() * (2000 - 1000)) + 1000;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
     enkelCheckTo.style.display = "none";
-    enkelKrimToTekst.textContent = "Du tæsjer 500 kroner brur";
+    enkelKrimToTekst.textContent = `Du tæsjer ${enkelValgTo} kroner brur`;
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.style.display = "none";
     enkelKnapp.style.display = "none";
     enkelKrimVt();
     setTimeout(() => {
-        enkelCheckEn.style.display = "flex";
-        enkelKrimEnTekst.style.display = "flex";
-        enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
-        enkelCheckTo.style.display = "flex";
-        enkelKrimToTekst.style.display = "flex";
-        enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
-        enkelCheckTre.style.display = "flex";
-        enkelKrimTreTekst.style.display = "flex";
-        enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
-        enkelKnapp.style.display = "block";
+        resetEnkel();
     }, 6000);
 };
 
 function enkelValgTre() {
+    const enkelValgTre = Math.floor(Math.random() * (5000 - 2500)) + 2500;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
     enkelCheckTo.style.display = "none";
     enkelKrimToTekst.style.display = "none";
     enkelCheckTre.style.display = "none";
-    enkelKrimTreTekst.textContent = "Du tæsjer 5000 kroner brur";
+    enkelKrimTreTekst.textContent = `Du tæsjer ${enkelValgTre} kroner brur.`;
     enkelKnapp.style.display = "none";
     enkelKrimVt();
     setTimeout(() => {
-        enkelCheckEn.style.display = "flex";
-        enkelKrimEnTekst.style.display = "flex";
-        enkelKrimEnTekst.textContent = "Ran tigger på Karl Johan";
-        enkelCheckTo.style.display = "flex";
-        enkelKrimToTekst.style.display = "flex";
-        enkelKrimToTekst.textContent = "Ran en tilfeldig person på gata";
-        enkelCheckTre.style.display = "flex";
-        enkelKrimTreTekst.style.display = "flex";
-        enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
-        enkelKnapp.style.display = "block";
+        resetEnkel();
     }, 6000);
+};
+
+function tungValgEn() {
+    const kebabKiosk = ["Gran Kebab", "Dronningens Kebab", "Balkan Pizza & Kebab House", "New Beirut Kebab", "Bislett Kebab House", "Carmel Grill", "Ekte Istanbul Kebab", "Kebab Toppen", "Gazakjøkken"];
+    const tungValgEn = Math.floor(Math.random() * (15000 - 10000)) + 10000;
+    const kebabValg = Math.floor(Math.random() * kebabKiosk.length);
+    tungCheckEn.style.display = "none";
+    tungKrimEnTekst.textContent = `Du stjeler ${tungValgEn} kroner fra ${kebabKiosk[kebabValg]}.`;
+    tungCheckTo.style.display = "none";
+    tungKrimToTekst.style.display = "none";
+    tungKnapp.style.display = "none";
+    tungKrimVt();
+    setTimeout(() => {
+        resetTung();
+    }, 11000);
+};
+
+function tungValgTo() {
+    const tungValgTo = Math.floor(Math.random() * (25000 - 20000)) + 20000;
+    tungCheckEn.style.display = "none";
+    tungKrimEnTekst.style.display = "none";
+    tungCheckTo.style.display = "none";
+    tungKrimToTekst.textContent = `Du stjeler ${tungValgTo} kroner fra Narvesen.`;
+    tungKnapp.style.display = "none";
+    tungKrimVt();
+    setTimeout(() => {
+        resetTung();
+    }, 11000);
 };
 
 enkelKnapp.addEventListener("click", doEnkelCrime);
@@ -278,41 +301,7 @@ function doTungCrime() {
     }
 };
 
-function tungValgEn() {
-    tungCheckEn.style.display = "none";
-    tungKrimEnTekst.textContent = "Du stjeler 7834 kroner fra Gran Kebab";
-    tungCheckTo.style.display = "none";
-    tungKrimToTekst.style.display = "none";
-    tungKnapp.style.display = "none";
-    tungKrimVt();
-    setTimeout(() => {
-        tungCheckEn.style.display = "flex";
-        tungKrimEnTekst.style.display = "flex";
-        tungKrimEnTekst.textContent = "Ran en kebab-kiosk";
-        tungCheckTo.style.display = "flex";
-        tungKrimToTekst.style.display = "flex";
-        tungKrimToTekst.textContent = "Ran Narvesen";
-        tungKnapp.style.display = "block";
-    }, 11000);
-};
 
-function tungValgTo() {
-    tungCheckEn.style.display = "none";
-    tungKrimEnTekst.style.display = "none";
-    tungCheckTo.style.display = "none";
-    tungKrimToTekst.textContent = "Du stjeler 13829 kroner fra Narvesen";
-    tungKnapp.style.display = "none";
-    tungKrimVt();
-    setTimeout(() => {
-        tungCheckEn.style.display = "flex";
-        tungKrimEnTekst.style.display = "flex";
-        tungKrimEnTekst.textContent = "Ran en kebab-kiosk";
-        tungCheckTo.style.display = "flex";
-        tungKrimToTekst.style.display = "flex";
-        tungKrimToTekst.textContent = "Ran Narvesen";
-        tungKnapp.style.display = "block";
-    }, 11000);
-};
 
 function enkelKrimVt() {
     if(enkelCountdown) {
