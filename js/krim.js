@@ -299,3 +299,18 @@ function tungValgTo() {
         tungKnapp.style.display = "block";
     }, 3000);
 };
+
+function preLoadButtons() {
+    enkelKnapp.addEventListener("mouseover", function() {
+        enkelKnapp.style.cursor = "default";
+        enkelKnapp.style.background = "#171717";
+        enkelKnapp.disabled = true;
+    });
+    tungKnapp.addEventListener("mouseover", function() {
+        tungKnapp.style.cursor = "default";
+        tungKnapp.style.background = "#171717";
+        tungKnapp.disabled = true;
+    });
+};
+
+preLoadButtons();
