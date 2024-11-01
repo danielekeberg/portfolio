@@ -5,6 +5,8 @@ const crimes = document.querySelector(".crimes");
 const krim = document.querySelectorAll(".krim");
 const krimTekst = document.getElementById("krimTekst");
 const krimCounter = document.getElementById("krimCounter");
+const pengeCounterP = document.getElementById("pengeCounter");
+
 
 const enkelKnapp = document.getElementById("enkelKnapp");
 const tungKnapp = document.getElementById("tungKnapp");
@@ -25,6 +27,7 @@ const tungKrimToTekst = document.getElementById("tungToTekst");
 let isInHotell = true;
 let previousIndex = -1;
 let crimeCounter = 0;
+let pengeCounter = 0;
 
 let enkelCountdown;
 let tungCountdown;
@@ -203,6 +206,8 @@ function resetTung() {
 
 function enkelValgEn() {
     const enkelValgEn = Math.floor(Math.random() * (900 - 500)) + 500;
+    pengeCounter += enkelValgEn;
+    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
     enkelCheckEn.style.display = "none";
     // enkelKrimEnTekst.style.display = "none";
     enkelKrimEnTekst.textContent = `Du tæsjer ${enkelValgEn} kroner brur`;
@@ -219,6 +224,8 @@ function enkelValgEn() {
 
 function enkelValgTo() {
     const enkelValgTo = Math.floor(Math.random() * (2000 - 1000)) + 1000;
+    pengeCounter += enkelValgTo;
+    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
     enkelCheckTo.style.display = "none";
@@ -234,6 +241,8 @@ function enkelValgTo() {
 
 function enkelValgTre() {
     const enkelValgTre = Math.floor(Math.random() * (5000 - 2500)) + 2500;
+    pengeCounter += enkelValgTre;
+    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
     enkelCheckTo.style.display = "none";
@@ -251,6 +260,8 @@ function tungValgEn() {
     const kebabKiosk = ["Gran Kebab", "Dronningens Kebab", "Balkan Pizza & Kebab House", "New Beirut Kebab", "Bislett Kebab House", "Carmel Grill", "Ekte Istanbul Kebab", "Kebab Toppen", "Gazakjøkken"];
     const tungValgEn = Math.floor(Math.random() * (15000 - 10000)) + 10000;
     const kebabValg = Math.floor(Math.random() * kebabKiosk.length);
+    pengeCounter += tungValgEn;
+    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
     tungCheckEn.style.display = "none";
     tungKrimEnTekst.textContent = `Du stjeler ${tungValgEn} kroner fra ${kebabKiosk[kebabValg]}.`;
     tungCheckTo.style.display = "none";
@@ -264,6 +275,8 @@ function tungValgEn() {
 
 function tungValgTo() {
     const tungValgTo = Math.floor(Math.random() * (25000 - 20000)) + 20000;
+    pengeCounter += tungValgTo;
+    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
     tungCheckEn.style.display = "none";
     tungKrimEnTekst.style.display = "none";
     tungCheckTo.style.display = "none";
