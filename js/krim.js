@@ -4,6 +4,7 @@ const krims = document.getElementById("krim");
 const crimes = document.querySelector(".crimes");
 const krim = document.querySelectorAll(".krim");
 const krimTekst = document.getElementById("krimTekst");
+const krimCounter = document.getElementById("krimCounter");
 
 const enkelKnapp = document.getElementById("enkelKnapp");
 const tungKnapp = document.getElementById("tungKnapp");
@@ -20,9 +21,12 @@ const tungCheckTo = document.getElementById("tungTo");
 const tungKrimEnTekst = document.getElementById("tungEnTekst");
 const tungKrimToTekst = document.getElementById("tungToTekst");
 
+
 let isInHotell = true;
 let previousIndex = -1;
-
+let crimeCounter = 0;
+// let enkelVt = 5;
+// let tungVt = 10;
 
 
 
@@ -184,6 +188,7 @@ function enkelValgEn() {
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.style.display = "none";
     enkelKnapp.style.display = "none";
+    enkelKrimVt();
     setTimeout(() => {
         enkelCheckEn.style.display = "flex";
         enkelKrimEnTekst.style.display = "flex";
@@ -195,7 +200,8 @@ function enkelValgEn() {
         enkelKrimTreTekst.style.display = "flex";
         enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
         enkelKnapp.style.display = "block";
-    }, 1500);
+        enkelVtP.style.display = "none";
+    }, 6000);
 };
 
 function enkelValgTo() {
@@ -206,6 +212,7 @@ function enkelValgTo() {
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.style.display = "none";
     enkelKnapp.style.display = "none";
+    enkelKrimVt();
     setTimeout(() => {
         enkelCheckEn.style.display = "flex";
         enkelKrimEnTekst.style.display = "flex";
@@ -217,7 +224,8 @@ function enkelValgTo() {
         enkelKrimTreTekst.style.display = "flex";
         enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
         enkelKnapp.style.display = "block";
-    }, 1500);
+        enkelVtP.style.display = "none";
+    }, 6000);
 };
 
 function enkelValgTre() {
@@ -228,6 +236,7 @@ function enkelValgTre() {
     enkelCheckTre.style.display = "none";
     enkelKrimTreTekst.textContent = "Du tæsjer 5000 kroner brur";
     enkelKnapp.style.display = "none";
+    enkelKrimVt();
     setTimeout(() => {
         enkelCheckEn.style.display = "flex";
         enkelKrimEnTekst.style.display = "flex";
@@ -239,10 +248,13 @@ function enkelValgTre() {
         enkelKrimTreTekst.style.display = "flex";
         enkelKrimTreTekst.textContent = "Ran en drosjesjåfør";
         enkelKnapp.style.display = "block";
-    }, 1500);
+        enkelVtP.style.display = "none";
+    }, 6000);
 };
 
 enkelKnapp.addEventListener("click", doEnkelCrime);
+enkelKnapp.addEventListener("click", updateCrimeCounter);
+tungKnapp.addEventListener("click", updateCrimeCounter);
 tungKnapp.addEventListener("click", doTungCrime);
 
 function doEnkelCrime() {
@@ -272,6 +284,7 @@ function tungValgEn() {
     tungCheckTo.style.display = "none";
     tungKrimToTekst.style.display = "none";
     tungKnapp.style.display = "none";
+    tungKrimVt();
     setTimeout(() => {
         tungCheckEn.style.display = "flex";
         tungKrimEnTekst.style.display = "flex";
@@ -280,7 +293,8 @@ function tungValgEn() {
         tungKrimToTekst.style.display = "flex";
         tungKrimToTekst.textContent = "Ran Narvesen";
         tungKnapp.style.display = "block";
-    }, 3000);
+        tungVtP.style.display = "none";
+    }, 11000);
 };
 
 function tungValgTo() {
@@ -289,6 +303,7 @@ function tungValgTo() {
     tungCheckTo.style.display = "none";
     tungKrimToTekst.textContent = "Du stjeler 13829 kroner fra Narvesen";
     tungKnapp.style.display = "none";
+    tungKrimVt();
     setTimeout(() => {
         tungCheckEn.style.display = "flex";
         tungKrimEnTekst.style.display = "flex";
@@ -297,7 +312,44 @@ function tungValgTo() {
         tungKrimToTekst.style.display = "flex";
         tungKrimToTekst.textContent = "Ran Narvesen";
         tungKnapp.style.display = "block";
-    }, 3000);
+        tungVtP.style.display = "none";
+    }, 11000);
+};
+
+function enkelKrimVt() {
+    let enkelVt = 5;
+    const enkelVtP = document.getElementById("enkelVtP");
+    const enkelCountdown = setInterval(() => {
+        enkelVtP.style.display = "flex";
+        enkelVtP.textContent = `Du kan utføre enkel igjen om ${enkelVt} sekunder.`;
+        enkelVt--;
+        if(enkelVt < 0) {
+            clearInterval(enkelCountdown)
+            enkelVtP.style.display = "none";
+        }
+    }, 1000);
+};
+
+function tungKrimVt() {
+    let tungVt = 10;
+    const tungVtP = document.getElementById("tungVtP");
+    const tungCountdown = setInterval(() => {
+        tungVtP.style.display = "flex";
+        tungVtP.textContent = `Du kan utføre tung igjen om ${tungVt} sekunder.`;
+        tungVt--;
+        if(tungVt < 0) {
+            clearInterval(tungCountdown)
+            tungVtP.style.display = "none";
+        }
+    }, 1000);
+};
+
+
+function updateCrimeCounter() {
+    // let updatedCrimeCounter = crimeCounter + 1;
+    // let updatedCrimeCounter = Math.floor(crimeCounter + 1);
+    crimeCounter += 1;
+    krimCounter.textContent = `Antall kriminelle handlinger: ${crimeCounter}`;
 };
 
 function preLoadButtons() {
