@@ -1070,12 +1070,6 @@ body::-webkit-scrollbar {
     margin: 10px;
 }
 
-.enkelCheck p,
-.tungCheck p {
-    display: flex;
-    justify-content: center;
-}
-
 .enkelEn,
 .enkelTo,
 .enkelTre,
