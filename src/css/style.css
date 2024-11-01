@@ -1098,6 +1098,19 @@ body::-webkit-scrollbar {
     justify-content: left;
 }
 
+#krimCounter {
+    display: flex;
+    justify-content: left;
+    margin-left: 11px;
+    color: #BDBDBD;
+}
+
+#enkelVtP,
+#tungVtP {
+    display: none;
+    font-size: 12px;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
