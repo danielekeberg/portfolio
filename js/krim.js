@@ -303,6 +303,8 @@ function tungValgTre() {
     if(pengeCounter < 40000) {
         tungVtP.style.display = "flex";
         tungVtP.textContent = "Du har ikke nok penger";
+        crimeCounter -= 1;
+        krimCounter.textContent = `Antall kriminelle handlinger: ${crimeCounter}`;
     } else {
         if(roulette === 0) {
             pengeCounter += 1400000;
