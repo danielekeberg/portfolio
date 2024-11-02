@@ -10,6 +10,7 @@ const pengeCounterP = document.getElementById("pengeCounter");
 
 const enkelKnapp = document.getElementById("enkelKnapp");
 const tungKnapp = document.getElementById("tungKnapp");
+const giPenger = document.getElementById("giPenger");
 
 const enkelCheckEn = document.getElementById("enkelEn");
 const enkelCheckTo = document.getElementById("enkelTo");
@@ -20,8 +21,10 @@ const enkelKrimTreTekst = document.getElementById("enkelTreTekst");
 
 const tungCheckEn = document.getElementById("tungEn");
 const tungCheckTo = document.getElementById("tungTo");
+const tungCheckTre = document.getElementById("tungTre");
 const tungKrimEnTekst = document.getElementById("tungEnTekst");
 const tungKrimToTekst = document.getElementById("tungToTekst");
+const tungKrimTreTekst = document.getElementById("tungTreTekst");
 
 
 let isInHotell = true;
@@ -201,13 +204,16 @@ function resetTung() {
     tungCheckTo.style.display = "flex";
     tungKrimToTekst.style.display = "flex";
     tungKrimToTekst.textContent = "Ran Narvesen";
+    tungCheckTre.style.display = "flex";
+    tungKrimTreTekst.style.display = "flex";
+    tungKrimTreTekst.textContent = "40k på grønn";
     tungKnapp.style.display = "block";
 }
 
 function enkelValgEn() {
     const enkelValgEn = Math.floor(Math.random() * (900 - 500)) + 500;
     pengeCounter += enkelValgEn;
-    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     enkelCheckEn.style.display = "none";
     // enkelKrimEnTekst.style.display = "none";
     enkelKrimEnTekst.textContent = `Du tæsjer ${enkelValgEn} kroner brur`;
@@ -225,7 +231,7 @@ function enkelValgEn() {
 function enkelValgTo() {
     const enkelValgTo = Math.floor(Math.random() * (2000 - 1000)) + 1000;
     pengeCounter += enkelValgTo;
-    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
     enkelCheckTo.style.display = "none";
@@ -242,7 +248,7 @@ function enkelValgTo() {
 function enkelValgTre() {
     const enkelValgTre = Math.floor(Math.random() * (5000 - 2500)) + 2500;
     pengeCounter += enkelValgTre;
-    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
     enkelCheckTo.style.display = "none";
@@ -261,11 +267,13 @@ function tungValgEn() {
     const tungValgEn = Math.floor(Math.random() * (15000 - 10000)) + 10000;
     const kebabValg = Math.floor(Math.random() * kebabKiosk.length);
     pengeCounter += tungValgEn;
-    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     tungCheckEn.style.display = "none";
     tungKrimEnTekst.textContent = `Du stjeler ${tungValgEn} kroner fra ${kebabKiosk[kebabValg]}.`;
     tungCheckTo.style.display = "none";
     tungKrimToTekst.style.display = "none";
+    tungCheckTre.style.display = "none";
+    tungKrimTreTekst.style.display = "none";
     tungKnapp.style.display = "none";
     tungKrimVt();
     setTimeout(() => {
@@ -276,17 +284,57 @@ function tungValgEn() {
 function tungValgTo() {
     const tungValgTo = Math.floor(Math.random() * (25000 - 20000)) + 20000;
     pengeCounter += tungValgTo;
-    pengeCounterP.textContent = `Penger: ${pengeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     tungCheckEn.style.display = "none";
     tungKrimEnTekst.style.display = "none";
     tungCheckTo.style.display = "none";
     tungKrimToTekst.textContent = `Du stjeler ${tungValgTo} kroner fra Narvesen.`;
     tungKnapp.style.display = "none";
+    tungCheckTre.style.display = "none";
+    tungKrimTreTekst.style.display = "none";
     tungKrimVt();
     setTimeout(() => {
         resetTung();
     }, 11000);
 };
+
+function tungValgTre() {
+    const roulette = Math.floor(Math.random() * 38);
+    if(pengeCounter < 40000) {
+        tungVtP.style.display = "flex";
+        tungVtP.textContent = "Du har ikke nok penger";
+    } else {
+        if(roulette === 0) {
+            pengeCounter += 1400000;
+            pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+            tungCheckEn.style.display = "none";
+            tungKrimEnTekst.style.display = "none";
+            tungCheckTo.style.display = "none";
+            tungKrimToTekst.display = "none";
+            tungKnapp.style.display = "none";
+            tungCheckTre.style.display = "none";
+            tungKrimTreTekst.textContent = "Du vinner 1400000 kroner!";
+            tungKrimVt();
+            setTimeout(() => {
+                resetTung();
+            }, 11000);
+        } else {
+            pengeCounter -= 40000;
+            pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+            tungCheckEn.style.display = "none";
+            tungKrimEnTekst.style.display = "none";
+            tungCheckTo.style.display = "none";
+            tungKrimToTekst.display = "none";
+            tungKnapp.style.display = "none";
+            tungCheckTre.style.display = "none";
+            tungKrimTreTekst.textContent = "Du taper 40000 kroner!";
+            tungKrimVt();
+            setTimeout(() => {
+            resetTung();
+            }, 11000);
+        }
+    }
+}
 
 enkelKnapp.addEventListener("click", doEnkelCrime);
 enkelKnapp.addEventListener("click", updateCrimeCounter);
@@ -311,6 +359,9 @@ function doTungCrime() {
     }
     if(tungCheckTo.checked) {
         tungValgTo();
+    }
+    if(tungCheckTre.checked) {
+        tungValgTre();
     }
 };
 
@@ -380,3 +431,10 @@ function preLoadButtons() {
 };
 
 preLoadButtons();
+
+function spawnPenger() {
+    pengeCounter += 100000;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+}
+
+giPenger.addEventListener("click", spawnPenger);
