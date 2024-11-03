@@ -440,3 +440,33 @@ function spawnPenger() {
 }
 
 giPenger.addEventListener("click", spawnPenger);
+
+const counterUp = document.getElementById("countUp");
+const counterDown = document.getElementById("countDown");
+const counterDisplay = document.getElementById("simpleCounterDisplay");
+
+
+let simpleCounter = 0;
+
+function simpleCounterUp() {
+    simpleCounter += 1;
+    counterDisplay.textContent = `${simpleCounter}`;
+    updateDisplayColor();
+}
+
+function simpleCounterDown() {
+    simpleCounter -= 1;
+    counterDisplay.textContent = `${simpleCounter}`;
+    updateDisplayColor();
+}
+
+function updateDisplayColor() {
+    if (simpleCounter < 0) {
+        counterDisplay.style.color = "#ad5151";
+    } else {
+        counterDisplay.style.color = "#333";
+    }
+}
+
+counterUp.addEventListener("click", simpleCounterUp);
+counterDown.addEventListener("click", simpleCounterDown);
