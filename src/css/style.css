@@ -843,6 +843,43 @@ body::-webkit-scrollbar {
     border: 1px solid #27272A;
 }
 
+.todoList {
+    display: flex;
+    justify-content: left;
+    color: #BDBDBD;
+}
+
+.addTodo input {
+    background: #acacac;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 25px;
+    color: #333;
+    min-height: 49px;
+    align-items: center;
+    border: 1px solid #27272A;
+}
+
+.addTodo button {
+    justify-content: center;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    align-items: center;
+    cursor: pointer;
+    color: #BDBDBD;
+    border: 1px solid #28282A;
+    background: #171717;
+    margin-top: 10px;
+    min-height: 49px;
+}
+
+button.removeBtn {
+    padding: 5px;
+    min-height: 25px;
+    font-size: 10px;
+    margin-left: 175px;
+}
 .displayQuote {
     display: flex;
     justify-content: right;
