@@ -1119,6 +1119,18 @@ body::-webkit-scrollbar {
     font-size: 12px;
 }
 
+.counter .JSButtons {
+    display: flex;
+}
+
+.counter .display {
+    justify-content: center;
+}
+
+#countUp{
+    margin-right: 5px;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
