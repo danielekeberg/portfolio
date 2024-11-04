@@ -11,6 +11,7 @@ function addTodo() {
     }
     
     const listItem = document.createElement("li");
+    listItem.className = "newTodo";
     const taskText = document.createTextNode(todoValue); 
     listItem.appendChild(taskText);
 
