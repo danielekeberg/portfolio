@@ -874,11 +874,18 @@ body::-webkit-scrollbar {
     min-height: 49px;
 }
 
+.newTodo {
+    min-width: 254px;
+    max-width: 255px;
+}
+
 button.removeBtn {
     padding: 5px;
     min-height: 25px;
     font-size: 10px;
-    margin-left: 175px;
+    display: inline;
+    justify-content: space-between;
+    margin-left: 169px;
 }
 .displayQuote {
     display: flex;
