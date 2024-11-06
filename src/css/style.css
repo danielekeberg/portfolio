@@ -900,6 +900,14 @@ button.removeBtn {
 
 #cashMoney {
     color: #BDBDBD;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+
+.JSButtons input {
+    background: #acacac;
+    border: 1px solid #27272A;
+    color: #333;
 }
 
 .displayQuote {
