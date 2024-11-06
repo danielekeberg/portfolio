@@ -887,6 +887,21 @@ button.removeBtn {
     justify-content: space-between;
     margin-left: 169px;
 }
+
+#inputNumber {
+    width: 100%;
+}
+
+#rouletteDisplay {
+    max-width: 250px;
+    min-width: 250px;
+    text-align: center;
+}
+
+#cashMoney {
+    color: #BDBDBD;
+}
+
 .displayQuote {
     display: flex;
     justify-content: right;
