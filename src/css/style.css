@@ -1118,6 +1118,7 @@ button.removeBtn {
     width: 300px;
     border-radius: 5px;
     min-height: 197px;
+    max-height: 197px;
 }
 
 .enkel h4,
@@ -1153,10 +1154,10 @@ button.removeBtn {
     width: 100%;
 }
 
-.tungCheck .JSButtons #tungKnapp {
+.tungCheck .JSButtons #tungKnapp,
+.enkelCheck .JSButtons #enkelKnapp {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
 }
 
 .enkelCheck input,
@@ -1165,6 +1166,8 @@ button.removeBtn {
     margin-right: 8px;
     justify-content: left;
 }
+
+
 
 #krimCounter {
     display: flex;
@@ -1184,8 +1187,14 @@ button.removeBtn {
 #tungVtP {
     display: none;
     font-size: 12px;
+    justify-content: center;
+    width: 100%;
 }
 
+#enkelVtP,
+#tungVtP {
+    padding-top: 60px;
+}
 .counter .JSButtons {
     display: flex;
 }
