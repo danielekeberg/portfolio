@@ -71,6 +71,7 @@ function bookHotell() {
 
 function booker() {
     updateHotell();
+    updatePenger();
     if(isInHotell) {
         hotell.style.color = "white";
         hotell.style.background = "green";
@@ -441,6 +442,7 @@ function preLoadButtons() {
     });
     krimCounter.textContent = `Antall kriminelle handlinger: ${crimeCounter}`;
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+    cashMoney.textContent = `Penger: ${pengeCounter}`;
 };
 
 preLoadButtons();
@@ -478,6 +480,11 @@ function updateDisplayColor() {
     } else {
         counterDisplay.style.color = "#333";
     }
+}
+
+function updatePenger() {
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+    cashMoney.textContent = `Penger: ${pengeCounter}`;
 }
 
 counterUp.addEventListener("click", simpleCounterUp);
