@@ -29,8 +29,8 @@ const tungKrimTreTekst = document.getElementById("tungTreTekst");
 
 let isInHotell = true;
 let previousIndex = -1;
-let crimeCounter = 0;
-let pengeCounter = 0;
+let crimeCounter = parseInt(localStorage.getItem("crimeCounter")) || 0;
+let pengeCounter = parseInt(localStorage.getItem("pengeCounter")) || 0;
 
 let enkelCountdown;
 let tungCountdown;
@@ -213,6 +213,7 @@ function resetTung() {
 function enkelValgEn() {
     const enkelValgEn = Math.floor(Math.random() * (900 - 500)) + 500;
     pengeCounter += enkelValgEn;
+    localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     enkelCheckEn.style.display = "none";
     // enkelKrimEnTekst.style.display = "none";
@@ -231,6 +232,7 @@ function enkelValgEn() {
 function enkelValgTo() {
     const enkelValgTo = Math.floor(Math.random() * (2000 - 1000)) + 1000;
     pengeCounter += enkelValgTo;
+    localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
@@ -248,6 +250,7 @@ function enkelValgTo() {
 function enkelValgTre() {
     const enkelValgTre = Math.floor(Math.random() * (5000 - 2500)) + 2500;
     pengeCounter += enkelValgTre;
+    localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     enkelCheckEn.style.display = "none";
     enkelKrimEnTekst.style.display = "none";
@@ -267,6 +270,7 @@ function tungValgEn() {
     const tungValgEn = Math.floor(Math.random() * (15000 - 10000)) + 10000;
     const kebabValg = Math.floor(Math.random() * kebabKiosk.length);
     pengeCounter += tungValgEn;
+    localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     tungCheckEn.style.display = "none";
     tungKrimEnTekst.textContent = `Du stjeler ${tungValgEn} kroner fra ${kebabKiosk[kebabValg]}.`;
@@ -284,6 +288,7 @@ function tungValgEn() {
 function tungValgTo() {
     const tungValgTo = Math.floor(Math.random() * (25000 - 20000)) + 20000;
     pengeCounter += tungValgTo;
+    localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
     tungCheckEn.style.display = "none";
     tungKrimEnTekst.style.display = "none";
@@ -308,11 +313,12 @@ function tungValgTre() {
     } else {
         if(roulette === 0) {
             pengeCounter += 1400000;
+            localStorage.setItem("pengeCounter", pengeCounter);
             pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
             tungCheckEn.style.display = "none";
             tungKrimEnTekst.style.display = "none";
             tungCheckTo.style.display = "none";
-            tungKrimToTekst.display = "none";
+            tungKrimToTekst.textContent = " ";
             tungKnapp.style.display = "none";
             tungCheckTre.style.display = "none";
             tungKrimTreTekst.textContent = "Du vinner 1400000 kroner!";
@@ -322,11 +328,12 @@ function tungValgTre() {
             }, 11000);
         } else {
             pengeCounter -= 40000;
+            localStorage.setItem("pengeCounter", pengeCounter);
             pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
             tungCheckEn.style.display = "none";
             tungKrimEnTekst.style.display = "none";
             tungCheckTo.style.display = "none";
-            tungKrimToTekst.display = "none";
+            tungKrimToTekst.textContent = " ";
             tungKnapp.style.display = "none";
             tungCheckTre.style.display = "none";
             tungKrimTreTekst.textContent = "Du taper 40000 kroner!";
@@ -376,7 +383,7 @@ function enkelKrimVt() {
 
     let enkelVt = 5;
     const enkelVtP = document.getElementById("enkelVtP");
-    enkelVtP.style.display = "block";
+    enkelVtP.style.display = "flex";
 
     enkelVtP.textContent = `Du kan utføre enkel igjen om ${enkelVt} sekunder.`;
 
@@ -397,7 +404,7 @@ function tungKrimVt() {
     
     let tungVt = 10;
     const tungVtP = document.getElementById("tungVtP");
-    tungVtP.style.display = "block";
+    tungVtP.style.display = "flex";
 
     tungVtP.textContent = `Du kan utføre tung igjen om ${tungVt} sekunder.`;
 
@@ -416,7 +423,9 @@ function updateCrimeCounter() {
     // let updatedCrimeCounter = crimeCounter + 1;
     // let updatedCrimeCounter = Math.floor(crimeCounter + 1);
     crimeCounter += 1;
+    localStorage.setItem("crimeCounter", crimeCounter);
     krimCounter.textContent = `Antall kriminelle handlinger: ${crimeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
 }
 
 function preLoadButtons() {
@@ -430,12 +439,15 @@ function preLoadButtons() {
         tungKnapp.style.background = "#171717";
         tungKnapp.disabled = true;
     });
+    krimCounter.textContent = `Antall kriminelle handlinger: ${crimeCounter}`;
+    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
 };
 
 preLoadButtons();
 
 function spawnPenger() {
     pengeCounter += 100000;
+    localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
 }
 
