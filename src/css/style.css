@@ -1191,6 +1191,10 @@ button.removeBtn {
     width: 100%;
 }
 
+#giCustomPenger {
+    width: 100%;
+}
+
 #enkelVtP,
 #tungVtP {
     padding-top: 60px;
