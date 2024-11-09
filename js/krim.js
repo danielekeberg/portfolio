@@ -10,6 +10,7 @@ const pengeCounterP = document.getElementById("pengeCounter");
 const enkelKnapp = document.getElementById("enkelKnapp");
 const tungKnapp = document.getElementById("tungKnapp");
 const giPenger = document.getElementById("giPenger");
+const resetPengerBtn = document.getElementById("resetPenger");
 
 const enkelCheckEn = document.getElementById("enkelEn");
 const enkelCheckTo = document.getElementById("enkelTo");
@@ -441,7 +442,7 @@ function preLoadButtons() {
     });
     krimCounter.textContent = `Antall kriminelle handlinger: ${crimeCounter}`;
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
-    cashMoney.textContent = `Penger: ${pengeCounter}`;
+    cashMoney.textContent = `Penger: ${pengeCounter} kr`;
 };
 
 preLoadButtons();
@@ -456,7 +457,7 @@ function spawnPenger() {
     const spawnCustomPenger = parseInt(document.getElementById("giCustomPenger").value, 10);
     pengeCounter += spawnCustomPenger;
     localStorage.setItem("pengeCounter", pengeCounter);
-    pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+    preLoadButtons();
 }
 
 giPenger.addEventListener("click", spawnPenger);
@@ -493,5 +494,11 @@ function updatePenger() {
     cashMoney.textContent = `Penger: ${pengeCounter}`;
 }
 
+function resetPenger() {
+    pengeCounter = 0;
+    preLoadButtons();
+}
+
+resetPengerBtn.addEventListener("click", resetPenger);
 counterUp.addEventListener("click", simpleCounterUp);
 counterDown.addEventListener("click", simpleCounterDown);
