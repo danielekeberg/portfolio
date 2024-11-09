@@ -7,7 +7,6 @@ const krimTekst = document.getElementById("krimTekst");
 const krimCounter = document.getElementById("krimCounter");
 const pengeCounterP = document.getElementById("pengeCounter");
 
-
 const enkelKnapp = document.getElementById("enkelKnapp");
 const tungKnapp = document.getElementById("tungKnapp");
 const giPenger = document.getElementById("giPenger");
@@ -447,8 +446,15 @@ function preLoadButtons() {
 
 preLoadButtons();
 
+// function spawnPenger() {
+//     pengeCounter += 100000;
+//     localStorage.setItem("pengeCounter", pengeCounter);
+//     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
+// }
+
 function spawnPenger() {
-    pengeCounter += 100000;
+    const spawnCustomPenger = parseInt(document.getElementById("giCustomPenger").value, 10);
+    pengeCounter += spawnCustomPenger;
     localStorage.setItem("pengeCounter", pengeCounter);
     pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
 }
