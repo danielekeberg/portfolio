@@ -843,6 +843,12 @@ body::-webkit-scrollbar {
     border: 1px solid #27272A;
 }
 
+.maintenance {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .todoList {
     display: flex;
     justify-content: left;
