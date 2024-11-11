@@ -23,11 +23,21 @@ function roulette() {
             rouletteDisplay.style.fontSize = "20px";
             rouletteDisplay.textContent = `Velg et tall mellom 0-38`;
         } else {
+            if (rouletteMath === 0) {
+                rouletteDisplay.style.backgroundColor = "#a1d99b";
+                rouletteScreen.style.backgroundColor = "#a1d99b";
+            } else if (rouletteMath % 2 === 0) {
+                rouletteDisplay.style.backgroundColor = "#222222";
+                rouletteScreen.style.backgroundColor = "#222222";
+                rouletteDisplay.style.color = "#BDBDBD";
+            } else {
+                rouletteDisplay.style.backgroundColor = "#ca6666";
+                rouletteScreen.style.backgroundColor = "#ca6666";
+            }
+
             if (rouletteMath == rouletteInput) {
                 pengeCounter += 3500000;
                 localStorage.setItem("pengeCounter", pengeCounter);
-                rouletteScreen.style.backgroundColor = "#a1d99b";
-                rouletteDisplay.style.backgroundColor = "#a1d99b";
                 rouletteDisplay.textContent = `Hjulet landet på: ${rouletteMath}`;
                 pengeCounterP.textContent = `Penger: ${pengeCounter} kr`;
                 cashMoney.textContent = `Penger: ${pengeCounter}`;
