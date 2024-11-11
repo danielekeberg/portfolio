@@ -858,6 +858,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     cursor: pointer;
 }
 
