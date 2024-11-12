@@ -1417,4 +1417,44 @@ button.removeBtn {
     .goback {
         display: none;
     }
+
+    .quiz {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flashCard {
+        height: 175px;
+        width: 125px;
+    }
+
+    #mode {
+        width: 100%;
+    }
+
+    #portfolioFooter {
+        width: 90px;
+    }
+
+    .version {
+        display: none;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+    .displayQuote {
+        display: flex;
+        width: 250px;
+        margin-left: 25%;
+    }
+
+    #textInput {
+        width: 100%;
+    }
+
+    #nameInput,
+    #colorInput {
+        width: 49%;
+    }
 }
