@@ -1254,6 +1254,29 @@ button.removeBtn {
     margin-right: 5px;
 }
 
+.weather-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#cityInput {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#searchButton {
+    padding: 8px 16px;
+}
+
+#weatherDisplay {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border: 1px solid #00796b;
+    border-radius: 8px;
+    display: none;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
