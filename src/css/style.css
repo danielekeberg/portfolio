@@ -1254,14 +1254,19 @@ button.removeBtn {
     margin-right: 5px;
 }
 
-.weather-container {
-    text-align: center;
-    margin-top: 50px;
+.weatherContainer {
+    margin-top: 25px;
 }
 
 #cityInput {
     padding: 8px;
     margin-right: 10px;
+    width: 100%;
+    border-radius: 6px;
+    max-width: 290px;
+    background: #acacac;
+    color: #333;
+    border: 1px solid #27272A;
 }
 
 #searchButton {
@@ -1271,10 +1276,22 @@ button.removeBtn {
 #weatherDisplay {
     margin-top: 20px;
     padding: 20px;
-    background-color: #e0f7fa;
-    border: 1px solid #00796b;
+    background-color: #171717;
+    border: 1px solid #2d2e36;
     border-radius: 8px;
     display: none;
+    color: #bdbdbd;
+    width: 290px;
+}
+
+#weatherDisplay h3 {
+    justify-content: left;
+}
+
+#cityP {
+    color: #BDBDBD;
+    margin-top: 10px;
+    width: 290px;
 }
 
 @keyframes fadeInAnimation {
