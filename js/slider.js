@@ -6,6 +6,7 @@ const pbImage = document.getElementById("kanskje");
 const submitBtn = document.getElementById("submitBtn");
 const allImages = document.getElementById("allImages");
 const urlBtn = document.getElementById("urlBtn");
+const sbmtBtn = document.getElementById("sbmtBtn");
 
 let imageArray = [
             "https://i.pinimg.com/564x/62/f6/e2/62f6e2823d2d886eeb0f40ef640d856b.jpg",
@@ -80,18 +81,3 @@ function disableBtn() {
 }
 
 disableBtn();
-
-function addImageFromInput() {
-    const urlInput = document.getElementById("urlInput");
-    const newImageUrl = urlInput.value.trim();
-
-    if (newImageUrl) {
-        imageSlot.push(newImageUrl);
-        loadImages();
-        urlInput.value = "";
-    } else {
-        alert("Please enter a valid image URL.");
-    }
-}
-
-urlBtn.addEventListener("click", addImageFromInput);
