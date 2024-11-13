@@ -1294,6 +1294,10 @@ button.removeBtn {
     width: 290px;
 }
 
+#submitBtn {
+    cursor: default;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
