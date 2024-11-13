@@ -3,6 +3,9 @@ const sliderDiv = document.getElementById("slider");
 const next = document.getElementById("nextImg");
 const randomImg = document.getElementById("randomImg");
 const pbImage = document.getElementById("kanskje");
+const submitBtn = document.getElementById("submitBtn");
+const allImages = document.getElementById("allImages");
+const urlBtn = document.getElementById("urlBtn");
 
 let imageArray = [
             "https://i.pinimg.com/564x/62/f6/e2/62f6e2823d2d886eeb0f40ef640d856b.jpg",
@@ -29,7 +32,10 @@ let imageArray = [
             "https://i.pinimg.com/564x/f7/05/19/f705197fc1cec5d487033d2f8b45524a.jpg",
             "https://i.pinimg.com/564x/4b/61/5b/4b615ba5eba79ba7e45c4f0b9b15e1ae.jpg"
             ];
+
 let imageSlot = 0;
+
+let arrayLength = imageArray.length;
 
 function nextImage() {
     imageSlot = (imageSlot + 1) % imageArray.length;
@@ -52,3 +58,40 @@ next.addEventListener("click", nextImage);
 randomImg.addEventListener("click", randomImage);
 
 randomPb();
+
+function loadImages() {
+    allImages.innerHTML = "";
+    imageArray.forEach(url => {
+        const img = document.createElement("img");
+        img.src = url;
+        img.style.width = "200px";
+        img.style.height = "200px";
+        img.style.margin = "10px";
+        img.style.borderRadius = "4px";
+        allImages.appendChild(img);
+    });
+}
+
+loadImages();
+
+function disableBtn() {
+    submitBtn.disabled = true;
+    submitBtn.textContent = `${arrayLength} images`;
+}
+
+disableBtn();
+
+function addImageFromInput() {
+    const urlInput = document.getElementById("urlInput");
+    const newImageUrl = urlInput.value.trim();
+
+    if (newImageUrl) {
+        imageSlot.push(newImageUrl);
+        loadImages();
+        urlInput.value = "";
+    } else {
+        alert("Please enter a valid image URL.");
+    }
+}
+
+urlBtn.addEventListener("click", addImageFromInput);
