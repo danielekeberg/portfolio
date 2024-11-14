@@ -119,8 +119,12 @@
         <div class="JSContainer">
             <h3>Random Color Project</h3>
             <div class="JSButtons" id="imgColorwidth">
-                <input type="checkbox" id="hexCheck">
-                <label for="hexCheck" id="hexLabel">Change color using HEX?</label><br>
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="hexCheck">
+                    <span class="customCheckmark"></span>
+                </label>
+                <label for="hexCheck">Change color using HEX?</label>
+
                 <input type="text" id="btnColorInput" placeholder="Change background (Red, blue, etc.)">
                 <input type="text" id="btnTxtColorInput" placeholder="Change textcolor (Red, blue, etc.)">
                 <input type="text" id="btnColorInputHex" placeholder="Change background (HEX)">
