@@ -7,6 +7,10 @@ const submitBtn = document.getElementById("submitBtn");
 const allImages = document.getElementById("allImages");
 const urlBtn = document.getElementById("urlBtn");
 const sbmtBtn = document.getElementById("sbmtBtn");
+const submitImgNumber = document.getElementById("submitImgNumber");
+const displaySelectedPicture = document.querySelector(".displayPicture");
+const displaySlctImg = document.getElementById("displaySlctImg");
+const displayH3 = document.getElementById("displayH3");
 
 let imageArray = [
             "https://i.pinimg.com/564x/62/f6/e2/62f6e2823d2d886eeb0f40ef640d856b.jpg",
@@ -81,3 +85,26 @@ function disableBtn() {
 }
 
 disableBtn();
+
+function inputPlaceholder() {
+    const imgNumberInput = document.getElementById("imgNumberInput");
+    imgNumberInput.placeholder = `0-${arrayLength - 1}`;
+    displaySlctImg.src = `${imageArray[0]}`;
+}
+
+inputPlaceholder();
+
+function selectImg() {
+    displayH3.textContent = `Select Image`;
+    displayH3.style.color = "#BDBDBD";
+    const selectImgInput = Number(document.getElementById("imgNumberInput").value);
+        if(selectImgInput > 22) {
+            displayH3.textContent = `Please select a number between 0-${arrayLength - 1}`;
+            displayH3.style.color = "red";
+        } else {
+            displaySelectedPicture.innerHTML = `
+                <img id="displaySlctImg" src="${imageArray[selectImgInput]}">`;
+        }
+}
+
+submitImgNumber.addEventListener("click", selectImg);
