@@ -5,6 +5,7 @@ const btnColor = document.getElementById("btnColorInput");
 const btnTxtColor = document.getElementById("btnTxtColorInput");
 const btnColorInputHex = document.getElementById("btnColorInputHex");
 const btnTxtColorInputHex = document.getElementById("btnTxtColorInputHex");
+const dropdownBtn = document.getElementById("dropdown-button");
 
 function changeBtnClr() {
     const clrInput = document.getElementById("btnColorInput").value;
@@ -46,3 +47,21 @@ function loadInput() {
 }
 
 loadInput();
+
+function toggleDropdown() {
+    document.getElementById("dropdown-content").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+dropdownBtn.addEventListener("click", toggleDropdown)
