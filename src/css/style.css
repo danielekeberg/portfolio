@@ -1317,6 +1317,31 @@ button.removeBtn {
     max-width: 190px;
 }
 
+#displayUrlError {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    background: #d49f9f;
+    color: #cc5757;
+    padding: 5px;
+    border-radius: 4px;
+    max-width: 190px;
+}
+
+#displayUrlSuccess {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    background: #a8d49f;
+    color: #57835e;
+    padding: 5px;
+    border-radius: 4px;
+    max-width: 190px;
+}
+
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
