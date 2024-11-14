@@ -1358,6 +1358,40 @@ button.removeBtn {
     text-align: left;
 }
 
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox .customCheckmark {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    top: 3px;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .customCheckmark {
+    background-color: #a8d49f;
+}
+
+.custom-checkbox .customCheckmark::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #57835e;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .customCheckmark::after {
+    display: block;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
