@@ -1305,6 +1305,18 @@ button.removeBtn {
     margin-top: 15px;
 }
 
+#displayError {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    background: #d49f9f;
+    color: #cc5757;
+    padding: 5px;
+    border-radius: 4px;
+    max-width: 190px;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
