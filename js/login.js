@@ -11,9 +11,12 @@ function login() {
         document.getElementById("success-message").style.display = "block";
         setTimeout(() => {
             window.location.href = "/test";
-        }, 1000)
+        }, 500)
     } else {
         document.getElementById("error-message").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("error-message").style.display = "none";
+        }, 3000);
     }
 }
 
