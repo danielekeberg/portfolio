@@ -803,6 +803,15 @@ body::-webkit-scrollbar {
     justify-content: center;
 }
 
+.JSProject p {
+    color: #777777;
+    font-size: 14px;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
 .JSProject h4 {
     color: #BDBDBD;
     font-size: 18px;
@@ -1366,14 +1375,16 @@ button.removeBtn {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background: #fff;
-    border-radius: 4px;
+    background: #363636;
+    border: 1px solid #9c9c9c;
+    border-radius: 3px;
     position: relative;
     top: 3px;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .customCheckmark {
-    background-color: #a8d49f;
+    background-color: #83b5cc;
+    border: none;
 }
 
 .custom-checkbox .customCheckmark::after {
@@ -1381,14 +1392,62 @@ button.removeBtn {
     position: absolute;
     left: 4px;
     width: 5px;
-    height: 10px;
-    border: solid #57835e;
+    height: 9px;
+    border: solid #10264e;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     display: none;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .customCheckmark::after {
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.dropdown-button {
+    background: #171717;
+    color: #BDBDBD;
+    border-radius: 4px;
+    border: 1px solid #28282A;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown-button:hover {
+    background: #313131;
+}
+
+.dropdown-button:active {
+    background: #555555;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.show {
     display: block;
 }
 
