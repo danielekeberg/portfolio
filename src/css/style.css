@@ -1298,6 +1298,13 @@ button.removeBtn {
     cursor: default;
 }
 
+#displaySlctImg {
+    width: 185px;
+    height: 185px;
+    border-radius:  4px;
+    margin-top: 15px;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
