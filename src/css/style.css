@@ -1341,6 +1341,14 @@ button.removeBtn {
     max-width: 190px;
 }
 
+#imgColorwidth {
+    max-width: 250px;
+}
+
+#btnColorInputHex,
+#btnTxtColorInputHex {
+    display: none;
+}
 
 @keyframes fadeInAnimation {
     0% {
