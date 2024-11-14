@@ -11,9 +11,18 @@ const submitImgNumber = document.getElementById("submitImgNumber");
 const displaySelectedPicture = document.querySelector(".displayPicture");
 const displaySlctImg = document.getElementById("displaySlctImg");
 const displayH3 = document.getElementById("displayH3");
-const displayError = document.getElementById("displayError");
-const errorMsg = document.getElementById("errorMsg");
 const imgNumberInput = document.getElementById("imgNumberInput");
+const imgUrlBtn = document.getElementById("imgUrlBtn");
+
+// ERROR ID
+const displayError = document.getElementById("displayError");
+const displayUrlError = document.getElementById("displayUrlError");
+const errorMsg = document.getElementById("errorMsg");
+const urlError = document.getElementById("urlError");
+
+// SUCCESS ID
+const displayUrlSuccess = document.getElementById("displayUrlSuccess");
+const urlSuccess = document.getElementById("urlSuccess");
 
 let imageArray = [
             "https://i.pinimg.com/564x/62/f6/e2/62f6e2823d2d886eeb0f40ef640d856b.jpg",
@@ -120,3 +129,25 @@ imgNumberInput.addEventListener("input", () => {
         imgNumberInput.style.color = "#333";
     }
 });
+
+// Doesnt actually add URL to array. Errormsg & successmsg works fine
+function addImageUrl() {
+    const imgUrl = document.getElementById("imgUrlInput").value;
+    if(imgUrl) {
+        imageArray.push(imgUrl);
+        document.getElementById("imgUrlInput").value = '';
+        displayUrlSuccess.style.display = "flex";
+        urlSuccess.textContent = `URL successfully saved.`
+        setTimeout(() => {
+            displayUrlSuccess.style.display = "none";
+        }, 4000);
+    } else {
+        displayUrlError.style.display = "flex";
+        urlError.textContent = `Please enter a valid URL.`;
+        setTimeout(() => {
+            displayUrlError.style.display = "none";
+        }, 4000);
+    }
+}
+
+imgUrlBtn.addEventListener("click", addImageUrl);
