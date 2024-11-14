@@ -1350,6 +1350,14 @@ button.removeBtn {
     display: none;
 }
 
+#btnColorInput,
+#btnTxtColorInput,
+#btnColorInputHex,
+#btnTxtColorInputHex {
+    width: 100%;
+    text-align: left;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
