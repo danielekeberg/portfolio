@@ -11,6 +11,9 @@ const submitImgNumber = document.getElementById("submitImgNumber");
 const displaySelectedPicture = document.querySelector(".displayPicture");
 const displaySlctImg = document.getElementById("displaySlctImg");
 const displayH3 = document.getElementById("displayH3");
+const displayError = document.getElementById("displayError");
+const errorMsg = document.getElementById("errorMsg");
+const imgNumberInput = document.getElementById("imgNumberInput");
 
 let imageArray = [
             "https://i.pinimg.com/564x/62/f6/e2/62f6e2823d2d886eeb0f40ef640d856b.jpg",
@@ -88,23 +91,32 @@ disableBtn();
 
 function inputPlaceholder() {
     const imgNumberInput = document.getElementById("imgNumberInput");
-    imgNumberInput.placeholder = `0-${arrayLength - 1}`;
+    imgNumberInput.placeholder = `1-${arrayLength}`;
     displaySlctImg.src = `${imageArray[0]}`;
 }
 
 inputPlaceholder();
 
 function selectImg() {
-    displayH3.textContent = `Select Image`;
-    displayH3.style.color = "#BDBDBD";
     const selectImgInput = Number(document.getElementById("imgNumberInput").value);
-        if(selectImgInput > 22) {
-            displayH3.textContent = `Please select a number between 0-${arrayLength - 1}`;
-            displayH3.style.color = "red";
+        if(selectImgInput > 23 || selectImgInput < 1) {
+            errorMsg.textContent = `Please select a number between 1-${arrayLength}`;
+            displayError.style.display = "flex";
+            imgNumberInput.style.color = "red";
         } else {
             displaySelectedPicture.innerHTML = `
-                <img id="displaySlctImg" src="${imageArray[selectImgInput]}">`;
+                <img id="displaySlctImg" src="${imageArray[selectImgInput - 1]}">`;
+                displayH3.textContent = `Currently Showing Image Number ${selectImgInput} / ${arrayLength}`;
+                displayError.style.display = "none";
         }
 }
 
 submitImgNumber.addEventListener("click", selectImg);
+imgNumberInput.addEventListener("input", () => {
+    const inputLength = document.getElementById("imgNumberInput").value;
+    if(inputLength > 23 || inputLength < 1) {
+        imgNumberInput.style.color = "#cc5757";
+    } else {
+        imgNumberInput.style.color = "#333";
+    }
+});
