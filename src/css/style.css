@@ -1436,11 +1436,24 @@ button.removeBtn {
     z-index: 1;
 }
 
+.dropdown-content p {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin: 0;
+}
+
+.dropdown-content p:hover {
+    background: #f1f1f1;
+}
+
 .dropdown-content a {
     color: #000;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    margin: 0;
 }
 
 .dropdown-content a:hover {
@@ -1449,6 +1462,14 @@ button.removeBtn {
 
 .show {
     display: block;
+}
+
+#dropdownImg {
+    display: none;
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    margin-top: 15px;
 }
 
 @keyframes fadeInAnimation {
