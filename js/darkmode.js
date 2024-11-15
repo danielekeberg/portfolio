@@ -19,9 +19,11 @@ let linkedIn = document.querySelector(".linkedIn");
 let right = document.querySelector(".right");
 let online = document.querySelector(".online");
 
-
+// let darkMode = parseInt(localStorage.getItem("darkMode")) || true;
 
 function lightMode() {
+    darkMode = false;
+    localStorage.setItem("darkMode", darkMode);
     body.style.background = "#fff";
     about.style.background = "#c7c7c7";
     welcome.style.color = "#171717";
@@ -29,6 +31,7 @@ function lightMode() {
     name.style.color = "#171717";
     light.style.display = "none";
     dark.style.display = "block";
+    dark.textContent = `Darkmode: ${darkMode}`;
     nav.style.background = "#c7c7c7";
     links.style.color = "#171717";
     contact.style.color = "#171717";
@@ -45,12 +48,15 @@ function lightMode() {
 }
 
 function darkMode() {
+    darkMode = true;
+    localStorage.setItem("darkMode", darkMode);
     body.style.background = "#171717";
     about.style.background = "#18181B";
     welcome.style.color = "#BDBDBD";
     info.style.color = "#BDBDBD";
     name.style.color = "#BDBDBD";
     light.style.display = "block";
+    light.textContent = `Darkmode: ${darkMode}`;
     dark.style.display = "none";
     nav.style.background = "#18181B";
     links.style.color = "#BDBDBD";
@@ -65,6 +71,16 @@ function darkMode() {
     linkedIn.style.color = "#BDBDBD";
     online.style.background = "#18181B";
 }
+
+// function preloadDarkmodeStatus() {
+//     if(darkMode = true) {
+//         light.textContent = `Darkmode: ${darkMode}`;
+//     } else {
+//         dark.textContent = `Darkmode: ${darkMode}`;
+//     }
+// }
+
+// preloadDarkmodeStatus();
 
 light.addEventListener("click", lightMode);
 dark.addEventListener("click", darkMode);
