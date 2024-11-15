@@ -118,7 +118,7 @@ function dropImg() {
     dropdownImg.src = `${imageArray[randomDropImg]}`;
     setTimeout(() => {
         dropdownImg.style.display = "none";
-    }, 5000);
+    }, 3000);
 }
 
 function dropdownH3() {
