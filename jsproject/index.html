@@ -124,12 +124,12 @@
                     <input type="checkbox" id="hexCheck">
                     <span class="customCheckmark"></span>
                 </label>
-                <label for="hexCheck">Change color using HEX?</label>
+                <label for="hexCheck">Change color using color slider?</label>
 
                 <input type="text" id="btnColorInput" placeholder="Change background (Red, blue, etc.)">
                 <input type="text" id="btnTxtColorInput" placeholder="Change textcolor (Red, blue, etc.)">
-                <input type="text" id="btnColorInputHex" placeholder="Change background (HEX)">
-                <input type="text" id="btnTxtColorInputHex" placeholder="Change textcolor (HEX)">
+                <input type="color" id="btnColorInputHex" placeholder="Change background (HEX)">
+                <input type="color" id="btnTxtColorInputHex" placeholder="Change textcolor (HEX)">
                 <button id="btnColor">Change button color</button>
             </div>
         </div>
@@ -150,14 +150,17 @@
         </div>
 
         <div class="JSContainer">
-            <h3>Dropdown Menu</h3>
+            <h3 id="dropH3">Dropdown Menu</h3>
             <div class="dropdown">
                 <button class="dropdown-button" id="dropdown-button">Dropdown</button>
                 <div id="dropdown-content" class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <p id="link1">Get A Random Image</p>
+                    <p id="link2">Rotate Image and H3 Color</p>
+                    <p id="link3">Redirect To Login Page</p>
                 </div>
+            </div>
+            <div class="imageContainer">
+                <img src="" id="dropdownImg">
             </div>
         </div>
     </div>
