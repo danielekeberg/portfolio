@@ -17,8 +17,8 @@ function changeBtnClr() {
 function changeBtnClrHex() {
     const clrTxtInputHex = document.getElementById("btnTxtColorInputHex").value;
     const clrInputHex = document.getElementById("btnColorInputHex").value;
-    btnClr.style.background = `#${clrInputHex}`;
-    btnClr.style.color = `#${clrTxtInputHex}`;
+    btnClr.style.background = `${clrInputHex}`;
+    btnClr.style.color = `${clrTxtInputHex}`;
 }
 
 btnClr.addEventListener("click", changeBtnClr);
@@ -65,3 +65,151 @@ window.onclick = function(event) {
 }
 
 dropdownBtn.addEventListener("click", toggleDropdown)
+
+const link1 = document.getElementById("link1");
+const link2 = document.getElementById("link2");
+const link3 = document.getElementById("link3");
+const dropH3 = document.getElementById("dropH3");
+const link1reset = document.getElementById("link1reset");
+
+// function dropdownOne() {
+//     dropH3.textContent = "Link1";
+// }
+
+// function dropdownTwo() {
+//     dropH3.textContent = "Link2";
+// }
+
+// function dropdownThree() {
+//     dropH3.textContent = "Link3";
+// }
+
+// link1.addEventListener("click", dropdownOne);
+// link2.addEventListener("click", dropdownTwo);
+// link3.addEventListener("click", dropdownThree);
+
+const dropdownImg = document.getElementById("dropdownImg");
+
+let colorArray = [
+    "red",
+    "blue",
+    "green",
+    "purple",
+    "pink",
+    "lightblue",
+    "white",
+    "orange",
+    "yellow",
+    "#56BBC8",
+    "#d1bdc1",
+    "#f4d1c4",
+    "#f8e4d6",
+    "#347e8f",
+    "#a3a1a3",
+    "#870038",
+    "#d74893"
+];
+let colorIndex = 10;
+let imageIndex = 10;
+
+function dropImg() {
+    const randomDropImg = Math.floor(Math.random() * arrayLength);
+    dropdownImg.style.display = "block";
+    dropdownImg.src = `${imageArray[randomDropImg]}`;
+    setTimeout(() => {
+        dropdownImg.style.display = "none";
+    }, 5000);
+}
+
+function dropdownH3() {
+    // const randomDropColor1 = Math.floor(Math.random() * colorArray.length); 
+    // const randomDropColor2 = Math.floor(Math.random() * colorArray.length); 
+    // const randomDropColor3 = Math.floor(Math.random() * colorArray.length); 
+    // const randomDropColor4 = Math.floor(Math.random() * colorArray.length); 
+    // const randomDropColor5 = Math.floor(Math.random() * colorArray.length); 
+    dropH3.style.color = `${colorArray[colorIndex]}`;
+    dropdownBtn.textContent = `${colorIndex}`;
+    dropdownImg.style.display = "block";
+    dropdownImg.src = `${imageArray[imageIndex]}`;
+    setTimeout(() => {
+        colorIndex -= 1;
+        imageIndex -= 1;
+        dropdownImg.src = `${imageArray[imageIndex]}`;
+        dropH3.style.color = `${colorArray[colorIndex]}`;
+        dropdownBtn.textContent = `${colorIndex}`;
+        setTimeout(() => {
+            colorIndex -= 1;
+            imageIndex -= 1;
+            dropdownImg.src = `${imageArray[imageIndex]}`;
+            dropH3.style.color = `${colorArray[colorIndex]}`;
+            dropdownBtn.textContent = `${colorIndex}`;
+            setTimeout(() => {
+                colorIndex -= 1;
+                imageIndex -= 1;
+                dropdownImg.src = `${imageArray[imageIndex]}`;
+                dropH3.style.color = `${colorArray[colorIndex]}`;
+                dropdownBtn.textContent = `${colorIndex}`;
+                setTimeout(() => {
+                    colorIndex -= 1;
+                    imageIndex -= 1;
+                    dropdownImg.src = `${imageArray[imageIndex]}`;
+                    dropH3.style.color = `${colorArray[colorIndex]}`;
+                    dropdownBtn.textContent = `${colorIndex}`;
+                    setTimeout(() => {
+                        colorIndex -= 1;
+                        imageIndex -= 1;
+                        dropdownImg.src = `${imageArray[imageIndex]}`;
+                        dropH3.style.color = `${colorArray[colorIndex]}`;
+                        dropdownBtn.textContent = `${colorIndex}`;
+                        setTimeout(() => {
+                            colorIndex -= 1;
+                            imageIndex -= 1;
+                            dropdownImg.src = `${imageArray[imageIndex]}`;
+                            dropH3.style.color = `${colorArray[colorIndex]}`;
+                            dropdownBtn.textContent = `${colorIndex}`;
+                            setTimeout(() => {
+                                colorIndex -= 1;
+                                imageIndex -= 1;
+                                dropdownImg.src = `${imageArray[imageIndex]}`;
+                                dropH3.style.color = `${colorArray[colorIndex]}`;
+                                dropdownBtn.textContent = `${colorIndex}`;
+                                setTimeout(() => {
+                                    colorIndex -= 1;
+                                    imageIndex -= 1;
+                                    dropdownImg.src = `${imageArray[imageIndex]}`;
+                                    dropH3.style.color = `${colorArray[colorIndex]}`;
+                                    dropdownBtn.textContent = `${colorIndex}`;
+                                    setTimeout(() => {
+                                        colorIndex -= 1;
+                                        imageIndex -= 1;
+                                        dropdownImg.src = `${imageArray[imageIndex]}`;
+                                        dropH3.style.color = `${colorArray[colorIndex]}`;
+                                        dropdownBtn.textContent = `${colorIndex}`;
+                                        colorIndex = 10;
+                                        setTimeout(() => {
+                                            dropdownBtn.textContent = `Dropdown`;
+                                            dropH3.style.color = "#BDBDBD";
+                                            dropdownImg.style.display = "none";
+                                        }, 1000)
+                                    }, 1000);
+                                }, 1000);
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+}
+
+function dropRedirect() {
+    dropH3.style.color = "green";
+    dropH3.textContent = "Redirecting to Login page!";
+    setTimeout(() => {
+        window.location.href = "../login/";
+    }, 1000);
+}
+
+link1.addEventListener("click", dropImg);
+link2.addEventListener("click", dropdownH3);
+link3.addEventListener("click", dropRedirect);
