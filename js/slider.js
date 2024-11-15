@@ -133,17 +133,21 @@ imgNumberInput.addEventListener("input", () => {
 // Doesnt actually add URL to array. Errormsg & successmsg works fine
 function addImageUrl() {
     const imgUrl = document.getElementById("imgUrlInput").value;
+    displayUrlSuccess.style.display = "none";
+    displayUrlError.style.display = "none";
     if(imgUrl) {
         imageArray.push(imgUrl);
         document.getElementById("imgUrlInput").value = '';
         displayUrlSuccess.style.display = "flex";
-        urlSuccess.textContent = `URL successfully saved.`
+        urlSuccess.style.color = "#57835e";
+        urlSuccess.textContent = `URL successfully saved.`;
         setTimeout(() => {
             displayUrlSuccess.style.display = "none";
         }, 4000);
     } else {
         displayUrlError.style.display = "flex";
         urlError.textContent = `Please enter a valid URL.`;
+        urlError.style.color = "#cc5757";
         setTimeout(() => {
             displayUrlError.style.display = "none";
         }, 4000);
