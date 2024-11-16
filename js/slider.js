@@ -157,6 +157,22 @@ function addImageUrl() {
 imgUrlBtn.addEventListener("click", addImageUrl);
 
 const username = "Daniel";
+// const username = document.getElementById("welcomeInput").value;
 const welcomeMsg = document.getElementById("welcomeMsg");
+// const welcomeInput = document.getElementById("welcomeInput");
+
+// function greetingMsg() {
+//     welcomeMsg.textContent += username === "" ? `Guest` : username;
+// }
 
 welcomeMsg.textContent += username === "" ? `Guest` : username;
+
+function mouseoverUsername() {
+    welcomeMsg.style.color = "lightblue";
+    setTimeout(() => {
+        welcomeMsg.style.color = "#BDBDBD";
+    }, 1000);
+}
+
+welcomeMsg.addEventListener("mouseover", mouseoverUsername);
+// welcomeInput.addEventListener("mouseover", greetingMsg)
