@@ -155,3 +155,8 @@ function addImageUrl() {
 }
 
 imgUrlBtn.addEventListener("click", addImageUrl);
+
+const username = "Daniel";
+const welcomeMsg = document.getElementById("welcomeMsg");
+
+welcomeMsg.textContent += username === "" ? `Guest` : username;
