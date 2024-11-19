@@ -168,11 +168,15 @@ const welcomeMsg = document.getElementById("welcomeMsg");
 welcomeMsg.textContent += username === "" ? `Guest` : username;
 
 function mouseoverUsername() {
-    welcomeMsg.style.color = "lightblue";
-    setTimeout(() => {
-        welcomeMsg.style.color = "#BDBDBD";
-    }, 1000);
+    const usernameHoverColor = document.getElementById("welcomeInput").value;
+    welcomeMsg.style.color = `${usernameHoverColor}`;
+}
+
+function mouseleaveUsername() {
+    welcomeMsg.style.color = "#BDBDBD";
 }
 
 welcomeMsg.addEventListener("mouseover", mouseoverUsername);
+welcomeMsg.addEventListener("mouseleave", mouseleaveUsername);
+
 // welcomeInput.addEventListener("mouseover", greetingMsg)
