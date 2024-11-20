@@ -1442,10 +1442,11 @@ button.removeBtn {
     text-decoration: none;
     display: block;
     margin: 0;
+    cursor: pointer;
 }
 
 .dropdown-content p:hover {
-    background: #f1f1f1;
+    background: #dbdbdb;
 }
 
 .dropdown-content a {
@@ -1470,6 +1471,14 @@ button.removeBtn {
     height: 200px;
     border-radius: 4px;
     margin-top: 15px;
+}
+
+#welcomeInput {
+    padding: 0;
+    width: 150px;
+    margin-top: 15px;
+    border: none;
+    background: none;
 }
 
 @keyframes fadeInAnimation {
