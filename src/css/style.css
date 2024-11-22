@@ -1481,6 +1481,33 @@ button.removeBtn {
     background: none;
 }
 
+#textfield {
+    min-width: 250px;
+    min-height: 200px;
+    align-items: start;
+    padding: 0;
+    justify-content: left;
+    background: #ACACAC;
+    color: #333;
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+.message {
+    display: flex;
+    font-size: 14px;
+}
+
+#textMessage {
+    width: 250px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    background: #ACACAC;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
