@@ -227,3 +227,26 @@ function square(element) {
 function cube(element) {
     return Math.pow(element, 3);
 }
+
+const messageDisplay = document.querySelector(".message");
+const textInput = document.getElementById("textMessage");
+
+// Lager ikke ny li, bare første meldingen blir "sendt", fiks senere
+
+function sendMessage() {
+    const messageInput = document.getElementById("textMessage").value;
+    if (messageDisplay.textContent === "Your message will show here") {
+        messageDisplay.textContent = messageInput;
+        const newMsg = document.createElement("li");
+        newMsg.className = "message";
+    } else {
+        const newMsg = document.createElement("li");
+        newMsg.className = "message";
+    }
+}
+
+textInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
