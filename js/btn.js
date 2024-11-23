@@ -233,9 +233,15 @@ const textInput = document.getElementById("textMessage");
 
 // Lager ikke ny li, bare første meldingen blir "sendt", fiks senere
 
+const preMsg = "Your message will show here";
+
+function loadMessage() {
+    messageDisplay.textContent = preMsg;
+}
+
 function sendMessage() {
     const messageInput = document.getElementById("textMessage").value;
-    if (messageDisplay.textContent === "Your message will show here") {
+    if (messageDisplay.textContent === preMsg) {
         messageDisplay.textContent = messageInput;
         const newMsg = document.createElement("li");
         newMsg.className = "message";
@@ -250,3 +256,5 @@ textInput.addEventListener("keypress", (event) => {
         sendMessage();
     }
 });
+
+loadMessage();
