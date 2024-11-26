@@ -1508,6 +1508,35 @@ button.removeBtn {
     background: #ACACAC;
 }
 
+.film {
+    background: #171717;
+    border: 1px solid #27272A;
+    padding: 15px;
+    border-radius: 5px;
+    color: #BDBDBD;
+    margin: 20px;
+    width: 750px;
+    min-height: 500px;
+}
+
+.film h1 {
+    margin: 10px;
+}
+
+.film p {
+    color: #BDBDBD;
+    margin: 0 100px;
+}
+
+.film img {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
