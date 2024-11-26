@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Lake of the Dead",
+        "catnr": "NFK0001",
+        "year": "1958",
+        "genre": ["Horror", "Thriller"],
+        "director": ["Kåre Bergstrøm"],
+        "stars": [""],
+        "description": "A group of friends travel to a cabin in the Norwegian forest. It's a rumor that at night a crazy man can be heard screaming at a lake nearby the cabin.",
+        "format": "Blu-ray",
+        "image": "https://upload.wikimedia.org/wikipedia/en/8/81/Lake_of_the_Dead%2C_Norwegian_film_poster%2C_1958.jpg",
+        "IMDB": "https://www.imdb.com/title/tt0051569/",
+        "date": "2024-11-01"
+    },
+    {
+        "id": 2,
+        "title": "Knutsen & Ludvigsen",
+        "catnr": "NFK0002",
+        "year": "1974",
+        "genre": ["Comedy", "Family"],
+        "director": ["Ola Winger"],
+        "stars": [""],
+        "description": "<p>Knutsen and Ludvigsen has all against the law chosen to live inside a tunnel.</p>",
+        "format": "Blu-ray",
+        "image": "https://fabel.no/wp-content/uploads/2024/11/Knutsen-Ludvigsen-og-den-faele-Rasputin-510x510.jpg",
+        "IMDB": "https://www.imdb.com/title/tt0151232/",
+        "date": "2024-11-02"
+    }
+]
