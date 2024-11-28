@@ -1509,14 +1509,14 @@ button.removeBtn {
 }
 
 .film {
-    background: #171717;
+    background: radial-gradient(circle at top left, rgb(4, 0, 37), rgb(6, 6, 8), rgb(44, 0, 17));
     border: 1px solid #27272A;
     padding: 15px;
     border-radius: 5px;
     color: #BDBDBD;
     margin: 20px;
     width: 750px;
-    min-height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .film h1 {
@@ -1528,13 +1528,19 @@ button.removeBtn {
     margin: 0 100px;
 }
 
+.film a {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .film img {
     display: flex;
     justify-content: center;
     border-radius: 5px;
     width: 200px;
-    height: auto;
-    margin: 0 auto;
+    height: 300px;
+    margin: 20px auto;
+    object-fit: cover;
 }
 
 @keyframes fadeInAnimation {
