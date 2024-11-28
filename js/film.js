@@ -12,11 +12,11 @@ fetch('../API/films.json')
       const filmHTML = `
         <div class="film">
           <h1>${film.title} (${film.year})</h1>
-          <p><strong>Genre:</strong> ${film.genre.join(', ')}</p>
-          <p><strong>Director:</strong> ${film.director.join(', ')}</p>
-          <p><strong>Description:</strong><br> ${film.description}</p>
-          <a href="${film.IMDB}" target="_blank">IMDB Page</a>
+          <p><strong>Genre:</strong>&nbsp${film.genre.join(', ')}</p>
+          <p><strong>Director:</strong>&nbsp${film.director.join(', ')}</p>
           <img src="${film.image}" alt="${film.title}" />
+          <p><strong>Description:</strong>&nbsp${film.description}</p>
+          <a href="${film.IMDB}" target="_blank">IMDB Page</a>
         </div>
       `;
 
