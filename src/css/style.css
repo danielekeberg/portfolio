@@ -1543,6 +1543,15 @@ button.removeBtn {
     object-fit: cover;
 }
 
+#total {
+    width: 150px;
+    color: #212121;
+}
+
+#newDarkMode {
+    cursor: pointer;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
