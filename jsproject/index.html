@@ -8,6 +8,8 @@
     <link rel="icon" href="/src/code.png">
     <title>Daniel Ekeberg</title>
     <script src="../js/version.js"></script>
+    <script src="../js/hover.js" defer></script>
+    <script src="../js/hover2.js" defer></script>
     <script defer type="module" src="/js/film.js"></script>
     
 </head>
@@ -190,6 +192,25 @@
                 <input type="number" id="bill" placeholder="Enter bill amount">
                 <input type="number" id="tip" placeholder="Enter tip percentage">
                 <button id="calculate">Calculate</button>
+            </div>
+        </div>
+
+        <div class="JSContainer hoverContainer">
+            <h3>Hover</h3>
+            <div class="hover-info">
+                <p class="hoverEffect" id="hoverEffekt1">This is the first hover effect</p>
+                <p class="hoverEffect" id="hoverEffekt2">This is actually the second hover effect</p>
+            </div>
+            <div class="hover">
+                <div class="hoverBox" id="hoverBox1">Hover over me</div>
+                <div class="hoverBox" id="hoverBox2">Hover over me</div>
+            </div>
+        </div>
+
+        <div class="JSContainer">
+            <div class="hover-container">
+                <button class="hover-target">Hover me</button>
+                <div class="info-box">This is the info box content.</div>
             </div>
         </div>
     </div>
