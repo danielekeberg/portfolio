@@ -1608,12 +1608,35 @@ button.removeBtn {
 
 .hoverContainer {
     position: relative;
-    height: 400px;
 }
 
 .hover-container {
     position: relative;
     display: inline-block;
+}
+
+.JSButtons span {
+    color: #9c9c9c;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.progress-container {
+    width: 30%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 30px;
+    margin: 10px auto;
+}
+  
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #92ee9a;
+    border-radius: 25px;
+    transition: width 0.3s ease;
 }
 
 .info-box {
