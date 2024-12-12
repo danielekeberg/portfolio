@@ -1630,6 +1630,16 @@ button.removeBtn {
     height: 30px;
     margin: 10px auto;
 }
+
+.progress-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.progress-buttons button {
+    min-width: 250px;
+
+}
   
 .progress-bar {
     height: 100%;
