@@ -1,4 +1,5 @@
 const clickBtn = document.getElementById('clickBtn');
+const clickRemoveBtn = document.getElementById('clickRemoveBtn');
 const clickSpan = document.getElementById('clickSpan');
 const progressBar = document.getElementById('progressBar');
 
@@ -20,6 +21,13 @@ const progressBar = document.getElementById('progressBar');
 
 let clickCount = 0;
 const maxClicks = 20;
+const minClicks = 0;
+
+function lockBtn() {
+    clickRemoveBtn.disabled = true;
+}
+
+lockBtn();
 
 clickBtn.addEventListener("click", () => {
     if (clickCount < maxClicks) {
@@ -27,10 +35,24 @@ clickBtn.addEventListener("click", () => {
         const progressPercentage = (clickCount / maxClicks) * 100;
         progressBar.style.width = `${progressPercentage}%`;
         clickSpan.textContent = `${clickCount} / ${maxClicks}`;
+        clickRemoveBtn.disabled = false;
     }
 
     if (clickCount === maxClicks) {
         clickBtn.disabled = true;
-        clickBtn.textContent = "You've reached the limit!";
+        clickRemoveBtn.disabled = false;
+    }
+});
+
+clickRemoveBtn.addEventListener("click", () => {
+    if (clickCount < maxClicks) {
+        clickCount--;
+        const progressPercentage = (clickCount / maxClicks) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+        clickSpan.textContent = `${clickCount} / ${maxClicks}`;
+    }
+
+    if (clickCount === minClicks) {
+        clickRemoveBtn.disabled = true;
     }
 });
