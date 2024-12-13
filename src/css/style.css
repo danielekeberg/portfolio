@@ -1636,9 +1636,18 @@ button.removeBtn {
     gap: 10px;
 }
 
+.progress-input {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.progress-input input {
+    min-width: 250px;
+}
+
 .progress-buttons button {
     min-width: 250px;
-
 }
   
 .progress-bar {
