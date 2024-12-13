@@ -1755,6 +1755,85 @@ button.removeBtn {
     }
 }
 
+.card-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+}
+
+.card {
+    display: flex;
+    width: 250px;
+    padding: 20px 10px 10px;
+    border-radius: 5px;
+    min-height: 350px;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-info {
+    opacity: 0;
+}
+
+
+.card:hover .card-info {
+    opacity: 1;
+}
+.github-repo {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.github-repo span {
+    color: #BDBDBD;
+}
+
+.card:hover .github-repo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card p {
+    margin-top: auto;
+    color: #BDBDBD;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.card h3 {
+    color: #BDBDBD;
+}
+
+.one {
+    background: rgb(114, 3, 3);
+}
+
+.two {
+    background: rgb(0, 0, 100);
+}
+
+.three {
+    background: rgb(2, 97, 2);
+}
+
 @media screen and (max-width: 768px) {
     nav .links a {
         font-size: 16px;
