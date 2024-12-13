@@ -6,6 +6,7 @@ const progressInput = document.getElementById('progressInput');
 const progressRemoveInput = document.getElementById('progressRemoveInput');
 const clickOneBtn = document.getElementById('clickOneBtn');
 const clickRemoveOneBtn = document.getElementById('clickRemoveOneBtn');
+// const maxClickInput = document.getElementById('maxClickInput');
 
 let clickCount = 0;
 const maxClicks = 100;
@@ -33,11 +34,6 @@ clickBtn.addEventListener("click", () => {
         clickCount = maxClicks;
         console.log(clickCount);
         clickSpan.textContent = `${clickCount} / ${maxClicks}`;
-    }
-
-    if (clickCount >= 19) {
-        clickBtn.disabled = false;
-        clickRemoveBtn.disabled = false;
     }
 });
 
