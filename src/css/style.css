@@ -1598,12 +1598,14 @@ button.removeBtn {
 }
 
 #hoverEffekt1 {
-    left: 736px;
-    top: 80px;
+    top: 40%;
+    left: 40.75%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 #hoverEffekt2 {
-    right: 736px;
-    top: 80px;
+    top: 40%;
+    left: 50.75%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hoverContainer {
@@ -1634,6 +1636,15 @@ button.removeBtn {
 .progress-buttons {
     display: flex;
     gap: 10px;
+}
+
+.hover-target {
+    background: #171717;
+    padding: 10px;
+    border: 1px solid #27272A;
+    border-radius: 4px;
+    color: #BDBDBD;
+    cursor: pointer;
 }
 
 .progress-input {
