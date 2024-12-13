@@ -32,7 +32,6 @@ clickBtn.addEventListener("click", () => {
         clickBtn.disabled = true;
         clickSpan.style.color = "green";
         clickCount = maxClicks;
-        console.log(clickCount);
         clickSpan.textContent = `${clickCount} / ${maxClicks}`;
     }
 });
@@ -40,13 +39,16 @@ clickBtn.addEventListener("click", () => {
 clickRemoveBtn.addEventListener("click", () => {
     if (clickCount > minClicks) {
         clickCount -= Number(progressRemoveInput.value);
+        if (clickCount < minClicks) {
+            clickCount = minClicks;
+        }
         const progressPercentage = (clickCount / maxClicks) * 100;
         progressBar.style.width = `${progressPercentage}%`;
         clickSpan.textContent = `${clickCount} / ${maxClicks}`;
         clickSpan.style.color = "#9c9c9c";
     }
 
-    if (clickCount <= minClicks) {
+    if (clickCount < minClicks) {
         clickRemoveBtn.disabled = true;
         clickSpan.style.color = "red";
         clickCount = minClicks;
@@ -98,7 +100,7 @@ clickRemoveOneBtn.addEventListener("click", () => {
         clickOneBtn.disabled = false;
     }
 
-    if (clickCount <= minClicks) {
+    if (clickCount < minClicks) {
         clickRemoveBtn.disabled = true;
         clickRemoveOneBtn.disabled = true;
         clickSpan.style.color = "red";
