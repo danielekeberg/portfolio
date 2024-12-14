@@ -1,0 +1,79 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "image": "https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png",
+        "role": "admin",
+        "birth": "1990-01-01",
+        "gender": "male",
+        "adress": "123 Main St, Springfield, USA",
+        "created_at": "2024-12-14"
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "image":"https://cdn.pixabay.com/photo/2017/01/30/23/52/female-2022387_640.png",
+        "role": "user",
+        "birth": "1995-05-15",
+        "gender": "female",
+        "adress": "456 Elm St, Springfield, USA",
+        "created_at": "2024-12-13"
+      }
+    ],
+    "posts": [
+      {
+        "id": 101,
+        "user_id": 1,
+        "title": "Introduction",
+        "image": "https://marketingtwentyone.co.uk/wp-content/uploads/2018/03/Introduction-BL.png",
+        "description": "An overview of space exploration",
+        "content": "Space—the final frontier. For centuries, humanity has looked up at the stars and wondered about the mysteries that lie beyond our blue planet. Today, with the help of cutting-edge technology and scientific ingenuity, we are exploring the cosmos like never before. From moon landings to Mars rovers, space exploration has become a symbol of human curiosity and resilience. In this blog post, we'll delve into the history, achievements, and future of space exploration. Along the way, we'll uncover how it impacts life on Earth and inspires generations to come.",
+        "created_at": "2024-12-11",
+        "updated_at": "2024-12-11",
+        "author": "John Doe"
+      },
+      {
+        "id": 102,
+        "user_id": 2,
+        "title": "A Brief History of Space Exploration",
+        "image": "https://aerospace.org/sites/default/files/styles/hero_small/public/2018-05/Space_exploration_Heroimage.jpg?itok=q5FAYN4b",
+        "description": "Key milestones in the journey to the stars",
+        "content": "The journey into space began in earnest during the mid-20th century, fueled by a Cold War rivalry between the United States and the Soviet Union. 1957: The Soviet Union launched Sputnik 1, the first artificial satellite, marking the beginning of the Space Age. 1961: Cosmonaut Yuri Gagarin became the first human to orbit Earth aboard Vostok 1. 1969: NASA's Apollo 11 mission landed the first humans on the Moon, with Neil Armstrong famously declaring, That's one small step for man, one giant leap for mankind. These milestones were not just technological achievements but also a testament to human ambition.",
+        "created_at": "2024-12-12",
+        "updated_at": "2024-12-12",
+        "author": "Jane Smith"
+      },
+      {
+        "id": 103,
+        "user_id": 3,
+        "title": "The Modern Era",
+        "image": "https://images.squarespace-cdn.com/content/v1/6440d46855729532d4bccedc/182d7924-1034-4270-b3a8-c3983bcef0ec/2.jpg",
+        "description": "Private companies and international collaborations",
+        "content": "In recent decades, space exploration has shifted from government-led missions to include private companies and international collaborations. The International Space Station (ISS): Orbiting 400 kilometers above Earth, the ISS represents a global partnership in space research. SpaceX: Founded by Elon Musk, SpaceX revolutionized space travel with reusable rockets, making missions more cost-effective. Mars Exploration: NASA's Perseverance Rover and China's Tianwen-1 are actively studying the Red Planet, paving the way for potential human colonization.",
+        "created_at": "2024-12-13",
+        "updated_at": "2024-12-13",
+        "author": "John Doe"
+      },
+      {
+        "id": 104,
+        "user_id": 4,
+        "title": "Why Explore Space?",
+        "image": "https://youthtimemag.com/wp-content/uploads/2021/04/shutterstock_540015799-scaled.jpg",
+        "description": "Private companies and international collaborations",
+        "content": "Advancing Science and Technology Space exploration drives innovation. Technologies developed for space missions often find their way into everyday life. For example: Satellite communication powers our GPS and internet systems. Medical advancements: Imaging techniques like MRI were refined using space research principles.",
+        "created_at": "2024-12-14",
+        "updated_at": "2024-12-14",
+        "author": "John Doe"
+      }
+    ],
+    "settings": {
+      "site_name": "My Placeholder Site",
+      "admin_email": "admin@example.com",
+      "posts_per_page": 10,
+      "maintenance_mode": false
+    }
+  }
+  
