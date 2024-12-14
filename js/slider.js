@@ -163,6 +163,7 @@ const username = "Daniel";
 // const username = document.getElementById("welcomeInput").value;
 const welcomeMsg = document.getElementById("welcomeMsg");
 // const welcomeInput = document.getElementById("welcomeInput");
+const colorInput = document.getElementById("welcomeInput");
 
 // function greetingMsg() {
 //     welcomeMsg.textContent += username === "" ? `Guest` : username;
@@ -170,16 +171,20 @@ const welcomeMsg = document.getElementById("welcomeMsg");
 
 welcomeMsg.textContent += username === "" ? `Guest` : username;
 
-function mouseoverUsername() {
-    const usernameHoverColor = document.getElementById("welcomeInput").value;
-    welcomeMsg.style.color = `${usernameHoverColor}`;
-}
+// function mouseoverUsername() {
+//     const usernameHoverColor = document.getElementById("welcomeInput").value;
+//     welcomeMsg.style.color = `${usernameHoverColor}`;
+// }
 
-function mouseleaveUsername() {
-    welcomeMsg.style.color = "#BDBDBD";
-}
+// function mouseleaveUsername() {
+//     welcomeMsg.style.color = "#BDBDBD";
+// }
 
-welcomeMsg.addEventListener("mouseover", mouseoverUsername);
-welcomeMsg.addEventListener("mouseleave", mouseleaveUsername);
+// welcomeMsg.addEventListener("mouseover", mouseoverUsername);
+// welcomeMsg.addEventListener("mouseleave", mouseleaveUsername);
+
+colorInput.addEventListener("input", () => {
+    welcomeMsg.style.color = colorInput.value;
+});
 
 // welcomeInput.addEventListener("mouseover", greetingMsg)
