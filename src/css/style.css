@@ -1946,6 +1946,7 @@ button.removeBtn {
     margin: 10px 0;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -2047,6 +2048,10 @@ button.removeBtn {
 
 .post-info-details {
     padding: 10px;
+}
+
+.post-info-details h2 {
+    margin: 10px;
 }
 
 #post-error {
