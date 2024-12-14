@@ -2072,6 +2072,11 @@ button.removeBtn {
     font-size: 24px;
 }
 
+.next-prev-page {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 768px) {
     nav .links a {
         font-size: 16px;
