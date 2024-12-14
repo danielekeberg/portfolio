@@ -65,7 +65,12 @@
     font-size: 14px;
     text-align: center;
     display: none;
-    background: #171717;
+    background: #18181B;
+}
+
+.error-message p,
+.success-message p {
+    background: #18181B;
 }
 
 .success-message {
@@ -73,5 +78,5 @@
     font-size: 14px;
     text-align: center;
     display: none;
-    background: #171717;
+    background: #18181B;
 }
