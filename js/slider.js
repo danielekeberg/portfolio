@@ -13,6 +13,7 @@ const displaySlctImg = document.getElementById("displaySlctImg");
 const displayH3 = document.getElementById("displayH3");
 const imgNumberInput = document.getElementById("imgNumberInput");
 const imgUrlBtn = document.getElementById("imgUrlBtn");
+const currentImageNumber = document.getElementById("currentImageNumber");
 
 // ERROR ID
 const displayError = document.getElementById("displayError");
@@ -58,11 +59,13 @@ function nextImage() {
     imageSlot = (imageSlot + 1) % imageArray.length;
     imgSlider.src = imageArray[imageSlot];
     console.log(`Her vises bilde nummer: ${imageSlot + 1}`);
+    currentImageNumber.textContent = `#${imageSlot + 1}`;
 }
 
 function randomImage() {
     const randomImageNumber = Math.floor(Math.random() * imageArray.length);
     imgSlider.src = imageArray[randomImageNumber];
+    currentImageNumber.textContent = `#${randomImageNumber + 1}`;
     console.log(`Her vises bilde nummer: ${randomImageNumber + 1}`);
 }
 
