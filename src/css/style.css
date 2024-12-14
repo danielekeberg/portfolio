@@ -1787,6 +1787,49 @@ button.removeBtn {
     opacity: 0;
 }
 
+.test-card {
+    background: rgb(1, 110, 78);
+    border-radius: 5px;
+    padding: 20px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.test-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.test-repo {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+
+
+.test2-repo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.test2-repo span {
+    color: #BDBDBD;
+}
+
+.test-card:hover .test-repo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.test-repo p {
+    color: #BDBDBD;
+}
 
 .card:hover .card-info {
     opacity: 1;
@@ -1832,6 +1875,18 @@ button.removeBtn {
 
 .three {
     background: rgb(2, 97, 2);
+}
+
+.four {
+    background: rgb(90, 0, 50);
+}
+
+.five {
+    background: rgb(0, 100, 100);
+}
+
+.six {
+    background: rgb(100, 100, 0);
 }
 
 @media screen and (max-width: 768px) {
