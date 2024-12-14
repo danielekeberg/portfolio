@@ -1970,6 +1970,7 @@ button.removeBtn {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
+    border: 1px solid #000;
 }
 
 #user-details:hover {
@@ -1982,8 +1983,9 @@ button.removeBtn {
 
 #user-details img {
     height: 200px;
-    border: 1px solid #000;
+    border: 1px solid #BDBDBD75;
     border-radius: 3px;
+    background: #000;
 }
 
 .user-info-details p,
@@ -2024,6 +2026,11 @@ button.removeBtn {
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+
+.post-div:hover,
+.user-div:hover {
+    background: #111111;
 }
 
 #post-details h2,
