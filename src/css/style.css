@@ -2077,6 +2077,106 @@ button.removeBtn {
     justify-content: space-between;
 }
 
+.dashboard {
+    width: 70%;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.user {
+    height: 100%;
+    margin: auto 0;
+}
+
+.user h3 {
+    margin: 10px;
+}
+
+.user p {
+    display: flex;
+    justify-content: left;
+}
+
+.logo img {
+    height: 150px;
+}
+
+.revenue h3 {
+    display: flex;
+    justify-content: left;
+    color: #fff;
+}
+
+.revenue {
+    width: 50%;
+}
+
+.revenue-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weeks {
+    display: flex;
+    gap: 20px;
+}
+.this-week p {
+    font-size: 16px;
+}
+
+.week-selector {
+    background: #929292;
+    height: 30px;
+    display: flex;
+    margin: auto 10px;
+}
+
+.week-selector p {
+    color: #fff;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.report span {
+    font-size: 30px;
+}
+
+.report h2 {
+    color: #fff;
+}
+
+.active-money {
+    color: purple;
+}
+
+.report {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-value {
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: auto 0;
+}
+
+.goal {
+    display: flex;
+}
+
+
 @media screen and (max-width: 768px) {
     nav .links a {
         font-size: 16px;
