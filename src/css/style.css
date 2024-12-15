@@ -2118,22 +2118,28 @@ button.removeBtn {
 
 .revenue-items {
     display: flex;
+    height: 80px;
     justify-content: space-between;
 }
 
 .weeks {
     display: flex;
     gap: 20px;
+    margin: auto 0;
 }
 .this-week p {
     font-size: 16px;
+    display: flex;
+    justify-content: left;
 }
 
 .week-selector {
-    background: #929292;
-    height: 30px;
+    border: 1px solid #fdfdfd;
+    border-radius: 5px;
+    padding: 0 10px;
     display: flex;
-    margin: auto 10px;
+    margin: auto 25px;
+    cursor: pointer;
 }
 
 .week-selector p {
@@ -2150,13 +2156,28 @@ button.removeBtn {
     color: #fff;
 }
 
+.report span {
+    color: #fff;
+}
+
+.order-up p {
+    color: green;
+    background: #a2d39c;
+    border: 3px solid #4d8c5e;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
 .active-money {
-    color: purple;
+    color: purple !important;
 }
 
 .report {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    margin:  20px 50px 20px 20px;
 }
 
 .order-value {
@@ -2176,6 +2197,15 @@ button.removeBtn {
     display: flex;
 }
 
+.goal-percent img {
+    margin-top: 10px;
+}
+
+
+.goal p {
+    display: flex;
+    margin: auto 10px;
+}
 
 @media screen and (max-width: 768px) {
     nav .links a {
