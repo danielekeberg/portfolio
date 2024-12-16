@@ -50,6 +50,7 @@ body::-webkit-scrollbar {
 
 .nav-btn .active {
     color: #fff;
+    font-weight: 600;;
 }
 
 .nav-btn {
@@ -70,6 +71,7 @@ body::-webkit-scrollbar {
 
 .stats-header .active {
     color: #fff;
+    font-weight: 600;
 }
 
 .container {
@@ -318,4 +320,9 @@ body::-webkit-scrollbar {
     color: #888;
     font-size: 12px;
     font-weight: 600;
+  }
+
+  a:hover {
+    color: #fff;
+    font-weight: 600;;
   }
