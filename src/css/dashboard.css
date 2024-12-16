@@ -1,0 +1,165 @@
+body {
+    background: #0e0e0f;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    background: #0a0a0a;
+    height: 100px;
+    border-bottom: 2px solid #303030;
+}
+
+.nav {
+    height: 100%;
+    margin: 0 20px;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 30px;
+}
+
+.logo h3 {
+    color: #fff;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-btn a {
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+.nav-btn .active {
+    color: #fff;
+}
+
+.nav-btn {
+    display: flex;
+    gap: 30px;
+}
+
+.user-img img {
+    height: 100px;
+}
+
+.stats-header a {
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+.stats-header .active {
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    margin: 50px;
+    width: 1650px;
+}
+
+.stats-container {
+    border: 1px solid #303030;
+    border-radius: 10px;
+    width: 100%;
+    margin: 10px;
+}
+
+.stats-header {
+    display: flex;
+    gap: 10px;
+    padding: 25px;
+    border-bottom: 1px solid #303030;
+}
+
+.calendar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 2px solid #303030;
+    width: 140px;
+    padding: 0 5px;
+}
+
+.today {
+    display: flex;
+    background: #252525;
+    border-radius: 10px;
+    width: 140px;
+}
+
+.current {
+    display: flex;
+    align-items: center;
+    margin: auto 5px;
+    background: #000;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 40px;
+}
+
+.total p {
+    color: #a7a7a7;
+    margin-left: 10px;
+}
+
+.calendar img {
+    margin-left: 6px;
+    height: 20px;
+}
+
+.main-container {
+    margin: 50px 25px;
+}
+
+.date {
+    display: flex;
+    gap: 20px;
+}
+
+.handlinger {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.rapporter {
+    padding: 10px 25px;
+    width: 315px;
+    border: 2px solid #303030;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.rapporter-idag {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rapporter-idag img {
+    height: 25px;
+    margin: auto 0;
+}
+
+.rapporter-container {
+    border: 2px solid #303030;
+}
+
+.handlinger-container {
+    display: flex;
+    gap: 50px;
+}
