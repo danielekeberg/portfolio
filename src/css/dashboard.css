@@ -1,7 +1,10 @@
 body {
     background: #0e0e0f;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
+
+
     color: #fff;
 }
 
@@ -68,13 +71,11 @@ body {
 .container {
     display: flex;
     margin: 50px;
-    width: 1650px;
 }
 
 .stats-container {
     border: 1px solid #303030;
     border-radius: 10px;
-    width: 100%;
     margin: 10px;
 }
 
@@ -134,12 +135,24 @@ body {
 .handlinger {
     display: flex;
     gap: 40px;
-    width: 100%;
+    /* width: 100%; */
+}
+
+.aktivitet-i-dag {
+    border: 2px solid #303030;
+    border-radius: 10px;
+    padding: 0 25px;
+}
+
+.ekstra-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
 }
 
 .rapporter {
     padding: 10px 25px;
-    width: 315px;
+    width: 200px;
     border: 2px solid #303030;
     border-radius: 10px;
     margin-top: 25px;
@@ -157,9 +170,103 @@ body {
 
 .rapporter-container {
     border: 2px solid #303030;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.rapporter-items h4,
+.rapporter-items p {
+    margin: 0;
+}
+
+.rapporter-items p {
+    color: #a7a7a7;
+}
+
+.handling-container {
+    border: 2px solid #303030;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.handling-header {
+    border-bottom: 2px solid #303030;
+    display: flex;
+    gap: 32px;
+    padding: 0 20px;
+}
+
+#handling {
+    width: 100px;
+}
+
+#by {
+    width: 87px;
 }
 
 .handlinger-container {
     display: flex;
     gap: 50px;
+    padding: 0 20px;
+}
+
+.left {
+    border-radius: 10px;
+    padding: 0 40px;
+}
+
+.user-info {
+    display: flex;
+    gap: 20px;
+    width: 250px;
+}
+
+.user-stats {
+    margin: auto 0;
+}
+
+.user-stats h4 {
+    font-weight: 400;
+}
+
+.user-stats h4,
+.user-stats p {
+    color: #a7a7a7;
+    margin: 0;
+}
+
+.stjel,
+.undersatter,
+.club,
+.rederi,
+.bedrifter,
+.ansatte {
+    margin-bottom: 20px;
+}
+
+.timers {
+    margin-top: 50px;
+}
+
+.timers h4 {
+    margin-bottom: 5px !important;
+}
+
+.undersatter,
+.club,
+.ansatte {
+    color: #a7a7a7;
+}
+
+.timers h4,
+.timers span {
+    margin: 0;
+}
+
+.timers span {
+    font-weight: 600;
+}
+
+.timers h4 {
+    font-weight: 400;
 }
