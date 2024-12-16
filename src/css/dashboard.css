@@ -2,11 +2,13 @@ body {
     background: #0e0e0f;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-
-
-
     color: #fff;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
 
 .header {
     display: flex;
@@ -57,6 +59,8 @@ body {
 
 .user-img img {
     height: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    border: 1px solid #303030;
 }
 
 .stats-header a {
@@ -270,3 +274,48 @@ body {
 .timers h4 {
     font-weight: 400;
 }
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    width: 600px;
+    padding: 10px;
+    position: relative;
+    margin: 0 40px;
+  }
+
+  .bar {
+    width: 40px;
+    margin-right: 10px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .bar span {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .y-labels {
+    position: absolute;
+    left: -35px;
+    bottom: 0;
+    text-align: right;
+    line-height: 1;
+  }
+
+  .y-labels div {
+    margin-top: 47px;
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+  }
