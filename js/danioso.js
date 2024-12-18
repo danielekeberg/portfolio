@@ -8,7 +8,29 @@ fetch('../API/users.json')
 const searchInput = document.getElementById('searchInput');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
-searchInput.addEventListener('input', () => {
+function createDropdownItem(user) {
+    const option = document.createElement('div');
+    option.classList.add('dropdown-item');
+
+    const dodLabel = user.stats.Dod ? " <span class='dod-label'>Død</span>" : "";
+    const utestengtLabel = user.stats.Utestengt ? " <span class='utestengt-label'>Utestengt</span>" : "";
+
+    option.innerHTML = `
+        <strong>${user.name}${dodLabel}${utestengtLabel}</strong>
+        <small>
+            ${user.stats.Rank}
+        </small>
+    `;
+    
+    option.addEventListener('click', () => {
+        searchInput.value = user.name;
+        navigateToPage(user.name);
+        dropdownMenu.style.display = 'none';
+    });
+    return option;
+}
+
+function filterDropdown() {
     const searchValue = searchInput.value.trim().toLowerCase();
 
     if (!searchValue) {
@@ -18,36 +40,38 @@ searchInput.addEventListener('input', () => {
     }
 
     const filteredUsers = users.filter(user =>
-        user.toLowerCase().startsWith(searchValue)
+        user.name.toLowerCase().startsWith(searchValue)
     );
 
     if (filteredUsers.length > 0) {
         dropdownMenu.innerHTML = '';
         filteredUsers.forEach(user => {
-            const option = document.createElement('div');
-            option.textContent = user;
-            option.addEventListener('click', () => {
-                searchInput.value = user;
-                navigateToPage(user);
-            });
-            dropdownMenu.appendChild(option);
+            const item = createDropdownItem(user);
+            dropdownMenu.appendChild(item);
         });
         dropdownMenu.style.display = 'block';
     } else {
         dropdownMenu.style.display = 'none';
     }
-});
+}
 
+function navigateToPage(userName) {
+    const filePath = `/dashboard/${userName.toLowerCase()}.html`;
+    window.location.href = filePath
+}
+
+searchInput.addEventListener('input', filterDropdown);
 searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const searchValue = searchInput.value.trim();
+        const matchedUser = users.find(user => user.name === searchValue);
 
-        if (users.includes(searchValue)) {
-            
+        if (matchedUser) {
+
             document.getElementById("searchSuccess").style.opacity = '1';
             setTimeout(() => {
                 document.getElementById("searchSuccess").style.opacity = '0';
-                navigateToPage(searchValue);
+                navigateToPage(matchedUser.name);
             }, 1000);
         } else {
             document.getElementById("searchError").style.opacity = '1';
@@ -58,21 +82,8 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-function navigateToPage(user) {
-    const filePath = `/dashboard/${user.toLowerCase()}.html`;
-    window.location.href = filePath;
-}
-
-const dod = document.querySelector(".dod");
-const hoverDod = document.querySelector("#hover-dod");
-
-function hoverOverDod() {
-    hoverDod.style.opacity = "1";
-}
-
-function leaveHoverDod() {
-    hoverDod.style.opacity = "0";
-}
-
-dod.addEventListener("mouseover", hoverOverDod);
-dod.addEventListener("mouseleave", leaveHoverDod);
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('#searchInput') && !e.target.closest('#dropdownMenu')) {
+        dropdownMenu.style.display = 'none';
+    }
+});
