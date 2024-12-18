@@ -1,9 +1,68 @@
 [
-    "Evince",
-    "Chance",
-    "Showmaker",
-    "Trueman",
-    "P3rpl3x3d",
-    "Thug",
-    "Crow"
+    {
+        "name": "Evince",
+        "stats": {
+            "Krims": 3416,
+            "Utfordringer": 180,
+            "Rank": "Capo de tutti Capi",
+            "Rankpoeng": 449868,
+            "Dod": false,
+            "Utestengt": false
+        }
+    },
+    {
+        "name": "Showmaker",
+        "stats": {
+            "Krims": 27892,
+            "Utfordringer": 243,
+            "Rank": "Capo de tutti Capi",
+            "Rankpoeng": 1517002,
+            "Dod": false,
+            "Utestengt": false
+        }
+    },
+    {
+        "name": "Trueman",
+        "stats": {
+            "Krims": 26153,
+            "Utfordringerv": 255,
+            "Rank": "Capo de tutti Capi",
+            "Rankpoeng": 1433376,
+            "Dod": false,
+            "Utestengt": false
+        }
+    },
+    {
+        "name": "Thug",
+        "stats": {
+            "Krims": 23651,
+            "Utfordringer": 255,
+            "Rank": "Capo de tutti Capi",
+            "Rankpoeng": 1254682,
+            "Dod": false,
+            "Utestengt": true
+        }
+    },
+    {
+        "name": "Chance",
+        "stats": {
+            "Krims": 9,
+            "Utfordringer": 20,
+            "Rank": "Capo de tutti Capi",
+            "Rankpoeng": 764581,
+            "Dod": true,
+            "Utestengt": false
+        }
+    },
+    {
+        "name": "Crow",
+        "stats": {
+            "Krims": 2,
+            "Utfordringer": 5,
+            "Rank": "Capo de tutti Capi",
+            "Rankpoeng": 722110,
+            "Dod": false,
+            "Utestengt": false
+        }
+    }
 ]
