@@ -1691,6 +1691,43 @@ button.removeBtn {
     visibility: visible;
 }
 
+.farmen-container {
+    display: flex;
+    gap: 20px;
+    background: #666666;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.farmen-left {
+    padding: 10px;
+}
+
+.farmen-btns {
+    margin-top: 20px;
+}
+
+.farmen-btns button {
+    background: #3a3a3a;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.farmen-right {
+    overflow: hidden;
+}
+
+.farmen-right img {
+    height: 100px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
