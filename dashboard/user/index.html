@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://logosandtypes.com/wp-content/uploads/2022/11/draw-recruitment.svg" type="image/x-icon">
+    <title>Dashbord</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="nav">
+                <div class="logo">
+                    <img src="https://i.ibb.co/DMFKJc4/letter-d-24.png" alt="Danioso Logo">
+                    <h3>Danioso</h3>
+                </div>
+                <div class="nav-btn">
+                    <a href="#" class="active">Dashbord</a>
+                    <a href="#">Rapporter</a>
+                    <a href="/dashboard/verktoy.html">Verktøy</a>
+                    <a href="/v4/">Tilbake til portfolio</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="user-container"></div>
+    <script>
+        (async () => {
+            // Get username from URL
+            const urlParams = new URLSearchParams(window.location.pathname.split('/').pop());
+            const username = urlParams.toString();
+    
+            // Fetch user data from JSON
+            const response = await fetch('/path/to/users.json'); // Adjust the path as necessary
+            const users = await response.json();
+    
+            // Find the user
+            const user = users.find(user => user.username === username);
+    
+            // Populate the user-container
+            const userContainer = document.getElementById('user-container');
+            if (user) {
+                userContainer.innerHTML = `
+                    <h1>${user.name}</h1>
+                    <p>Email: ${user.email}</p>
+                    <p>Username: ${user.username}</p>
+                `;
+            } else {
+                userContainer.innerHTML = '<p>User not found</p>';
+            }
+        })();
+    </script>
+</body>
+</html>
