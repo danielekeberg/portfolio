@@ -2275,6 +2275,34 @@ button.removeBtn {
     transform: translate(-50%, -50%);
 }
 
+.divContent {
+    width: 500px;
+    background: blue;
+    border: 1px solid #BDBDBD;
+    border-radius: 10px;
+}
+
+.newContainer {
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+}
+
+.newContainer img {
+    margin: 50px;
+}
+
+.divContent .newContainer .JSButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.divContent .newContainer .JSButtons button {
+    width: 150px;
+}
+
 @media screen and (max-width: 768px) {
     nav .links a {
         font-size: 16px;
