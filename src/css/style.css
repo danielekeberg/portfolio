@@ -2303,6 +2303,50 @@ button.removeBtn {
     width: 150px;
 }
 
+.login-form {
+    background: url("https://4kwallpapers.com/images/walls/thumbs_3t/5630.jpg");
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.extra-container label,
+.extra-container a {
+    color: #BDBDBD;
+}
+
+.login-container h4 {
+    padding: 20px;
+}
+
+.JSButtons .loginBtn {
+    display: flex;
+    margin: 50px 10% 0 !important;
+    width: 80% !important;
+}
+
+.login-input input {
+    width: 400px;
+    padding: 10px 0 10px 20px;
+    margin: 5%;
+    border-radius: 25px;
+    border: none;
+    background: rgba(27, 27, 27, 0.4);
+}
+
+.extra-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
 @media screen and (max-width: 768px) {
     nav .links a {
         font-size: 16px;
