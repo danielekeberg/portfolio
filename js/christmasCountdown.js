@@ -51,3 +51,18 @@ const timer = setInterval(updateCountdown, 1000);
 const birthdayTimer = setInterval(updateBirthdayCountdown, 1000);
 
 updateCountdown();
+
+const loading = document.getElementById("loading");
+const content = document.getElementById("content");
+
+function fetchData() {
+    loading.style.display = 'block';
+    content.style.display = 'none';
+
+    setTimeout(() => {
+        loading.style.display = 'none';
+        content.style.display = 'block';
+    }, 2000)
+}
+
+fetchData();
