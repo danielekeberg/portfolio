@@ -1,4 +1,4 @@
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 13, 52, 24, 33, 100, 73, 55];
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 13, 52, 24, 33, 73, 55];
 const names = ["Daniel", "Therese", "Hilde", "Håvard", "Romeo"]
 const forEachDiv = document.createElement("div");
 
