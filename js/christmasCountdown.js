@@ -15,7 +15,11 @@ function updateCountdown() {
 
     if (timeLeft < 0) {
         clearInterval(timer);
-        document.getElementById("countdown").innerHTML = `<h3>Merry Christmas</h3>`;
+        document.getElementById("countdown").style.display = "block";
+        document.getElementById("countdown").innerHTML = `
+        <h3>Merry Christmas</h3>
+        <img src="https://i.ibb.co/R0stmmx/cdf3d7d593fdc35913e57edd1d8b182b.png">
+        `;
     }
 }
 
