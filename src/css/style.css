@@ -2354,10 +2354,17 @@ button.removeBtn {
     width: 100%;
     border: 1px solid #BDBDBD;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgb(255, 255, 255, 0.15);
+    box-shadow: 0 4px 6px rgb(255, 255, 255, 0.05);
     cursor: pointer;
+    background: #242424;
+    transition: all 0.3s ease;
     /* min-height: 400px; */
     /* min-width: 500px; */
+}
+
+.christmas-container:hover {
+    background: #212121;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.15);
 }
 
 .christmas-container h3 {
