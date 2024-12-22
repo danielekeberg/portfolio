@@ -2349,18 +2349,27 @@ button.removeBtn {
 }
 
 .christmas-container {
-    background: red;
-    border-radius: 10px;
-    border: 1px solid #fff;
+    margin: 10px;
     padding: 10px;
-    min-width: 500px;
+    width: 100%;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgb(255, 255, 255, 0.15);
+    cursor: pointer;
+    /* min-height: 400px; */
+    /* min-width: 500px; */
 }
 
 .christmas-container h3 {
+    text-align: center;
     margin-bottom: 20px;
+    font-size: 36px;
+    color: #ffffff;
+    font-family: 'Cinzel', sans-serif;
 }
 
-#countdown {
+#countdown,
+#birthdayCountdown {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -2368,13 +2377,29 @@ button.removeBtn {
 
 .time {
     display: flex;
-    flex-direction: column;
+    gap: 5px;
+    flex-direction: row;
     align-items: center;
 }
 
 .time span,
 .time p {
-    color: #BDBDBD;
+    color: #ffffff;
+    font-family: 'Cinzel', sans-serif;
+    font-size: 24px;
+}
+
+.time span {
+    font-weight: 900;
+}
+
+.time p {
+    font-weight: 600;
+}
+
+.christmas-container img {
+    display: flex;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
