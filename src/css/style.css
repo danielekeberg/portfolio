@@ -2376,6 +2376,7 @@ button.removeBtn {
 }
 
 #countdown,
+#birthdayCountdown,
 #birthdayCountdown {
     display: flex;
     justify-content: space-around;
