@@ -47,10 +47,38 @@ function updateBirthdayCountdown() {
     }
 }
 
+function updateNextChristmas() {
+    const nextChristmas = new Date('December 24, 2025 00:00:00').getTime();
+    const now = new Date().getTime();
+    const nextTimeLeft = nextChristmas - now;
+
+    const days = Math.floor(nextTimeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((nextTimeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((nextTimeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((nextTimeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("2025days").textContent = days;
+    document.getElementById("2025hours").textContent = hours;
+    document.getElementById("2025minutes").textContent = minutes;
+    document.getElementById("2025seconds").textContent = seconds;
+
+    if (nextTimeLeft < 0) {
+        clearInterval(nextTimer);
+        document.getElementById("countdown").style.display = "block";
+        document.getElementById("countdown").innerHTML = `
+        <h3>Merry Christmas</h3>
+        <img src="https://i.ibb.co/R0stmmx/cdf3d7d593fdc35913e57edd1d8b182b.png">
+        `;
+    }
+}
+
 const timer = setInterval(updateCountdown, 1000);
 const birthdayTimer = setInterval(updateBirthdayCountdown, 1000);
+const nextTimer = setInterval(updateNextChristmas, 1000);
 
 updateCountdown();
+updateBirthdayCountdown();
+updateBirthdayCountdown();
 
 const loading = document.getElementById("loading");
 const content = document.getElementById("content");
