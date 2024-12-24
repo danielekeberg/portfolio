@@ -64,8 +64,8 @@ function updateNextChristmas() {
 
     if (nextTimeLeft < 0) {
         clearInterval(nextTimer);
-        document.getElementById("2025countdown").style.display = "block";
-        document.getElementById("2025countdown").innerHTML = `
+        document.getElementById("nextCountdown").style.display = "block";
+        document.getElementById("nextCountdown").innerHTML = `
         <h3>Merry Christmas</h3>
         <img src="https://i.ibb.co/R0stmmx/cdf3d7d593fdc35913e57edd1d8b182b.png">
         `;
