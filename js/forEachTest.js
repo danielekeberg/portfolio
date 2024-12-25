@@ -8,4 +8,3 @@ numbers.forEach(number => {
     forEachDiv.innerHTML = `This is number ${number}`;
     document.getElementById("forEachContainer").appendChild(forEachDiv);
 });
-    
