@@ -2465,6 +2465,7 @@ button.removeBtn {
     border: 1px solid #3d69bc;
     display: flex;
     transition: all 0.4s ease;
+    margin: 20px 0;
 }
 
 .pop-img {
