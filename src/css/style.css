@@ -2439,6 +2439,22 @@ button.removeBtn {
     display: none;
 }
 
+.new-card {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: url("https://4kwallpapers.com/images/walls/thumbs_3t/5630.jpg");
+    width: 500px;
+    height: 500px;
+}
+
+.new-card-info {
+    backdrop-filter: blur(10px);
+    width: 90%;
+    padding: 50px;
+    border-radius: 10px;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
