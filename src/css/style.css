@@ -2453,6 +2453,37 @@ button.removeBtn {
     width: 90%;
     padding: 50px;
     border-radius: 10px;
+    border: 1px solid #BDBDBD70;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.pop {
+    width: 800px;
+    padding: 20px 0;
+    background: #373737;
+    border: 1px solid #3d69bc;
+    display: flex;
+    transition: all 0.4s ease;
+}
+
+.pop-img {
+    display: flex;
+    width: 100px;
+    justify-content: flex-end;
+}
+
+.pop-img img {
+    height: 50px;
+}
+
+.pop-text .pop-remove {
+    background: rgb(41, 31, 111);
+    padding: 5px;
+    border: 1px solid #BDBDBD70;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 @keyframes spin {
