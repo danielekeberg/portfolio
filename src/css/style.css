@@ -2487,6 +2487,72 @@ button.removeBtn {
     cursor: pointer;
 }
 
+.calc-display {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
+.calc-display p {
+    color: #212121;
+    font-size: 24px;
+}
+
+.calculator-container {
+    background: rgb(35, 35, 35);
+    width: 300px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.calculator-container .calc-display {
+    background: rgb(111, 111, 111);
+    width: 91.5%;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #cacaca;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.calc-btns {
+    margin: 10px 0;
+}
+
+.row button {
+    background: #2c2c2c;
+    font-size: 24px;
+    padding: 10px;
+    width: 23%;
+    cursor: pointer;
+    color: #BDBDBD;
+}
+
+.row button:hover {
+    background: #444444;
+}
+
+.row .top:hover {
+    background: #858585;
+}
+
+.row .right:hover {
+    background: orange;
+}
+
+.row .top {
+    background: rgb(111, 111, 111);
+}
+
+.row .right {
+    background: rgb(230, 136, 28);
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
