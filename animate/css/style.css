@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 200vh; /* Makes the page tall enough to scroll */
+}
+
+.container {
+    position: relative;
+}
+
+.spacer {
+    height: 50vh; /* Adds space for scrolling */
+}
+
+.animated-image {
+    position: fixed; /* Fixes the image in place for smooth movement */
+    left: 10%; /* Starting position */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.container img {
+    height: 150px;
+}
+
+.third-animated-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; /* Adjust image size */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.5s ease; /* Smooth fade-in/out */
+}
+
+h1 {
+    animation: smil 5s infinite;
+    font-size: 136px;
+    cursor: grab;
+}
+
+body {
+    background: radial-gradient(circle, red, green, blue);
+    animation: farge 3s infinite;
+}
+
+.h1Container {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes farge {
+    0% {
+        background: radial-gradient(circle, green, blue, red);
+    }
+
+    50% {
+        background: radial-gradient(circle, blue, red, green);
+    }
+
+    100% {
+        background: radial-gradient(circle, yellow, red, blue);
+    }
+}
+
+@keyframes smil {
+    0% {
+        margin: 0 -1050px;
+        color: #000;
+    }
+
+    100% {
+        margin: 0 -1050px 0 100%;
+        color: #fff;
+    }
+}
