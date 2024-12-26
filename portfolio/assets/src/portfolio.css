@@ -161,6 +161,11 @@ main {
         margin: 10px;
     }
 
+    .header .nav-btns {
+        display: flex;
+        margin: 0 auto;
+    }
+
     .header .nav-btns a {
         font-size: 14px;
     }
