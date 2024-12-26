@@ -100,14 +100,14 @@ main {
     transition: all 0.3s ease;
 }
 
-.right img:hover {
-    transform: scale(1.02);
-}
-
 .socials {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.socials-container h3 {
+    color: #363535;
 }
 
 .socials-logos {
@@ -141,6 +141,7 @@ main {
 
 .left .info h1 {
     width: 70%;
+    color: #363535;
 }
 
 .left .info strong {
