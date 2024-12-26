@@ -92,6 +92,12 @@ main {
     height: 400px;
     border: 1px solid #212121;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right img:hover {
+    transform: scale(1.02);
 }
 
 .socials {
@@ -140,4 +146,47 @@ main {
 .left .info span {
     font-weight: 400;
     color: #0573d9;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        margin: 0;
+    }
+    .header .logo {
+        display: none;
+    }
+
+    .header {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .header .nav-btns a {
+        font-size: 14px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .container .left {
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    .container .left h1 {
+        font-size: 27px;
+    }
+
+    .container .right img {
+        margin: 0 auto 50px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    
+    .header .nav-btns a {
+        font-size: 13px;
+    }
 }
