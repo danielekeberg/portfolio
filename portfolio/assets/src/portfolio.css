@@ -2,6 +2,10 @@
     font-family: 'Futura', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+  }
+
 body {
     /* background: #edf1f4; */
     background: linear-gradient(to right, #d4dade, #edf1f4);
@@ -190,8 +194,35 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-    
+    .container {
+        justify-content: center;
+    }
+
+    .socials {
+        display: block;
+    }
+
+    .socials-logos {
+        justify-content: left;
+    }
+
     .header .nav-btns a {
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .right img {
+        height: 300px;
+    }
+
+    .left .info {
+        width: 100%;
+    }
+
+    .left .info h1 {
+        width: 100%;
+    }
+
+    .remove-mobile {
+        displaY: none;
     }
 }
