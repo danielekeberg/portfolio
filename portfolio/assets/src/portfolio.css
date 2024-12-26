@@ -150,6 +150,16 @@ main {
 .left .info span {
     font-weight: 400;
     color: #0573d9;
+    animation: test 1s infinite;
+}
+
+@keyframes test {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @media screen and (max-width: 1024px) {
