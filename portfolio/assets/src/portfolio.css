@@ -296,3 +296,60 @@ footer {
     transform: scale(1.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
+
+section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-cards {
+    display: flex;
+    gap: 25px;
+}
+
+.project {
+    border: 1px solid #212121;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #edf1f4;
+    overflow: hidden;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateY(100%);
+}
+
+.project:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-links a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    color: #212121;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
