@@ -14,6 +14,9 @@ body {
 
 header {
     height: 100px;
+    position: sticky;
+    z-index: 1000;
+    background: linear-gradient(to right, #d4dade, #edf1f4);
 }
 
 main {
