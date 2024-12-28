@@ -243,6 +243,7 @@ main {
 
 footer {
     width: 100%;
+    padding: 0 0 15px;
 }
 
 .footer {
@@ -355,4 +356,28 @@ section {
 
 .project-links a:hover {
     text-decoration: underline;
+}
+
+.contact-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container {
+    background: linear-gradient(to right, #d4dade, #edf1f4);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #212121;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-input input {
+    width: 450px;
+    border: 1px solid #212121;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.contact-input label {
+    margin: 10px 0 5px;
 }
