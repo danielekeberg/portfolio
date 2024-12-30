@@ -1,5 +1,5 @@
 function updateCountdown() {
-    const christmasDate = new Date('December 24, 2024 00:00:00').getTime();
+    const christmasDate = new Date('December 24, 2025 00:00:00').getTime();
     const now = new Date().getTime();
     const timeLeft = christmasDate - now;
 
@@ -47,8 +47,8 @@ function updateBirthdayCountdown() {
     }
 }
 
-function updateNextChristmas() {
-    const nextChristmas = new Date('December 24, 2025 00:00:00').getTime();
+function updateNewYear() {
+    const nextChristmas = new Date('January 1, 2025 00:00:00').getTime();
     const now = new Date().getTime();
     const nextTimeLeft = nextChristmas - now;
 
@@ -74,11 +74,11 @@ function updateNextChristmas() {
 
 const timer = setInterval(updateCountdown, 1000);
 const birthdayTimer = setInterval(updateBirthdayCountdown, 1000);
-const nextTimer = setInterval(updateNextChristmas, 1000);
+const nextTimer = setInterval(updateNewYear, 1000);
 
 updateCountdown();
 updateBirthdayCountdown();
-updateBirthdayCountdown();
+updateNewYear();
 
 const loading = document.getElementById("loading");
 const content = document.getElementById("content");
