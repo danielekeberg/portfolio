@@ -1,3 +1,24 @@
 body {
     background: rgb(14, 14, 14) !important;
 }
+
+.countdown-header {
+    height: 100px;
+
+}
+
+.upload {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    width: 90%;
+}
+
+.upload img {
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #DBDBDB;
+    cursor: pointer;
+}
