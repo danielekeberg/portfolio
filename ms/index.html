@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+    <link rel="icon" href="/src/code.png">
+    <title>Danioso</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <h1>Danioso</h1>
+            </div>
+            <div class="user-stats">
+                <div class="profile-picture">
+                    <img src="https://mafiaspillet.no/imgupload/417836.png" alt="Profile Picture">
+                </div>
+                <div class="stats">
+                    <p>Evince</p>
+                    <p><strong>Penger:</strong>&nbsp51 000 000 kr</p>
+                    <p><strong>Poeng:</strong>&nbsp2032</p>
+                </div>
+                <div class="stats">
+                    <p><strong>Helse:</strong>&nbsp100%</p>
+                    <p><strong>Beskyttelse:</strong>&nbsp1000</p>
+                    <p><strong>Angrep:</strong>&nbsp297</p>
+                </div>
+                <div class="stats">
+                    <p class="current-time"></p>
+                    <p><strong>Rank:</strong>&nbspCapo de tutti Capi 85%</p>
+                    <p><strong>Familie:</strong>&nbspPublic Enemies</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="container-header">
+                <div class="nav">
+                    <a href="/ms/index.html">Hjem</a>
+                    <a href="#">Kriminalitet</a>
+                    <a href="#">Undersåtter</a>
+                    <a href="#">Oppdrag</a>
+                    <a href="#">Flyplass</a>
+                    <a href="#">Organisert Kriminalitet</a>
+                    <a href="#">Forum</a>
+                    <a href="#">Marked</a>
+                    <a href="#">Sykehus</a>
+                    <a href="#">Familie</a>
+                    <a href="#">Store bedrifter</a>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="left">
+                    <div class="hotellknapp">
+                        <button>Sjekk ut (23 t 25 m)</button>
+                    </div>
+                    <div class="skyt">
+                        <input type="text" placeholder="Bruker">
+                        <button id="skyt">Skyt!</button>
+                    </div>
+                    <div class="rapport-feed">
+                        <div class="rapport-top" id="rapport-top">
+                            <h3>Overvåking</h3>
+                            <button id="rapport-btn">Av</button>
+                            <button id="rapport-btn-on">På</button>
+                        </div>
+                        <div class="feed">
+                            <p id="rapport-feed-off">Overvåking er ikke aktivert. Aktiveres når du utfører en kriminell handling, og skrur seg av etter en time uten aktivitet.</p>
+                            <p><a href="#">Rapporter</a>&nbsp|&nbsp<a href="#">Endre byer</a>&nbsp|&nbsp<a href="#">Nullstill</a></p>
+                        </div>
+                    </div>
+                    <div class="by">
+                        <h4>New York</h4>
+                        <a href="#">New York Bank</a>
+                        <a href="#">Angrep i denne byen</a>
+                        <a href="#">Kasinoer</a>
+                        <p>Overvåkningsnivå mot meg:&nbsp<span>92%</span></p>
+                    </div>
+                    <div class="by">
+                        <h4>Verktøy</h4>
+                        <a href="#">Support og FAQ</a>
+                        <a href="#">Spillere</a>
+                        <a href="#">Kjøp poeng</a>
+                        <a href="#">Konkurranser</a>
+                        <a href="#">Inception</a>
+                        <a href="#">Changelog</a>
+                        <a href="#">Hitlist</a>
+                        <a href="#">Hall of Fame og Statistikk</a>
+                        <a href="#">Innstillinger</a>
+                        <a href="#">Logg ut</a>
+                    </div>
+                    <div class="ping">
+                        <p>Ping:&nbsp<span>29</span>&nbsp|&nbspVarsler:&nbsp<span>106</span>&nbspms</p>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="rapport-on" id="turnOnRapportFeed">
+                        <p>Overvåkingen ble aktivert og er aktiv i 1 time fra nå.</p>
+                    </div>
+                    <div class="skudd-error" id="skuddError">
+                        <p>Du kan ikke gjøre dette mens du er i hotell. Gå ut av hotell og prøv igjen!</p>
+                    </div>
+                    <div class="main-header">
+                        <a href="#" class="active">Oversikt</a>
+                        <a href="#">Drap</a>
+                        <a href="#">Skills</a>
+                        <a href="#">Spesialisering</a>
+                        <a href="#">Utfordringer</a>
+                        <a href="#">Stresskofferter</a>
+                        <a href="#">Min rating</a>
+                        <a href="#">Handlingslogg</a>
+                    </div>
+                    <div class="user-info">
+                        <p><span>I hotell (+800)</span>&nbsp&nbsp|&nbsp&nbsp<strong>Helse:</strong>&nbsp<span class="underline">100%</span>&nbsp(<span>Perfekt!</span>)&nbsp&nbsp|&nbsp&nbspAngriper (nivå 3)&nbsp&nbsp|&nbsp&nbsp<strong>Beskyttelse:</strong>&nbsp1000&nbsp&nbsp|&nbsp&nbsp<strong>Angrep:</strong>&nbsp297&nbsp&nbsp|&nbsp&nbsp<a href="#">Endre</a></span></p>
+                    </div>
+                    <div class="info-box">
+                        <p><span>NB:</span>&nbspDrapsfunksjonen er stengt fram til 1. januar 2025 kl 20:00. Dette gjelder ikke drap av boter.</p>
+                    </div>
+                    <div class="activity">
+                        <div class="content-box">
+                            <h3>Siste hendelser i spillet</h3>
+                        </div>
+                        <div class="content-box">
+                            <h3>Aktivitet i dag</h3>
+                            <div class="activity-bar">
+                                <div class="daglig-progress"></div>
+                            </div>
+                            <div class="crimes-today">
+                                <h4>10</h4>&nbsp<h5>/ 20 vellykkede <u>krim/stjel</u></h5>
+                            </div>
+                            <p class="kursiv">Gjennomfør 20 vellykket krim/stjel for å få en bonus!</p>
+                            <h3>Totalt</h3>
+                            <div class="activity-bar">
+                                <div class="total-progress"></div>
+                            </div>
+                            <div class="crimes-today">
+                                <h4>32</h4>&nbsp<h5>/ 33 krimmedager totalt</h5>
+                            </div>
+                            <p class="kursiv">Du får neste store bonus på <strong>33</strong> dager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="bil">
+                        <div class="bil-stats">
+                            <h3>Bil</h3>
+                            <p>Rolls Royce</p>
+                            <p>Bensin:&nbsp<strong>111</strong>&nbspliter</p>
+                            <p>Skade:&nbsp<strong>23</strong>&nbsp%</p>
+                            <p><strong>+ 30 </strong>i beskyttelse</p>
+                        </div>
+                        <div class="bil-img">
+                            <img src="https://mafiaspillet.no/grafikk3/biler/bil12.png">
+                        </div>
+                    </div>
+                    <div class="bil">
+                        <div class="bil-stats">
+                            <h3>Våpen</h3>
+                            <p>Flammekaster</p>
+                            <p>Angrep: 35</p>
+                            <p>Bensin:&nbsp<strong>198</strong>&nbspliter</p>
+                        </div>
+                        <div class="bil-img">
+                            <img src="https://mafiaspillet.no/grafikk3/vapen/27.png">
+                        </div>
+                    </div>
+                    <div class="economy">
+                        <h3>Økonomi</h3>
+                        <a href="./bedrifter/">
+                            <div class="bedrifter">
+                                <img src="https://mafiaspillet.no/images/small_house.png">
+                                <div class="bedrifter-text">
+                                    <h4>Mine bedrifter</h4>
+                                    <p>3 t og 5 min til inntekt</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./rederi/">
+                            <div class="boats">
+                                <img src="https://mafiaspillet.no/images/ship.png">
+                                <div class="bedrifter-text">
+                                    <h4>Mitt rederi</h4>
+                                    <p>4 t og 56 min til inntekt</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="forumstream">
+                        <h3>Forumstream</h3>
+                        <div class="innlegg">
+                            <img src="https://mafiaspillet.no/imgupload/416607.jpeg">
+                            <p>2 til</p>
+                        </div>
+                        <div class="innlegg">
+                            <img src="https://mafiaspillet.no/imgupload/416607.jpeg">
+                            <p>2 til</p>
+                        </div>
+                        <div class="innlegg">
+                            <img src="https://mafiaspillet.no/imgupload/418833.jpeg">
+                            <p>Trenger 1 til OC</p>
+                        </div>
+                        <div class="innlegg">
+                            <img src="https://mafiaspillet.no/grafikk2/varslingsikoner/konkurranse3.png">
+                            <p>Monsieur vinner kill-the-bot</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
