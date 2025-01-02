@@ -53,7 +53,7 @@ header {
     margin: 0 auto;
     width: 1250px;
     background: #060810;
-    height: 100vh;
+    height: 120vh;
 }
 
 .container-header {
@@ -388,6 +388,7 @@ header {
     align-items: center;
     gap: 10px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .innlegg p {
@@ -518,17 +519,65 @@ header {
     display: flex;
     color: #BDBDBD;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 .bedrifter-content {
     padding: 10px;
     background: #BDBDBD30;
+    margin-bottom: 50px;
 }
 
 .bedrifter-content h4 {
-    color: #747474;
+    color: #BDBDBD;
 }
 
 #colored-background {
     background: #3b3b3b;
+}
+
+.bedrifter-info p {
+    color: #BDBDBD;
+}
+
+.tid {
+    width: 360px !important;
+}
+
+.selg {
+    display: flex;
+    justify-content: center;
+    background: red;
+    padding: 5px 10px;
+    color: #fff;
+    border: 1px solid #666565;
+    width: 160px !important;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.selg:hover {
+    background: #171A26;
+}
+
+.selg-status {
+    width: 160px !important;
+}
+
+.default {
+    background: #171A26;
+    color: #cfcfcf;
+    border: 1px solid #666565;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.store-bedrifter p {
+    color: #BDBDBD;
+}
+
+.default:hover {
+    color: #FFF;
 }
