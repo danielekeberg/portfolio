@@ -53,7 +53,6 @@ header {
     margin: 0 auto;
     width: 1250px;
     background: #060810;
-    height: 120vh;
 }
 
 .container-header {
@@ -696,4 +695,22 @@ header {
 
 .ukebonus-tekst p {
     margin: 30px 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.aktuelt .innlegg {
+    padding: 0 50px 0 10px;
+    width: 75%;
+    border-radius: 5px;
+}
+
+.aktuelt img {
+    height: 25px;
+}
+
+.aktuelt .innlegg:hover {
+    background: #ffffff10;
 }
