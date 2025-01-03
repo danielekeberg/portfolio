@@ -714,3 +714,13 @@ header {
 .aktuelt .innlegg:hover {
     background: #ffffff10;
 }
+
+.mainmain {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mainmain .content-box {
+    margin: 0 10px 20px;
+    width: 90%;
+}
