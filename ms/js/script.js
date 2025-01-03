@@ -73,3 +73,13 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+let cash = 10000000;
+
+function updatePenger() {
+    document.querySelector('.current-money').innerHTML = `<p><strong>Penger:</strong> ${cash} kr`;
+}
+
+updatePenger();
+
+document.getElementById('skyt').addEventListener('click', updatePenger);
