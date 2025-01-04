@@ -724,3 +724,32 @@ header {
     margin: 0 10px 20px;
     width: 90%;
 }
+
+.valg-krim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 0 0;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.valg-krim:hover {
+    background: #ffffff10;
+}
+
+.stjel .valg-krim {
+    padding: 15px;
+}
+
+.stjel .valg-krim:hover {
+    background: #ffffff10;
+}
+
+.valg-krim label {
+    cursor: pointer;
+}
+
+.utfør {
+    width: 91%;
+}
