@@ -753,3 +753,80 @@ header {
 .utfør {
     width: 91%;
 }
+
+footer {
+    display: flex;
+    margin: 0 auto;
+}
+
+.centerfooter {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    height: 40px;
+    bottom: 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    background: #2e3346;
+    border: 1px solid rgb(160, 160, 160);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.footer-left {
+    display: flex;
+}
+
+.footer-btn {
+    display: flex;
+    align-items: center;
+    color: #BDBDBD;
+    gap: 5px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.footer-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.rank-progress {
+    display: flex;
+    margin: auto 0;
+    width: 100px;
+    height: 40px;
+    border: 1px solid rgb(47, 47, 47);
+    background: #fff;
+    height: 60%;
+}
+
+.rank-progress-bar {
+    background: #909090;
+    overflow: none;
+    height: 100%;
+    width: 91.31%;
+    position: relative;
+}
+
+.rank-progress-bar p {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: -2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    width: 90px;
+    font-weight: 600;
+}
+
+.footer-right {
+    display: flex;
+}
