@@ -48,7 +48,7 @@ function updateBirthdayCountdown() {
 }
 
 function updateNewYear() {
-    const nextChristmas = new Date('January 1, 2025 00:00:00').getTime();
+    const nextChristmas = new Date('January 4, 2025 03:20:40').getTime();
     const now = new Date().getTime();
     const nextTimeLeft = nextChristmas - now;
 
@@ -66,8 +66,7 @@ function updateNewYear() {
         clearInterval(nextTimer);
         document.getElementById("nextCountdown").style.display = "block";
         document.getElementById("nextCountdown").innerHTML = `
-        <h3>Merry Christmas</h3>
-        <img src="https://i.ibb.co/R0stmmx/cdf3d7d593fdc35913e57edd1d8b182b.png">
+        <h3>Godt nyttår brynjar</h3>
         `;
     }
 }
