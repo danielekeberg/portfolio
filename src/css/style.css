@@ -2554,6 +2554,105 @@ button.removeBtn {
     background: rgb(230, 136, 28);
 }
 
+.todo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.todo {
+    background: #242424;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    min-height: 200px;
+    padding: 10px 0 50px;
+}
+
+.todo input {
+    border-radius: 5px;
+    border: 2px solid #212121;
+    background: #515151;
+    font-size: 16px;
+    padding: 10px;
+    color: #BDBDBD;
+}
+
+.todo-input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+    gap: 10px;
+}
+
+.todo-output {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #515151;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    max-width: 500px;
+    padding: 0 7px 0 0;
+    margin: 5px auto;
+}
+
+.task p {
+    color: #BDBDBD;
+}
+
+.task img {
+    width: 20px;
+}
+
+.todo-images {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-images img {
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.todo-images img:hover {
+    background: #3a3a3a;
+}
+
+.completed {
+    background: #275220 !important;
+}
+
+.completed p {
+    text-decoration: line-through !important;
+}
+
+.completed #checkmarkBtn {
+    filter: grayscale(100%) !important;
+}
+
+.todo-input button {
+    background: #242424;
+    border-radius: 5px;
+    border: 1px solid #212121;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #BDBDBD;
+    width: 75px;
+    cursor: pointer;
+}
+
+.todo-input button:hover {
+    background: #232323;
+    color: #cecece;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
