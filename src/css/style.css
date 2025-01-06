@@ -2653,6 +2653,70 @@ button.removeBtn {
     color: #cecece;
 }
 
+.newWeatherContainer {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    gap: 10px;
+    margin: 25px;
+}
+
+.newWeatherContainer input {
+    border: 1px solid #4d4d4d;
+    border-radius: 10px;
+    color: #BDBDBD;
+    padding: 10px;
+    font-size: 16px;
+    background: #242424;
+}
+
+.newWeatherContainer input:focus {
+    outline: none;
+}
+
+.newWeatherContainer button {
+    background: #242424;
+    border: 1px solid #4d4d4d;
+    color: #BDBDBD;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#weatherInfo {
+    color: #BDBDBD;
+    justify-content: left;
+    background: #242424;
+    border: 1px solid #4d4d4d;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#weatherInfo p {
+    text-transform: capitalize;
+}
+
+#weatherInfo span {
+    color: #BDBDBD;
+}
+
+.weatherInfoContainer {
+    margin: 25px 10px 10px;
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+.weatherInfoContainer img {
+    height: 30px;
+}
+
+#wind {
+    height: 25px !important;
+    padding-top: 8px !important;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
