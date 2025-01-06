@@ -8,16 +8,23 @@
     <title>Weather App</title>
 </head>
 <body>
+    <header>
+        <div class="header">
+            <div class="weather-info">
+                <input type="text" id="city" placeholder="Enter city name">
+                <button id="getWeather">Fetch Weather</button>
+            </div>
+        </div>
+    </header>
     <main>
         <div class="container">
             <div class="weather-container">
-                <div class="weather-info">
-                    <input type="text" id="city" placeholder="Enter city name">
-                    <button id="getWeather">Fetch Weather</button>
-                </div>
                 <div class="display-weather">
                     <div id="weatherOutput">
-                        <h2>Weather in <strong>Oslo, NO</strong></h2>
+                        <div class="location">
+                            <h2>Weather in <strong>Oslo</strong></h2>
+                            <img src="https://flagcdn.com/no.svg">
+                        </div>
                         <div class="temp">
                             <p>Temperature: <strong>0°C</strong></p>
                             <p>Feels Like: <strong>0°C</strong></p>
@@ -27,6 +34,7 @@
                         <p>Wind Speed: <strong>0 m/s</strong></p>
                     </div>
                 </div>
+                
             </div>
         </div>
     </main>
