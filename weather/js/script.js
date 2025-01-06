@@ -5,7 +5,11 @@ const weatherInfo = document.getElementById('weatherOutput');
 function weather() {
     const city = document.getElementById('city').value;
     if (!city) {
-        weatherInfo.innerHTML = 'Please enter a city name.';
+        weatherInfo.innerHTML = `
+        <div class="cityError">
+            <h2>Please enter a city name.</h2>
+        </div>
+        `;
         return;
     }
 
@@ -17,8 +21,13 @@ function weather() {
         return response.json();
     })
     .then(data => {
+        const countryCode = data.sys.country.toLowerCase();
+
         weatherInfo.innerHTML = `
-        <h2>Weather in <strong>${data.name}, ${data.sys.country}</strong></h2>
+        <div class="location">
+            <h2>Weather in <strong>${data.name}</strong></h2>
+            <img src="https://flagcdn.com/${countryCode}.svg">
+        </div>
         <div class="temp">
             <p>Temperature: <strong>${data.main.temp}°C</strong></p>
             <p>Feels Like: <strong>${data.main.feels_like}°C</strong></p>
@@ -33,4 +42,14 @@ function weather() {
     });
 };
 
-getWeatherButton.addEventListener('click', weather);
+getWeatherButton.addEventListener('click', function () {
+    weather();
+    document.getElementById('city').value = "";
+})
+
+document.getElementById('city').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        weather();
+        document.getElementById('city').value = "";
+    }
+})
