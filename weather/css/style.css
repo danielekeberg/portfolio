@@ -9,7 +9,6 @@ body {
 }
 
 main {
-    display: flex;
     width: 100%;
 }
 
@@ -152,4 +151,34 @@ main {
 
 .quote-container span {
     color: #8deaff;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.password-container input::placeholder {
+    color: #212121;
+}
+
+.password-container button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #212121;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    width: 50px;
+}
+
+.password-container button:hover {
+    background: #343434;
 }
