@@ -119,3 +119,37 @@ main {
 .temp p {
     margin: 0;
 }
+
+.quote-container {
+    color: #BDBDBD;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 25px;
+    align-items: center;
+}
+
+.quote-container button {
+    padding: 10px;
+    background: #c6c6c6;
+    border: 1px solid #212121;
+    color: #212121;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quote-container button:hover {
+    background: #d1d1d1;
+}
+
+.quote-container button:active {
+    background: #e0e0e0;
+}
+
+.quote-container p {
+    font-size: 24px;
+}
+
+.quote-container span {
+    color: #8deaff;
+}
