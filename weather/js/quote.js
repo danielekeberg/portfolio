@@ -16,3 +16,14 @@ let quoteCount = 0;
   }
 
   document.getElementById('quoteBtn').addEventListener('click', randomQuote);
+
+
+document.getElementById('pwrdBtn').addEventListener('click', () => {
+    if (document.getElementById('pwrd').type === 'password') {
+        document.getElementById('pwrd').type = 'text';
+        document.getElementById('pwrdBtn').textContent = '-';
+    } else {
+        document.getElementById('pwrd').type = 'password';
+        document.getElementById('pwrdBtn').textContent = 'O';
+    }
+})
