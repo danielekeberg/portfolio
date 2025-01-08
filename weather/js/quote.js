@@ -55,14 +55,65 @@ function randomBackgroundColor() {
 // randomBackgroundColor();
 
 let cash = 100;
+let countdownTime = 5;
+
+function countdown() {
+    countdownTime--;
+    document.getElementById('spawnCash').textContent = `+$50 (Checks ever ${countdownTime} second)`;
+    if (countdownTime < 1) {
+        countdownTime = 6;
+    }
+}
+
+setInterval(countdown, 1000);
 
 function updateCash() {
     document.getElementById('totalCash').innerHTML = `<h2>$${cash}</h2>`;
+    cash += 50;
 }
 
 document.getElementById('spawnCash').addEventListener('click', () => {
     cash += 50;
 })
 
-setInterval(updateCash, 5000);
+function customCash() {
+    const cashInput = document.getElementById('inputCash').value;
+    const cashInputNumber = Number(cashInput);
+
+    cash += cashInputNumber;
+    updateCash();
+}
+
+function removeCustomCash() {
+    const cashInput = document.getElementById('negativeInputCash').value;
+    const cashInputNumber = Number(cashInput);
+
+    cash -= cashInputNumber;
+    updateCash();
+}
+
+document.getElementById('spawnCustomCash').addEventListener('click', customCash);
+document.getElementById('inputCash').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        customCash();
+    }
+})
+document.getElementById('negativeInputCash').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        removeCustomCash();
+    }
+})
+document.getElementById('removeCustomCash').addEventListener('click', removeCustomCash);
+
+setInterval(updateCash, 6000);
 updateCash();
+
+// function party() {
+//     if (cash >= 10000) {
+//         setInterval(randomBackgroundColor, 1000);
+//     } else {
+//         document.body.style.backgroundColor = '#181818';
+//     }
+// }
+
+// setInterval(party, 1000);
