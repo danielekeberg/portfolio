@@ -182,3 +182,25 @@ main {
 .password-container button:hover {
     background: #343434;
 }
+
+.container h2 {
+    color: #BDBDBD;
+}
+
+.color-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.color-container button,
+.button button {
+    width: 120px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 14px;
+    background: #c6c6c6;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #212121;
+}
