@@ -194,7 +194,9 @@ main {
 }
 
 .color-container button,
-.button button {
+.button button,
+.cashInput button,
+.negativeCashInput button {
     width: 120px;
     margin: 0 auto;
     padding: 10px;
@@ -203,4 +205,18 @@ main {
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid #212121;
+}
+
+.cashInput input,
+.negativeCashInput input {
+    font-size: 16px;
+    padding: 10px;
+    background: #c6c6c6;
+    border-radius: 5px;
+    color: #212121;
+}
+
+.cashInput input:focus,
+.negativeCashInput input:focus {
+    outline: none;
 }
