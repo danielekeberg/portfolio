@@ -27,3 +27,42 @@ document.getElementById('pwrdBtn').addEventListener('click', () => {
         document.getElementById('pwrdBtn').textContent = 'O';
     }
 })
+
+document.getElementById('changeClr').addEventListener('click', () => {
+    const randomColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    document.body.style.backgroundColor = randomColor;
+})
+
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    document.getElementById('clock').innerHTML = `<h2>${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+
+function randomBackgroundColor() {
+    const rndmClr = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    document.body.style.backgroundColor = rndmClr;
+}
+
+// setInterval(randomBackgroundColor, 2000);
+// randomBackgroundColor();
+
+let cash = 100;
+
+function updateCash() {
+    document.getElementById('totalCash').innerHTML = `<h2>$${cash}</h2>`;
+}
+
+document.getElementById('spawnCash').addEventListener('click', () => {
+    cash += 50;
+})
+
+setInterval(updateCash, 5000);
+updateCash();
