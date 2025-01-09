@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/quote.js" defer></script>
+    <script src="./js/todo.js" defer></script>
     <title>Random Quote Generator</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
                 <h2>$0</h2>
             </div>
             <div class="button" id="spawnCashBtn">
-                <button id="spawnCash">+$50 (Checks ever 5 second)</button>
+                <button id="spawnCash">+$50 (Checks in 5 second)</button>
             </div>
             <div class="cashInput">
                 <input type="number" id="inputCash">
@@ -58,6 +59,15 @@
             <div class="negativeCashInput">
                 <input type="number" id="negativeInputCash">
                 <button id="removeCustomCash">-</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="todo-container">
+                <div class="input-container">
+                    <input type="text" id="task-input" placeholder="Add a new task">
+                    <button id="add-task">Add</button>
+                </div>
+                <ul id="task-list"></ul>
             </div>
         </div>
     </main>
