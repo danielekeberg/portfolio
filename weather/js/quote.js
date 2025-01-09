@@ -59,7 +59,7 @@ let countdownTime = 5;
 
 function countdown() {
     countdownTime--;
-    document.getElementById('spawnCash').textContent = `+$50 (Checks ever ${countdownTime} second)`;
+    document.getElementById('spawnCash').textContent = `+$50 (Checks in ${countdownTime} second)`;
     if (countdownTime < 1) {
         countdownTime = 6;
     }
