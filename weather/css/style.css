@@ -220,3 +220,33 @@ main {
 .negativeCashInput input:focus {
     outline: none;
 }
+
+.todo-container {
+    margin-top: 50px;
+}
+
+.todo-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-container ul li {
+    color: #BDBDBD;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+button.delete {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
