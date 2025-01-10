@@ -1,0 +1,116 @@
+* {
+    font-family: 'Futura', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #d4dade, #edf1f4);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.header .nav-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.header .nav-btns a {
+    padding: 7px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #212121;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.header .nav-btns img {
+    height: 20px;
+}
+
+.header .nav-btns a:hover {
+    background: linear-gradient(to right, #dee2e5, #edf1f4);
+    color: #ab3f3f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header .nav-btns a:active {
+    background: #e7dfd0;;
+}
+
+.header .nav-btns .active {
+    color: #ab3f3f;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar .month {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar .day {
+    display: flex;
+    gap: 50px;
+    border-bottom: 2px solid #212121;
+    margin: 5px;
+}
+
+.calendar .day h4 {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar .day h4 {
+    width: 100px;
+}
+
+.calendar .calendar-date {
+    display: flex;
+    gap: 50px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.calendar .calendar-date a {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #212121;
+    border-radius: 5px;
+}
+
+.calendar .calendar-date a:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #edf1f4;
+    color: #ab3f3f;
+}
+
+.calendar .calendar-date .prev-days {
+    text-decoration: line-through;
+}
+
+.calendar .calendar-date .prev-month {
+    color: #7a7b7c;
+}
