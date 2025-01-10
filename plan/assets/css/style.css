@@ -30,6 +30,7 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .header .nav-btns img {
