@@ -895,9 +895,19 @@ function addToStoredMonth(amount) {
     localStorage.setItem('currentMonth', updatedMonth);
 }
 
-
-
 updateMonthDisplay();
 updateDayDisplay();
 setInterval(updateMonthDisplay, 3600000);
 setInterval(updateDayDisplay, 1000);
+
+document.getElementById('calendar-btn').addEventListener('click', () => {
+    document.getElementById('calendar').scrollIntoView( { behavior : "smooth" } );
+})
+
+document.getElementById('workoutBtn').addEventListener('click', () => {
+    document.getElementById('workout').scrollIntoView( { behavior : "smooth" } );
+})
+
+document.getElementById('foodBtn').addEventListener('click', () => {
+    document.getElementById('foodPrep').scrollIntoView( { behavior : "smooth" } );
+})
