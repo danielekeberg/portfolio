@@ -21,6 +21,12 @@ body::-webkit-scrollbar {
     margin: 0 50px;
 }
 
+.header .logo h1 {
+    cursor: pointer;
+    padding: 10px;
+    color: #ab3f3f;
+}
+
 .header .nav-btns {
     display: flex;
     gap: 15px;
@@ -175,4 +181,20 @@ section {
 
 #currentDay {
     width: 155px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.footer-content p {
+    transition: all 0.15s ease;
+    cursor: grab;
+}
+
+.footer-content p:hover {
+    color: #ab3f3f;
 }
