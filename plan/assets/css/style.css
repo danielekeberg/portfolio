@@ -78,7 +78,13 @@ body::-webkit-scrollbar {
 
 .calendar .month {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.calendar .month h2 {
+    cursor: pointer;
 }
 
 .calendar .day {
