@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/heart-59-64.png">
+    <script src="./js/script.js" defer></script>
     <title>Planning</title>
 </head>
 <body>
@@ -17,6 +18,7 @@
                 <a href="#" class="active">Home</a>
                 <a href="#">Måltidsplanlegger</a>
                 <a href="#">Treningsplanlegger</a>
+                <a href="#" id="currentDay">00:00:00</a>
                 <a href="#"><img src="./assets/user-64.png"></a>
             </div>
         </div>
@@ -24,67 +26,15 @@
 
     <main>
         <div class="container">
-            <div class="calendar">
-                <div class="calendar-header">
-                    <div class="month">
-                        <h3>January</h3>
-                    </div>
-                    <div class="day">
-                        <h4>S</h4>
-                        <h4>M</h4>
-                        <h4>T</h4>
-                        <h4>W</h4>
-                        <h4>T</h4>
-                        <h4>F</h4>
-                        <h4>S</h4>
-                    </div>
-                    <div class="calendar-date">
-                        <a href="#" class="prev-days prev-month">29</a>
-                        <a href="#" class="prev-days prev-month">30</a>
-                        <a href="#" class="prev-days prev-month">31</a>
-                        <a href="#" class="prev-days">1</a>
-                        <a href="#" class="prev-days">2</a>
-                        <a href="#" class="prev-days">3</a>
-                        <a href="" class="prev-days">4</a>
-                    </div>
-                    <div class="calendar-date">
-                        <a href="#" class="prev-days">5</a>
-                        <a href="#" class="prev-days">6</a>
-                        <a href="#" class="prev-days">7</a>
-                        <a href="#" class="prev-days">8</a>
-                        <a href="#" class="prev-days">9</a>
-                        <a href="#" class="prev-days">10</a>
-                        <a href="#">11</a>
-                    </div>
-                    <div class="calendar-date">
-                        <a href="#">12</a>
-                        <a href="#">13</a>
-                        <a href="#">14</a>
-                        <a href="#">15</a>
-                        <a href="#">16</a>
-                        <a href="#">17</a>
-                        <a href="#">18</a>
-                    </div>
-                    <div class="calendar-date">
-                        <a href="#">19</a>
-                        <a href="#">20</a>
-                        <a href="#">21</a>
-                        <a href="#">22</a>
-                        <a href="#">23</a>
-                        <a href="#">24</a>
-                        <a href="#">25</a>
-                    </div>
-                    <div class="calendar-date">
-                        <a href="#">26</a>
-                        <a href="#">27</a>
-                        <a href="#">28</a>
-                        <a href="#">29</a>
-                        <a href="#">30</a>
-                        <a href="#">31</a>
-                        <a href="#"></a>
-                    </div>
-                </div>
+            <div id="activity">
+                
             </div>
+            
+                    
+                
+        </div>
+        <div class="container">
+            <div id="calendar"></div>
         </div>
     </main>
 </body>
