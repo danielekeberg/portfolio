@@ -55,19 +55,22 @@ function getMonthName(monthIndex) {
     return months[monthIndex];
 }
 
+
 function updateMonthDisplay() {
     const currentMonth = new Date().getMonth();
-    const storedMonth = localStorage.getItem("currentMonth");
+    const storedMonth = Number(localStorage.getItem("currentMonth"));
     const calendarTag = document.getElementById('calendar');
 
     // document.getElementById('monthDiv').innerHTML = '<h4>' + getMonthName(currentMonth) + '</h4>';
 
-    if (getMonthName(currentMonth) === 'January') {
+    if (storedMonth === 0) {
         calendarTag.innerHTML = `
         <div class="calendar">
             <div class="calendar-header">
                 <div class="month">
+                    <h2 id="prevMonth"><</h2>
                     <h2>Januar</h2>
+                    <h2 id="nextMonth">></h2>
                 </div>
                 <div class="day">
                     <h4>S</h4>
@@ -126,12 +129,14 @@ function updateMonthDisplay() {
             </div>
         </div>
         `;
-    } else if (getMonthName(currentMonth) === 'February') {
+    } else if (storedMonth === 1) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Februar</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -189,12 +194,14 @@ function updateMonthDisplay() {
                     </div>
                 </div>
             </div>`;
-    } else if (getMonthName(currentMonth) === 'March') {
+    } else if (storedMonth === 2) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Mars</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -253,12 +260,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'April') {
+    } else if (storedMonth === 3) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>April</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -317,12 +326,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'May') {
+    } else if (storedMonth === 4) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Mai</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -381,12 +392,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'June') {
+    } else if (storedMonth === 5) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Juni</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -445,12 +458,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'July') {
+    } else if (storedMonth === 6) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Juli</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -509,12 +524,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'August') {
+    } else if (storedMonth === 7) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>August</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -582,12 +599,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'September') {
+    } else if (storedMonth === 8) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>September</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -646,12 +665,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'October') {
+    } else if (storedMonth === 9) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Oktober</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -710,12 +731,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'November') {
+    } else if (storedMonth === 10) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>November</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -783,12 +806,14 @@ function updateMonthDisplay() {
                 </div>
             </div>
             `;
-    } else if (getMonthName(currentMonth) === 'December') {
+    } else if (storedMonth === 11) {
         calendarTag.innerHTML = `
         <div class="calendar">
                 <div class="calendar-header">
                     <div class="month">
+                        <h2 id="prevMonth"><</h2>
                         <h2>Desember</h2>
+                        <h2 id="nextMonth">></h2>
                     </div>
                     <div class="day">
                         <h4>S</h4>
@@ -848,8 +873,29 @@ function updateMonthDisplay() {
             </div>
             `;
     }
-
+    document.getElementById('nextMonth').addEventListener('click', () => {
+        addToStoredMonth(1);
+        updateMonthDisplay();
+    })
+    document.getElementById('prevMonth').addEventListener('click', () => {
+        addToStoredMonth(-1);
+        updateMonthDisplay();
+    })
 }
+
+function addToStoredMonth(amount) {
+    let storedMonth = localStorage.getItem('currentMonth');
+    if (storedMonth === null) {
+        storedMonth = 0;
+    } else {
+        storedMonth = parseInt(storedMonth);
+    }
+    let updatedMonth = storedMonth + amount;
+    updatedMonth = updatedMonth % 12;
+    localStorage.setItem('currentMonth', updatedMonth);
+}
+
+
 
 updateMonthDisplay();
 updateDayDisplay();
