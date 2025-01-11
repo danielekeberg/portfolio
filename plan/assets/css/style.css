@@ -4,6 +4,7 @@
 
 body {
     background: linear-gradient(to right, #d4dade, #edf1f4);
+    margin: 0;
 }
 
 body::-webkit-scrollbar {
@@ -12,13 +13,26 @@ body::-webkit-scrollbar {
 
 .container {
     margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    height: 100px;
+    z-index: 1000;
+    position: sticky;
+    background: linear-gradient(to right, #d4dade, #edf1f4);
+    top: 0;
+    border-bottom: 1px solid #212121;
 }
 
 .header {
     display: flex;
+    position: sticky;
     align-items: center;
     justify-content: space-between;
     margin: 0 50px;
+    top: 0;
 }
 
 .header .logo h1 {
@@ -38,7 +52,7 @@ body::-webkit-scrollbar {
     border-radius: 2px;
     text-decoration: none;
     color: #212121;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
@@ -203,4 +217,48 @@ footer {
 
 .footer-content p:hover {
     color: #ab3f3f;
+}
+
+.features {
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+}
+
+.feature img {
+    display: flex;
+    margin: 0 auto;
+    height: 75px;
+}
+
+.feature h3,
+.feature p {
+    text-align: center;
+    transition: all 0.15s ease;
+}
+
+.feature {
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.feature:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature:hover h3 {
+    color: #ab3f3f;
+}
+
+.workout-container {
+    margin-top: 140px;
+    width: 1010px;
+    height: 500px;
+    text-align: center;
+}
+
+.workout-container {
+    border: 1px solid #212121;
+    border-radius: 5px;
 }
