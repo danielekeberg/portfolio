@@ -10,6 +10,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+.container {
+    margin-top: 100px;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -22,7 +26,8 @@ body::-webkit-scrollbar {
     gap: 15px;
 }
 
-.header .nav-btns a {
+.header .nav-btns a,
+.header .nav-btns p {
     padding: 7px 10px;
     border-radius: 2px;
     text-decoration: none;
@@ -59,6 +64,10 @@ body::-webkit-scrollbar {
 .calendar-header {
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #212121;
+    margin: 0 0 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .calendar .month {
@@ -100,6 +109,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     color: #212121;
     border-radius: 5px;
+    font-weight: 600;
 }
 
 .calendar .calendar-date a:hover {
@@ -110,8 +120,59 @@ body::-webkit-scrollbar {
 
 .calendar .calendar-date .prev-days {
     text-decoration: line-through;
+    pointer-events: none;
+    font-weight: 400;
 }
 
-.calendar .calendar-date .prev-month {
+.calendar .calendar-date .prev-month,
+.calendar .calendar-date .next-month {
     color: #7a7b7c;
+    font-weight: 400;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 50px;
+    cursor: pointer;
+}
+
+.activity {
+    justify-content: center;
+    width: 1010px;
+    border: 1px solid #212121;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#activity {
+    width: 100%;
+}
+
+.activity-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #212121;
+}
+
+.activity-content {
+    width: 100%;
+    overflow: none;
+}
+
+.activity-image img {
+    overflow: none;
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.activity-info {
+    padding: 10px 25px;
+}
+
+#currentDay {
+    width: 155px;
 }
