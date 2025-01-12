@@ -2,6 +2,7 @@ const monthYearDisplay = document.getElementById('monthYear');
 const calendarDays = document.getElementById('calendarDays');
 const prevMonthBtn = document.getElementById('prevMonth');
 const nextMonthBtn = document.getElementById('nextMonth');
+const params = new URLSearchParams(window.location.search);
 
 let currentDate = new Date();
 
@@ -28,7 +29,10 @@ function renderCalendar() {
         const isToday = today.getDate() === day &&
                         today.getMonth() === month &&
                         today.getFullYear() === year;
-        calendarDays.innerHTML += `<div class="day {isToday ? 'today' : ''}">${day}</div>`;
+        calendarDays.innerHTML += `
+        <a href="./activity/?day=${day}">
+            <div class="day ${isToday ? 'today' : ''}">${day}</div>
+        </a>`;
     }
 }
 
