@@ -1,6 +1,21 @@
 const params = new URLSearchParams(window.location.search);
-const currentPage = params.get('day');
+const currentDate = params.get('date');
 
-if (currentPage) {
-    document.getElementById('fungerte').innerHTML = `<h2>Dette er dag ${currentPage}.</h2>`
+if (currentDate) {
+    const clickedDate = new Date(currentDate);
+    const dayOfWeek = clickedDate.getDay();
+
+    const dayMessages = [
+        "Søndag",
+        "Mandag",
+        "Tisdag",
+        "Onsdag",
+        "Torsdag",
+        "Fredag",
+        "Lørdag"
+    ];
+
+    document.getElementById('fungerte').innerHTML = `<h2>Dette er dag ${currentDate} ${dayMessages[dayOfWeek]}.</h2>`
+} else {
+    document.getElementById('fungerte').innerHTML = `<h2>No date selected.</h2>`;
 }
