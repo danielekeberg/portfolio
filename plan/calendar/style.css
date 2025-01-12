@@ -6,6 +6,7 @@ body {
 
 main {
     padding-top: 80px;
+    min-height: 80vh;
 }
 
 .calendar {
@@ -160,7 +161,7 @@ header {
 }
 
 .nav-btns .active {
-    color: #ab3f3f;
+    color: #ab3f3f !important;
 }
 
 footer {
