@@ -29,8 +29,11 @@ function renderCalendar() {
         const isToday = today.getDate() === day &&
                         today.getMonth() === month &&
                         today.getFullYear() === year;
+
+        const fullDate = `${year}-${month + 1}-${day}`;
+
         calendarDays.innerHTML += `
-        <a href="./activity/?day=${day}">
+        <a href="./activity/?date=${fullDate}">
             <div class="day ${isToday ? 'today' : ''}">${day}</div>
         </a>`;
     }
