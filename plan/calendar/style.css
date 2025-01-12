@@ -4,6 +4,10 @@ body {
     background: linear-gradient(to right, #d4dade, #edf1f4);
 }
 
+main {
+    padding-top: 80px;
+}
+
 .calendar {
     display: inline-block;
     border: 1px solid #212121;
@@ -78,4 +82,94 @@ body {
 .calendar-header button:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #ab3f3f;
+}
+
+#calendarDays a {
+    text-decoration: none;
+}
+
+.today {
+    background: #c7cbcd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ab3f3f;
+}
+
+header {
+    margin: 0 50px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .nav-btns a {
+    text-decoration: none;
+    color: #212121;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.header .nav-btns a:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ab3f3f;
+}
+
+.header .logo h1 {
+    color: #ab3f3f;
+    cursor: default;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin: 50px auto;
+}
+
+.feature img {
+    height: 75px;
+}
+
+.feature {
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.feature:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    transition: all 0.3s ease;
+}
+
+.feature:hover h3 {
+    color: #ab3f3f;
+}
+
+.nav-btns .active {
+    color: #ab3f3f;
+}
+
+footer {
+    height: 200px;
+}
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
 }
