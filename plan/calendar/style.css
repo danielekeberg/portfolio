@@ -174,3 +174,63 @@ footer {
     justify-content: center;
     height: 100%;
 }
+
+article {
+    display: flex;
+    border: 1px solid #212121;
+    border-radius: 5px;
+    width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.activity {
+    width: 100%;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.activity-image {
+    overflow: hidden;
+    object-fit: cover;
+    height: 300px;
+    border: 1px solid #212121;
+}
+
+.activity-image img {
+    width: 100%;
+}
+
+.activity-info {
+    padding: 20px;
+}
+
+.activity-info h4,
+.activity-info p {
+    text-align: left;
+}
+
+.workout,
+.weekly-food {
+    text-align: left;
+}
+
+.workout h3,
+.weekly-food h3 {
+    margin-left: 40px;
+}
+
+.desc {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.desc ul li {
+    list-style-type: none;
+    text-align: left;
+}
