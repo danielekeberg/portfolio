@@ -240,6 +240,7 @@ if (currentDate) {
         </div>
     </article>
     `;
+    document.title = `Fuel & Flow | Aktivitet ${allDays[dayOfWeek]}`;
 } else {
     document.getElementById('fungerte').innerHTML = `<h2>No date selected.</h2>`;
 }
