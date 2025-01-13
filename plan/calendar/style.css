@@ -234,3 +234,14 @@ article {
     list-style-type: none;
     text-align: left;
 }
+
+.tips {
+    padding: 0 20px;
+    border: 1px solid #212121;
+    background: #d4dade;
+    width: 420px;
+    margin: 50px auto 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}

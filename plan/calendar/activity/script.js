@@ -5,6 +5,7 @@ const currentDate = params.get('date');
 if (currentDate) {
     const clickedDate = new Date(currentDate);
     const dayOfWeek = clickedDate.getDay();
+    const randomNumber = Math.floor(Math.random() * 8);
 
     const allDays = [
         "Søndag",
@@ -14,6 +15,17 @@ if (currentDate) {
         "Torsdag",
         "Fredag",
         "Lørdag"
+    ];
+
+    const randomTip = [
+        `<p><strong>Drikk nok vann:</strong> Minst 2-3 liter daglig</p>`,
+        `<p><strong>Fokus på søvn:</strong> 7-9 timer per natt for best restitusjon</p>`,
+        `<p><strong>Næring:</strong> Inkluder proteiner i hvert måltid</p>`,
+        `<p><strong>Restitusjon:</strong> Helgen gir kroppen tid til å hente seg inn</p>`,
+        `<p><strong>Kjøp frossen fisk og kylling</strong> billigere og like næringsrikt.</p>`,
+        `<p><strong>Se etter tilbud</strong> på kjøtt og basisvarer</p>`,
+        `<p><strong>Handle store pakker</strong> av havregryn, ris og pasta</p>`,
+        `<p><strong>Bruk frosne grønnsaker</strong> til middag for å spare penger</p>`
     ];
 
     const dayMessages = [
@@ -41,6 +53,9 @@ if (currentDate) {
                         <li><strong>Kveldsmat:</strong> Smoothie med banan, melk og havregryn</li>
                     </ul>
                 </div>
+            </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
             </div>
         </div>
         `,
@@ -72,6 +87,9 @@ if (currentDate) {
                     </ul>
                 </div>
             </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
+            </div>
         </div>
         `,
         `<div class="activity-image">
@@ -100,6 +118,9 @@ if (currentDate) {
                         <li><strong>Kveldsmat:</strong> Yoghurt med granola og nøtter</li>
                     </ul>
                 </div>
+            </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
             </div>
         </div>
         `,
@@ -131,6 +152,9 @@ if (currentDate) {
                     </ul>
                 </div>
             </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
+            </div>
         </div>
         `,
         `<div class="activity-image">
@@ -158,6 +182,9 @@ if (currentDate) {
                         <li><strong>Kveldsmat:</strong> Grovbrød med makrell i tomat</li>
                     </ul>
                 </div>
+            </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
             </div>
         </div>
         `,
@@ -189,6 +216,9 @@ if (currentDate) {
                     </ul>
                 </div>
             </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
+            </div>
         </div>
         `,
         `<div class="activity-image">
@@ -216,10 +246,12 @@ if (currentDate) {
                     </ul>
                 </div>
             </div>
+            <div class="tips">
+                <p><strong>Tips:</strong> ${randomTip[randomNumber]}</p>
+            </div>
         </div>
         `
-
-    ]
+    ];
 
     // document.getElementById('fungerte').innerHTML = `<h2>Dette er dag ${currentDate} ${dayMessages[dayOfWeek]}.</h2>`
     document.getElementById('fungerte').innerHTML = `
