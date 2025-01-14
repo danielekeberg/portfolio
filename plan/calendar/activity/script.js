@@ -5,7 +5,7 @@ const currentDate = params.get('date');
 if (currentDate) {
     const clickedDate = new Date(currentDate);
     const dayOfWeek = clickedDate.getDay();
-    const randomNumber = Math.floor(Math.random() * 8);
+    const randomNumber = Math.floor(Math.random() * randomTip.length);
 
     const allDays = [
         "Søndag",
@@ -25,7 +25,8 @@ if (currentDate) {
         `<p><strong>Kjøp frossen fisk og kylling</strong> billigere og like næringsrikt.</p>`,
         `<p><strong>Se etter tilbud</strong> på kjøtt og basisvarer</p>`,
         `<p><strong>Handle store pakker</strong> av havregryn, ris og pasta</p>`,
-        `<p><strong>Bruk frosne grønnsaker</strong> til middag for å spare penger</p>`
+        `<p><strong>Bruk frosne grønnsaker</strong> til middag for å spare penger</p>`,
+        `<p><strong>Varm alltid opp</strong> i 5-10 minutter før styrkeøkter for å unngå skader</p>`
     ];
 
     const dayMessages = [
