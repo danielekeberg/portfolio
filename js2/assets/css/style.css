@@ -98,7 +98,7 @@ footer {
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0 50px;
     height: 100px;
@@ -191,4 +191,89 @@ footer {
 
 .post .comment input::placeholder {
     color: #162a36;
+}
+
+.create-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.create-info {
+    background: #b9dfe8;
+    color: #162a36;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #162a36;
+}
+
+.title,
+.desc {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.title {
+    width: 250px;
+}
+
+.desc {
+    width: 500px;
+}
+
+.title input {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #212121;
+}
+
+.title input,
+.desc textarea {
+    color: #162a36;
+}
+
+.title input::placeholder,
+.desc textarea::placeholder {
+    color: #162a36;
+}
+
+.desc textarea {
+    min-height: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #212121;
+    min-width: 97%;
+    max-width: 97%;
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btns button {
+    color: #F0F8FF;
+    background: #368ba4;
+    padding: 5px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #2b4e5f;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.btns button:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: #2f718b;
+    color: #fff;
+}
+
+.btns button:active {
+    background: #2e6177;
+}
+
+.create-info label {
+    font-weight: 600;
 }
