@@ -277,3 +277,17 @@ footer {
 .create-info label {
     font-weight: 600;
 }
+
+.profile-container {
+    padding: 50px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.profile-info img {
+    height: 200px;
+}
