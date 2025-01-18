@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+</head>
+<body>
+    <h2>Logging you in...</h2>
+
+    <script>
+        const hash = window.location.hash.substring(1).split('&').reduce((acc, item) => {
+            const parts = item.split('=');
+            acc[parts[0]] = decodeURIComponent(parts[1]);
+            return acc;
+        }, {});
+
+        localStorage.setItem('spotifyAccessToken', hash.access_token);
+
+        window.location.href = './music/home/';
+    </script>
+</body>
+</html>
