@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="weather.js" defer></script>
     <title>Random Quote Generator</title>
 </head>
 <body>
@@ -13,7 +14,28 @@
         <div id="quote-box">
             <p id="quote">Click the button to generate a new quote!</p>
             <p id="author"></p>
-            <button id="new-quote">New Quote</button>
+            <div class="btn">
+                <button id="new-quote">Fetch Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Weather API</h1>
+        <div class="input-weather">
+            <input type="text" placeholder="Oslo.." id="cityInput">
+            <div class="btn">
+                <button id="cityBtn">Fetch Weather</button>
+            </div>
+        </div>
+        <div id="weather">
+            <div id="city">
+                <h3 id="city">Oslo</h3>
+                <img id="countryFlag" src="https://flagcdn.com/no.svg">
+            </div>
+            <p id="temperature">Temperature: 0°C</p>
+            <p id="description">Description: cloudy</p>
+            <p id="error"></p>
         </div>
     </div>
 </body>
