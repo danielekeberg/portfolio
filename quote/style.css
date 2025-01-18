@@ -14,8 +14,14 @@ body {
     border: 1px solid #494949;
 }
 
+.container .btn {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
 .container button {
-    width: 100%;
+    width: 200px;
     height: 50px;
     border-radius: 5px;
     border: 1px solid #212121;
@@ -35,6 +41,19 @@ body {
     text-align: center;
 }
 
+.container input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid #494949;
+    color: #212121;
+}
+
+.container input:focus {
+    outline: none;
+}
+
 #quote {
     min-height: 75px;
 }
@@ -42,4 +61,13 @@ body {
 #author {
     display: flex;
     justify-content: flex-end;
+}
+
+.container img {
+    height: 30px;
+}
+
+#city {
+    display: flex;
+    justify-content: space-between;
 }
