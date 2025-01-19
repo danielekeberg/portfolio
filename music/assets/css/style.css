@@ -1,0 +1,276 @@
+body {
+    background: #1c1818;
+}
+
+.loginBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}
+
+#loginBtn {
+    color: #f0eded;
+    padding: 15px;
+    border: 1px solid #212121;
+    border-radius: 10px;
+    background: #56aedd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 200px;
+}
+
+#loginBtn:hover {
+    background: #5190b2;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.song-info {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.song-info img {
+    height: 50px;
+}
+
+#results {
+    color: #e7eceb;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.header .search input {
+    padding: 10px;
+    border-radius: 25px;
+    width: 400px;
+}
+
+.header .search input:focus {
+    outline: none;
+}
+
+.header .logo h1 {
+    color: #56aedd;
+}
+
+.header .nav button {
+    background: #56aedd;
+    border-radius: 5px;
+    border: 1px solid #212121;
+    padding: 5px;
+    height: 40px;
+    width: 80px;
+    color: #fbfeff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header .nav button:hover {
+    background: #5190b2;
+}
+
+.container {
+    display: flex;
+    color: #fff;
+    width: 100%;
+    gap: 10px;
+}
+
+.playlists {
+    width: 250px;
+    height: 75vh;
+    padding: 10px;
+    background: #302c2c;
+    border-radius: 5px;
+}
+
+.playlist {
+    display: flex;
+    gap: 5px;
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.playlist h5 {
+    font-size: 16px;
+}
+
+.playlist p {
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.playlist:hover {
+    background: #423e3e;
+}
+
+.playlist .playlist-info h5,
+.playlist .playlist-info p {
+    margin: 1px;
+}
+
+.playlists .playlist-image img {
+    height: 50px;
+}
+
+.main-songs {
+    padding: 10px;
+    height: 75vh;
+    width: 100%;
+    border-radius: 5px;
+    background: #302c2c;
+}
+
+footer {
+    color: #fff;
+    margin: 10px;
+    padding: 8px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player .controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.player .controls button {
+    border-radius: 25px;
+    width: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.player .controls button:hover {
+    background: #d7d7d7;
+}
+
+.player .controls button:active {
+    background: #fff;
+}
+
+.controls #pause {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer .progress {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-bar {
+    width: 800px;
+    height: 4px;
+    border: 1px solid #BDBDBD;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-bar .song-progress {
+    position: absolute;
+    background: #fff;
+    width: 33%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.album {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.album .album-info h4,
+.album .album-info p {
+    margin: 1px;
+}
+
+.album .album-info p {
+    color: #d3d3d3;
+}
+
+.album .album-cover img {
+    height: 75px;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume img {
+    height: 20px;
+}
+
+.volume-bar {
+    width: 100px;
+    height: 4px;
+    border: 1px solid #BDBDBD;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.volume-bar .volume-progress {
+    position: absolute;
+    background: #fff;
+    width: 73%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.volume-bar:hover:hover .volume-progress,
+.progress-bar:hover .song-progress {
+    background: #56aedd;
+}
+
+.gradiant {
+    background: linear-gradient(to bottom, #dc7dcb, #302c2c);
+}
+
+.recent-playlists {
+    display: grid;
+    grid-template-columns: repeat(4, 210px);
+}
+
+.recent-playlist {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    background: #ffffff30;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.recent-playlist .recent-album img {
+    height: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
