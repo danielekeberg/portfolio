@@ -1,0 +1,50 @@
+body {
+    background: #212121;
+    color: #f9f6f7;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 100px;
+}
+
+#post {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+img {
+    height: 150px;
+    border-radius: 25px;
+    border: 2px solid #bdbdbd;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    animation: borderxD 0.5s;
+}
+
+@keyframes borderxD {
+    0% {
+        box-shadow: 0 -4px 25px rgba(179, 120, 71, 0.3);
+    }
+    25% {
+        box-shadow: 0 -4px 25px rgba(179, 120, 71, 0.5);
+    }
+    50% {
+        box-shadow: 0 -4px 25px rgba(179, 120, 71, 0.7);
+    }
+    75% {
+        box-shadow: 0 -4px 25px rgba(179, 120, 71, 0.4);
+    }
+}
+
+p {
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: #BDBDBD;
+}
