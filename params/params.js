@@ -9,7 +9,9 @@ fetch('params.json')
     data.users.forEach(user => {
         const paramsDiv = document.createElement('div');
         paramsDiv.innerHTML = `
-        <a href="./post.html?id=${user.id}"><p>${user.id}</p></a>`;
+        <div class="param">
+        <a href="./post.html?id=${user.id}"><p>${user.name}</p></a>
+        </div>`;
         document.getElementById('container').appendChild(paramsDiv);
     })
 })

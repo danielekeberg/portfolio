@@ -9,7 +9,7 @@ body {
 
 #post {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 img {
@@ -47,4 +47,13 @@ p {
 a {
     text-decoration: none;
     color: #BDBDBD;
+}
+
+.param {
+    background: #292929;
+    border: 1px solid #bdbdbd;
+    padding: 0;
+    margin: 10px;
+    width: 100px;
+    border-radius: 5px;
 }

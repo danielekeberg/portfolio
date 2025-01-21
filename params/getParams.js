@@ -14,8 +14,8 @@ fetch('params.json')
         if (user) {
             document.getElementById('post').innerHTML = `
             <h1>${user.name}</h1>
-            <p>${user.id}</p>
-            <p>${user.age}</p>
+            <p>ID: ${user.id}</p>
+            <p>Age: ${user.age}</p>
             <img src="${user.img}" alt="${user.name}">`;
         }
     })
