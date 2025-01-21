@@ -17,6 +17,12 @@
             "name": "Swain",
             "age": 99,
             "img": "https://i.pinimg.com/474x/17/7d/6c/177d6c3bc35be73466211b57691b615c.jpg"
+        },
+        {
+            "id": 8289898238792978,
+            "name": "Trym",
+            "age": 33,
+            "img": "https://i.pinimg.com/474x/d4/9f/eb/d49feb42cb808734a854903cc6a5e916.jpg"
         }
     ]
 }
