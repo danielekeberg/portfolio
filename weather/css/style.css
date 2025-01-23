@@ -260,3 +260,25 @@ button.delete {
     background: green;
     border-radius: 5px;
 }
+
+.changeColor {
+    display: flex;
+    gap: 20px;
+}
+
+.colorBar {
+    display: flex;
+    flex-direction: column;
+}
+
+#redLabel {
+    color: red;
+}
+
+#greenLabel {
+    color: green;
+}
+
+#blueLabel {
+    color: blue;
+}
