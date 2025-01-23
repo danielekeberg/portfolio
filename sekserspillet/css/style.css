@@ -1,0 +1,112 @@
+body {
+    background: #181818;
+    margin: 0;
+    color: #f9f6f7;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
+    align-items: center;
+    height: 100px;
+    background: #232323;
+    border-bottom: 1px solid #BDBDBD70;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header .nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header .nav-btns img {
+    height: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+main .container {
+    background: #232323;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid #BDBDBD70;
+}
+
+.container .rules {
+    margin: 20px;
+}
+
+.container .game .sekserInput {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.container .game .sekserInput input {
+    border: 1px solid #BDBDBD;
+    border-radius: 0;
+    padding: 10px;
+    margin: 20px;
+    width: 70%;
+}
+
+.container .game .sekserInput button {
+    border-radius: 0;
+    background: #181818;
+    color: #f9f6f7;
+    cursor: pointer;
+    border: 1px solid #BDBDBD;
+    height: 30px;
+    width: 50px;
+}
+
+.container .game .sekserInput button:hover {
+    color: #fff;
+}
+
+.container .game .dices {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+.container .game .dices img {
+    height: 37px;
+}
+
+.container .game .result {
+    margin: 20px;
+}
+
+.container .game .result {
+    background: #181818;
+    border: 1px solid #BDBDBD70;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: #232323;
+    border-top: 1px solid #bdbdbd70;
+}
+
+.container .maintenance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
