@@ -59,7 +59,7 @@ let countdownTime = 5;
 
 function countdown() {
     countdownTime--;
-    document.getElementById('spawnCash').textContent = `+$50 (Checks in ${countdownTime} second)`;
+    document.getElementById('spawnCash').textContent = `+$50 (Checks ever ${countdownTime} second)`;
     if (countdownTime < 1) {
         countdownTime = 6;
     }
@@ -69,6 +69,7 @@ setInterval(countdown, 1000);
 
 function updateCash() {
     document.getElementById('totalCash').innerHTML = `<h2>$${cash}</h2>`;
+    cash += 50;
 }
 
 document.getElementById('spawnCash').addEventListener('click', () => {
@@ -117,42 +118,6 @@ updateCash();
 
 // setInterval(party, 1000);
 
-// function roulette() {
-//     const spinRoulette = Math.floor(Math.random() * 38);
-//     const rouletteDisplay = document.getElementById('rouletteDisplay');
-//     const rouletteInput = document.getElementById('rouletteInput');
-//     cash -= 1000;
-//     updateCash();
-
-//     if (spinRoulette === 0) {
-//         rouletteDisplay.style.backgroundColor = 'green';
-//         rouletteDisplay.innerHTML = `<h2>${spinRoulette}</h2>`;
-//         if (rouletteInput === spinRoulette) {
-//             cash += 38000;
-//             updateCash();
-//             document.body.style.backgroundColor = 'green';
-//         }
-//     } if (spinRoulette % 2 === 0) {
-//         rouletteDisplay.style.backgroundColor = 'red';
-//         rouletteDisplay.innerHTML = `<h2>${spinRoulette}</h2>`;
-//         if (rouletteInput === spinRoulette) {
-//             cash += 38000;
-//             updateCash();
-//             document.body.style.backgroundColor = 'green';
-//         }
-//     } else {
-//         rouletteDisplay.style.backgroundColor = 'black';
-//         rouletteDisplay.innerHTML = `<h2>${spinRoulette}</h2>`;
-//         if (rouletteInput === spinRoulette) {
-//             cash += 38000;
-//             updateCash();
-//             document.body.style.backgroundColor = 'green';
-//         }
-//     }
-// }
-
-// document.getElementById('roulette-btn').addEventListener('click', roulette);
-
 function roulette() {
     const rouletteInput = document.getElementById('rouletteInput');
     const userBet = parseInt(rouletteInput.value, 10);
@@ -188,3 +153,14 @@ function roulette() {
 }
 
 document.getElementById('roulette-btn').addEventListener('click', roulette);
+
+function colorBar() {
+    const colorRangeInputRed = document.getElementById('red').value;
+    const colorRangeInputGreen = document.getElementById('green').value;
+    const colorRangeInputBlue = document.getElementById('blue').value;
+    const colorRange = `rgba(${colorRangeInputRed}, ${colorRangeInputGreen}, ${colorRangeInputBlue})`;
+    console.log(colorRange);
+    document.body.style.backgroundColor = colorRange;
+}
+
+document.getElementById('blueBtn').addEventListener('click', colorBar);

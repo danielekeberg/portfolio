@@ -50,7 +50,7 @@
                 <h2>$0</h2>
             </div>
             <div class="button" id="spawnCashBtn">
-                <button id="spawnCash">+$50 (Checks in 5 second)</button>
+                <button id="spawnCash">+$50 (Checks ever 5 second)</button>
             </div>
             <div class="cashInput">
                 <input type="number" id="inputCash">
@@ -78,6 +78,23 @@
                 </div>
                 <ul id="task-list"></ul>
             </div>
+        </div>
+        <div class="container">
+            <div class="changeColor">
+                <div class="colorBar">
+                    <label for="red" id="redLabel">Red</label>
+                    <input type="range" id="red" min="0" max="255" value="128">
+                </div>
+                <div class="colorBar">
+                    <label for="green" id="greenLabel">Green</label>
+                    <input type="range" id="green" min="0" max="255" value="128">
+                </div>
+                <div class="colorBar">
+                    <label for="blue" id="blueLabel">Blue</label>
+                    <input type="range" id="blue" min="0" max="255" value="128">
+                </div>
+            </div>
+            <button id="blueBtn">Change Color</button>
         </div>
     </main>
 </body>
