@@ -21,7 +21,9 @@ header .logo img {
 header .user-stats {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 25px;
+    width: 250px;
 }
 
 header .user-stats img {
@@ -109,13 +111,11 @@ main .container {
 }
 
 .container .game .result {
-    margin: 20px;
-}
-
-.container .game .result {
+    opacity: 0;
     background: #181818;
     border: 1px solid #BDBDBD70;
     text-align: center;
+    margin: 20px;
 }
 
 footer {

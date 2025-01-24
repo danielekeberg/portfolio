@@ -27,6 +27,8 @@ function sekserSpillet() {
     const maxWin = inputValue * 31;
     let antallSeksere = 0;
 
+    document.getElementById('resultDisplay').style.opacity = '0';
+
     if (inputValue < 1000) {
         document.getElementById('resultDisplay').style.backgroundColor = 'red';
         document.getElementById('result').textContent = 'Ugyldig beløp. Du må satse minst 1000 kroner.';
@@ -154,6 +156,7 @@ function sekserSpillet() {
                                                     currentPenger += maxWin;
                                                     updatePenger();
                                                 }
+                                                document.getElementById('resultDisplay').style.opacity = '1';
                                             }, 50)
                                         }, 50)
                                     }, 50)
