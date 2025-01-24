@@ -18,14 +18,37 @@ header .logo img {
     height: 50px;
 }
 
-header .nav-btns {
+header .user-stats {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-header .nav-btns img {
+header .user-stats img {
     height: 20px;
+}
+
+header .nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .nav-btns a {
+    text-decoration: none;
+    color: #f9f6f7;
+    cursor: pointer;
+    padding: 20px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+header .nav-btns a:hover {
+    background: #181818;
+}
+
+header .nav-btns .active {
+    text-decoration: underline;
 }
 
 main {
@@ -109,4 +132,21 @@ footer {
     justify-content: center;
     align-items: center;
     height: 200px;
+}
+
+.container .cards {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.container .cards img {
+    height: 100px;
+}
+
+.container .krigResult {
+    margin: 20px;
+    background: #181818;
+    border: 1px  solid #BDBDBD70;
+    text-align: center;
 }

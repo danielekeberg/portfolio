@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/script.js" defer></script>
+    <script src="../js/time.js" defer></script>
+    <script type="module" src="../js/krig.js" defer></script>
+    <link rel="icon" href="../assets/dice-6-svgrepo-com.svg">
+    <title>Sekserspillet</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/dice-6-svgrepo-com.svg">
+        </div>
+        <div class="nav-btns">
+            <a href="../">Sekserspillet</a>
+            <a href="./" class="active">Krig</a>
+            <a href="/">Superflaks</a>
+            <a href="/">Timing</a>
+            <a href="/">En til??</a>
+        </div>
+        <div class="user-stats">
+            <p id="penger">0 kr</p>
+            <p id="tid">00:00:00</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="rules">
+                <p><strong>Maxbet:</strong> 90 000 000 kroner.</p>
+                <p><strong>Regler:</strong> Du og dealer får hvert deres kort. Den med høyest kort vinner beløpet som ble satset. Vinnersjansen er 50/50.</p>
+            </div>
+            <div class="game">
+                <div class="sekserInput">
+                    <input type="number" id="krigInput" placeholder="Beløp du vil satse">
+                    <button id="krigBtn" class="playBtn">Spill!</button>
+                </div>
+                <div class="krigResult" id="krigDiv">
+                    <p id="krigResult">Can win</p>
+                </div>
+                <p id="dette"></p>
+                <div class="cards">
+                    <div class="displayed-card">
+                        <p><strong>Mitt kort</strong></p>
+                        <img id="myCard" src="../assets/13.png">
+                    </div>
+                    <div class="displayed-card">
+                        <p><strong>Dealer</strong></p>
+                        <img id="dealerCard" src="../assets/12.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; DanKasino</p>
+    </footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js" defer></script>
+    <script type="module" src="./js/script.js" defer></script>
     <script src="./js/time.js" defer></script>
     <link rel="icon" href="./assets/dice-6-svgrepo-com.svg">
     <title>Sekserspillet</title>
@@ -15,11 +15,15 @@
             <img src="./assets/dice-6-svgrepo-com.svg">
         </div>
         <div class="nav-btns">
+            <a href="./" class="active">Sekserspillet</a>
+            <a href="./krig/">Krig</a>
+            <a href="/">Superflaks</a>
+            <a href="/">Timing</a>
+            <a href="/">En til??</a>
+        </div>
+        <div class="user-stats">
             <p id="penger">0 kr</p>
             <p id="tid">00:00:00</p>
-            <a href="money">
-                <img src="./assets/plus-svgrepo-com.svg">
-            </a>
         </div>
     </header>
 
@@ -41,12 +45,10 @@
             <div class="game">
                 <div class="sekserInput">
                     <input type="number" id="sekserInput" placeholder="Beløp du vil satse">
-                    <button id="sekserBtn">Spill!</button>
+                    <button id="sekserBtn" class="playBtn">Spill!</button>
                 </div>
                 <div class="result" id="resultDisplay">
                     <p id="result">Her ser du gevinsten</p>
-                    <p id="test"></p>
-                    <p id="tester"></p>
                 </div>
                 <div class="dices">
                     <img id="first" src="../src/dice-six-faces-1.png">
@@ -64,7 +66,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; DanKasino</p>
+        <p>&copy; Danino</p>
     </footer>
 </body>
 </html>

@@ -1,6 +1,15 @@
-let currentPenger = 500000000;
+let currentPenger = 1000000000;
 
-function updatePenger() {
+export function getCurrentPenger() {
+    return currentPenger;
+}
+
+export function setCurrentPenger(newAmount) {
+    currentPenger = newAmount;
+    updatePenger();
+}
+
+export function updatePenger() {
     const formatedPenger = currentPenger.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     document.getElementById('penger').textContent = `${formatedPenger} kr`
 }
@@ -145,16 +154,16 @@ function sekserSpillet() {
                                                     currentPenger += maxWin;
                                                     updatePenger();
                                                 }
-                                            })
-                                        }, 0)
-                                    }, 0)
-                                }, 0)
-                            }, 0)
-                        }, 0)
-                    }, 0)
-                }, 0)
-            }, 0)
-        }, 0)
+                                            }, 50)
+                                        }, 50)
+                                    }, 50)
+                                }, 50)
+                            }, 50)
+                        }, 50)
+                    }, 50)
+                }, 50)
+            }, 50)
+        }, 50)
     }, 0)
 }
 
