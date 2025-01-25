@@ -1,6 +1,7 @@
 body {
     background: #181818;
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 header {
@@ -12,6 +13,11 @@ header {
     border-bottom: 1px solid #BDBDBD70;
     color: #BDBDBD;
     text-transform: uppercase;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #BDBDBD;
 }
 
 header .nav-btns {
@@ -63,12 +69,15 @@ main {
 .pokeContainer {
     background: #333333;
     border: 1px solid #BDBDBD70;
-    padding: 20px 100px;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .pokeCard {
     display: flex;
-    gap: 100px;
+    gap: 140px;
 }
 
 .pokeCard img {
@@ -84,8 +93,12 @@ main {
     gap: 10px;
 }
 
+.pokeId h1 {
+    width: 150px;
+}
+
 .pokeId span {
-    color: #111111;
+    width: 500px;
 }
 
 .pokeStats p {
@@ -114,4 +127,111 @@ main {
 
 #allPokes p:hover {
     background: #393939;
+}
+
+#id {
+    font-weight: 600;
+}
+
+.type {
+    text-align: center;
+    color: #181818;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#electric {
+    background: #ccc927;
+}
+
+#grass {
+    background: #35cc27;
+}
+
+#fire {
+    background: #cc5627;
+}
+
+#bug {
+    background: #1a690a;
+}
+
+#normal {
+    background: #575757;
+}
+
+#water {
+    background: #0a4369;
+    color: #bdbdbd;
+}
+
+#fighting {
+    background: #801d43;
+    color: #bdbdbd;
+}
+
+#psychic {
+    background: #ca6d6d;
+    color: #bdbdbd;
+}
+
+#poison {
+    background: #660a69;
+    color: #bdbdbd;
+}
+
+#dragon {
+    background: #043352;
+    color: #bdbdbd;
+}
+
+#ghost {
+    background: #3f408b;
+    color: #bdbdbd;
+}
+
+#dark {
+    background: #3d333f;
+    color: #bdbdbd;
+}
+
+#ground {
+    background: #855e25;
+    color: #bdbdbd;
+}
+
+#rock {
+    background: #70634e;
+    color: #bdbdbd;
+}
+
+#fairy {
+    background: #c28eda;
+    color: #181818;
+}
+
+#flying {
+    background: #7e7bac;
+    color: #bdbdbd;
+}
+
+#ice {
+    background: #a8d3e4;
+    color: #181818;
+}
+
+#steel {
+    background: #2c373f;
+    color: #bdbdbd;
+}
+
+#error {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    background: #dfa8a8;
+    color: #6b0000;
+    padding: 1px;
+    border-radius: 5px;
 }
