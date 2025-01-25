@@ -1,0 +1,117 @@
+body {
+    background: #181818;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #131313;
+    padding: 20px;
+    border-bottom: 1px solid #BDBDBD70;
+    color: #BDBDBD;
+    text-transform: uppercase;
+}
+
+header .nav-btns {
+    display: flex;
+    gap: 20px;
+}
+
+header .nav-btns a {
+    text-decoration: none;
+    color: #BDBDBD;
+    padding: 10px;
+}
+
+header .nav-btns a:hover {
+    background: #191919;
+}
+
+input {
+    padding: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container .pokemonInput {
+    padding: 20px;
+}
+
+#pokemon {
+    text-transform: uppercase;
+    color: #BDBDBD;
+}
+
+main {
+    min-height: 88vh;
+    background: #232323;
+}
+
+.pokeContainer {
+    background: #333333;
+    border: 1px solid #BDBDBD70;
+    padding: 20px 100px;
+}
+
+.pokeCard {
+    display: flex;
+    gap: 100px;
+}
+
+.pokeCard img {
+    border: 1px solid #bdbdbd70;
+    background: #141414;
+    height: 200px;
+    width: 200px;
+}
+
+.pokeId {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pokeId span {
+    color: #111111;
+}
+
+.pokeStats p {
+    margin: 0;
+}
+
+#allPokes {
+    display: grid;
+    grid-template-columns: repeat(5, 0.6fr);
+    color: #BDBDBD;
+    text-transform: capitalize;
+    gap: 10px;
+}
+
+#allPokes a {
+    text-decoration: none;
+    color: #BDBDBD;
+}
+
+#allPokes p {
+    background: #333333;
+    padding: 10px;
+    border: 1px solid #BDBDBD70;
+    cursor: pointer;
+}
+
+#allPokes p:hover {
+    background: #393939;
+}
