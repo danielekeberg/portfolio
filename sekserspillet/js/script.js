@@ -25,6 +25,7 @@ function sekserSpillet() {
     const triple = inputValue * 3;
     const tenx = inputValue * 10;
     const maxWin = inputValue * 31;
+    const tax = inputValue * 0.05;
     let antallSeksere = 0;
 
     document.getElementById('resultDisplay').style.opacity = '0';
@@ -118,6 +119,7 @@ function sekserSpillet() {
                                                     document.getElementById('result').innerHTML = `<p>Du fikk ${antallSeksere} seksere og vinner ${double}</p>`
                                                     document.getElementById('resultDisplay').style.backgroundColor = "green";
                                                     currentPenger += double;
+                                                    currentPenger -= tax;
                                                     updatePenger();
                                                 }
                                                 if(antallSeksere == 1) {
@@ -136,27 +138,32 @@ function sekserSpillet() {
                                                     document.getElementById('result').innerHTML = `<p>Du fikk ${antallSeksere} seksere og vinner ${double}</p>`
                                                     document.getElementById('resultDisplay').style.backgroundColor = "green";
                                                     currentPenger += double;
+                                                    currentPenger -= tax;
                                                     updatePenger();
                                                 }
                                                 if(antallSeksere == 4) {
                                                     document.getElementById('result').innerHTML = `<p>Du fikk ${antallSeksere} seksere og vinner ${triple}</p>`
                                                     document.getElementById('resultDisplay').style.backgroundColor = "green";
                                                     currentPenger += triple;
+                                                    currentPenger -= tax;
                                                     updatePenger();
                                                 }
                                                 if(antallSeksere == 5) {
                                                     document.getElementById('result').innerHTML = `<p>Du fikk ${antallSeksere} seksere og vinner ${tenx}</p>`
                                                     document.getElementById('resultDisplay').style.backgroundColor = "green";
                                                     currentPenger += tenx;
+                                                    currentPenger -= tax;
                                                     updatePenger();
                                                 }
                                                 if(antallSeksere >= 6) {
                                                     document.getElementById('result').innerHTML = `<p>Du fikk ${antallSeksere} seksere og vinner ${maxWin}</p>`
                                                     document.getElementById('resultDisplay').style.backgroundColor = "green";
                                                     currentPenger += maxWin;
+                                                    currentPenger -= tax;
                                                     updatePenger();
                                                 }
                                                 document.getElementById('resultDisplay').style.opacity = '1';
+                                                console.log(tax);
                                             }, 50)
                                         }, 50)
                                     }, 50)
