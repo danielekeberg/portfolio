@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background: #181818;
     margin: 0;
@@ -37,6 +41,7 @@ header .nav-btns a:hover {
 
 input {
     padding: 10px;
+    width: 178px;
 }
 
 input:focus {
@@ -230,8 +235,26 @@ main {
     display: none;
     margin-top: 10px;
     text-align: center;
-    background: #dfa8a8;
-    color: #6b0000;
+    background: #BDBDBD;
+    color: #181818;
     padding: 1px;
-    border-radius: 5px;
+    border-radius: 2px;
+}
+
+.autocomplete-container {
+    position: absolute;
+    background: #BDBDBD;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 200px;
+    z-index: 1000;
+}
+
+.autocomplete-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover {
+    background: #f0f0f0;
 }

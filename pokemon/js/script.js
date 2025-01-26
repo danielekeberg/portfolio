@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const selectedPokemon = params.get("name");
 const pokeValue = document.getElementById("pokemonName").value.toLowerCase();
+let allPokemonNames = [];
 
 fetchAllPokemons();
 async function fetchPokemon() {
@@ -86,6 +87,8 @@ async function fetchAllPokemons() {
 
         console.log(data);
 
+        allPokemonNames = pokeData.map(pokemon => pokemon.name);
+
         document.getElementById("pokemonName").placeholder = `Search ${data.count} Pokémons`;
 
         pokeData.forEach(pokemon => {
@@ -101,3 +104,41 @@ async function fetchAllPokemons() {
     }
 }
 
+function setupAutocomplete() {
+    const input = document.getElementById("pokemonName");
+    const container = document.getElementById("autocomplete-container");
+
+    input.addEventListener("input", () => {
+        const query = input.value.toLowerCase();
+        container.innerHTML = "";
+
+        if (query.length === 0) return;
+
+        const filteredNames = allPokemonNames.filter(name =>
+            name.toLowerCase().startsWith(query)
+        );
+
+        filteredNames.slice(0, 10).forEach(name => {
+            const suggestion = document.createElement("div");
+            suggestion.classList.add("autocomplete-item");
+            suggestion.textContent = name;
+
+            suggestion.addEventListener("click", () => {
+                input.value = name;
+                container.innerHTML = "";
+            });
+
+            container.appendChild(suggestion);
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!container.contains(e.target) && e.target !== input) {
+            container.innerHTML = "";
+        }
+    });
+}
+
+fetchAllPokemons().then(() => {
+    setupAutocomplete();
+})

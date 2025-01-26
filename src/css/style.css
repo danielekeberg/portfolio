@@ -232,6 +232,10 @@ nav .links a.active {
     background: #000;
 }
 
+.email img {
+    height: 20px;
+}
+
 #invisible,
 #invisibleText {
     display: none;
@@ -2716,7 +2720,6 @@ button.removeBtn {
     height: 25px !important;
     padding-top: 8px !important;
 }
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
