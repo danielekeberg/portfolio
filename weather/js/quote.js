@@ -118,39 +118,7 @@ updateCash();
 
 // setInterval(party, 1000);
 
-function roulette() {
-    const rouletteInput = document.getElementById('rouletteInput');
-    const userBet = parseInt(rouletteInput.value, 10);
-    const spinRoulette = Math.floor(Math.random() * 39);
-    const rouletteDisplay = document.getElementByIde('rouletteDisplay');
 
-    if (isNaN(userBet) || userBet < 0 || userBet > 38) {
-        alert("Please enter a valid number between 0 and 38!");
-        return;
-    }
-
-    cash -= 1000;
-    updateCash();
-
-    if (spinRoulette === 0) {
-        rouletteDisplay.style.backgroundColor = 'green';
-    } else if (spinRoulette % 2 === 0) {
-        rouletteDisplay.style.backgroundColor = 'black';
-    } else {
-        rouletteDisplay.style.backgroundColor = 'red';
-    }
-
-    rouletteDisplay.innerHTML = `<h2>${spinRoulette}</h2>`;
-
-    if (userBet === spinRoulette) {
-        cash += 36000;
-        alert(`You won! The roulette landed on ${spinRoulette}`);
-    } else {
-        alert(`You lost! The roulette landed on ${spinRoulette}`);
-    }
-
-    updateCash();
-}
 
 document.getElementById('roulette-btn').addEventListener('click', roulette);
 
@@ -164,3 +132,4 @@ function colorBar() {
 }
 
 document.getElementById('blueBtn').addEventListener('click', colorBar);
+
