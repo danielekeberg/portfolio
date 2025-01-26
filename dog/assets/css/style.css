@@ -1,0 +1,56 @@
+body {
+    background: #f9f6f7;
+    height: 100vh;
+}
+
+main {
+    height: 70%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.container button {
+    padding: 10px;
+    border-radius: 10px;
+    background: #329fd9;
+    border: 1px solid #BDBDBD70;
+    color: #e1ddde;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.container button:hover {
+    color: #f9f6f7;
+    background: #2888bb;
+}
+
+.container button:active {
+    background: #3eabe6;
+}
+
+.container img {
+    height: 500px;
+    border: 5px solid #BDBDBD;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#breeds {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.container .cat {
+    margin: 10px;
+    background: #ebebeb;
+    text-align: center;
+    text-transform: capitalize;
+    border: 1px solid #BDBDBD70;
+    border-radius: 3px;
+}
