@@ -1,6 +1,4 @@
-const clientId = 'X';
-const redirectUri = 'http://localhost:3000/callback.html';
-const scopes = 'streaming user-read-email user-read-private';
+import { clientId, redirectUri, scopes } from './config.js';
 
 document.getElementById('loginBtn').addEventListener('click', () => {
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
