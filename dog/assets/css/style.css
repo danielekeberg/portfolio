@@ -46,11 +46,18 @@ main {
     grid-template-columns: repeat(5, 1fr);
 }
 
-.container .cat {
+.container .dog p {
     margin: 10px;
     background: #ebebeb;
     text-align: center;
     text-transform: capitalize;
     border: 1px solid #BDBDBD70;
     border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dog a {
+    text-decoration: none;
+    color: #181818;
 }
