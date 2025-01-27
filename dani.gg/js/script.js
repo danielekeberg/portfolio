@@ -1,9 +1,96 @@
-const puuid = 'VmOJyY1b084jkClyRZgoV0X0hNUpywVXS_Cml-EndHgUMK1JdmHwuwcZFy4zT_XG7nz4krxOV3aFAw'; // Chance#11111 PUUID //
-const apiKey = 'X'; // DELETE BEFORE PUSHING //
-const apiUrl = `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?api_key=${apiKey}`;
+import { apiKey, puuid, apiUrl, summonerId } from './config.js';
+
 const params = new URLSearchParams(window.location.search);
 const selectedSummoner = params.get('summoner');
 const selectedTag = params.get('tag');
+
+let newPuuid = localStorage.setItem('puuid', '');
+// let newAccountId = localStorage.setItem('accountId', '');
+let newGameName = localStorage.setItem('gameName', '');
+let newTagLine = localStorage.setItem('tagLine', '');
+
+async function fetchUser() {
+    try {
+        const response = await fetch(`https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/Chance/11111?api_key=${apiKey}`, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+                "Accept-Language": "nb-NO,nb;q=0.9,no;q=0.8,nn;q=0.7,en-US;q=0.6,en;q=0.5",
+                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Origin": "https://developer.riotgames.com/"
+            }
+        });
+
+        const data = await response.json();
+        console.log(selectedSummoner);
+        document.getElementById('gameName').textContent = `${data.gameName}`;
+        document.getElementById('tagLine').textContent = `${data.tagLine}`;
+        localStorage.setItem('puuid', data.puuid);
+        console.log(data.puuid)
+        localStorage.setItem('puuid', data.gameName);
+        localStorage.setItem('puuid', data.tagLine);
+        // document.getElementById('gameName').textContent = `${data.account.gameName}`;
+        // document.getElementById('tagLine').textContent = `${data.account.tagLine}`;
+    }
+    catch(error) {
+        console.error(error);
+    }
+}
+
+fetchUser();
+
+function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+async function fetchRank() {
+    try {
+        const response = await fetch(`https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${apiKey}`, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+                "Accept-Language": "nb-NO,nb;q=0.9,no;q=0.8,nn;q=0.7,en-US;q=0.6,en;q=0.5",
+                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Origin": "https://developer.riotgames.com/"
+            }
+        });
+        const data = await response.json();
+        const flexTier = data[0].tier;
+        const flexFormatted = capitalizeFirstLetter(flexTier);
+        const flexTierLowercased = data[0].tier.toLowerCase();
+        const soloTier = data[1].tier;
+        const soloFormatted = capitalizeFirstLetter(soloTier);
+        const soloTierLowercased = data[1].tier.toLowerCase();
+        const SWR = data[1].wins / (data[1].wins + data[1].losses) * 100;
+        const soloWinRate = SWR.toFixed(0);
+        const FWR = data[1].wins / (data[1].wins + data[0].losses) * 100;
+        const flexWinRate = FWR.toFixed(0);
+
+        console.log(data);
+        document.getElementById('soloRank').textContent = `${data[1].rank}`;
+        document.getElementById('soloTier').textContent = `${soloFormatted}`;
+        document.getElementById('soloLeaguePoints').textContent = `${data[1].leaguePoints} LP`;
+
+        document.getElementById('flexRank').textContent = `${data[0].rank}`;
+        document.getElementById('flexTier').textContent = `${flexFormatted}`;
+        document.getElementById('flexLeaguePoints').textContent = `${data[0].leaguePoints} LP`;
+
+        document.getElementById('flexwin').textContent = `${data[0].wins} W`;
+        document.getElementById('flexloss').textContent = `${data[0].losses} L`;
+
+        document.getElementById('solowin').textContent = `${data[1].wins} W`;
+        document.getElementById('sololoss').textContent = `${data[1].losses} L`;
+
+        document.getElementById('soloRank').src = `https://static.bigbrain.gg/assets/lol/ranks/s13/${soloTierLowercased}.png`;
+        document.getElementById('flexRank').src = `https://static.bigbrain.gg/assets/lol/ranks/s13/${flexTierLowercased}.png`;
+
+        document.getElementById('soloWinrate').textContent = `${soloWinRate}% Win Rate`;
+        document.getElementById('flexWinrate').textContent = `${flexWinRate}% Win Rate`;
+    }
+    catch(error) {
+        console.error(error);
+    }
+}
+
+fetchRank();
 
 async function fetchMatches() {
     try {
@@ -33,9 +120,9 @@ async function fetchMatches() {
                     console.error('Rate limit exceeded: Too many requests. Wait and try again.');
                     break;
                 default:
-                    console.error(`Unexpected error: ${response.status} - ${errorDetails}`);
+                    console.error(`Unexpected error: ${errorDetails}`);
             }
-            throw new Error(`Error fetching API data: ${response.status} - ${errorDetails}`)
+            throw new Error(`Error fetching API data: ${errorDetails}`)
         }
 
         const data = await response.json();
@@ -70,19 +157,34 @@ async function postMatch(match) {
         });
 
         const data = await response.json();
+        const kda = data.info.participants[1].challenges.kda.toFixed(2);
+        const userPuuid = puuid;
+        const participant = data.info.participants.find(p => p.puuid === userPuuid);
+        if(!participant) {
+            console.error('Participant not found for user!');
+            return;
+        }
+        console.log(`Found participant: ${participant}`);
+
+        const didWin = participant.win;
+
+        if (didWin) {
+            document.getElementById('didWin').textContent = 'WIN';
+            document.getElementById('matchStatus').className = 'match win';
+        }
 
         const b = document.createElement('div');
         b.className = "match-history";
         b.innerHTML = `
-        <div class="match win">
+        <div id="matchStatus" class="match loss">
             <div class="match-mode">
                 <p><strong>${data.info.gameMode}</strong></p>
-                <p>2 hours ago</p>
-                <p>${data.info.participants[1].win} 20:58</p>
+                <p id="gameTime">${new Date(data.info.gameStartTimestamp).toLocaleString()}</p>
+                <p id="didWin">LOSS</p>
             </div>
             <div class="champ">
                 <div class="champ-pb">
-                    <img src="https://static.bigbrain.gg/assets/lol/riot_static/15.2.1/img/champion/${data.info.participants[1].championName}.png" alt="${data.info.participants[1].championName}">
+                    <img src="https://static.bigbrain.gg/assets/lol/riot_static/15.2.1/img/champion/${participant.championName}.png" alt="${data.info.participants[1].championName}">
                 </div>
                 <div class="champ-summs">
                     <div class="summs">
@@ -96,9 +198,9 @@ async function postMatch(match) {
                 </div>
             </div>
             <div class="match-stats">
-                <h4>${data.info.participants[1].kills} / <span>${data.info.participants[1].deaths}</span> / ${data.info.participants[1].assists}</h4>
-                <p>${data.info.participants[1].challenges.kda} KDA</p>
-                <p>${data.info.participants[1].totalMinionsKilled} CS</p>
+                <h4>${participant.kills} / <span>${participant.deaths}</span> / ${participant.assists}</h4>
+                <p>${kda} KDA</p>
+                <p>${participant.totalMinionsKilled} CS</p>
             </div>
             <div class="items">
                 <img src="#" alt="item">
@@ -168,31 +270,6 @@ async function postMatch(match) {
         console.error(error);
     }
 }
-
-async function fetchUser() {
-    try {
-        const response = await fetch(`https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/Chance/11111?api_key=${apiKey}`, {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
-                "Accept-Language": "nb-NO,nb;q=0.9,no;q=0.8,nn;q=0.7,en-US;q=0.6,en;q=0.5",
-                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Origin": "https://developer.riotgames.com/"
-            }
-        });
-
-        const data = await response.json();
-        console.log(selectedSummoner);
-        document.getElementById('gameName').textContent = `${data.gameName}`;
-        document.getElementById('tagLine').textContent = `${data.tagLine}`;
-        // document.getElementById('gameName').textContent = `${data.account.gameName}`;
-        // document.getElementById('tagLine').textContent = `${data.account.tagLine}`;
-    }
-    catch(error) {
-        console.error(error);
-    }
-}
-
-fetchUser();
 
 function searchUser() {
     const summonerInput = document.getElementById('summonerInput').value;

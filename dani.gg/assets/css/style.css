@@ -135,6 +135,12 @@ main {
     padding: 0;
 }
 
+.user-stats .aside .gamemode .ranked,
+.user-stats .aside .gamemode .WL {
+    display: flex;
+    gap: 5px;
+}
+
 .user-stats .aside .gamemode .rank .current-rank {
     display: flex;
     align-items: center;

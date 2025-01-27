@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script type="module" src="../js/script.js" defer></script>
+    <script type="module" src="../js/config.js" defer></script>
     <title>Dani.GG</title>
 </head>
 <body>
@@ -38,15 +39,21 @@
                         <h3>Ranked Solo</h3>
                         <div class="rank">
                             <div class="current-rank">
-                                <img src="#">
+                                <img id="soloRank" src="https://static.bigbrain.gg/assets/lol/ranks/s13/challenger.png">
                                 <div class="rank-info">
-                                    <h4>Silver 2</h4>
-                                    <p>27 LP</p>
+                                    <div class="ranked">
+                                        <h4 id="soloTier">Challenger</h4>
+                                        <h4 id="soloRank"></h4>
+                                    </div>
+                                    <p id="soloLeaguePoints">2738 LP</p>
                                 </div>
                             </div>
                             <div class="winloss">
-                                <p>8W 7L</p>
-                                <p>53% Win Rate</p>
+                                <div class="WL">
+                                    <p id="solowin">100 W</p>
+                                    <p id="sololoss">0 L</p>
+                                </div>
+                                <p id="soloWinrate">100% Win Rate</p>
                             </div>
                         </div>
                     </div>
@@ -54,22 +61,28 @@
                         <h3>Ranked Flex</h3>
                         <div class="rank">
                             <div class="current-rank">
-                                <img src="#">
+                                <img id="flexRank" src="https://static.bigbrain.gg/assets/lol/ranks/s13/challenger.png">
                                 <div class="rank-info">
-                                    <h4>Silver 2</h4>
-                                    <p>84 LP</p>
+                                    <div class="ranked">
+                                        <h4 id="flexTier">Challenger</h4>
+                                        <h4 id="flexRank"></h4>
+                                    </div>
+                                    <p id="flexLeaguePoints">2738 LP</p>
                                 </div>
                             </div>
                             <div class="winloss">
-                                <p>16W 19L</p>
-                                <p>46% Win Rate</p>
+                                <div class="WL">
+                                    <p id="flexwin">100 W</p>
+                                    <p id="flexloss">0 L</p>
+                                </div>
+                                <p id="flexWinrate">100% Win Rate</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="matchOverview">
                     <div class="match-history">
-                        <div class="match win">
+                        <!-- <div class="match win">
                         <div class="match-mode">
                             <p><strong>ARAM</strong></p>
                             <p>2 hours ago</p>
@@ -150,7 +163,7 @@
                             </div>
                         </div>
                         </div>
-                    </div>
+                    </div> -->
                     </div>
                 </div>
             </div>
