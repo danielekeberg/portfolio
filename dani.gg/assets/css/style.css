@@ -1,0 +1,248 @@
+body {
+    height: 100vh;
+    background: #181818;
+    margin: 0;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: center;
+    background: #1e2533;
+}
+
+header {
+    border-bottom: 1px solid #bdbdbd70;
+}
+
+footer {
+    border-top: 1px solid #bdbdbd70;
+}
+
+header .search,
+footer p {
+    color: #f5f7fa;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .search input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #bdbdbd70;
+}
+
+header #tagInput {
+    width: 35px;
+}
+
+header img {
+    height: 20px;
+}
+
+header .search input:focus {
+    outline: none;
+}
+
+header .search button {
+    height: 35px;
+    border: none;
+}
+
+header .search .searchInput input {
+    margin: 0;
+}
+
+main {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    color: #f5f7fa;
+    background: #1e2533;
+    width: 1200px;
+    padding: 20px;
+}
+
+.container .user .profile-picture {
+    position: relative;
+}
+
+.container .user .profile-picture .user-level {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+}
+
+.container .user .profile-picture .user-level p {
+    background: #181f2b;
+    padding: 2px 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 2px solid #969696;
+}
+
+.container .user .profile-picture img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    border: 2px solid #969696;
+}
+
+.container .user {
+    display: flex;
+    gap: 20px;
+}
+
+.container .user .user-details {
+    display: flex;
+    gap: 20px;
+}
+
+.container .user-details h1 {
+    margin: 0;
+}
+
+.container .user-details span {
+    color: #c4d3e9;
+}
+
+.container .user-stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-stats .aside {
+    width: 300px;
+    margin: 10px 0;
+}
+
+.user-stats .aside .gamemode {
+    background: #2d384d;
+    padding: 15px;
+    margin: 0 0 25px;
+    border-radius: 5px;
+}
+
+.user-stats .gamemode h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.user-stats .aside .gamemode .rank .current-rank {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-stats .aside .gamemode .rank {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-stats .aside .gamemode .rank img {
+    height: 50px;
+    width: 50px;
+}
+
+.gamemode .rank .rank-info h4 {
+    font-size: 18px;
+}
+
+.gamemode .rank .winloss p {
+    font-size: 13px;
+}
+
+.gamemode .rank .rank-info h4,
+.gamemode .rank .rank-info p,
+.gamemode .rank .winloss p {
+    margin: 0;
+}
+
+.container .match-history .match {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    margin: 10px;
+    width: 900px;
+}
+
+.match .match-mode,
+.match .match-stats,
+.match .items {
+    width: 100px;
+}
+
+.champ .champ-summs {
+    width: 200px;
+}
+
+.match .champ {
+    width: 110px;
+}
+
+.match .teams {
+    display: flex;
+}
+
+.match .team {
+    width: 150px;
+    height: 100%;
+}
+
+.match-stats span {
+    color: #ad0e0e;
+}
+
+.container .match-history .win {
+    background: #314c6c;
+}
+
+.container .match-history .loss {
+    background: #e00f0f6a;
+}
+
+.container .match-history .match .team .player {
+    display: flex;
+    align-items: center;
+    margin: 3px;
+    gap: 5px;
+}
+
+.container .match-history .match .team .player img {
+    height: 20px;
+}
+
+.container .match-history .match .team .player p {
+    margin: 0;
+}
+
+.match-history .match .items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.match-history .match .champ {
+    display: flex;
+}
+
+.match-history .match .champ-summs {
+    height: 50px;
+}
+
+.match-history .match .champ-summs img {
+    height: 25px;
+    margin: 0;
+}
+
+.match-history .match .champ .champ-pb img {
+    height: 50px;
+}
