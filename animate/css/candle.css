@@ -1,0 +1,56 @@
+body {
+    /* background: #181818; */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.candle {
+    background: #f9f6f7;
+    width: 100px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd70;
+}
+
+.stilk {
+    height: 20px;
+    width: 10px;
+    background: #181818;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    margin: auto;
+}
+
+.flame {
+    background: rgb(255, 106, 0);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    margin: auto;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    animation: bounce 1s ease infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+        background: red;
+    }
+    95% {
+        background: rgb(232, 146, 17);
+    }
+    100% {
+        background: rgb(255, 106, 0);
+    }
+}
