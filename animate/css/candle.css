@@ -76,6 +76,14 @@ body {
     transition: all 0.3s ease;
 }
 
+#candleTime {
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
 @keyframes bounce {
     0% {
         transform: translateY(0);
