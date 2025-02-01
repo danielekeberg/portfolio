@@ -28,8 +28,6 @@ async function fetchUser() {
         console.log(data.puuid)
         localStorage.setItem('puuid', data.gameName);
         localStorage.setItem('puuid', data.tagLine);
-        // document.getElementById('gameName').textContent = `${data.account.gameName}`;
-        // document.getElementById('tagLine').textContent = `${data.account.tagLine}`;
     }
     catch(error) {
         console.error(error);

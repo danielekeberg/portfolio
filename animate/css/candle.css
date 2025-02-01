@@ -99,3 +99,34 @@ body {
         background: rgb(255, 106, 0);
     }
 }
+
+.cloud1 {
+    background: #fff;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    top: 40px;
+    left: 60%;
+    position: absolute;
+    z-index: 10000;
+}
+.cloud2 {
+    background: #fff;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    top: 40px;
+    left: 40%;
+    position: absolute;
+    z-index: 10000;
+}
+.cloud3 {
+    background: #fff;
+    border-radius: 50px;
+    width: 100px;
+    height: 140px;
+    top: 2px;
+    left: 50%;
+    position: absolute;
+    z-index: 10000;
+}
