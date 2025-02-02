@@ -9,3 +9,16 @@ function candleTime() {
 
 candleTime();
 setInterval(candleTime, 1000);
+
+function candleTimeColor() {
+    const candle = document.getElementById('candleTime');
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+
+    candle.style.color = `rgb(${red}, ${green}, ${blue})
+    `;
+}
+
+candleTimeColor();
+setInterval(candleTimeColor, 1000);
