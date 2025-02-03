@@ -1,0 +1,53 @@
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#title {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.final-pick {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.container {
+    width: 800px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.options p {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.options p:hover {
+    background: #e6e6e6;
+}
+
+.options p:active {
+    background: #cacaca;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
