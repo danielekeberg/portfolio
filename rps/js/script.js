@@ -9,7 +9,6 @@ const scissors = document.getElementById('scissors');
 
 let userScoreDisplay = 0;
 let compScoreDisplay = 0;
-let pick = [];
 
 function pickRock() {
     userPick.src = './assets/rock.svg';

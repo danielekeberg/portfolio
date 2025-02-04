@@ -1,3 +1,10 @@
+body {
+    background: #beb7b7;
+    margin: 0;
+    padding: 0;
+    color: #171717;
+}
+
 .score {
     display: flex;
     justify-content: center;
@@ -31,23 +38,31 @@ main {
 .options {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 30px;
 }
 
-.options p {
-    padding: 5px 10px;
+.options img {
+    padding: 5px;
+    width: 50px;
     cursor: pointer;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background: #a8a7a7;
+    border: 1px solid #18181870;
+    transition: all 0.3s ease;
 }
 
-.options p:hover {
-    background: #e6e6e6;
+.options img:hover {
+    background: #9b9b9b;
 }
 
-.options p:active {
-    background: #cacaca;
+.options img:active {
+    background: #b8b7b7;
 }
 
 img {
     height: 100px;
     width: 100px;
 }
+
