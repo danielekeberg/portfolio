@@ -1,0 +1,70 @@
+body {
+    background: #beb7b7;
+    margin: 0;
+    padding: 0;
+    color: #171717;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #adacac;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #181818;
+    margin-top: 10%;
+}
+
+.display {
+    background: rgb(138, 138, 138);
+    text-align: end;
+    border-radius: 10px;
+}
+
+.display p {
+    color: #181818;
+    padding: 10px;
+}
+
+.input input {
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.button {
+    margin: 10px 0;
+}
+
+.button button {
+    background: #7c7c7c;
+    color: #f9f6f7;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.button button:hover {
+    background: #636363;
+}
+
+.button button:active {
+    background: rgb(126, 125, 125);
+}
+
+.hello {
+    background: #adacac;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #171717;
+}
