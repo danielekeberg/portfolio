@@ -1,0 +1,26 @@
+body {
+    background: #beb7b7;
+    margin: 0;
+    padding: 0;
+    color: #171717;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border: 1px solid #bdbdbd70;
+}
