@@ -16,8 +16,7 @@ function candleTimeColor() {
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
 
-    candle.style.color = `rgb(${red}, ${green}, ${blue})
-    `;
+    candle.style.color = `rgb(${red}, ${green}, ${blue})`;
 }
 
 candleTimeColor();

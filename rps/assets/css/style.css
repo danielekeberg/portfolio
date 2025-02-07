@@ -18,6 +18,7 @@ body {
 main {
     display: flex;
     justify-content: center;
+    height: 80vh;
 }
 
 .final-pick {
@@ -66,3 +67,12 @@ img {
     width: 100px;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: 12px;
+}

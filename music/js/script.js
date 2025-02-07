@@ -1,4 +1,29 @@
-import { clientId, redirectUri, scopes } from './config.js';
+import { clientId, clientSecret, redirectUri, scopes } from './config.js';
+
+const token = 'BQCCKLABschLAxy-LeUB_5hsSREdBjmcCs7reLQMd4eanFZ8oI7PLULrUBCbS5OkuVAjxPm9-RTA9TshLKZk6g6bL_tCwEAXgso7zflHEaPzX8Yk4PcM4NtjejlElrYtRD-q4cazV96OBcZChkBssYab3ZmjtxXR3TreMtLBf6UtNr00NCSAboYBh_TiAXMCK3G5hbsF6eNJoF-tRxnTzONHo1Q2U3ADA9qAgVvC1u6dfCHBRpPiNmc0lifG2h4xpcgvKMv6IMKolcb0id1eug3n9MxGtUZDcrZq';
+
+async function fetchWebApi(endpoint, method, body) {
+    const res = await fetch(`https://api.spotify.com/v1/me/shows?offset=0&limit=20`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+        method,
+        body:JSON.stringify(body)
+    });
+    return await res.json();
+}
+
+async function getTopTracks() {
+    return (await fetchWebApi('v1/me/top/tracks?time_range=long_term&limit=5', 'GET')).items;
+}
+
+const topTracks = await getTopTracks();
+console.log(
+    topTracks?.map(
+        ({name, artist}) =>
+            `${name} by ${artists.map(artist => artist.name).join(', ')}`
+    )
+);
 
 document.getElementById('loginBtn').addEventListener('click', () => {
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
@@ -46,6 +71,3 @@ async function playTrack(device_id, token) {
     });
 }
 
-async function displayTrack() {
-
-}

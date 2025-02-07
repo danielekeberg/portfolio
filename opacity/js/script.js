@@ -13,6 +13,8 @@ function dogSlider() {
     document.getElementById('test').style.color = '#181818';
     }
     console.log('aosdn');
+
+    
 }
 
 dogSlider();

@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.utf {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #181818;
+    width: 350px;
+    padding: 0 20px;
+    margin: 5px;
+}
+
+.progress {
+    height: 10px;
+    width: 100px;
+    border: 1px solid #181818;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progressbar {
+    height: 10px;
+    width: 0;
+    background: #acc794;
+}
+
+.utf p {
+    width: 200px;
+}
+
+.nice {
+    padding: 5px;
+}
+
+.nice button {
+    background: #181818;
+    border: none;
+    color: #f9f6f7;
+    padding: 20px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.nice button:hover {
+    background: #292929;
+}
+
+.nice button:active {
+    background: #333;
+}
+
+.nice p {
+    text-align: center;
+}

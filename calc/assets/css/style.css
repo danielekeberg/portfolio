@@ -1,0 +1,46 @@
+main {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #181818;
+    color: #f9f6f7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.display p {
+    text-align: end;
+    padding: 0 5px;
+}
+
+.display {
+    background: #434343;
+    padding: 1px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.row p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    background: #434343;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.row p:hover {
+    background: #4e4d4d;
+}
