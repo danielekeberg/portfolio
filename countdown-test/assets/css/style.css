@@ -1,0 +1,16 @@
+.stopwatch {
+    display: flex;
+}
+
+body {
+    background: #d0bcbc;
+}
+
+.nedtelling {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}

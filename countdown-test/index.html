@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
     <main>
         <p id="countdown"></p>
         <p id="lap"></p>
+        <div class="container">
+            <div class="stopwatch">
+                <p id="hours"></p>
+                <p id="minutes"></p>
+                <p id="seconds"></p>
+                <p id="mseconds"></p>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="nedtelling">
+                <p id="tid">00</p>
+                <input type="number" id="lengde">
+                <button id="nedtellingBtn">Ha</button>
+            </div>
+        </div>
     </main>
 </body>
 </html>
