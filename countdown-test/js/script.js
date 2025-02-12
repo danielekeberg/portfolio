@@ -105,3 +105,67 @@ document.getElementById('lengde').addEventListener('keypress', (e) => {
         }, 1000);
     }
 })
+
+let loadingBar = 0;
+let fontSize = 16;
+
+function popup() {
+    const getNumber = document.getElementById('randomNumber').value;
+    if(fontSize > 20) {
+        document.getElementById('between').style.fontWeight = '600';
+    }
+    if(fontSize > 24) {
+        const red = Math.floor(Math.random() * 255);
+        const green = Math.floor(Math.random() * 255);
+        const blue = Math.floor(Math.random() * 255);
+        document.getElementById('between').style.color = `rgb(${red}, ${green}, ${blue})`;
+    }
+    if(getNumber > 10 || getNumber < 0) {
+        fontSize++;
+        document.getElementById('between').style.fontSize = fontSize + 'px';
+        return;
+    }
+
+    const d = document.createElement('div');
+    d.className = 'yeah';
+    d.innerHTML = `
+    <div class="loading">
+        <p>Analyzing Data</p>
+        <div class="loadingBar">
+            <div class="loadingProcess"></div>
+        </div>
+    </div>`;
+
+    document.getElementById('yeah').appendChild(d);
+
+    
+    
+
+    const loadingInterval = setInterval(() => {
+        loadingBar++;
+        document.querySelector('.loadingProcess').style.width = loadingBar + '%';
+
+
+        if(loadingBar >= 100) {
+            clearInterval(loadingInterval);
+            loadingBar = 0;
+            d.removeChild(document.querySelector('.loading'));
+
+            d.innerHTML = `
+            <div class="selectedNumber">
+                <p>The number you were thinking about is ${getNumber}</p>
+                <button class="fancyKnapp" id="removePop">Try again!</button>
+            </div>`;
+            document.getElementById('yeah').appendChild(d);
+            document.getElementById('removePop').addEventListener('click', () => {
+                document.getElementById('yeah').removeChild(d);
+            })
+        }
+    }, 30);
+}
+
+document.getElementById('randomNumber').addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') {
+        popup();
+    }
+})

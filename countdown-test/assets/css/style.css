@@ -14,3 +14,65 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.eah {
+    position: relative;
+}
+
+.yeah {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    background: #f9f6f7;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+}
+
+.loadingBar {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #181818;
+    overflow: none;
+}
+
+.loadingProcess {
+    background: rgb(114, 220, 114);
+    width: 0px;
+    height: 20px;
+    overflow: none;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.fancyKnapp {
+    background: #707070;
+    border: #bdbdbd70;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    color: #f9f6f7;
+}
+
+.fancyKnapp:hover {
+    background: #656565;
+}
+
+.selectedNumber {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
