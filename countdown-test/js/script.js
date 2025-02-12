@@ -111,6 +111,12 @@ let fontSize = 16;
 
 function popup() {
     const getNumber = document.getElementById('randomNumber').value;
+    if(isNaN(getNumber) || getNumber === '') {
+        document.getElementById('selectNumber').style.color = 'red';
+        document.getElementById('selectNumber').style.fontWeight = '600';
+        document.getElementById('selectNumber').style.textDecoration = 'underline';
+        return;
+    }
     if(fontSize > 20) {
         document.getElementById('between').style.fontWeight = '600';
     }
