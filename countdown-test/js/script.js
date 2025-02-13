@@ -108,6 +108,8 @@ document.getElementById('lengde').addEventListener('keypress', (e) => {
 
 let loadingBar = 0;
 let fontSize = 16;
+let minNumber = 0;
+let maxNumber = 10;
 
 function popup() {
     const getNumber = document.getElementById('randomNumber').value;
@@ -126,7 +128,7 @@ function popup() {
         const blue = Math.floor(Math.random() * 255);
         document.getElementById('between').style.color = `rgb(${red}, ${green}, ${blue})`;
     }
-    if(getNumber > 10 || getNumber < 0) {
+    if(getNumber > maxNumber || getNumber < minNumber) {
         fontSize++;
         document.getElementById('between').style.fontSize = fontSize + 'px';
         return;
@@ -175,3 +177,9 @@ document.getElementById('randomNumber').addEventListener('keypress', (e) => {
         popup();
     }
 })
+
+function loadNumber() {
+    document.getElementById('between').textContent = `between ${minNumber + 1} - ${maxNumber}`;
+}
+
+loadNumber();
