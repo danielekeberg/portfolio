@@ -42,7 +42,7 @@ body {
 }
 
 .loadingProcess {
-    background: rgb(114, 220, 114);
+    background: rgb(114, 202, 220);
     width: 0px;
     height: 20px;
     overflow: none;
