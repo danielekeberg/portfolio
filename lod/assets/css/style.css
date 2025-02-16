@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.abilities {
+    display: flex;
+    gap: 10px;
+}
+
+.abilities p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background: #ddd;
+    border: 1px solid #bdbdbd;
+    cursor: pointer;
+}
+
+.cd {
+    background: #7d7d7d !important;
+    color: #f9f6f7;
+}
+
+.abilities p:hover {
+    background: #cacaca;
+}
+
+.abilities p:active {
+    background: #e9e9e9;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.hp-bar {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #bdbdbd;
+    overflow: hidden;
+    position: relative;
+}
+
+.health {
+    background: rgb(68, 244, 68);
+    width: 90px;
+    height: 100%;
+}
+
+.hp-bar p {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+
+
+.garen p {
+    text-align: center;
+}
+
+.garen {
+    height: 500px;
+}
