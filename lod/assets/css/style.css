@@ -48,8 +48,8 @@ body {
     position: relative;
 }
 
-.health {
-    background: rgb(68, 244, 68);
+.health{
+    background: rgb(244, 80, 68);
     width: 90px;
     height: 100%;
 }
@@ -63,12 +63,29 @@ body {
     cursor: pointer;
 }
 
-
-
 .garen p {
     text-align: center;
 }
 
 .garen {
     height: 500px;
+}
+
+.my-hp-bar {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #bdbdbd;
+    overflow: hidden;
+    position: relative;
+}
+
+.myHp {
+    background: rgb(68, 244, 68);
+    width: 100px;
+    height: 100%;
+}
+
+.self-hp-bar {
+    display: flex;
+    justify-content: center;
 }
