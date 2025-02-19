@@ -147,3 +147,35 @@ document.addEventListener('keydown', (e) => {
         r();
     }
 })
+
+function test1(key) {
+    const date = new Date();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+
+    const keylogger = document.getElementById('keylogger');
+
+    const uppercase = String(key).toUpperCase();
+
+    const d = document.createElement('div');
+    d.className = 'key';
+    d.innerHTML = `
+    <div class="logger">
+        <div class="key">
+            <p>Key: ${uppercase}</p>
+        </div>
+        <div class="time">
+            <p>Time: ${hours}:${minutes}:${seconds}</p>
+        </div>
+    </div>
+    `;
+
+    document.getElementById('keylogger').appendChild(d);
+
+    keylogger.scrollTop = keylogger.scrollHeight;
+}
+
+document.addEventListener('keydown', (e) => {
+    test1(e.key);
+})

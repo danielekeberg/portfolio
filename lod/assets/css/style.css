@@ -89,3 +89,26 @@ body {
     display: flex;
     justify-content: center;
 }
+.keylogger {
+    height: 145px;
+    width: 250px;
+    overflow: auto;
+    background: #896161;
+    border: 1px solid #181818;
+}
+
+.logger {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #f9f6f7;
+}
+
+.logger .key,
+.logger .time {
+    width: 100px;
+}
+
+.logger p {
+    margin: 0;
+}
