@@ -148,7 +148,7 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
-function test1(key) {
+function keylogging(key) {
     const date = new Date();
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -177,5 +177,21 @@ function test1(key) {
 }
 
 document.addEventListener('keydown', (e) => {
-    test1(e.key);
+    keylogging(e.key);
 })
+
+function testTime() {
+    const date = new Date("1999-04-08");
+    const today = new Date().getTime();
+    const currentTime = today - date;
+
+    const years = Math.floor(currentTime / (1000 * 60 * 60 * 24 * 365))
+    const days = Math.floor((currentTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((currentTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((currentTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((currentTime % (1000 * 60)) / 1000)
+
+    document.getElementById('birth').textContent = `${years} years ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+}
+
+setInterval(testTime, 1000)
