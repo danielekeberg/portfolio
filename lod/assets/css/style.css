@@ -23,6 +23,10 @@ body {
     cursor: pointer;
 }
 
+#garenText {
+    font-size: 20px;
+}
+
 .cd {
     background: #7d7d7d !important;
     color: #f9f6f7;
