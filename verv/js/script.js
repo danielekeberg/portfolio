@@ -1,4 +1,4 @@
-let defaultMin = 9;
+let defaultMin = 10;
 let defaultSec = 0;
 let counter = 0;
 
