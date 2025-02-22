@@ -1,24 +1,23 @@
-function tuttiTimer() {
-    const getHour = Number(document.getElementById('hour').value);
-    let addCooldown = getHour + 18;
-    // const numberToString = String(addCooldown).padStart(2, '0');
-
-    if(getHour > 24) {
-        document.getElementById('tutti1').innerHTML = '<p>Oppdrag 2: <span style="color: red">Error</span></p>';
+function calculateTimes() {
+    const input = document.getElementById("timeInput").value;
+    if (!input) {
+        alert("Please enter a valid time.");
         return;
     }
 
-    if(getHour >= 6) {
-        document.getElementById('tutti1').textContent = 'Oppdrag 2: ' + (addCooldown - 24);
-        document.getElementById('tutti2').textContent = 'Oppdrag 3: ' + ((addCooldown + 18) > 24 ? addCooldown + 18 - 24 : addCooldown + 18 - 24 -24);
-    } else {
-        document.getElementById('tutti1').textContent = 'Oppdrag 2: ' + addCooldown;
-        document.getElementById('tutti2').textContent = 'Oppdrag 3: ' + (addCooldown + 18 >= 24 ? addCooldown + 18 - 24 : addCooldown + 18 - 24 -24);
-    }
-}
+    let baseTime = new Date(input);
+    let results = [];
 
-document.getElementById('hour').addEventListener('keydown', (e) => {
-    if(e.key === 'Enter') {
-        tuttiTimer();
+    for (let i = 1; i <= 3; i++) {
+        baseTime.setHours(baseTime.getHours() + 18);
+        results.push(baseTime.toLocaleString());
     }
-})
+
+    let resultList = document.getElementById("timerResults");
+    resultList.innerHTML = "";
+    results.forEach(time => {
+        let listItem = document.createElement("li");
+        listItem.textContent = time;
+        resultList.appendChild(listItem);
+    });
+}

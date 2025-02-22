@@ -8,9 +8,11 @@
     <title>Tuttioppdrag</title>
 </head>
 <body>
-    <input type="number" id="hour" placeholder="Hvilken time">
-    <p id="tutti1">Oppdrag 2:</p>
-    <p id="tutti2">Oppdrag 3:</p>
-    <p id="tutti3">Oppdrag 4:</p>
+    <label for="timeInput">Enter Task Completion Time:</label>
+    <input type="datetime-local" id="timeInput">
+    <button id="calculate">Calculate</button>
+    
+    <h3>Next Timers:</h3>
+    <ul id="timerResults"></ul>
 </body>
 </html>
