@@ -1,5 +1,5 @@
-let defaultMin = 0;
-let defaultSec = 3;
+let defaultMin = 10;
+let defaultSec = 0;
 let counter = 0;
 
 function startTimer() {
@@ -13,13 +13,13 @@ function startTimer() {
     const timer = setInterval(() => {
         defaultSec--;
         if(defaultSec < 0) {
-            defaultSec = 59;
             defaultMin--;
+            defaultSec = 59;
         }
         if(defaultMin < 0) {
             clearInterval(timer);
-            defaultSec = 5;
-            defaultMin = 0;
+            defaultMin = 9;
+            defaultSec = 59;
             document.getElementById('min').textContent = 'Oppdater nye spillere';
             document.getElementById('sec').textContent = '';
             document.getElementById('mid').textContent = '';
