@@ -1,6 +1,6 @@
-let defaultMin = 10;
+let defaultMin = 5;
 let defaultSec = 0;
-let counter = 0;
+let counter = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
 
 function startTimer() {
     document.title = 'Vervetimer';
@@ -18,8 +18,8 @@ function startTimer() {
         }
         if(defaultMin < 0) {
             clearInterval(timer);
-            defaultMin = 9;
-            defaultSec = 59;
+            defaultMin = 5;
+            defaultSec = 0;
             document.getElementById('min').textContent = 'Oppdater nye spillere';
             document.getElementById('sec').textContent = '';
             document.getElementById('mid').textContent = '';
@@ -28,6 +28,7 @@ function startTimer() {
             document.getElementById('restartBtn').style.opacity = '1';
             document.title = '(1) Oppdater!';
             counter++;
+            localStorage.setItem('counter', counter);
             document.getElementById('counter').textContent = 'Antall oppdateringer: ' + counter;
             return;
         }
@@ -43,3 +44,9 @@ document.getElementById('restartBtn').addEventListener('click', () => {
     document.getElementById('sec').textContent = defaultSec;
     startTimer();
 });
+
+function loadCounter() {
+    document.getElementById('counter').textContent = 'Antall oppdateringer: ' + counter;
+}
+
+loadCounter();
