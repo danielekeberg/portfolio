@@ -1,0 +1,40 @@
+body {
+    background: #121212;
+    color: #f9f6f7;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.timer {
+    display: flex;
+    gap: 10px;
+}
+
+.timer p {
+    font-size: 48px;
+}
+
+.container button {
+    background: #000;
+    color: #f9f6f7;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.container button:hover {
+    background: #111;
+}
+
+.container button:active {
+    background: #222;
+}
