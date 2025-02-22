@@ -13,11 +13,16 @@ body {
 
 .timer {
     display: flex;
+    height: 150px;
     gap: 10px;
 }
 
 .timer p {
     font-size: 48px;
+}
+
+.start {
+    height: 100px;
 }
 
 .container button {

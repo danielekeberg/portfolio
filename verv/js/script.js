@@ -8,7 +8,7 @@ function startTimer() {
     document.getElementById('min').textContent = String(defaultMin).padStart(2, '0');
     document.getElementById('sec').textContent = String(defaultSec).padStart(2, '0');
     document.getElementById('mid').textContent = ':';
-    document.getElementById('restartBtn').style.opacity = '0';
+    document.getElementById('restartBtn').style.display = 'none';
     document.body.style.backgroundColor = '#121212';
     const timer = setInterval(() => {
         defaultSec--;
@@ -25,7 +25,8 @@ function startTimer() {
             document.getElementById('mid').textContent = '';
             document.querySelector("link[rel~='icon']").href = './assets/clock-red.svg';
             document.body.style.backgroundColor = 'green';
-            document.getElementById('restartBtn').style.opacity = '1';
+            // randomBackground();
+            document.getElementById('restartBtn').style.display = 'block';
             document.title = '(1) Oppdater!';
             counter++;
             localStorage.setItem('counter', counter);
@@ -43,6 +44,7 @@ document.getElementById('restartBtn').addEventListener('click', () => {
     document.getElementById('min').textContent = defaultMin;
     document.getElementById('sec').textContent = defaultSec;
     startTimer();
+
 });
 
 function loadCounter() {
@@ -50,3 +52,16 @@ function loadCounter() {
 }
 
 loadCounter();
+
+function randomBackground() {
+    const randomClr = setInterval(() => {
+        const red = Math.floor(Math.random() * 255);
+        const green = Math.floor(Math.random() * 255);
+        const blue = Math.floor(Math.random() * 255);
+        document.body.style.backgroundColor = `rgba(${red}, ${green}, ${blue})`;
+    }, 500);
+
+    document.getElementById('restartBtn').addEventListener('click', () => {
+        clearInterval(randomClr);
+    })
+}
