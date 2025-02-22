@@ -1,5 +1,5 @@
-let defaultMin = 0;
-let defaultSec = 1;
+let defaultMin = 10;
+let defaultSec = 0;
 
 function startTimer() {
     document.title = 'Vervetimer';
