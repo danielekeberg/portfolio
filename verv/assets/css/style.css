@@ -8,7 +8,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 .timer {
@@ -37,4 +37,13 @@ body {
 
 .container button:active {
     background: #222;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header p {
+    padding: 0 20px;
 }

@@ -1,5 +1,6 @@
-let defaultMin = 10;
-let defaultSec = 0;
+let defaultMin = 0;
+let defaultSec = 3;
+let counter = 0;
 
 function startTimer() {
     document.title = 'Vervetimer';
@@ -17,8 +18,8 @@ function startTimer() {
         }
         if(defaultMin < 0) {
             clearInterval(timer);
-            defaultSec = 59;
-            defaultMin = 4;
+            defaultSec = 5;
+            defaultMin = 0;
             document.getElementById('min').textContent = 'Oppdater nye spillere';
             document.getElementById('sec').textContent = '';
             document.getElementById('mid').textContent = '';
@@ -26,6 +27,8 @@ function startTimer() {
             document.body.style.backgroundColor = 'green';
             document.getElementById('restartBtn').style.opacity = '1';
             document.title = '(1) Oppdater!';
+            counter++;
+            document.getElementById('counter').textContent = 'Antall oppdateringer: ' + counter;
             return;
         }
 
