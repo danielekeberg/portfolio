@@ -105,6 +105,10 @@ document.getElementById('minusClub').addEventListener('click', () => {
 });
 
 function hamburger() {
+    if(document.querySelector('.stat')) {
+        return;
+    }
+
     const d = document.createElement('div');
     d.className = 'stat';
     d.innerHTML = `
@@ -127,6 +131,7 @@ function hamburger() {
     document.getElementById('stats').appendChild(d);
     document.getElementById('stat-header').addEventListener('click', () => {
         document.querySelector('.stats').removeChild(d);
+        d = null;
     });
 
     document.getElementById('addVerv').addEventListener('click', () => {
@@ -142,7 +147,9 @@ function hamburger() {
     });
 }
 
-document.getElementById('hamburger').addEventListener('click', hamburger);
+document.getElementById('hamburger').addEventListener('click', () => {
+    hamburger();
+});
 
 
 
