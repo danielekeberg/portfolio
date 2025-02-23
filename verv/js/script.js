@@ -1,6 +1,7 @@
 let defaultMin = 5;
 let defaultSec = 0;
 let counter = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
+let vCounter = localStorage.getItem('vCounter') ? parseInt(localStorage.getItem('vCounter')) : 0;
 
 function startTimer() {
     document.title = 'Vervetimer';
@@ -108,3 +109,46 @@ document.getElementById('minusClub').addEventListener('click', () => {
         document.querySelector('.club-bar').style.background = 'none';
     }, 100)
 });
+
+function hamburger() {
+    const d = document.createElement('div');
+    d.className = 'stat';
+    d.innerHTML = `
+    <div class="stat-header" id="stat-header">
+        <h3>Statistikk</h3>
+    </div>
+    <div class="verv-stats">
+        <p>Antall oppdateringer: <strong>${counter}</strong></p>
+        <div class="nyVerv">
+            <p>Antall verver: <strong id="totalVerv">${vCounter}</strong></p>
+            <div class="verver">
+                <p id="removeVerv">-1</p>
+                <p id="addVerv">+1</p>
+            </div>
+        </div>
+        <p>Antall verver oppdrag 5: <strong>0</strong></p>
+    </div>
+    `;
+
+    document.getElementById('stats').appendChild(d);
+    document.getElementById('stat-header').addEventListener('click', () => {
+        document.querySelector('.stats').removeChild(d);
+    });
+
+    document.getElementById('addVerv').addEventListener('click', () => {
+        vCounter++;
+        localStorage.setItem('vCounter', vCounter);
+        document.getElementById('totalVerv').textContent = vCounter;
+    });
+
+    document.getElementById('removeVerv').addEventListener('click', () => {
+        vCounter--;
+        localStorage.setItem('vCounter', vCounter);
+        document.getElementById('totalVerv').textContent = vCounter;
+    });
+}
+
+document.getElementById('hamburger').addEventListener('click', hamburger);
+
+
+

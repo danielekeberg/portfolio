@@ -89,3 +89,65 @@ header p {
     padding: 5px 20px;
     cursor: pointer;
 }
+
+#hamburger {
+    border: 1px solid #bdbdbd;
+    padding: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#hamburger:hover {
+    background: #222;
+}
+
+.stat {
+    position: absolute;
+    z-index: 1000;
+    background: #222;
+    width: 300px;
+    height: 400px;
+    transform: translate(-50%, -40%);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-header {
+    background: #333;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+.stat-header h3 {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.verv-stats {
+    padding: 0 20px;
+}
+
+.nyVerv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.verver {
+    display: flex;
+    gap: 20px;
+}
+
+.verver p {
+    background: #333;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.verver p:hover {
+    background: #444;
+}
