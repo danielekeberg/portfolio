@@ -48,12 +48,6 @@ document.getElementById('restartBtn').addEventListener('click', () => {
 
 });
 
-function loadCounter() {
-    document.getElementById('counter').textContent = 'Antall oppdateringer: ' + counter;
-}
-
-loadCounter();
-
 function randomBackground() {
     const randomClr = setInterval(() => {
         const red = Math.floor(Math.random() * 255);
