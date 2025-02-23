@@ -94,5 +94,17 @@ function loadClubCounter() {
 
 loadClubCounter();
 
-document.getElementById('plussClub').addEventListener('click', clubCounter);
-document.getElementById('minusClub').addEventListener('click', minusClubCounter);
+document.getElementById('plussClub').addEventListener('click', () => {
+    clubCounter();
+    document.querySelector('.club-bar').style.backgroundColor = 'green';
+    setTimeout(() => {
+        document.querySelector('.club-bar').style.background = 'none';
+    }, 100)
+});
+document.getElementById('minusClub').addEventListener('click', () => {
+    minusClubCounter();
+    document.querySelector('.club-bar').style.backgroundColor = 'red';
+    setTimeout(() => {
+        document.querySelector('.club-bar').style.background = 'none';
+    }, 100)
+});
