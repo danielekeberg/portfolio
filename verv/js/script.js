@@ -74,7 +74,7 @@ function clubCounter() {
     localStorage.setItem('count', count);
     const percent = Math.round((count / maxCount) * 100);
     document.querySelector('.club-progress').style.width = percent + '%';
-    document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
+    document.getElementById('club-counter').textContent = count + ' / ' + maxCount + ' (' + percent + '%)';
 }
 
 function minusClubCounter() {
@@ -82,13 +82,14 @@ function minusClubCounter() {
     localStorage.setItem('count', count);
     const percent = Math.round((count / maxCount) * 100);
     document.querySelector('.club-progress').style.width = percent + '%';
-    document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
+    document.getElementById('club-counter').textContent = count + ' / ' + maxCount + ' (' + percent + '%)';
 }
 
 function loadClubCounter() {
     const percent = Math.round((count / maxCount) * 100);
+
     document.querySelector('.club-progress').style.width = percent + '%';
-    document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
+    document.getElementById('club-counter').textContent = count + ' / ' + maxCount + ' (' + percent + '%)';
 }
 
 loadClubCounter();
