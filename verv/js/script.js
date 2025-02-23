@@ -67,10 +67,11 @@ function randomBackground() {
 }
 
 const maxCount = 150;
-let count = 0;
+let count = localStorage.getItem('count') ? parseInt(localStorage.getItem('count')) : 0;;
 
 function clubCounter() {
     count++;
+    localStorage.setItem('count', count);
     const percent = Math.round((count / maxCount) * 100);
     document.querySelector('.club-progress').style.width = percent + '%';
     document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
@@ -78,6 +79,7 @@ function clubCounter() {
 
 function minusClubCounter() {
     count--;
+    localStorage.setItem('count', count);
     const percent = Math.round((count / maxCount) * 100);
     document.querySelector('.club-progress').style.width = percent + '%';
     document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
