@@ -65,3 +65,31 @@ function randomBackground() {
         clearInterval(randomClr);
     })
 }
+
+const maxCount = 150;
+let count = 0;
+
+function clubCounter() {
+    count++;
+    const percent = Math.round((count / maxCount) * 100);
+    document.querySelector('.club-progress').style.width = percent + '%';
+    document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
+}
+
+function minusClubCounter() {
+    count--;
+    const percent = Math.round((count / maxCount) * 100);
+    document.querySelector('.club-progress').style.width = percent + '%';
+    document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
+}
+
+function loadClubCounter() {
+    const percent = Math.round((count / maxCount) * 100);
+    document.querySelector('.club-progress').style.width = percent + '%';
+    document.getElementById('club-counter').textContent = count + ' / ' + maxCount;
+}
+
+loadClubCounter();
+
+document.getElementById('plussClub').addEventListener('click', clubCounter);
+document.getElementById('minusClub').addEventListener('click', minusClubCounter);

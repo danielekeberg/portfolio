@@ -1,6 +1,7 @@
 body {
     background: #121212;
     color: #f9f6f7;
+    font-family: 'Roboto', serif;
 }
 
 .container {
@@ -25,7 +26,7 @@ body {
     height: 100px;
 }
 
-.container button {
+.start button {
     background: #000;
     color: #f9f6f7;
     border: 1px solid #bdbdbd;
@@ -51,4 +52,38 @@ header {
 
 header p {
     padding: 0 20px;
+}
+
+.club-bar {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.club-progress {
+    position: absolute;
+    height: 100%;
+    background: #9dd69b;
+}
+
+.club p {
+    text-align: center;
+}
+
+.club-btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.club-btns button {
+    width: 50px;
+    background: #000;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    color: #f9f6f7;
+    padding: 5px 20px;
+    cursor: pointer;
 }

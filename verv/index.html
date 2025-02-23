@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/clock-blue.svg">
     <script src="./js/script.js" type="module" defer></script>
@@ -21,6 +24,16 @@
             </div>
             <div class="start">
                 <button id="restartBtn">Start timer</button>
+            </div>
+            <div class="club">
+                <div class="club-bar">
+                    <div class="club-progress"></div>
+                </div>
+                <p id="club-counter">0 / 150</p>
+                <div class="club-btns">
+                    <button id="minusClub">-1</button>
+                    <button id="plussClub">+1</button>
+                </div>
             </div>
         </div>
     </main>
