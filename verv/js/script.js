@@ -87,22 +87,22 @@ function loadClubCounter() {
     document.getElementById('club-counter').textContent = count + ' / ' + maxCount + ' (' + percent + '%)';
 }
 
-loadClubCounter();
+// loadClubCounter();
 
-document.getElementById('plussClub').addEventListener('click', () => {
-    clubCounter();
-    document.querySelector('.club-bar').style.backgroundColor = 'green';
-    setTimeout(() => {
-        document.querySelector('.club-bar').style.background = 'none';
-    }, 100)
-});
-document.getElementById('minusClub').addEventListener('click', () => {
-    minusClubCounter();
-    document.querySelector('.club-bar').style.backgroundColor = 'red';
-    setTimeout(() => {
-        document.querySelector('.club-bar').style.background = 'none';
-    }, 100)
-});
+// document.getElementById('plussClub').addEventListener('click', () => {
+//     clubCounter();
+//     document.querySelector('.club-bar').style.backgroundColor = 'green';
+//     setTimeout(() => {
+//         document.querySelector('.club-bar').style.background = 'none';
+//     }, 100)
+// });
+// document.getElementById('minusClub').addEventListener('click', () => {
+//     minusClubCounter();
+//     document.querySelector('.club-bar').style.backgroundColor = 'red';
+//     setTimeout(() => {
+//         document.querySelector('.club-bar').style.background = 'none';
+//     }, 100)
+// });
 
 function hamburger() {
     if(document.querySelector('.stat')) {
@@ -117,6 +117,7 @@ function hamburger() {
     </div>
     <div class="verv-stats">
         <p>Antall oppdateringer: <strong>${counter}</strong></p>
+        <p>Antall minutter oppdatert: <strong>${counter * 5}</strong></p>
         <div class="nyVerv">
             <p>Antall verver: <strong id="totalVerv">${vCounter}</strong></p>
             <div class="verver">

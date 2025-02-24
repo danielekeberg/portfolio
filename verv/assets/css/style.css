@@ -130,6 +130,10 @@ header p {
     padding: 0 20px;
 }
 
+.verv-stats p {
+    margin: 15px 0 0;
+}
+
 .nyVerv {
     display: flex;
     justify-content: space-between;
@@ -137,15 +141,16 @@ header p {
 
 .verver {
     display: flex;
-    gap: 20px;
+    gap: 5px;
 }
 
 .verver p {
     background: #333;
     border: 1px solid #bdbdbd;
     border-radius: 5px;
-    padding: 0 5px;
+    width: 30px;
     cursor: pointer;
+    text-align: center;
 }
 
 .verver p:hover {
