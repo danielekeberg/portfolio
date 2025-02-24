@@ -104,7 +104,6 @@ function loadClubCounter() {
 //     }, 100)
 // });
 
-const hoursUpdated = (counter * 5 / 60).toFixed(1);
 
 function hamburger() {
     if(document.querySelector('.stat')) {
@@ -120,7 +119,7 @@ function hamburger() {
     <div class="verv-stats">
         <p>Antall oppdateringer: <strong>${counter}</strong></p>
         <p>Antall minutter oppdatert: <strong>${counter * 5}</strong></p>
-        <p>Antall timer oppdatert: <strong>${hoursUpdated}</strong></p>
+        <p>Antall timer oppdatert: <strong>${(counter * 5 / 60).toFixed(1)}</strong></p>
         <div class="nyVerv">
             <p>Antall verver: <strong id="totalVerv">${vCounter}</strong></p>
             <div class="verver">
