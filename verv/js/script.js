@@ -10,7 +10,7 @@ function startTimer() {
     document.getElementById('sec').textContent = String(defaultSec).padStart(2, '0');
     document.getElementById('mid').textContent = ':';
     document.getElementById('restartBtn').style.display = 'none';
-    document.body.style.backgroundColor = '#121212';
+    document.body.style.backgroundColor = '#050505';
     const timer = setInterval(() => {
         defaultSec--;
         if(defaultSec < 0) {
