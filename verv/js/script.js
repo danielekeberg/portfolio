@@ -2,6 +2,7 @@ let defaultMin = 5;
 let defaultSec = 0;
 let counter = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
 let vCounter = localStorage.getItem('vCounter') ? parseInt(localStorage.getItem('vCounter')) : 0;
+let v5Counter = localStorage.getItem('v5Counter') ? parseInt(localStorage.getItem('v5Counter')) : 0;
 
 function startTimer() {
     document.title = 'Vervetimer';
@@ -127,7 +128,7 @@ function hamburger() {
                 <p id="addVerv">+1</p>
             </div>
         </div>
-        <p>Antall verver oppdrag 5: <strong>0</strong></p>
+        <p>Antall verver oppdrag 5: <strong>${v5Counter}</strong></p>
     </div>
     `;
 
@@ -153,6 +154,3 @@ function hamburger() {
 document.getElementById('hamburger').addEventListener('click', () => {
     hamburger();
 });
-
-
-
