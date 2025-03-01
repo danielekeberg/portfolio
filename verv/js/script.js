@@ -110,7 +110,13 @@ function hamburger() {
                 <p id="addVerv">+1</p>
             </div>
         </div>
-        <p>Antall verver oppdrag 5: <strong>${v5Counter}</strong></p>
+        <div class="nyVerv">
+            <p>Antall verver oppdrag 5: <strong id="total5Verv">${v5Counter}</strong></p>
+            <div class="verver">
+                <p id="remove5Verv">-1</p>
+                <p id="add5Verv">+1</p>
+            </div>
+        </div>
     </div>
     `;
 
@@ -130,6 +136,18 @@ function hamburger() {
         vCounter--;
         localStorage.setItem('vCounter', vCounter);
         document.getElementById('totalVerv').textContent = vCounter;
+    });
+
+    document.getElementById('add5Verv').addEventListener('click', () => {
+        v5Counter++;
+        localStorage.setItem('v5Counter', v5Counter);
+        document.getElementById('total5Verv').textContent = v5Counter;
+    });
+
+    document.getElementById('remove5Verv').addEventListener('click', () => {
+        v5Counter--;
+        localStorage.setItem('v5Counter', v5Counter);
+        document.getElementById('total5Verv').textContent = v5Counter;
     });
 }
 
