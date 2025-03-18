@@ -56,12 +56,14 @@ main {
 
 .header .logo h4 {
     color: #363535;
+    cursor: pointer;
 }
 
 .header .logo img {
     height: 50px;
     border-radius: 50px;
     border: 1px solid #212121;
+    cursor: pointer;
 }
 
 .header .nav-btns a:hover {
