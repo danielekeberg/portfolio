@@ -315,6 +315,16 @@ section {
     gap: 25px;
 }
 
+.project-cards img {
+    width: 100%;
+    overflow: none;
+}
+
+.project-one {
+    background: #381f24 !important;
+    color: #f9f6f7 !important;
+}
+
 .project {
     border: 1px solid #212121;
     width: 250px;
@@ -335,6 +345,7 @@ section {
     opacity: 0;
     transition: all 0.3s ease;
     transform: translateY(100%);
+    font-size: 14px;
 }
 
 .project:hover .project-info {
@@ -353,7 +364,7 @@ section {
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
-    color: #212121;
+    color: #f9f6f7;
 }
 
 .project-links a:hover {

@@ -3,114 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="/src/code.png">
+    <link rel="stylesheet" href="./newAssets/src/portfolio.css">
+    <link rel="icon" href="../src/code.png">
+    <script src="./newJs/script.js" defer></script>
     <title>Daniel Ekeberg</title>
-    <script src="generate-index.js"></script>
-    <script src="js/main.js"></script>
-    <script src="script.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <i class="fas fa-code"></i>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="https://danielekeberg.netlify.app/assets/daniel.png" alt="Daniel">
+                <h4>danielekeberg</h4>
+            </div>
+            <div class="nav-btns">
+                <a href="#" class="active">HOME</a>
+                <a href="#" class="remove-mobile" id="featuresBtn">FEATURES</a>
+                <a href="#">RESUME</a>
+                <a href="#" class="remove-mobile" id="contactBtn">CONTACT</a>
+                <a href="https://github.com/danielekeberg" target="_blank">GITHUB</a>
+            </div>
         </div>
-        <div class="links">
-            <a href="#" class="active">About</a>
-            <a href="#">Portfolio</a>
-            <a href="#" id="emailButton">Contact Me</a>
-        </div>
-    </nav>
-    <div class="about">
-        <div class="left">
-            <h3>Front-end Developer</h3>
-            <div class="info">
-                <h2>I'm Daniel Ekeberg</h2>
-                <p>I craft engaging and responsive user interfaces to enhance the web experience.</p>
-                <div class="buttons">
-                    <button class="hire">Hire me <i class="fas fa-plus"></i></button>
-                    <button class="email" id="copyButton">Copy Email <i class="far fa-copy"></i></button>
-                    <a href="login/"><button class="email">Go To Testing</i></button></a>
-                    <a href="./pokemon/?name=bulbasaur"><button class="email"><img src="./pokemon/assets/pokeball-pokemon-svgrepo-com.svg">DaniDex</i></button></a>
-                    <div id="customAlert" class="custom-alert">
-                        <div class="custom-alert-content">
-                            <span class="closebtn" onclick="closeAlert()">&times;</span>
-                            <p id="alertMessage"></p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left">
+                <div class="info">
+                    <h3>Welcome to my world</h3>
+                    <h1>Hi, I'm <strong>Daniel Ekeberg</strong> a Front-End Dev<span>|</span></h1>
+                    <p>I craft immersive and accessible web experiences using HTML, CSS, and JavaScript, guiding users effortlessly through every interaction. It’s not just about writing code – it’s about creating designs that feel intuitive and alive, connecting people with technology in meaningful ways.</p>
+                </div>
+                <div class="socials">
+                    <div class="socials-container">
+                        <h3>My socials</h3>
+                        <div class="socials-logos">
+                            <a href="https://www.facebook.com/daniel.ekeberg/" target="_blank"><img src="./newAssets/facebook-64.png" alt="Facebook logo"></a>
+                            <a href="https://www.instagram.com/danielekeberg/" target="_blank"><img src="./newAssets/instagram-64.png" alt="Instagram logo"></a>
+                            <a href="https://www.linkedin.com/in/daniel-lehre-ekeberg-04a7b1178/" target="_blank"><img src="./newAssets/linkedin-64.png" alt="Linkedin logo"></a>
+                        </div>
+                    </div>
+                    <div class="socials-container">
+                        <h3>My best skills</h3>
+                        <div class="socials-logos">
+                            <img src="./newAssets/html.png" alt="HTML logo">
+                            <img src="./newAssets/css.png" alt="CSS logo">
+                            <img src="./newAssets/js.png" alt="JS logo">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="right">
-            <a class="online" href="#"><i class="fas fa-circle"></i> Available for Job</a>
-            <img src="https://i.ibb.co/xXZHPqJ/cfa4739f2a3ab3bf712b8843471c1758.jpg"></img>
-        </div>
-    </div>
-    <div class="works">
-        <div class="left">
-            <h3><i class="fas fa-circle"></i> Recent Works</h3>
-            <div class="works-list">
-                <div class="item">
-                    <div class="work-info">
-                        <h5 class="active">Lorem</h5>
-                        <p>2024 - Present</p>
-                    </div>
-                    <p>Lorem</p>
-                </div>
-                <div class="item">
-                    <div class="work-info">
-                        <h5>Lorem</h5>
-                        <p>2021 - 2023</p>
-                    </div>
-                    <p>Lorem</p>
-                </div>
-                <div class="item">
-                    <div class="work-info">
-                        <h5>Lorem</h5>
-                        <p>2020 - 2021</p>
-                    </div>
-                    <p>Lorem</p>
-                </div>
-                <div class="item">
-                    <div class="work-info">
-                        <h5>Lorem</h5>
-                        <p>2018 - 2020</p>
-                    </div>
-                    <p>Lorem</p>
-                </div>
+            <div class="right">
+                <img src="https://danielekeberg.netlify.app/assets/daniel.png" alt="Daniel Ekeberg">
             </div>
         </div>
-        <div class="right">
-            <div class="item">
-                <a href="#">About My Work</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dignissimos quas delectus illum! Necessitatibus impedit mollitia nobis dicta, facilis fugit perspiciatis omnis quis iure id ipsa soluta ex at voluptas.</p>
+
+    </main>
+    <section id="section1">
+        <div class="project-cards">
+            <div class="project project-one">
+                <img src="https://i.ibb.co/KckBkN8d/Skjermbilde-2025-03-18-120734.png">
+                <div class="project-info">
+                    <p>Danbook is a JavaScript-based social platform built as my JavaScript 2 project, featuring full CRUD functionality.</p>
+                    <ul>
+                        <li>📝 Create, edit, and delete posts</li>
+                        <li>💬 Comment on and like posts</li>
+                        <li>🔧 Edit their profiles</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/danielekeberg/Danbook" target="_blank">Github Repo</a>
+                        <span>/</span>
+                        <a href="https://danbook.netlify.app" target="_blank">Live Site</a>
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <a href="#">Design Solutions</a>
-                <p>Ways to solve design challenges with creative approaches.</p>
+            <div class="project">
+                <h1>Project 2</h1>
+                <div class="project-info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam molestias dolorem incidunt asperiores illo perspiciatis. Aliquam voluptas illo nisi rem dignissimos voluptatibus odit, eveniet blanditiis accusamus! Quisquam, minus consectetur?</p>
+                    <div class="project-links">
+                        <a href="#">Github Repo</a>
+                        <span>/</span>
+                        <a href="#">Live Site</a>
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <a href="#">Responsive Design</a>
-                <p>Ensuring a seamless user experience across all devices.</p>
-            </div>
-            <div class="item">
-                <a href="#">Research and Testing</a>
-                <p>Using data-driven insights to inform design decisions.</p>
-            </div>
-            <div class="item">
-                <a href="#">Collaborative Projects</a>
-                <p>Working with cross-functional teams to bring ideas to life.</p>
+            <div class="project">
+                <h1>Project 3</h1>
+                <div class="project-info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam molestias dolorem incidunt asperiores illo perspiciatis. Aliquam voluptas illo nisi rem dignissimos voluptatibus odit, eveniet blanditiis accusamus! Quisquam, minus consectetur?</p>
+                    <div class="project-links">
+                        <a href="#">Github Repo</a>
+                        <span>/</span>
+                        <a href="#">Live Site</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="section2">
+        <div class="contact-container">
+            <h2>Contact me!</h2>
+            <div class="contact-form">
+                <div class="contact-input">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name"></input>
+                </div>
+                <div class="contact-input">
+                    <label for="contact-name">Email</label>
+                    <input type="email" id="contact-email"></input>
+                </div>
+                <div class="contact-input">
+                    <label for="contact-name">Message</label>
+                    <input type="text" id="contact-message"></input>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     <footer>
-        <a href="#">My Portfolio</a>
-        <div class="socials">
-            <a href="https://github.com/danielekeberg" target="_blank">Github</a>
-            <a href="https://www.instagram.com/danielekeberg/" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com/in/daniel-lehre-ekeberg-04a7b1178/" target="_blank">LinkedIn</a>
+        <div class="footer">
+            <div class="footer-content">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-content">
+                <h4>Help</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Ordering</a>
+                <a href="#">Returns</a>
+                <a href="#">Status</a>
+                <a href="#">Payment</a>
+            </div>
+            <div class="footer-content">
+                <h4>Shop</h4>
+                <a href="#">Dress</a>
+                <a href="#">Shoes</a>
+                <a href="#">Accesories</a>
+                <a href="#">Bags</a>
+            </div>
+            <div class="footer-content">
+                <h4>Follow Me</h4>
+                <div class="social-images">
+                    <div class="logo">
+                        <img src="./newAssets/facebook-3-64.png" alt="Facebook logo">
+                    </div>
+                    <div class="logo">
+                        <img src="./newAssets/instagram-64-2.png" alt="Instagram logo">
+                    </div>
+                    <div class="logo">
+                        <img src="./newAssets/twitter-64.png" alt="Twitter logo">
+                    </div>
+                    <div class="logo">
+                        <img src="./newAssets/linkedin-64-2.png" alt="Linkedin logo">
+                    </div>
+                </div>
+            </div>
         </div>
-        <a class="online" href="#"><i class="fas fa-circle"></i> Available For Job</a>
     </footer>
 </body>
+</html>
