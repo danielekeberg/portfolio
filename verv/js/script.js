@@ -165,3 +165,21 @@ function profilteller() {
 window.onload = () => {
     profilteller();
 }
+
+function clock() {
+    const now = new Date();
+    const hour = String(now.getHours()).padStart(2, 0);
+    const minute = String(now.getMinutes()).padStart(2, 0);
+    const second = String(now.getSeconds()).padStart(2, 0);
+
+    document.getElementById('clock').textContent = `${hour}:${minute}:${second}`
+
+    if(now.getHours() === 1 && now.getMinutes() === 2 && now.getSeconds() === 20) {
+        document.body.style.backgroundColor = "red";
+    } else {
+        document.body.style.backgroundColor = "#050505";
+    }
+}
+
+clock();
+setInterval(clock, 1000);
