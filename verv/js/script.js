@@ -1,8 +1,9 @@
-let defaultMin = 5;
+let defaultMin = 45;
 let defaultSec = 0;
 let counter = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
 let vCounter = localStorage.getItem('vCounter') ? parseInt(localStorage.getItem('vCounter')) : 0;
 let v5Counter = localStorage.getItem('v5Counter') ? parseInt(localStorage.getItem('v5Counter')) : 0;
+let pageViews = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
 
 function startTimer() {
     document.title = 'Vervetimer';
@@ -20,7 +21,7 @@ function startTimer() {
         }
         if(defaultMin < 0) {
             clearInterval(timer);
-            defaultMin = 5;
+            defaultMin = 45;
             defaultSec = 0;
             document.getElementById('min').textContent = 'Oppdater nye spillere';
             document.getElementById('sec').textContent = '';
@@ -154,3 +155,13 @@ function hamburger() {
 document.getElementById('hamburger').addEventListener('click', () => {
     hamburger();
 });
+
+function profilteller() {
+    pageViews++;
+    localStorage.setItem('views', pageViews);
+    document.getElementById('views').textContent = pageViews;
+}
+
+window.onload = () => {
+    profilteller();
+}

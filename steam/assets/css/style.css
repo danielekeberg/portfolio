@@ -1,0 +1,19 @@
+body {
+    background: #212121;
+}
+
+#apiKey {
+    color: #f9f6f7;
+    text-align: center;
+}
+
+.error {
+    color: #810303;
+    background: #e28f8f;
+    width: 100%;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid #bdbdbd70;
+}
