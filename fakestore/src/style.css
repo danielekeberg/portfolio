@@ -4,6 +4,10 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     margin: 0;
     padding: 20px;
@@ -167,4 +171,65 @@ main {
     width: 70%;
     padding: 0 20px;
     justify-content: space-between;
+}
+
+.dashboard {
+    background: #f9f6f7;
+    border-radius: 5px;
+    border: 1px solid #18181A;
+    color: #18181A;
+    padding: 20px;
+}
+
+.dashboard #singleUser {
+    display: flex;
+    gap: 50px;
+}
+
+.dashboard #singleUser img {
+    height: 100px;
+}
+
+.dashboard .name {
+    display: flex;
+    gap: 3px;
+}
+
+.dashboard .name p {
+    margin: 0;
+}
+
+.dashboard a {
+    text-decoration: none;
+    color: #18181A;
+}
+
+.displayUser,
+.displayUser p {
+    width: 100px;
+}
+
+#users,
+#carts {
+    cursor: pointer;
+}
+
+#display {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.userCard {
+    text-align: center;
+    width: 100px;
+    margin: 10px;
+    border: 1px solid #18181A;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.userCard:hover {
+    background: #e2e2e2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }

@@ -10,7 +10,7 @@ async function fetchProducts() {
             d.href = `./product/?${product.title}&id=${product.id}`;
             d.innerHTML = `
             <div class="product-image" id="test">
-                <img src="${product.image}">
+                <img src="${product.image}" alt="${product.title}">
             </div>
             <p>${product.title}</p>
             <div class="price">
