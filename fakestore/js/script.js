@@ -13,8 +13,9 @@ async function fetchProducts() {
                 <img src="${product.image}">
             </div>
             <p>${product.title}</p>
-
-            <p>${product.category }</p>
+            <div class="price">
+                <p>$${product.price}</p>
+            </div>
             `;
             d.title = product.title;
             document.getElementById('items').appendChild(d);
@@ -41,11 +42,14 @@ async function fetchSingleProduct() {
         <div class="">
             <h1>${data.title}</h1>
             <p>$${data.price}</p>
-            <p>${data.rating.rate} / ${data.rating.count}</p>
-            <P>${data.description}</p>
-            <p>${data.category}</p>
+            <p id="ratings">${data.rating.rate} / 5</p>
+            <p>${data.description}</p>
+            <div class="btn">
+                <button class="addCart">Add to cart</button>
+            </div>
         </div>
         `;
+        document.getElementById('ratings').title = `${data.rating.count} ratings`;
 
     } catch(error) {
         console.log(error);
@@ -56,7 +60,7 @@ fetchSingleProduct();
 
 async function fetchUsers() {
     try {
-        const response = await fetch('https://fakestoreapi.com/carts');
+        const response = await fetch('https://fakestoreapi.com/users');
         const data = await response.json();
         console.log(data);
     } catch(error) {
@@ -65,3 +69,40 @@ async function fetchUsers() {
 }
 
 fetchUsers();
+
+function openCart() {
+    const d = document.createElement('div');
+    d.className = 'cart';
+    d.innerHTML = `
+    <p>Your items:</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>`
+
+    document.getElementById('openCart').appendChild(d);
+}
+
+async function fetchCart() {
+    try {
+        const response = await fetch('https://fakestoreapi.com/carts/2');
+        const data = await response.json();
+        console.log(data);
+        const cart = data.products;
+        console.log(cart);
+
+        cart.forEach(product => {
+            const d = document.createElement('div');
+            d.className = 'cart-item'
+            d.innerHTML = `
+            <p>ID: ${product.productId}</p>
+            <p>x${product.quantity}</p>`;
+            document.getElementById('shoppingCart').appendChild(d);
+        })
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+fetchCart();
