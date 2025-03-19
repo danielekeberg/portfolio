@@ -108,8 +108,9 @@ main {
     display: flex;
     width: 1000px;
     gap: 50px;
-    background: #f9f6f7;
-    color: #450d0a;
+    background: #262629;
+    border: 1px solid #9f9fa3;
+    color: #f9f6f7;
     padding: 20px;
 }
 
@@ -128,6 +129,7 @@ main {
 .btn {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .addCart {
@@ -159,14 +161,17 @@ main {
     width: 1000px;
     margin: 0 auto;
     height: 500px;
-    background: #f9f6f7;
-    color: #18181a;
+    background: #262629;
+    border: 1px solid #9f9fa3;
+    color: #f9f6f7;
     padding: 20px;
 }
 
 .cart-item {
     margin: 10px auto;
-    background: #e0e0e0;
+    background: #3e3e42;
+    border: 1px solid #9f9fa3;
+    color: #f9f6f7;
     display: flex;
     width: 70%;
     padding: 0 20px;
@@ -174,10 +179,10 @@ main {
 }
 
 .dashboard {
-    background: #f9f6f7;
+    background: #262629;
     border-radius: 5px;
-    border: 1px solid #18181A;
-    color: #18181A;
+    border: 1px solid #9f9fa3;
+    color: #f9f6f7;
     padding: 20px;
 }
 
@@ -201,12 +206,7 @@ main {
 
 .dashboard a {
     text-decoration: none;
-    color: #18181A;
-}
-
-.displayUser,
-.displayUser p {
-    width: 100px;
+    color: #f9f6f7;
 }
 
 #users,
@@ -223,13 +223,14 @@ main {
     text-align: center;
     width: 100px;
     margin: 10px;
-    border: 1px solid #18181A;
+    border: 1px solid #9f9fa3;
+    background: #3e3e42;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .userCard:hover {
-    background: #e2e2e2;
+    background: #4a4a4e;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }

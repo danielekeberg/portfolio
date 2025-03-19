@@ -2,8 +2,6 @@ async function fetchProducts() {
     try {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
-        console.log(data);
-        
         data.forEach(product => {
             const d = document.createElement('a');
             d.className = 'product';
@@ -22,7 +20,7 @@ async function fetchProducts() {
         });
         
     } catch(error) {
-        console.log('errooor');
+        console.error('errooor');
     }
 }
 
@@ -99,7 +97,9 @@ async function fetchCart() {
             <p>ID: ${product.productId}</p>
             <p>x${product.quantity}</p>`;
             document.getElementById('shoppingCart').appendChild(d);
-        })
+        });
+
+        
     } catch(error) {
         console.log(error);
     }
