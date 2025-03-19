@@ -10,3 +10,12 @@ goFeatures.addEventListener('click', () => {
 goContact.addEventListener('click', () => {
   secondSection.scrollIntoView({ behavior: 'smooth' });
 });
+
+function footerYear() {
+  const now = new Date();
+  const year = now.getFullYear();
+
+  document.getElementById('footerYear').textContent = year;
+}
+
+footerYear();

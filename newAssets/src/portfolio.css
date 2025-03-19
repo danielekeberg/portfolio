@@ -252,6 +252,7 @@ footer {
     display: flex;
     gap: 200px;
     justify-content: center;
+    font-weight: 600;
 }
 
 .footer-content {
