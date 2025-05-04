@@ -1,4 +1,4 @@
-let defaultMin = 45;
+let defaultMin = 10;
 let defaultSec = 0;
 let counter = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
 let vCounter = localStorage.getItem('vCounter') ? parseInt(localStorage.getItem('vCounter')) : 0;
@@ -21,7 +21,7 @@ function startTimer() {
         }
         if(defaultMin < 0) {
             clearInterval(timer);
-            defaultMin = 45;
+            defaultMin = 10;
             defaultSec = 0;
             document.getElementById('min').textContent = 'Oppdater nye spillere';
             document.getElementById('sec').textContent = '';
@@ -91,6 +91,7 @@ function loadClubCounter() {
 
 function hamburger() {
     if(document.querySelector('.stat')) {
+        document.querySelector('.stat').remove();
         return;
     }
 
@@ -156,15 +157,15 @@ document.getElementById('hamburger').addEventListener('click', () => {
     hamburger();
 });
 
-function profilteller() {
-    pageViews++;
-    localStorage.setItem('views', pageViews);
-    document.getElementById('views').textContent = pageViews;
-}
+// function profilteller() {
+//     pageViews++;
+//     localStorage.setItem('views', pageViews);
+//     document.getElementById('views').textContent = pageViews;
+// }
 
-window.onload = () => {
-    profilteller();
-}
+// window.onload = () => {
+//     profilteller();
+// }
 
 function clock() {
     const now = new Date();
