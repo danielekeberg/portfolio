@@ -68,6 +68,6 @@ export function removeFromList(imdbID) {
     // location.reload();
 }
 
-document.getElementById('todoList').addEventListener('click', () => {
+function redirectTodo() {
     window.location.href = '../t/'
-});
+}

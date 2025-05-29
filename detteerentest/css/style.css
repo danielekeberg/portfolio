@@ -389,11 +389,11 @@ header .search input {
     background: #dbc484;
 }
 
-.profile-nav button:last-child:hover {
+.profile-nav button:hover {
     background: #d4d4d4;
 }
 
-.profile-nav button:last-child:active {
+.profile-nav button:active {
     background: #ffffff;
 }
 
