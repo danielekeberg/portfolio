@@ -5,18 +5,21 @@ async function fetchList(imdbID) {
     try {
         const res = await fetch(`${apiUrl}apiKey=${apiKey}&i=${imdbID}`);
         const data = await res.json();
-        const d = document.createElement('a');
+        const d = document.createElement('div');
         // d.href = `../m/?q=${data.Title}&${data.imdbID}`;
-        d.className = 'movieCard';
+        d.className = 'swag';
         d.innerHTML = 
         `
+        <a class="movieCard" href="../m/?q=${data.Title}&i=${data.imdbID}">
         <img id="moviePoster" src="${data.Poster}" alt="${data.Title}s alt">
         <div class="movieDetails">
             <h2>${data.Title}</h2>
             <p>${data.Year}</p>
             <p>${data.Type}</p>
-            <button class="removeList">Remove</button>
+            
         </div>
+        </a>
+        <button class="removeList">Remove</button>
         `;
 
         document.getElementById('list').appendChild(d);
@@ -64,3 +67,7 @@ export function removeFromList(imdbID) {
         },2000);
     // location.reload();
 }
+
+document.getElementById('todoList').addEventListener('click', () => {
+    window.location.href = '../t/'
+});

@@ -252,6 +252,23 @@ header .search input {
     border-radius: 5px;
 }
 
+.swag {
+    position: relative;
+}
+
+.swag button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.swag button:hover {
+    background: #e3e0e0;
+}
+
 .movieCard .movieDetails h2 {
     color: #f5c451;
 }
@@ -393,4 +410,8 @@ header .search input {
 
 .movieHeader img:hover {
     filter: grayscale(50%)
+}
+
+#todo li {
+    margin: 10px 0;
 }

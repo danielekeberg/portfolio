@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/moviedb.svg">
     <script type="module" src="../js/script.js" defer></script>
-    <script type="module" src="../js/fav.js" defer></script>
     <title>iMDb</title>
 </head>
 <body>
@@ -38,14 +37,36 @@
             <div id="watchlist-container"></div>
             <div class="list">
                 <div class="profile-header">
-                    <h1>Your list</h1>
-                    <div class="profile-nav">
-                        <button id="changeName">Change Name</button>
-                        <button id="todoList">Todo</button>
-                        <button id="emptyList">Empty List</button>
-                    </div>
+                    <h1>Todo list</h1>
+                    
                 </div>
-                <div id="list"></div>
+                <div id="todo">
+                    <ul>
+                        <li>Rating system
+                            <ul>
+                                <li>Rangere fra 1-5</li>
+                                <li>Lagre i localStorage</li>
+                                <li>Display etter rangering</li>
+                            </ul>
+                        </li>
+                        <li>Featured today?
+                            <ul>
+                                <li>Legge til en array med nye filmer, viser 1 hver dag</li>
+                            </ul>
+                        </li>
+                        <li>Bedre top 10 liste
+                            <ul>
+                                <li>Oppdatert</li>
+                                <li>ChatGPT? :D</li>
+                            </ul>
+                        </li>
+                        <li>Legge til fav liste fra hjemsiden?
+                            <ul>
+                                <li>Typ liten stjerne på movie card</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </main>

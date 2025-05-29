@@ -32,7 +32,7 @@ async function fetchMovies() {
             </div>
             <div class="rating">
                 <img src="../assets/star.svg" alt="Rating Star">
-                <p id="rating">${data.imdbRating}</p>
+                <p id="rating">${data.imdbRating} / 10</p>
                 <p>${data.imdbVotes}</p>
             </div>
             <div class="desc">
