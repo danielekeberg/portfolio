@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/moviedb.svg">
+    <script type="module" src="../js/script.js" defer></script>
+    <script type="module" src="../js/fav.js" defer></script>
+    <title>iMDb</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../">iMDb</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Movie.." id="movieInput">
+            <button id="searchMovie">Search</button>
+        </div>
+        <div class="user">
+            <a id="displayedUsername" href="../p/">danielekeberg</a>
+            <img src="https://i.pinimg.com/736x/0b/d5/2f/0bd52f658b0698a7b06ca263e04a3404.jpg" alt="Profile Picture">
+        </div>
+    </header>
+    <main>
+        <div class="modal" id="nameModal" style="display: none;">
+            <div class="modal-content">
+                <h1>Gjerne skriv inn et navn! :)</h1>
+                <div class="modalInput">
+                    <input type="text" placeholder="Navn" id="nameInput">
+                    <button id="nameSubmit">Neste</button>
+                </div>
+            </div>
+        </div>
+        <div class="loader" style="display: none"></div>
+        <div class="container">
+            <div id="watchlist-container"></div>
+            <div class="list">
+                <div class="profile-header">
+                    <h1>Your list</h1>
+                    <div class="profile-nav">
+                        <button id="changeName">Change Name</button>
+                        <button id="emptyList">Empty List</button>
+                    </div>
+                </div>
+                <div id="list"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
