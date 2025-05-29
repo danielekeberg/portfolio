@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/moviedb.svg">
     <script type="module" src="../js/script.js" defer></script>
-    <script type="module" src="../js/fav.js" defer></script>
+    <script type="module" src="../js/rate.js" defer></script>
     <title>iMDb</title>
 </head>
 <body>
@@ -35,29 +35,9 @@
         </div>
         <div class="loader" style="display: none"></div>
         <div class="container">
-            <div id="watchlist-container"></div>
-            <div class="list">
-                <div class="profile-header">
-                    <h1>Your list</h1>
-                    <div class="profile-nav">
-                        <button id="changeName">Change Name</button>
-                        <button id="todoList">Todo</button>
-                        <button id="test">Test</button>
-                        <button id="emptyList">Empty List</button>
-                    </div>
-                </div>
-                <div id="list"></div>
+            <h1>Test</h1>
             </div>
         </div>
     </main>
-
-    <script>
-        document.getElementById('todoList').addEventListener('click', () => {
-            window.location.href = '../t/';
-        })
-        document.getElementById('test').addEventListener('click', () => {
-            window.location.href = '../test/';
-        })
-    </script>
 </body>
 </html>
