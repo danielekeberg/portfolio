@@ -1,11 +1,10 @@
 import { API_URL, moreWines, header, colors } from "./config.js";
 
 let color = 0;
-let max = 75;
 
 async function fetchProduct() {
     try {
-        const res = await fetch(`${API_URL}?start=120&maxResults=${max}&productTypeId=red_wine`, header)
+        const res = await fetch(`${API_URL}?start=125&maxResults=100`, header)
         const data = await res.json();
         if(!res.ok) {
             throw new Error(`Error fetching ${res.status}`);
@@ -58,6 +57,7 @@ async function fetchEach(id) {
         const data = await res.json();
         
         const d = document.createElement('a');
+        d.title = `${data[0].basic.productShortName}`;
         d.href = `../../vin/wine/?q=${data[0].basic.productId}&_n=${data[0].basic.productShortName}`;
         d.style.backgroundColor = colors[color] + 95;
         color++;

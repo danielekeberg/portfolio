@@ -5,8 +5,9 @@ async function fetchMore(id) {
         const res = await fetch(`${API_URL}?productId=${id}`, header)
         const data = await res.json();
         const d = document.createElement('a');
+        d.title = data[0].basic.productShortName;
         d.className = 'product';
-        d.href = `../wine/?q=${data[0].basic.productId}&_n=${data[0].basic.productShortName}`
+        d.href = `../wine/?q=${data[0].basic.productId}&_n=${data[0].basic.productShortName}`;
         d.innerHTML = 
         `
         <img src="https://bilder.vinmonopolet.no/cache/300x300-0/${data[0].basic.productId}-1.jpg">

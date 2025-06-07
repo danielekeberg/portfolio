@@ -35,6 +35,7 @@ async function fetchEach(id) {
         
         const d = document.createElement('a');
         d.href = `../../vin/wine/?q=${data[0].basic.productId}&_n=${data[0].basic.productShortName}`;
+        d.title = `${data[0].basic.productShortName}`;
         d.style.backgroundColor = colors[color] + 95;
         color++;
         if(color >= colors.length) {
