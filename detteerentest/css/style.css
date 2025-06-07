@@ -1,0 +1,417 @@
+body {
+    background: #0f1115;
+    color: #f4f3f2;
+    margin: 0;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    border-bottom: 1px solid #bdbdbd
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #f4f3f2;
+    font-size: 36px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+header .logo a:hover {
+    color: #f5c451;
+}
+
+header .user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header .user a {
+    text-decoration: none;
+    color: #f4f3f2;
+}
+
+header .user a:hover {
+    text-decoration: underline;
+}
+
+header .user img {
+    height: 25px;
+    border-radius: 50%;
+}
+
+header .search {
+    display: flex;
+    gap: 5px;
+}
+
+header .search button {
+    border: 1px solid #bdbdbd;
+    background: #f4f3f2;
+    color: #181818;
+    border-radius: 2px;
+}
+
+header .search input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #bdbdbd;
+    border-radius: 2px;
+}
+
+.container {
+    width: 60%;
+    display: flex;
+    margin: 50px auto;
+}
+
+.main {
+    color: #d3d3d3;
+    display: flex;
+    gap: 100px;
+}
+
+.main .movieTitle {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #f5c451;
+}
+
+.main .movieTitle p {
+    color: #d3d3d3;
+}
+
+.main .rated {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#top10 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#top10 a {
+    text-decoration: none;
+    color: #f4f3f2;
+}
+
+#top10 .card {
+    border: 1px solid #bdbdbd70;
+    background: #13151a;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+#rated,
+.card h2 {
+    color: #f5c451;
+}
+
+#rated {
+    font-weight: 600;
+}
+
+.card h2,
+.movieTitle h1,
+.movieTitle p {
+    margin-bottom: 0;
+}
+
+.card p {
+    color: #999999;
+}
+
+.card:hover {
+    background: #0f1115 !important;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.rating img {
+    height: 20px;
+}
+
+#rating {
+    color: #f5c451;
+}
+
+.card .details,
+.card .rating {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.card .details,
+.main .rated {
+    font-size: 12px;
+}
+
+.card .details p {
+    color: #d3d3d3;
+}
+
+.card .rating {
+    font-weight: 600;
+}
+
+.card #plot {
+    height: 100px;
+    overflow: scroll;
+    margin-bottom: 20px;
+}
+
+.card #year {
+    margin: 0;
+}
+
+.card .details p,
+.card .rating p {
+    margin: 10px 0;
+}
+
+.cast {
+    display: flex;
+    gap: 20px;
+}
+
+.main img {
+    border-radius: 5px;
+}
+
+/* #loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #f4f3f2;
+} */
+
+.loader {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: 10px solid #f4f3f2;
+    border-top: 10px solid #f5c451;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.displaySearch {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.movieCard {
+    cursor: pointer;
+    display: flex;
+    gap: 30px;
+    background: #1a1d22;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.movieCard:hover {
+    background: #191b20;
+}
+
+.movieCard img {
+    height: 200px;
+    max-width: 150px;
+    border-radius: 5px;
+}
+
+.swag {
+    position: relative;
+}
+
+.swag button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.swag button:hover {
+    background: #e3e0e0;
+}
+
+.movieCard .movieDetails h2 {
+    color: #f5c451;
+}
+
+.movieCard .movieDetails p {
+    color: #d3d3d3;
+}
+
+#list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.success,
+.error {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.success p,
+.error p {
+    margin: 0;
+    padding: 10px;
+}
+
+.success {
+    background: #1e3a2f;
+    color: #b0f5d1;
+}
+
+.error {
+    background: #3a1e1e;
+    color: #f5b0b0;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1a1d22;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #f5c451;
+    height: 300px;
+    width: 500px;
+}
+
+.modal-content h1{
+    text-align: center;
+}
+
+.modalInput {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.modalInput input {
+    padding: 10px;
+    border: 1px solid #bdbdbd;
+    width: 50%;
+}
+
+.modalInput input:focus {
+    outline: none;
+}
+
+.modalInput button {
+    background: #f5c451;
+    color: #0f1115;
+    border: none;
+    cursor: pointer;
+}
+
+.modalInput button:hover {
+    background: #e0b846;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1180px;
+}
+
+.profile-nav button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-nav button:first-child {
+    background: #f5c451;
+}
+
+.profile-nav button:first-child:hover {
+    background: #e0b846;
+}
+
+.profile-nav button:first-child:active {
+    background: #dbc484;
+}
+
+.profile-nav button:hover {
+    background: #d4d4d4;
+}
+
+.profile-nav button:active {
+    background: #ffffff;
+}
+
+.movieHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.movieHeader img {
+    height: 20px;
+    cursor: pointer;
+}
+
+.movieHeader img:hover {
+    filter: grayscale(50%)
+}
+
+#todo li {
+    margin: 10px 0;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/moviedb.svg">
+    <!-- <script type="module" src="../js/movies.js" defer></script> -->
+    <script type="module" src="../js/script.js" defer></script>
+    <script type="module" src="../js/search.js" defer></script>
+    <title>iMDb</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../">iMDb</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Movie.." id="movieInput">
+            <button id="searchMovie">Search</button>
+        </div>
+        <div class="user">
+            <a id="displayedUsername" href="../p/">danielekeberg</a>
+            <img src="https://i.pinimg.com/736x/0b/d5/2f/0bd52f658b0698a7b06ca263e04a3404.jpg" alt="Profile Picture">
+        </div>
+    </header>
+    <main>
+        <div class="loader" style="display: none"></div>
+        <div class="container">
+            <div class="displaySearch" id="search">
+                <!-- <div class="movieCard">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZTJkYjdmYjYtOGMyNC00ZGU1LThkY2ItYTc1OTVlMmE2YWY1XkEyXkFqcGc@._V1_SX300.jpg">
+                    <div class="movieDetails">
+                        <h2>Title</h2>
+                        <p>Year</p>
+                        <p>Movie</p>
+                    </div>
+                </div> -->
+                <!-- <img src="https://m.media-amazon.com/images/M/MV5BNzU0OTI4YTQtNGQ1ZS00ZjA4LTg3MTMtZjkyZWNjN2RiZDJmXkEyXkFqcGc@._V1_SX300.jpg">
+                <div>
+                    <div class="movieTitle">
+                        <h1>Title</h1>
+                        <p>(2025)</p>
+                    </div>
+                    <div class="rated">
+                        <p id="rated">R</p>
+                        <p>2h 22m</p>
+                        <p>Drama, Crime</p>
+                    </div>
+                    <div class="rating">
+                        <img src="../assets/star.svg" alt="Rating Star">
+                        <p id="rating">4.2</p>
+                        <p>438,234</p>
+                    </div>
+                    <div class="desc">
+                        <p>Desc</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+</body>
+</html>
