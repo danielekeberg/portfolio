@@ -7,13 +7,13 @@ let color = 0;
 
 async function search() {
     try {
-        const res = await fetch(`${API_URL}?productId=${s}`, header);
+        const res = await fetch(`${API_URL}?productShortNameContains=${s}`, header);
         const data = await res.json();
         console.log(data);
         if(data.length === 0) {
             return document.getElementById('products').innerHTML = 
             `
-            <h1>Error fetching product ID. Try again!</h1>
+            <h1>Error fetching product. Try again!</h1>
             `;
         }
         const d = document.createElement('a');
