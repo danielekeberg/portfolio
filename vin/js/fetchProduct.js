@@ -3,6 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const q = params.get('q');
 
 async function fetchProduct() {
+    document.getElementById('loader').style.display = 'block';
     try {
         const res = await fetch(`${API_URL}?productId=${q}`, header);
         const data = await res.json();
@@ -33,6 +34,8 @@ async function fetchProduct() {
         });
     } catch(error) {
         console.error(error);
+    } finally {
+        document.getElementById('loader').style.display = 'none';
     }
 }
 
