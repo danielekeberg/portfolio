@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -137,4 +141,55 @@ input:focus {
     top: 50%;
     left: 20px;
     transform: translate(-50%, -50%);
+}
+
+#product {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#product .product-img {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+#product .product-desc {
+    width: 100%;
+}
+
+#product .product-desc .review {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#product .product-desc .review .stars {
+    display: flex;
+}
+
+#product .product-desc .review .stars img {
+    height: 20px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+    filter: grayscale(1);
+}
+
+#product .product-desc .review .stars img:hover {
+    filter: grayscale(0);
+}
+
+#product .product-desc .total-revs p {
+    font-weight: 600;
+}
+
+#product .product-desc .total-revs span {
+    font-size: 14px;
+}
+
+#product .product-desc .total-revs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
