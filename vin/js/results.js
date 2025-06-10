@@ -6,7 +6,7 @@ async function fetchWines(id) {
         const data = await res.json();
         const d = document.createElement('a');
         d.className = 'featured-wine';
-        d.href = `../wine/?q=${data[0].basic.productId}&${data[0].basic.productShortName}`;
+        d.href = `../product/?q=${data[0].basic.productId}&${data[0].basic.productShortName}`;
         d.innerHTML = 
         `
         <div class="wine-img">
@@ -31,6 +31,8 @@ function wines() {
 
 wines();
 
+let start = 0;
+
 async function search() {
     const searchInput = document.getElementById('searchInput').value;
     if(searchInput === '') {
@@ -38,13 +40,13 @@ async function search() {
         return wines();
     }
     try {
-        const res = await fetch(`${API_URL}?productShortNameContains=${searchInput}&maxResults=20`, header);
+        const res = await fetch(`${API_URL}?productShortNameContains=${searchInput}&start=${start}&maxResults=50`, header);
         const data = await res.json();
         document.getElementById('results').innerHTML = '';
         data.forEach(result => {
             const d = document.createElement('a');
             d.className = 'featured-wine';
-            d.href = `../wine/?q=${result.basic.productId}&${result.basic.productShortName}`;
+            d.href = `../product/?q=${result.basic.productId}&${result.basic.productShortName}`;
             d.innerHTML = 
             `
             <div class="wine-img">

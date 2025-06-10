@@ -16,6 +16,30 @@ header {
     align-items: center;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 38px;
+}
+
+.header-items {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-items img {
+    height: 25px;
+}
+
 header h1 {
     margin: 0;
     margin-bottom: 50px;
@@ -95,6 +119,10 @@ main .container {
     color: #303030;
 }
 
+.featured-wine .wine-desc {
+    text-align: center;
+}
+
 .featured-wine .wine-img {
     display: flex;
     justify-content: center;
@@ -147,12 +175,18 @@ input:focus {
     display: flex;
     justify-content: center;
     gap: 50px;
+    min-height: 80vh;
 }
 
 #product .product-img {
     display: flex;
     justify-content: center;
     width: 50%;
+    height: 300px;
+}
+
+#product .product-img img {
+    height: 300px;
 }
 
 #product .product-desc {
