@@ -2,6 +2,13 @@ import { API_URL, header } from './config.js';
 const params = new URLSearchParams(window.location.search);
 const q = params.get('q');
 
+document.getElementById('searchInput').addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        const s = document.getElementById('searchInput').value;
+        location.href = `../browse/?q=${s}`
+    }
+})
+
 async function fetchProduct() {
     try {
         const res = await fetch(`${API_URL}?productId=${q}`, header);

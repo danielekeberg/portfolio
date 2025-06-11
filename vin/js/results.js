@@ -29,18 +29,29 @@ function wines() {
     })
 }
 
-wines();
-
 let start = 0;
 
 async function search() {
     const searchInput = document.getElementById('searchInput').value;
+    const newParams = new URLSearchParams();
+    newParams.set('q', document.getElementById('searchInput').value);
+
+    const newUrl = `${window.location.pathname}?${newParams.toString()}`;
+    window.history.pushState({}, '', newUrl);
+
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+    
     if(searchInput === '') {
         document.getElementById('results').innerHTML = '';
         return wines();
     }
+    if(!q) {
+        document.getElementById('results').innerHTML = '';
+        return wines();
+    }
     try {
-        const res = await fetch(`${API_URL}?productShortNameContains=${searchInput}&start=${start}&maxResults=50`, header);
+        const res = await fetch(`${API_URL}?productShortNameContains=${q}&start=${start}&maxResults=20`, header);
         const data = await res.json();
         document.getElementById('results').innerHTML = '';
         data.forEach(result => {
@@ -61,7 +72,9 @@ async function search() {
     } catch(error) {
         console.error(error);
     }
-}
+}   
+
+search();
 
 // document.getElementById('searchInput').addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
