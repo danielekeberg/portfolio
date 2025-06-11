@@ -1,4 +1,4 @@
-import { API_URL, header, moreWines } from './config.js';
+import { API_URL, header, moreWines } from './config.js';
 
 async function fetchWines(id) {
     try {
