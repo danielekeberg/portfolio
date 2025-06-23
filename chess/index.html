@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Chess</title>
+    <link rel="icon" href="./assets/chess-piece-part-2-svgrepo-com.svg">
+    <title>ChessKnight</title>
 </head>
 <body>
     <header>
@@ -79,7 +80,7 @@
                     <h2>Recently Analyzed Players</h2>
                 </div>
                 <div class="players">
-                    <a href="./user/?username=magnus_carlsen" class="player-card">
+                    <a href="./user/?username=magnus_carlsen&v=overview" class="player-card">
                         <div class="player-header">
                             <img class="user-img" src="./assets/user-alt-1-svgrepo-com (1).svg">
                             <div class="player">
@@ -115,7 +116,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="./user/?username=hikaru" class="player-card">
+                    <a href="./user/?username=hikaru&v=overview" class="player-card">
                         <div class="player-header">
                             <img class="user-img" src="./assets/user-alt-1-svgrepo-com (1).svg">
                             <div class="player">
@@ -151,7 +152,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="./user/?username=chessbrah" class="player-card">
+                    <a href="./user/?username=chessbrah&v=overview" class="player-card">
                         <div class="player-header">
                             <img class="user-img" src="./assets/user-alt-1-svgrepo-com (1).svg">
                             <div class="player">
@@ -194,6 +195,11 @@
                 <div class="browse">
                     <button id="clubs">Browse Clubs</button>
                     <button id="tournaments">Tournaments</button>
+                    <a href="https://github.com/danielekeberg" target="_blank">
+                        <button class="github" id="tournaments">
+                            Github
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
