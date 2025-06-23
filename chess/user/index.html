@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script type="module" src="../js/fetchUser.js" defer></script>
+    <link rel="icon" href="../assets/chess-piece-part-2-svgrepo-com.svg">
+    <script type="module" src="../js/user.js" defer></script>
     <title>ChessKnight</title>
 </head>
 <body>
@@ -33,16 +34,18 @@
         </div>
     </header>
     <main>
+        <!-- <div id="loader">
+            <h1>Loading</h1>
+        </div> -->
         <div class="container">
             <div class="user-stats">
                 <div class="user-pb">
                     <img id="avatar" src="">
-                    <!-- <h1>D</h1> -->
                 </div>
                 <div class="user-details">
                     <div class="name">
-                        <h1 id="username">danielekeberg99</h1>
-                        <p>GM</p>
+                        <h1 id="username">user</h1>
+                        <p id="title">GM</p>
                     </div>
                     <div class="loc">
                         <div>
@@ -51,51 +54,57 @@
                         </div>
                         <div>
                             <img src="../assets/time-svgrepo-com.svg">
-                            <p>Online</p>
+                            <p id="lastOnline">Online</p>
                         </div>
                     </div>
                     <div class="loc">
-                        <p>Joined in 2018</p>
-                        <p>12 874 followers</p>
+                        <p id="joined">Joined in</p>
+                        <p id="followers">0 followers</p>
                     </div>
                 </div>
                 <div class="modes">
                     <p>Rapid</p>
-                    <h1 id="rapidRating">2847</h1>
+                    <h1 id="rapidRating">0</h1>
                     <div class="peak">
-                        <p id="rapidPeak">Best: 2882</p>
-                        <p id="rapidGames">1247 games</p>
+                        <p id="rapidPeak">Best: 0</p>
+                        <p id="rapidGames">0 games</p>
                     </div>
                 </div>
                 <div class="modes">
                     <p>Blitz</p>
-                    <h1 id="blitzRating">2965</h1>
+                    <h1 id="blitzRating">0</h1>
                     <div class="peak">
-                        <p id="blitzPeak">Best: 2998</p>
-                        <p id="blitzGames">2891 games</p>
+                        <p id="blitzPeak">Best: 0</p>
+                        <p id="blitzGames">0 games</p>
                     </div>
                 </div>
                 <div class="modes">
                     <p>Bullet</p>
-                    <h1 id="bulletRating">2954</h1>
+                    <h1 id="bulletRating">0</h1>
                     <div class="peak">
-                        <p id="bulletPeak">Best: 2987</p>
-                        <p id="bulletGames">5643 games</p>
+                        <p id="bulletPeak">Best: 0</p>
+                        <p id="bulletGames">0 games</p>
                     </div>
                 </div>
-                <a href="https://www.chess.com/member/danielekeberg99" target="_blank">
-                    <img src="../assets/new-window-svgrepo-com.svg">
-                    <p>Chess.com Profile</p>
-                </a>
+                <div class="profile-btns">
+                    <a id="refresh" href="./">
+                        <img src="../assets/refresh-cw-alt-1-svgrepo-com.svg">
+                        <p>Refresh</p>
+                    </a>
+                    <a id="chessLink" href="#" target="_blank">
+                        <img src="../assets/new-window-svgrepo-com.svg">
+                        <p>Chess.com Profile</p>
+                    </a>
+                </div>
             </div>
             <div class="profile-nav">
-                <p class="active">Overview</p>
-                <p>Game Stats</p>
-                <p>History</p>
-                <p>Clubs</p>
-                <p>Tournaments</p>
+                <p id="overview">Overview</p>
+                <p id="gamestats">Game Stats</p>
+                <p id="history">History</p>
+                <p id="clubs">Clubs</p>
+                <p id="tournaments">Tournaments</p>
             </div>
-            <div class="stats">
+            <div class="stats" id="page">
                 <div class="left">
                     <div class="profile-card">
                         <div class="title">
@@ -104,19 +113,19 @@
                         </div>
                         <div class="profile-summary">
                             <div class="profile-stats">
-                                <h1>10 781</h1>
+                                <h1 id="total">0</h1>
                                 <p>Total Games</p>
                             </div>
                             <div class="profile-stats">
-                                <h1>63.5%</h1>
+                                <h1 id="winrate">0%</h1>
                                 <p>Win Rate</p>
                             </div>
                             <div class="profile-stats">
-                                <h1>487h</h1>
+                                <h1>0h</h1>
                                 <p>Time Played</p>
                             </div>
                             <div class="profile-stats">
-                                <h1>8m 24s</h1>
+                                <h1>0s</h1>
                                 <p>Avg Game</p>
                             </div>
                         </div>
@@ -192,15 +201,15 @@
                         <div class="quick-stats">
                             <div class="result">
                                 <p>Wins</p>
-                                <p>6847</p>
+                                <p id="wins">0</p>
                             </div>
                             <div class="result">
                                 <p>Draws</p>
-                                <p>1000</p>
+                                <p id="draws">0</p>
                             </div>
                             <div class="result">
                                 <p>Losses</p>
-                                <p>2934</p>
+                                <p id="loss">0</p>
                             </div>
                         </div>
                     </div>
