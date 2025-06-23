@@ -345,6 +345,14 @@ header a:hover {
     cursor: pointer;
 }
 
+.explore a {
+    text-decoration: none;
+    color: #c8a258;
+}
+
+.explore a button img {
+    height: 15px;
+}
 .explore button:hover {
     background: #352311;
 }
@@ -418,7 +426,7 @@ header a:hover {
 }
 
 .user-stats .modes {
-    width: 200px;
+    width: 12%;
     background: #695137;
     text-align: center;
     padding: 10px;
@@ -521,6 +529,10 @@ header a:hover {
 
 .profile-summary .profile-stats {
     margin: 20px;
+}
+
+.profile-stats p {
+    text-align: center;
 }
 
 .profile-card .profile-summary h1,
@@ -629,4 +641,92 @@ header a:hover {
 
 .recent-games .elo p {
     font-weight: 600;
+}
+
+#loader {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: linear-gradient(135deg,#533d29, #000000);
+    color: #f9f6f5;
+    text-align: center;
+    padding: 10% 0;
+}
+
+.profile-btns a {
+    margin: 10px 0;
+}
+
+.profile-btns #refresh {
+    background: #dfaf37;
+    color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-btns #refresh:hover {
+    background: #a5822a;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.game-stats .profile-card {
+    width: 30%;
+}
+
+.game-stats .profile-card .mode-stats {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.game-stats .profile-card .mode-stats div {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.game-stats .profile-card .mode-stats div h4,
+.game-stats .profile-card .mode-stats div p {
+    margin: 0;
+}
+
+.game-stats .profile-card .detailed-stats div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-stats .profile-card .detailed-stats p {
+    margin: 5px;
+}
+
+.history {
+    width: 100%;
+}
+
+.profile-card .history-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0d9b5;
+    padding: 0 10px;
+}
+
+.profile-card .history-header:last-child {
+    border: none;
+}
+
+.profile-card .history-header p {
+    min-width: 15%;
+}
+
+.history-stats {
+    padding: 0 20px;
+}
+
+.game:hover {
+    background: #dfaf3720;
 }
