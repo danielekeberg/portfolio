@@ -517,7 +517,7 @@ header a:hover {
     background: linear-gradient(135deg, #7f6439, #7f6439);
     border: 1px solid #927546;
     border-radius: 5px;
-    margin: 20px 0;
+    margin: 0 0 20px;
     padding: 10px;
     color: #dfaf37;
 }
@@ -729,4 +729,58 @@ header a:hover {
 
 .game:hover {
     background: #dfaf3720;
+}
+
+.clubs {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.clubs .club-card {
+    text-decoration: none;
+    color: #dfaf37;
+    background: #634d2b;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.clubs .club-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clubs .club-header div h4,
+.clubs .club-header div p {
+    margin: 2px;
+}
+
+.clubs .club-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clubs .club-details p {
+    margin: 5px;
+}
+
+.clubs .role {
+    border: 1px solid #dfaf3750;
+    padding: 5px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+#tourney a {
+    text-decoration: none;
+    color: #dfaf37;
+}
+
+.longer {
+    width: 22%;
+}
+
+.clubs-page h1 {
+    font-family: 'Playfair Display', sans-serif;
 }
