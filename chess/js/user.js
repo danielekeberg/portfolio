@@ -1,12 +1,11 @@
 const params = new URLSearchParams(window.location.search);
-const q = params.get('username');
+const q = params.get('q');
 const page = params.get('v');
 
 async function fetchUser() {
     try {
         const res = await fetch(`https://api.chess.com/pub/player/${q}`);
         const data = await res.json();
-        console.log(data);
 
         document.getElementById('username').textContent = data.username;
         fetchCountry(data.country);
@@ -51,17 +50,34 @@ async function totalGames() {
     try {
         const res = await fetch(`https://api.chess.com/pub/player/${q}/stats`);
         const data = await res.json();
-        console.log(data);
-        const allGames = data.chess_blitz ? data.chess_blitz.record.win + data.chess_blitz.record.draw + data.chess_blitz.record.loss : 0 + data.chess_rapid ? data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss : 0 + data.chess_bullet ? data.chess_bullet.record.win + data.chess_bullet.record.draw + data.chess_bullet.record.loss : 0;
-        const allWins = data.chess_blitz ? data.chess_blitz.record.win : 0 + data.chess_rapid ? data.chess_rapid.record.win : 0 + data.chess_bullet ? data.chess_bullet.record.win : 0;
-        const allDraws = data.chess_blitz ? data.chess_blitz.record.draw : 0 + data.chess_rapid ? data.chess_rapid.record.draw : 0 + data.chess_bullet ? data.chess_bullet.record.draw : 0;
-        const allLosses = data.chess_blitz ? data.chess_blitz.record.loss : 0 + data.chess_rapid ? data.chess_rapid.record.loss : 0 + data.chess_bullet ? data.chess_bullet.record.loss : 0;
-        document.getElementById('total').textContent = allGames;
+        const allBlitz = data.chess_blitz ? data.chess_blitz.record.win + data.chess_blitz.record.draw + data.chess_blitz.record.loss : 0;
+        const allRapid = data.chess_rapid ? data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss : 0;
+        const allBullet = data.chess_bullet ? data.chess_bullet.record.win + data.chess_bullet.record.draw + data.chess_bullet.record.loss : 0;
+        const newAllGames = allBlitz + allRapid + allBullet;
+
+        const rapidWins = data.chess_rapid ? data.chess_rapid.record.win : 0;
+        const blitzWins = data.chess_blitz ? data.chess_blitz.record.win : 0;
+        const bulletWins = data.chess_bullet ? data.chess_bullet.record.win : 0;
+        const allWins = rapidWins + blitzWins + bulletWins;
+
+        const rapidDraws = data.chess_rapid ? data.chess_rapid.record.draw : 0;
+        const blitzDraws = data.chess_blitz ? data.chess_blitz.record.draw : 0;
+        const bulletDraws = data.chess_bullet ? data.chess_bullet.record.draw : 0;
+        const allDraws = rapidDraws + blitzDraws + bulletDraws;
+
+        const rapidLoss = data.chess_rapid ? data.chess_rapid.record.loss : 0;
+        const blitzLoss = data.chess_blitz ? data.chess_blitz.record.loss : 0;
+        const bulletLoss = data.chess_bullet ? data.chess_bullet.record.loss : 0;
+        const allLoss = rapidLoss + blitzLoss + bulletLoss;
+
+        
+
+        document.getElementById('total').textContent = newAllGames;
         document.getElementById('wins').textContent = allWins;
         document.getElementById('draws').textContent = allDraws;
-        document.getElementById('loss').textContent = allLosses;
+        document.getElementById('loss').textContent = allLoss;
 
-        const winrate = ((allWins / allGames) * 100);
+        const winrate = ((allWins / newAllGames) * 100);
         document.getElementById('winrate').textContent = winrate.toFixed(2) + '%';
     } catch(error) {
         console.error(error);
@@ -76,12 +92,12 @@ async function fetchUserStats() {
         document.getElementById('blitzRating').textContent = data.chess_blitz ? data.chess_blitz.last.rating : 0;
         document.getElementById('bulletRating').textContent = data.chess_bullet ? data.chess_bullet.last.rating : 0;
 
-        document.getElementById('rapidPeak').textContent = `Best: ${data.chess_rapid ? data.chess_rapid.best.rating : 0}`;
+        document.getElementById('rapidPeak').textContent = `Best: ${data.chess_rapid ? data.chess_rapid.last.rating : 0}`;
         document.getElementById('blitzPeak').textContent = `Best: ${data.chess_blitz ? data.chess_blitz.best.rating : 0}`;
         document.getElementById('bulletPeak').textContent = `Best: ${data.chess_bullet ? data.chess_bullet.best.rating : 0}`;
-        document.getElementById('rapidGames').textContent = (data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss) + ' games';
-        document.getElementById('blitzGames').textContent = (data.chess_blitz.record.win + data.chess_blitz.record.draw + data.chess_blitz.record.loss) + ' games';
-        document.getElementById('bulletGames').textContent = (data.chess_bullet.record.win + data.chess_rapid.record.draw + data.chess_bullet.record.loss) + ' games';
+        document.getElementById('rapidGames').textContent = `${data.chess_rapid ? data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss : 0} games`;
+        document.getElementById('blitzGames').textContent = `${data.chess_blitz ? data.chess_blitz.record.win + data.chess_blitz.record.draw + data.chess_blitz.record.loss : 0} games`;
+        document.getElementById('bulletGames').textContent = `${data.chess_bullet ? data.chess_bullet.record.win + data.chess_bullet.record.draw + data.chess_bullet.record.loss : 0} games`;
     } catch(error) {
         console.error(error);
     }
@@ -109,11 +125,60 @@ function timeAgo(timestamp) {
     return document.getElementById('lastOnline').textContent = 'just now';
 }
 
+function newTitle(raw) {
+    let nameParts = raw.split('-');
+    nameParts = nameParts.slice(0, -1);
+    const clean = nameParts.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return clean;
+}
+
+let tourney = 0;
 async function fetchTournaments() {
     try {
         const res = await fetch(`https://api.chess.com/pub/player/${q}/tournaments`);
         const data = await res.json();
-        console.log(data);
+        const tournaments = data.finished;
+        tourney = data.finished.length;
+        for(let i = 0; i < 10; i++) {
+            const tournament = tournaments[tourney - 1];
+            const id = tournament['@id'];
+            
+            const d = document.createElement('a');
+            const rawTitle = tournaments[tourney - 1].url.replace('https://www.chess.com/tournament/live/', '');
+            const cleanTitle = newTitle(rawTitle);
+            const tourneyFinished = await fetchTournament(id);
+            d.className = 'history-header game';
+            d.href = data.finished[tourney - 1].url;
+            d.target = '_blank';
+            d.innerHTML =
+            `
+                <p class="longer">${cleanTitle}</p>
+                <p>${data.finished[tourney - 1].placement}</p>
+                <p>${data.finished[tourney - 1].total_players} players</p>
+                <p>${data.finished[tourney - 1].status}</p>
+                <p>${tourneyFinished}</p>
+            `;
+            document.getElementById('tourney').appendChild(d);
+            tourney--;
+        }
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+async function fetchTournament(id) {
+    try {
+        const res = await fetch(id);
+        const data = await res.json();
+        const timestamp = data.finish_time;
+        const date = new Date(timestamp * 1000);
+
+        const yyyy = date.getUTCFullYear();
+        const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+        const dd = String(date.getUTCDate()).padStart(2, '0');
+
+        const full = `${yyyy}-${mm}-${dd}`;
+        return full;
     } catch(error) {
         console.error(error);
     }
@@ -139,17 +204,11 @@ async function fetch10Games(url) {
         for(let i = 0; i < 10; i++) {
             const d = document.createElement('div');
             d.className = 'history-header game';
-            
-
-            console.log(i)
-            console.log(data.games[gameLength]);
-            console.log(data.games[gameLength].end_time);
             const timestamp = data.games[gameLength].end_time;
             const date = new Date(timestamp * 1000);
             const yyyy = date.getUTCFullYear();
             const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
             const dd = String(date.getUTCDate()).padStart(2, '0');
-            console.log(`${yyyy}-${mm}-${dd}`);
 
             d.innerHTML = 
             `
@@ -165,34 +224,82 @@ async function fetch10Games(url) {
             gameLength--;
         }
     } catch(error) {
-        console.log(error);
+        console.error(error);
     }
 }
+
+async function fetchClubs() {
+    try {
+        const res = await fetch(`https://api.chess.com/pub/player/${q}/clubs`);
+        const data = await res.json();
+        const clubs = data.clubs;
+        clubs.forEach(club => {
+            const timestamp = club.joined;
+            const date = new Date(timestamp * 1000);
+
+            const yyyy = date.getUTCFullYear();
+            const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+            const dd = String(date.getUTCDate()).padStart(2, '0');
+            const d = document.createElement('a');
+            d.className = 'club-card';
+            d.href = club.url;
+            d.target = '_blank';
+            d.innerHTML = 
+            `
+            <div class="club-card">
+                <div class="club-header">
+                    <div>
+                        <h4>${club.name}</h4>
+                        <p>15 234 members</p>
+                    </div>
+                    <p class="role">Admin</p>
+                </div>
+                <div class="club-details">
+                    <p>Joined</p>
+                    <p>${yyyy}-${mm}-${dd}</p>
+                </div>
+                <div class="club-details">
+                    <p>Activity</p>
+                    <p>Very Active</p>
+                </div>
+            </div>
+            `;
+            document.getElementById('all-clubs').appendChild(d);
+        })
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+// fetchUser();
+// fetchUserStats();
+// totalGames();
 
 document.body.addEventListener('keydown', (e) => {
     if(e.key === 'Enter') {
         fetchUser();
         fetchUserStats();
         totalGames();
-        // fetchTournaments();
+        fetchTournaments();
         fetchHistory();
+        fetchClubs();
     }
 })
 
 document.getElementById('overview').addEventListener('click', () => {
-    window.location.href = `./?username=${q}&v=overview`;
+    window.location.href = `./?q=${q}&v=overview`;
 });
 document.getElementById('gamestats').addEventListener('click', () => {
-    window.location.href = `./?username=${q}&v=gamestats`;
+    window.location.href = `./?q=${q}&v=gamestats`;
 });
 document.getElementById('history').addEventListener('click', () => {
-    window.location.href = `./?username=${q}&v=history`;
+    window.location.href = `./?q=${q}&v=history`;
 });
 document.getElementById('clubs').addEventListener('click', () => {
-    window.location.href = `./?username=${q}&v=clubs`;
+    window.location.href = `./?q=${q}&v=clubs`;
 });
 document.getElementById('tournaments').addEventListener('click', () => {
-    window.location.href = `./?username=${q}&v=tournaments`;
+    window.location.href = `./?q=${q}&v=tournaments`;
 });
 
 if(page === 'overview') {
@@ -211,139 +318,125 @@ function overview() {
     document.getElementById('overview').className = 'active';
 }
 
-function gamestats() {
-    document.getElementById('gamestats').className = 'active';
-    document.getElementById('page').innerHTML = 
-    `
-    <div class="game-stats">
-        <div class="profile-card">
-            <div class="title">
-                <img src="../assets/chart-column-svgrepo-com.svg">
-                <h2>Rapid Statistics</h2>
-            </div>
-            <div class="mode-stats">
-                <div>
-                    <h4>0</h4>
-                    <p>Wins</p>
+async function gamestats() {
+    try {
+        const res = await fetch(`https://api.chess.com/pub/player/${q}/stats`);
+        const data = await res.json();
+
+        const allRapid = data.chess_rapid ? data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss : 0;
+        const allBlitz = data.chess_blitz ? data.chess_blitz.record.win + data.chess_blitz.record.draw + data.chess_blitz.record.loss : 0;
+        const allBullet = data.chess_bullet ? data.chess_bullet.record.win + data.chess_bullet.record.draw + data.chess_bullet.record.loss : 0;
+        document.getElementById('gamestats').className = 'active';
+        document.getElementById('page').innerHTML = 
+        `
+        <div class="game-stats">
+            <div class="profile-card">
+                <div class="title">
+                    <img src="../assets/chart-column-svgrepo-com.svg">
+                    <h2>Rapid Statistics</h2>
                 </div>
-                <div>
-                    <h4>0</h4>
-                    <p>Draws</p>
+                <div class="mode-stats">
+                    <div>
+                        <h4>${data.chess_rapid ? data.chess_rapid.record.win : 0}</h4>
+                        <p>Wins</p>
+                    </div>
+                    <div>
+                        <h4>${data.chess_rapid ? data.chess_rapid.record.draw : 0}</h4>
+                        <p>Draws</p>
+                    </div>
+                    <div>
+                        <h4>${data.chess_rapid ? data.chess_rapid.record.loss : 0}</h4>
+                        <p>Losses</p>
+                    </div>
                 </div>
-                <div>
-                    <h4>0</h4>
-                    <p>Losses</p>
-                </div>
-            </div>
-            <div class="detailed-stats">
-                <div>
-                    <p>Avg rating</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Peak rating</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Lowest rating</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Avg Game Time</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Total Time</p>
-                    <p>0</p>
-                </div>
-            </div>
-        </div>
-        <div class="profile-card">
-            <div class="title">
-                <img src="../assets/chart-column-svgrepo-com.svg">
-                <h2>Blitz Statistics</h2>
-            </div>
-            <div class="mode-stats">
-                <div>
-                    <h4>0</h4>
-                    <p>Wins</p>
-                </div>
-                <div>
-                    <h4>0</h4>
-                    <p>Draws</p>
-                </div>
-                <div>
-                    <h4>0</h4>
-                    <p>Losses</p>
+                <div class="detailed-stats">
+                    <div>
+                        <p>Avg rating</p>
+                        <p>0</p>
+                    </div>
+                    <div>
+                        <p>Peak rating</p>
+                        <p>HMM</p>
+                    </div>
+                    <div>
+                        <p>Total Games</p>
+                        <p>${allRapid}</p>
+                    </div>
                 </div>
             </div>
-            <div class="detailed-stats">
-                <div>
-                    <p>Avg rating</p>
-                    <p>0</p>
+            <div class="profile-card">
+                <div class="title">
+                    <img src="../assets/chart-column-svgrepo-com.svg">
+                    <h2>Blitz Statistics</h2>
                 </div>
-                <div>
-                    <p>Peak rating</p>
-                    <p>0</p>
+                <div class="mode-stats">
+                    <div>
+                        <h4>${data.chess_blitz ? data.chess_blitz.record.win : 0}</h4>
+                        <p>Wins</p>
+                    </div>
+                    <div>
+                        <h4>${data.chess_blitz ? data.chess_blitz.record.draw : 0}</h4>
+                        <p>Draws</p>
+                    </div>
+                    <div>
+                        <h4>${data.chess_blitz ? data.chess_blitz.record.loss : 0}</h4>
+                        <p>Losses</p>
+                    </div>
                 </div>
-                <div>
-                    <p>Lowest rating</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Avg Game Time</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Total Time</p>
-                    <p>0</p>
-                </div>
-            </div>
-        </div>
-        <div class="profile-card">
-            <div class="title">
-                <img src="../assets/chart-column-svgrepo-com.svg">
-                <h2>Bullet Statistics</h2>
-            </div>
-            <div class="mode-stats">
-                <div>
-                    <h4>0</h4>
-                    <p>Wins</p>
-                </div>
-                <div>
-                    <h4>0</h4>
-                    <p>Draws</p>
-                </div>
-                <div>
-                    <h4>0</h4>
-                    <p>Losses</p>
+                <div class="detailed-stats">
+                    <div>
+                        <p>Avg rating</p>
+                        <p>0</p>
+                    </div>
+                    <div>
+                        <p>Peak rating</p>
+                        <p>${data.chess_blitz ? data.chess_blitz.best.rating : 0}</p>
+                    </div>
+                    <div>
+                        <p>Total Games</p>
+                        <p>${allBlitz}</p>
+                    </div>
                 </div>
             </div>
-            <div class="detailed-stats">
-                <div>
-                    <p>Avg rating</p>
-                    <p>0</p>
+            <div class="profile-card">
+                <div class="title">
+                    <img src="../assets/chart-column-svgrepo-com.svg">
+                    <h2>Bullet Statistics</h2>
                 </div>
-                <div>
-                    <p>Peak rating</p>
-                    <p>0</p>
+                <div class="mode-stats">
+                    <div>
+                        <h4>${data.chess_bullet ? data.chess_bullet.record.win : 0}</h4>
+                        <p>Wins</p>
+                    </div>
+                    <div>
+                        <h4>${data.chess_bullet ? data.chess_bullet.record.draw : 0}</h4>
+                        <p>Draws</p>
+                    </div>
+                    <div>
+                        <h4>${data.chess_bullet ? data.chess_bullet.record.loss : 0}</h4>
+                        <p>Losses</p>
+                    </div>
                 </div>
-                <div>
-                    <p>Lowest rating</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Avg Game Time</p>
-                    <p>0</p>
-                </div>
-                <div>
-                    <p>Total Time</p>
-                    <p>0</p>
+                <div class="detailed-stats">
+                    <div>
+                        <p>Avg rating</p>
+                        <p>0</p>
+                    </div>
+                    <div>
+                        <p>Peak rating</p>
+                        <p>${data.chess_bullet ? data.chess_bullet.best.rating : 0}</p>
+                    </div>
+                    <div>
+                        <p>Total Games</p>
+                        <p>${allBullet}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    `;
+        `;
+    } catch(error){
+        console.error(error);
+    }
 }
 
 function history() {
@@ -370,12 +463,48 @@ function history() {
         </div>
     </div>
     `;
+    // fetchHistory();
 }
 
 function tournaments() {
     document.getElementById('tournaments').className = 'active';
+    document.getElementById('page').innerHTML = 
+    `
+    <div class="history">
+        <div class="profile-card">
+            <div class="title">
+                <img src="../assets/trophy-svgrepo-com (1).svg">
+                <h2>Tournament Results</h2>
+            </div>
+            <div class="history-stats" id="tourney">
+                <div class="history-header">
+                    <p class="longer">Tournament</p>
+                    <p>Place</p>
+                    <p>Participants</p>
+                    <p>Status</p>
+                    <p>Date</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    // fetchTournaments();
 }
 
 function clubs() {
     document.getElementById('clubs').className = 'active';
+    document.getElementById('page').innerHTML = 
+    `
+    <div class="history">
+        <div class="profile-card">
+            <div class="title">
+                <img src="../assets/users-svgrepo-com (1).svg">
+                <h2>Club Memberships</h2>
+            </div>
+            <div class="clubs" id="all-clubs">
+            </div>
+        </div>
+    </div>
+    `;
+    // fetchClubs();
 }
