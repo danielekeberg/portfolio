@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/chess-piece-part-2-svgrepo-com.svg">
+    <script type="module" src="../js/search.js" defer></script>
+    <title>ChessKnight</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="../" class="logo">
+                <img src="../assets/crown.svg" alt="Logo">
+                <div class="logo-text">
+                    <h2>ChessKnight</h2>
+                    <h4>Player Analytics</h4>
+                </div>
+            </a>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search Chess.com username...">
+            </div>
+            <a class="profile" href="#">
+                <img src="../assets/user-alt-1-svgrepo-com (1).svg">
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="clubs-page">
+                <h1 style="color: #d4af37; font-size: 55px">Chess Clubs <span style="color: #ebdf9a">& Tournaments</span></h1>
+                <p>Discover chess communities, join clubs, and participate in exciting tournaments</p>
+            </section>
+            <div class="analyze">
+                <img src="../assets/search-svgrepo-com.svg">
+                <input type="text" id="analyzeInput" placeholder="Enter Chess.com username to begin analysis...">
+                <button id="analyze">Analyze</button>
+            </div>
+            <div class="featured">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/chart-line-up-svgrepo-com.svg">
+                    </div>
+                        <h3>Performance Analytics</h3>
+                        <p>Track rating progression and identify improvement patterns</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/trophy-svgrepo-com.svg">
+                    </div>
+                    <h3>Tournament History</h3>
+                    <p>Complete tournament records and achievements</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/users-svgrepo-com.svg">
+                    </div>
+                        <h3>Club Insights</h3>
+                        <p>Explore chess clubs and community activities</p>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../assets/lightning-01-svgrepo-com.svg">
+                    </div>
+                        <h3>Real-time Data</h3>
+                        <p>Live statistics directly from Chess.com</p>
+                </div>
+            </div>
+            <div class="recent">
+                <div class="player-card-header">
+                    <img src="../assets/chart-line-up-svgrepo-com (1).svg">
+                    <h2>Recently Analyzed Players</h2>
+                </div>
+                <div class="players">
+                    <a href="../user/?q=magnus_carlsen&v=overview" class="player-card">
+                        <div class="player-header">
+                            <img class="user-img" src="../assets/user-alt-1-svgrepo-com (1).svg">
+                            <div class="player">
+                                <h3>magnus_carlsen</h3>
+                                <div class="player-loc">
+                                    <p>Norway</p>
+                                    <img src="../assets/time-svgrepo-com.svg">
+                                    <p>2 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mode">
+                            <div class="first">
+                                <p>Rapid</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2847</p>
+                                </div>
+                            </div>
+                            <div class="first">
+                                <p>Blitz</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2832</p>
+                                </div>
+                            </div>
+                            <div class="first">
+                                <p>Bullet</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2798</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../user/?q=hikaru&v=overview" class="player-card">
+                        <div class="player-header">
+                            <img class="user-img" src="../assets/user-alt-1-svgrepo-com (1).svg">
+                            <div class="player">
+                                <h3>hikaru</h3>
+                                <div class="player-loc">
+                                    <p>USA</p>
+                                    <img src="../assets/time-svgrepo-com.svg">
+                                    <p>online</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mode">
+                            <div class="first">
+                                <p>Rapid</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2781</p>
+                                </div>
+                            </div>
+                            <div class="first">
+                                <p>Blitz</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2965</p>
+                                </div>
+                            </div>
+                            <div class="first">
+                                <p>Bullet</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2954</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../user/?q=chessbrah&v=overview" class="player-card">
+                        <div class="player-header">
+                            <img class="user-img" src="../assets/user-alt-1-svgrepo-com (1).svg">
+                            <div class="player">
+                                <h3>chessbrah</h3>
+                                <div class="player-loc">
+                                    <p>Canada</p>
+                                    <img src="../assets/time-svgrepo-com.svg">
+                                    <p>1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mode">
+                            <div class="first">
+                                <p>Rapid</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2456</p>
+                                </div>
+                            </div>
+                            <div class="first">
+                                <p>Blitz</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2489</p>
+                                </div>
+                            </div>
+                            <div class="first">
+                                <p>Bullet</p>
+                                <div class="rating">
+                                    <img src="../assets/trophy-svgrepo-com (1).svg">
+                                    <p>2412</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="explore">
+                <h3>Explore more features</h3>
+                <div class="browse">
+                    <a href="../clubs/">
+                        <button class="github" id="tournaments">
+                            Browse Clubs & Tournaments
+                        </button>
+                    </a>
+                    <a href="https://github.com/danielekeberg" target="_blank">
+                        <button class="github" id="tournaments">
+                            Github
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
