@@ -12,9 +12,23 @@ async function featuredPlayers(player) {
     }
 }
 
+async function getPlayerImage(player) {
+    try {
+        const res = await fetch(`https://api.chess.com/pub/player/${player}`);
+        const data = await res.json();
+        console.log(data);
+        document.getElementById(`${player}Img`).src = data.avatar;
+        document.getElementById(`${player}Img`).src = data.avatar;
+        document.getElementById(`${player}Img`).src = data.avatar;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
 function fetchPlayers() {
     players.forEach(player => {
         featuredPlayers(player);
+        // getPlayerImage(player);
     })
 }
 
