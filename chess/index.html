@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/chess-piece-part-2-svgrepo-com.svg">
     <script type="module" src="./js/search.js" defer></script>
+    <script type="module" src="./js/featured.js" defer></script>
     <title>ChessKnight</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
         </div>
     </header>
     <main>
-        <div class="container">
+        <div class="container home">
             <section>
                 <h1 style="color: #d4af37">Analyze Chess</h1>
                 <h1 style="color: #ebdf9a">Like Never Before</h1>
@@ -81,15 +82,13 @@
                     <h2>Recently Analyzed Players</h2>
                 </div>
                 <div class="players">
-                    <a href="./user/?q=magnus_carlsen&v=overview" class="player-card">
+                    <a href="./user/?q=magnuscarlsen&v=overview" class="player-card">
                         <div class="player-header">
                             <img class="user-img" src="./assets/user-alt-1-svgrepo-com (1).svg">
                             <div class="player">
-                                <h3>magnus_carlsen</h3>
+                                <h3>magnuscarlsen</h3>
                                 <div class="player-loc">
                                     <p>Norway</p>
-                                    <img src="./assets/time-svgrepo-com.svg">
-                                    <p>2 hours ago</p>
                                 </div>
                             </div>
                         </div>
@@ -98,21 +97,21 @@
                                 <p>Rapid</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2847</p>
+                                    <p id="magnuscarlsenRapid">0</p>
                                 </div>
                             </div>
                             <div class="first">
                                 <p>Blitz</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2832</p>
+                                    <p id="magnuscarlsenBlitz">0</p>
                                 </div>
                             </div>
                             <div class="first">
                                 <p>Bullet</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2798</p>
+                                    <p id="magnuscarlsenBullet">0</p>
                                 </div>
                             </div>
                         </div>
@@ -124,8 +123,6 @@
                                 <h3>hikaru</h3>
                                 <div class="player-loc">
                                     <p>USA</p>
-                                    <img src="./assets/time-svgrepo-com.svg">
-                                    <p>online</p>
                                 </div>
                             </div>
                         </div>
@@ -134,21 +131,21 @@
                                 <p>Rapid</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2781</p>
+                                    <p id="hikaruRapid">0</p>
                                 </div>
                             </div>
                             <div class="first">
                                 <p>Blitz</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2965</p>
+                                    <p id="hikaruBlitz">0</p>
                                 </div>
                             </div>
                             <div class="first">
                                 <p>Bullet</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2954</p>
+                                    <p id="hikaruBullet">0</p>
                                 </div>
                             </div>
                         </div>
@@ -160,8 +157,6 @@
                                 <h3>chessbrah</h3>
                                 <div class="player-loc">
                                     <p>Canada</p>
-                                    <img src="./assets/time-svgrepo-com.svg">
-                                    <p>1 day ago</p>
                                 </div>
                             </div>
                         </div>
@@ -170,21 +165,21 @@
                                 <p>Rapid</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2456</p>
+                                    <p id="chessbrahRapid">0</p>
                                 </div>
                             </div>
                             <div class="first">
                                 <p>Blitz</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2489</p>
+                                    <p id="chessbrahBlitz">0</p>
                                 </div>
                             </div>
                             <div class="first">
                                 <p>Bullet</p>
                                 <div class="rating">
                                     <img src="./assets/trophy-svgrepo-com (1).svg">
-                                    <p>2412</p>
+                                    <p id="chessbrahBullet">0</p>
                                 </div>
                             </div>
                         </div>
