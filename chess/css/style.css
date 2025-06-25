@@ -105,6 +105,11 @@ header a:hover {
 .container {
     width: 80%;
     margin: 50px auto;
+    
+}
+
+.home {
+    animation: start 1s;
 }
 
 .container section {
@@ -529,6 +534,7 @@ header a:hover {
 
 .profile-summary .profile-stats {
     margin: 20px;
+    text-align: center;
 }
 
 .profile-stats p {
@@ -664,6 +670,7 @@ header a:hover {
     color: #000;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .profile-btns #refresh:hover {
@@ -745,6 +752,10 @@ header a:hover {
     border-radius: 10px;
 }
 
+.clubs .club-card:hover {
+    background: #6d5532;
+}
+
 .clubs .club-header {
     display: flex;
     justify-content: space-between;
@@ -783,4 +794,19 @@ header a:hover {
 
 .clubs-page h1 {
     font-family: 'Playfair Display', sans-serif;
+}
+
+.newRating {
+    padding-left: 20px;
+}
+
+@keyframes start {
+    0% {
+        margin-top: 70px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 50px;
+        opacity: 1;
+    }
 }
