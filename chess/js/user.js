@@ -32,7 +32,7 @@ async function fetchUser() {
     } catch(error) {
         console.error(error);
     } finally {
-        document.getElementById('loader').remove();
+        loader();
     }
 }
 
@@ -195,7 +195,16 @@ async function fetchHistory() {
     }
 }
 
+function getOpening(raw) {
+    let nameParts = raw.split('-');
+    nameParts = nameParts.slice(0, -1);
+    const clean = nameParts.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return clean;
+}
+
 let gameLength = 0;
+let openingId = 0;
+
 async function fetch10Games(url) {
     try {
         const res = await fetch(url);
@@ -207,20 +216,66 @@ async function fetch10Games(url) {
             const timestamp = data.games[gameLength].end_time;
             const date = new Date(timestamp * 1000);
             const yyyy = date.getUTCFullYear();
-            const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+            const mm = date.getUTCMonth()
             const dd = String(date.getUTCDate()).padStart(2, '0');
+            
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Des']
+
+            const currentGame = data.games[gameLength];
+
+            let finalOpening;
+
+            const rawOpening = data.games[gameLength].eco.replace('https://www.chess.com/openings/', '');
+            const cleanOpening = newTitle(rawOpening);
+
+            const maxChars = 14;
+            if(cleanOpening.length > maxChars) {
+                finalOpening = cleanOpening.slice(0, maxChars) + '...';
+            } else {
+                finalOpening = cleanOpening;
+            }
+            console.log(finalOpening)
+
+            let result;
+            let opponent;
+            let rating;
+
+            const isWhite = currentGame.white.username.toLowerCase() === q;
+            const isBlack = currentGame.black.username.toLowerCase() === q;
+
+            if(isWhite) {
+                if(currentGame.white.result !== 'win') {
+                    result = 'Loss';
+                } else {
+                    result = 'Win';
+                }
+                rating = currentGame.white.rating;
+                opponent = currentGame.black.username;
+            } else if (isBlack) {
+                if(currentGame.black.result !== 'win') {
+                    result = 'Loss';
+                } else {
+                    result = 'Win';
+                }
+                rating = currentGame.black.rating;
+                opponent = currentGame.white.username;
+            }
+
+            
 
             d.innerHTML = 
             `
-            <p>win</p>
-            <p>magnus-carlsen</p>
-            <p>2842</p>
-            <p>10+0</p>
-            <p>Scillian Defense</p>
-            <p>42</p>
-            <p>${yyyy}-${mm}-${dd}</p>
+            <p>${result}</p>
+            <p>${opponent}</p>
+            <p class="newRating">${rating}</p>
+            <p>${currentGame.time_class}</p>
+            <p id="opening${openingId}">${finalOpening}</p>
+            <p>${currentGame.time_control}</p>
+            <p>${months[mm]} ${dd}, ${yyyy}</p>
             `;
             document.getElementById('new-games').appendChild(d);
+            document.getElementById(`opening${openingId}`).title = cleanOpening;
+            openingId++;
             gameLength--;
         }
     } catch(error) {
@@ -246,7 +301,6 @@ async function fetchClubs() {
             d.target = '_blank';
             d.innerHTML = 
             `
-            <div class="club-card">
                 <div class="club-header">
                     <div>
                         <h4>${club.name}</h4>
@@ -262,7 +316,6 @@ async function fetchClubs() {
                     <p>Activity</p>
                     <p>Very Active</p>
                 </div>
-            </div>
             `;
             document.getElementById('all-clubs').appendChild(d);
         })
@@ -271,9 +324,9 @@ async function fetchClubs() {
     }
 }
 
-// fetchUser();
-// fetchUserStats();
-// totalGames();
+fetchUser();
+fetchUserStats();
+totalGames();
 
 document.body.addEventListener('keydown', (e) => {
     if(e.key === 'Enter') {
@@ -326,6 +379,15 @@ async function gamestats() {
         const allRapid = data.chess_rapid ? data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss : 0;
         const allBlitz = data.chess_blitz ? data.chess_blitz.record.win + data.chess_blitz.record.draw + data.chess_blitz.record.loss : 0;
         const allBullet = data.chess_bullet ? data.chess_bullet.record.win + data.chess_bullet.record.draw + data.chess_bullet.record.loss : 0;
+
+        const rapidWin = data.chess_rapid ? data.chess_rapid.record.win : 0;
+        const blitzWin = data.chess_blitz ? data.chess_blitz.record.win : 0;
+        const bulletWin = data.chess_bullet ? data.chess_bullet.record.win : 0;
+
+        const rapidWinRate = ((rapidWin / allRapid) * 100).toFixed(2);
+        const blitzWinRate = ((blitzWin / allBlitz) * 100).toFixed(2);
+        const bulletWinRate = ((bulletWin / allBullet) * 100).toFixed(2);
+        
         document.getElementById('gamestats').className = 'active';
         document.getElementById('page').innerHTML = 
         `
@@ -351,16 +413,20 @@ async function gamestats() {
                 </div>
                 <div class="detailed-stats">
                     <div>
-                        <p>Avg rating</p>
-                        <p>0</p>
+                        <p>Total Games</p>
+                        <p>${allRapid}</p>
+                    </div>
+                    <div>
+                        <p>Win Rate</p>
+                        <p>${rapidWinRate}%</p>
                     </div>
                     <div>
                         <p>Peak rating</p>
                         <p>HMM</p>
                     </div>
                     <div>
-                        <p>Total Games</p>
-                        <p>${allRapid}</p>
+                        <p>Avg rating</p>
+                        <p>0</p>
                     </div>
                 </div>
             </div>
@@ -385,16 +451,20 @@ async function gamestats() {
                 </div>
                 <div class="detailed-stats">
                     <div>
-                        <p>Avg rating</p>
-                        <p>0</p>
+                        <p>Total Games</p>
+                        <p>${allBlitz}</p>
+                    </div>
+                    <div>
+                        <p>Win Rate</p>
+                        <p>${blitzWinRate}%</p>
                     </div>
                     <div>
                         <p>Peak rating</p>
                         <p>${data.chess_blitz ? data.chess_blitz.best.rating : 0}</p>
                     </div>
                     <div>
-                        <p>Total Games</p>
-                        <p>${allBlitz}</p>
+                        <p>Avg rating</p>
+                        <p>0</p>
                     </div>
                 </div>
             </div>
@@ -419,16 +489,20 @@ async function gamestats() {
                 </div>
                 <div class="detailed-stats">
                     <div>
-                        <p>Avg rating</p>
-                        <p>0</p>
+                        <p>Total Games</p>
+                        <p>${allBullet}</p>
+                    </div>
+                    <div>
+                        <p>Win Rate</p>
+                        <p>${bulletWinRate}%</p>
                     </div>
                     <div>
                         <p>Peak rating</p>
                         <p>${data.chess_bullet ? data.chess_bullet.best.rating : 0}</p>
                     </div>
                     <div>
-                        <p>Total Games</p>
-                        <p>${allBullet}</p>
+                        <p>Avg rating</p>
+                        <p>0</p>
                     </div>
                 </div>
             </div>
@@ -453,17 +527,17 @@ function history() {
                 <div class="history-header">
                     <p>Result</p>
                     <p>Opponent</p>
-                    <p>Rating</p>
-                    <p>Time Control</p>
+                    <p class="newRating">Rating</p>
+                    <p>Mode</p>
                     <p>Opening</p>
-                    <p>Moves</p>
+                    <p>Time Control</p>
                     <p>Date</p>
                 </div>
             </div>
         </div>
     </div>
     `;
-    // fetchHistory();
+    fetchHistory();
 }
 
 function tournaments() {
@@ -488,7 +562,7 @@ function tournaments() {
         </div>
     </div>
     `;
-    // fetchTournaments();
+    fetchTournaments();
 }
 
 function clubs() {
@@ -506,5 +580,15 @@ function clubs() {
         </div>
     </div>
     `;
-    // fetchClubs();
+    fetchClubs();
 }
+
+function loader() {
+    setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+    }, 200);
+}
+
+document.getElementById('refresh').addEventListener('click', () => {
+    window.location.href = `./?q=${q}&v=${page}`;
+})
