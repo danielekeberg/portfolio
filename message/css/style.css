@@ -480,3 +480,16 @@ input:focus {
     display: flex;
     flex-direction: column;
 }
+
+.admin .card #delete {
+    height: 15px;
+    cursor: pointer;
+}
+
+.admin .post {
+    width: 100%;
+}
+
+.aside .card .stats p {
+    margin: 2px;
+}
