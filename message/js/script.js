@@ -10,7 +10,6 @@ async function totalMembers() {
         const res = await fetch(`${userAPI}`);
         const data = await res.json();
         const length = data.length;
-        console.log(length);
         const username = data.find(user => user.username === getUsername);
         console.log(username.avatar);
         document.getElementById('postImg').src = username.avatar;
@@ -20,7 +19,19 @@ async function totalMembers() {
     }
 }
 
+async function totalPosts() {
+    try {
+        const res = await fetch(msgAPI);
+        const data = await res.json();
+        const length = data.length;
+        document.getElementById('totalMessages').textContent = length;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
 totalMembers();
+totalPosts();
 
 // document.getElementById('goToProfile').addEventListener('click', () => {
 //     const usrnm = localStorage.getItem('testName');
