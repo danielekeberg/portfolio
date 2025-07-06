@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.svg">
+    <script type="module" src="../js/script.js" defer></script>
+    <script type="module" src="../js/logout.js" defer></script>
+    <script type="module" src="../js/msg.js" defer></script>
+    <title>ChatNest</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="../">ChatNest</a>
+                <p>Beta</p>
+            </div>
+            <div class="nav">
+                <a class="active" href="./">
+                    <img src="../assets/home.svg">
+                    <p>Home</p>
+                </a>
+                <a href="../profile/" id="goToProfile">
+                    <img src="../assets/user-2.svg">
+                    <p>Profile</p>
+                </a>
+                <a id="logout">
+                    <img src="../assets/logout.svg">
+                    <p>Logout</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="content">
+                <div class="posts">
+                    <div class="card">
+                        <div>
+                            <img id="postImg" src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg">
+                            <input type="text" id="messageInput" placeholder="What's on your mind?">
+                        </div>
+                        <div class="sendBtn">
+                            <button class="btn" id="sendMsg">Post Message</button>
+                        </div>
+                    </div>
+                    <div id="newMsg"></div>
+                    <div id="display">
+                    </div>
+                </div>
+                <div class="aside">
+                    <div class="card">
+                        <h3>Community Stats</h3>
+                        <div class="stats">
+                            <p>Total Members</p>
+                            <span id="totalMembers">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
