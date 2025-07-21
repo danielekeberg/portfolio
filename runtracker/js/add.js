@@ -16,57 +16,55 @@ function addRun() {
     d.className = 'overlay';
     d.innerHTML = 
     `
-    <div class="overlay">
-        <div class="addRun">
-            <div class="add-header">
-                <h2>Add New Run</h2>
-                <p id="remove">x</p>
+    <div class="addRun">
+        <div class="add-header">
+            <h2>Add New Run</h2>
+            <p id="remove">x</p>
+        </div>
+        <div class="form">
+            <div>
+                <p>Date</p>
+                <input type="datetime-local" id="myDatetime">
             </div>
-            <div class="form">
-                <div>
-                    <p>Date</p>
-                    <input type="datetime-local" id="myDatetime">
-                </div>
-                <div>
-                    <p>Type</p>
-                    <select id="runType" name="runType">
-                        <option value="easy">Easy</option>
-                        <option value="tempo">Tempo</option>
-                        <option value="interval">Interval</option>
-                        <option value="long">Long Run</option>
-                        <option value="recovery">Recovery</option>
-                    </select>
-                </div>
+            <div>
+                <p>Type</p>
+                <select id="runType" name="runType">
+                    <option value="easy">Easy</option>
+                    <option value="tempo">Tempo</option>
+                    <option value="interval">Interval</option>
+                    <option value="long">Long Run</option>
+                    <option value="recovery">Recovery</option>
+                </select>
             </div>
-            <div class="form">
-                <div>
-                    <p>Distance (km)</p>
-                    <input type="number" id="distance" placeholder="5">
-                </div>
-                <div>
-                    <p>Duration (mm:ss)</p>
-                    <input type="text" id="duration" placeholder="25:30">
-                </div>
+        </div>
+        <div class="form">
+            <div>
+                <p>Distance (km)</p>
+                <input type="number" id="distance" placeholder="5">
             </div>
-            <div class="form longer">
-                <div>
-                    <p>Location</p>
-                    <input type="text" id="location" placeholder="Sognsvann">
-                </div>
+            <div>
+                <p>Duration (mm:ss)</p>
+                <input type="text" id="duration" placeholder="25:30">
             </div>
-            <div class="form longer">
-                <div>
-                    <p>Notes</p>
-                    <textarea type="text" id="desc" placeholder="How did the run feel? Any observations..."></textarea>
-                </div>
+        </div>
+        <div class="form longer">
+            <div>
+                <p>Location</p>
+                <input type="text" id="location" placeholder="Sognsvann">
             </div>
-            <div class="btns">
-                <div id="submit">
-                    <img src="./assets/plus.svg">
-                    <p>Add Run</p>
-                </div>
-                <button id="cancel">Cancel</button>
+        </div>
+        <div class="form longer">
+            <div>
+                <p>Notes</p>
+                <textarea type="text" id="desc" placeholder="How did the run feel? Any observations..."></textarea>
             </div>
+        </div>
+        <div class="btns">
+            <div id="submit">
+                <img src="./assets/plus.svg">
+                <p>Add Run</p>
+            </div>
+            <button id="cancel">Cancel</button>
         </div>
     </div>
     `;
@@ -89,8 +87,8 @@ function addRun() {
     })
     document.getElementById('submit').addEventListener('click', () => {
         const distance = document.getElementById('distance').value * 1000;
-        const desc = document.getElementById('desc').value ? document.getElementById('desc').value : 'No description';
-        const location = document.getElementById('location').value ? document.getElementById('location').value : 'Not defined';
+        const desc = document.getElementById('desc').value ? document.getElementById('desc').value : 'No description.';
+        const location = document.getElementById('location').value ? document.getElementById('location').value : 'Not defined.';
         const time = document.getElementById('duration').value.trim();
         const [minutes, seconds] = time.split(':').map(Number);
         const select = document.getElementById('runType');
@@ -103,7 +101,6 @@ function addRun() {
             const totalSeconds = minutes * 60 + seconds;
             newRun(distance, totalSeconds, timestamp, selectedValue, desc, location);
         }
-        console.log('NY POST ADDED');
         document.querySelector('.overlay').remove();
     })
 }
@@ -218,7 +215,6 @@ async function update(distance) {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data);
         const totalDistanceMeters = data.reduce((sum, run) => {
             return sum + parseInt(run.distance);
         }, 0);
