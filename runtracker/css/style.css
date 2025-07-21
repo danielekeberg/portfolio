@@ -78,6 +78,11 @@ header .nav {
 #error {
     height: 35px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#error:hover {
+    scale:1.05;
 }
 
 header .nav .add:hover {
