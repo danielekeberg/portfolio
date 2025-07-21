@@ -76,8 +76,6 @@ async function getRuns() {
             const day = date.getDate();
             const formatted = `${weekday}, ${month} ${day}`;
 
-            console.log(formatted);
-
             const min = Math.floor(avgPace);
             const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
             d.className = 'card';
