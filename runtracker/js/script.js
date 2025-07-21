@@ -18,7 +18,6 @@ async function totalDistance() {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data);
         const totalDistanceMeters = data.reduce((sum, run) => {
             return sum + parseInt(run.distance);
         }, 0);
@@ -81,7 +80,10 @@ async function getRuns() {
             d.className = 'card';
             d.innerHTML = 
             `
-            <h4>${run.distance / 1000} km run</h4>
+            <div class="card-header">
+                <h4>${run.distance / 1000} km run</h4>
+                <img onclick="deleteRun(${run.id})" class="delete" src="./assets/delete.svg">
+            </div>
             <div class="time">
                 <div class="date">
                     <img src="./assets/cal-70.svg">
@@ -124,3 +126,10 @@ async function getRuns() {
 
 totalDistance();
 getRuns();
+
+// document.body.addEventListener('keydown', (e) => {
+//     if(e.key === 'Enter') {
+//         totalDistance();
+//         getRuns();
+//     }
+// })
