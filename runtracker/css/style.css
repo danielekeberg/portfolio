@@ -312,7 +312,8 @@ section .runs .current .stats span {
     border: 1px solid #d65762;
 }
 
-.tempo {
+.tempo,
+.moderate {
     color: #d67f57 !important;
     background: #f3e9cd;
     border: 1px solid #d67f57;
@@ -322,6 +323,12 @@ section .runs .current .stats span {
     color: #8357d6 !important;
     background: #d8cdf3;
     border: 1px solid #8357d6;
+}
+
+.final {
+    color: #cc9262 !important;
+    background: #f3f2cd;
+    border: 1px solid #cc9262;
 }
 
 .card .run-stats {
@@ -519,3 +526,93 @@ section .runs .current .stats span {
     }
 }
 
+.plan-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.plan-header img {
+    height: 25px;
+}
+
+.plan-length {
+    text-align: right;
+}
+
+.plan-length p,
+.plan-length span,
+.week-length h4,
+.week-length span {
+    margin: 5px 0;
+}
+
+.plan-length p {
+    font-size: 14px;
+    color: #707070;
+}
+
+.plan-length span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.week-length {
+    text-align: right;
+}
+
+.program {
+    margin-bottom: 80px;
+}
+
+.prog-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prog-header img {
+    height: 25px;
+}
+
+.prog {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prog .prog-card {
+    width: 33%;
+}
+
+.prog .prog-card p,
+.prog .prog-card span {
+    margin: 3px;
+}
+
+.prog .prog-card p {
+    color: #707070;
+    font-size: 14px;
+}
+
+.prog .prog-card span {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.error-msg {
+    background: #855656;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0,0.2);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999999;
+}
+
+.error-msg p {
+    margin: 0;
+}
