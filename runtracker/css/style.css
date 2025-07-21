@@ -46,6 +46,40 @@ header .nav .add {
     transition: all 0.3s ease;
 }
 
+header .nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#nav {
+    position: relative;
+}
+
+.error {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 1px solid #000;
+    width: 500px;
+    z-index: 10000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.error h1,
+.error p {
+    margin: 0;
+}
+
+#error {
+    height: 35px;
+    cursor: pointer;
+}
+
 header .nav .add:hover {
     scale: 1.02;
 }
@@ -479,3 +513,4 @@ section .runs .current .stats span {
         opacity: 1;
     }
 }
+
