@@ -537,7 +537,6 @@ async function getWeeks() {
             `;
             document.getElementById('week8').appendChild(d);
         })
-        console.log(week);
     }catch(err) {
         console.error(err);
     }
