@@ -13,6 +13,7 @@
     <script type="module" src="./js/script.js" defer></script>
     <script type="module" src="./js/add.js" defer></script>
     <script type="module" src="./js/error.js" defer></script>
+    <script src="./js/delete.js" defer></script>
     <title>RunTracker</title>
 
 </head>
@@ -126,7 +127,10 @@
             </div>
             <div class="runs" id="runs">
                 <!-- <div class="card">
-                    <h4>2.88 km run</h4>
+                    <div class="card-header">
+                        <h4>2.88 km run</h4>
+                        <img onclick="deleteRun(8)" class="delete" src="./assets/delete.svg">
+                    </div>
                     <div class="time">
                         <div class="date">
                             <img src="./assets/cal-70.svg">
