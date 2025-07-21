@@ -134,7 +134,16 @@ async function newRun(distance, time, date, diff, desc, location) {
         });
 
         if(!res.ok) {
-            throw new Error("Failed to save data");
+            const d = document.createElement('div');
+            d.className = 'error-msg';
+            d.innerHTML = 
+            `
+            <p>Ops! Something went wrong! Please try again or contact me if it doesnt work!</p>
+            `;
+            document.body.appendChild(d);
+            setTimeout(() => {
+                document.querySelector('.error-msg').remove();
+            }, 2000);
         }
         post(distance, time, date, diff, desc, location);
         update(distance, time, date, diff, desc, location);
