@@ -9,7 +9,7 @@ function deleteRun(id) {
     <div class="addRun">
         <p style="text-align: center; margin-bottom: 50px;">Are you sure you want to <strong>permanently delete</strong> this run?</p>
         <div class="btns">
-            <button id="yes">Delete ID ${getId}</button>
+            <button id="yes">Delete</button>
             <button id="dont">Cancel</button>
         </div>
     </div>
