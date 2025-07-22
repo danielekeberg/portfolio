@@ -9,6 +9,7 @@ function getWeekNumber(date = new Date()) {
 }
 
 const week = getWeekNumber();
+const weekRn = getWeekNumber();
 const now = Date.now();
 
 function addRun() {
@@ -119,7 +120,6 @@ async function newRun(distance, time, date, diff, desc, location) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id: id,
                 distance: distance,
                 time: time,
                 date: date,
@@ -215,7 +215,9 @@ async function update(distance) {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        const totalDistanceMeters = data.reduce((sum, run) => {
+
+        const currentWeek = data.filter(week => week.week === `${weekRn}`)
+        const totalDistanceMeters = currentWeek.reduce((sum, run) => {
             return sum + parseInt(run.distance);
         }, 0);
 
