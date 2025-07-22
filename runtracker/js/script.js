@@ -147,14 +147,14 @@ async function weeklyProgress() {
         if(currentTime >= lastTime) {
             document.getElementById('paceProgress').innerHTML = 
             `
-            <img src="./assets/trending.svg">
-            <p>${timePercent}% from last week</p>
+            <img src="./assets/trending-up-red.svg">
+            <p class="down">${timePercent}% from last week</p>
             `;
         } else if (currentTime < lastTime) {
             document.getElementById('paceProgress').innerHTML = 
             `
-            <img src="./assets/trending-red.svg">
-            <p class="down">${timePercent}% from last week</p>
+            <img src="./assets/trending-down-green.svg">
+            <p>${timePercent}% from last week</p>
             `;
         }
     } catch(err) {
