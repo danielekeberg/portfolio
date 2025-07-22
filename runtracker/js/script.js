@@ -67,7 +67,7 @@ async function fetchWeekStats() {
         let totalTime = 0;
         let totalDistance = 0;
     
-        data.forEach(run => {
+        currentWeek.forEach(run => {
             totalTime += parseFloat(run.time);
             totalDistance += parseFloat(run.distance);
         });
@@ -91,8 +91,8 @@ async function weeklyProgress() {
         const res = await fetch(url);
         const data = await res.json();
 
-        const current = data.filter(week => week.week === `${weekRn - 1}`);
-        const last = data.filter(week => week.week === `${weekRn - 2}`);
+        const current = data.filter(week => week.week === `${weekRn}`);
+        const last = data.filter(week => week.week === `${weekRn - 1}`);
 
         let currentDistance = 0;
         let currentRuns = current.length;
@@ -261,6 +261,85 @@ async function lastMonth() {
     }
 }
 
+async function bestRuns() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const longestRun = data.sort((a, b) => b.distance - a.distance)[0];
+        const longestDistance = Number((longestRun.distance / 1000))
+        
+        const timestamp = Number(longestRun.date);
+        const date = new Date(timestamp);
+
+        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        const weekday = weekdays[date.getDay()];
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const formatted = `${weekday}, ${month} ${day}`;
+
+        const avgPace = (longestRun.time / longestRun.distance) * 1000 / 60;
+        const totalTime = (longestRun.time / 60);
+        const runMin = Math.floor(totalTime);
+        const runSec = String(Math.round((totalTime - runMin) * 60)).padStart(2, '0');
+
+        const min = Math.floor(avgPace);
+        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
+
+        document.getElementById('longestRunDistance').textContent = `${longestDistance} km run`;
+        document.getElementById('longestRunDate').textContent = formatted;
+        document.getElementById('longestRunTime').textContent = `${runMin}:${runSec}`;
+        document.getElementById('longestRunAvg').textContent = `${min}:${sec}/km`;
+        document.getElementById('longestLocation').textContent = `${longestRun.location}`;
+        document.getElementById('longestDesc').textContent = `${longestRun.desc}`;
+
+        const sortedPace = data.slice().sort((a, b) => {
+            const paceA = (a.time / 60) / a.distance;
+            const paceB = (b.time / 60) / b.distance;
+            return paceA - paceB;
+        });
+
+        const fastestRun = sortedPace[0];
+        const fastestDistance = Number((fastestRun.distance / 1000))
+
+        const timestampFast = Number(fastestRun.date);
+        const dateFast = new Date(timestampFast);
+
+        const weekdaysFast = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const monthsFast = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        const weekdayFast = weekdaysFast[dateFast.getDay()];
+        const monthFast = monthsFast[dateFast.getMonth()];
+        const dayFast = dateFast.getDate();
+        const formattedFast = `${weekdayFast}, ${monthFast} ${dayFast}`;
+
+        const avgPaceFast = (fastestRun.time / fastestRun.distance) * 1000 / 60;
+        const totalTimeFast = (fastestRun.time / 60);
+        const runMinFast = Math.floor(totalTimeFast);
+        const runSecFast = String(Math.round((totalTimeFast - runMinFast) * 60)).padStart(2, '0');
+
+        const minFast = Math.floor(avgPaceFast);
+        const secFast = String(Math.round((avgPaceFast - minFast) * 60)).padStart(2, '0');
+
+        document.getElementById('fastestRunDistance').textContent = `${fastestDistance} km run`;
+        document.getElementById('fastestRunDate').textContent = formattedFast;
+        document.getElementById('fastestRunTime').textContent = `${runMinFast}:${runSecFast}`;
+        document.getElementById('fastestRunAvg').textContent = `${minFast}:${secFast}/km`;
+        document.getElementById('fastestLocation').textContent = `${fastestRun.location}`;
+        document.getElementById('fastestDesc').textContent = `${fastestRun.desc}`;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+// document.body.addEventListener('keydown', (e) => {
+//     if(e.key === 'Enter') {
+//         fetchWeekStats();
+//     }
+// })
+bestRuns();
 lastMonth();
 fetchWeekStats();
 totalDistance();
