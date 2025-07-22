@@ -119,42 +119,36 @@ async function weeklyProgress() {
         if(currentDistance >= lastDistance) {
             document.getElementById('distanceProgress').innerHTML = 
             `
-            <img src="./assets/trending.svg">
-            <p>${distancePercent}% from last week</p>
+            <p>&#x25B2; ${distancePercent}% from last week</p>
             `;
         } else if (currentDistance < lastDistance) {
             document.getElementById('distanceProgress').innerHTML = 
             `
-            <img src="./assets/trending-red.svg">
-            <p class="down">${distancePercent}% from last week</p>
+            <p class="down">&#x25BC; ${distancePercent}% from last week</p>
             `;
         }
 
         if(currentRuns >= lastRuns) {
             document.getElementById('runsProgress').innerHTML = 
             `
-            <img src="./assets/trending.svg">
-            <p>${runsPercent}% from last week</p>
+            <p>&#x25B2; ${runsPercent}% from last week</p>
             `;
         } else if (currentRuns < lastRuns) {
             document.getElementById('runsProgress').innerHTML = 
             `
-            <img src="./assets/trending-red.svg">
-            <p class="down">${runsPercent}% from last week</p>
+            <p class="down">&#x25BC; ${runsPercent}% from last week</p>
             `;
         }
 
         if(currentTime >= lastTime) {
             document.getElementById('paceProgress').innerHTML = 
             `
-            <img src="./assets/trending-up-red.svg">
-            <p class="down">${timePercent}% from last week</p>
+            <p class="down">&#x25B2; ${timePercent}% from last week</p>
             `;
         } else if (currentTime < lastTime) {
             document.getElementById('paceProgress').innerHTML = 
             `
-            <img src="./assets/trending-down-green.svg">
-            <p>${timePercent}% from last week</p>
+            <p>&#x25BC; ${timePercent}% from last week</p>
             `;
         }
     } catch(err) {
