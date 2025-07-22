@@ -24,7 +24,7 @@
             <p>Track your running journey</p>
         </div>
         <div class="nav" id="nav">
-            <img id="error" src="./assets/error-blue.svg">
+            <img style="display: none;" id="error" src="./assets/error-blue.svg">
             <a style=" text-decoration: none; background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);" href="./plan/" class="add">
                 <img src="./assets/cal-18.svg">
                 <p style="color: #181818">View Plan</p>
@@ -80,9 +80,9 @@
                     <h3><span id="total">0</span> km</h3>
                     <img src="./assets/pulse-blue.svg">
                 </div>
-                <div class="progress">
+                <div class="progress" id="distanceProgress">
                     <img src="./assets/trending.svg">
-                    <p>0% from last week</p>
+                    <p >0% from last week</p>
                 </div>
             </div>
             <div class="card">
@@ -91,7 +91,7 @@
                     <h3><span id="totalRuns">0</span></h3>
                     <img src="./assets/target.svg">
                 </div>
-                <div class="progress">
+                <div class="progress" id="runsProgress">
                     <img src="./assets/trending.svg">
                     <p>0% from last week</p>
                 </div>
@@ -102,7 +102,7 @@
                     <h3><span id="avgPace">0:00</span>/km</h3>
                     <img src="./assets/clock.svg">
                 </div>
-                <div class="progress">
+                <div class="progress" id="paceProgress">
                     <img src="./assets/trending-red.svg">
                     <p class="down">0% from last week</p>
                 </div>
@@ -112,10 +112,6 @@
                 <div class="card-main">
                     <h3><span id="thisMonth">0</span> km</h3>
                     <img src="./assets/growth-blue.svg">
-                </div>
-                <div class="progress">
-                    <img src="./assets/trending.svg">
-                    <p>0% from last week</p>
                 </div>
             </div>
         </div>
