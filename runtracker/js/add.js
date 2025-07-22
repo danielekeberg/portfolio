@@ -12,6 +12,10 @@ const week = getWeekNumber();
 const weekRn = getWeekNumber();
 const now = Date.now();
 
+const lol = new Date();
+const month = lol.getMonth();
+const currentMonth = month + 1;
+
 function addRun() {
     const d = document.createElement('div');
     d.className = 'overlay';
@@ -126,7 +130,8 @@ async function newRun(distance, time, date, diff, desc, location) {
                 week: week,
                 desc: desc,
                 difficulty: diff,
-                location: location
+                location: location,
+                month: currentMonth
             })
         });
 
