@@ -4,8 +4,7 @@ function error() {
     d.innerHTML = 
     `
     <h1>Note:</h1>
-    <p><strong>"This Week"</strong> currently shows data from all running sessions. This will be fixed!</p>
-    <p>I'm currently updating the progress from last week. It will be fixed shortly — thanks for your patience!</p>
+    <p><strong>Everything</strong> works as intended! :)</p>
     `;
     document.getElementById('nav').appendChild(d);
 }
