@@ -12,6 +12,7 @@ function getWeekNumber(date = new Date()) {
 }
 
 const week = getWeekNumber();
+const weekRn = getWeekNumber();
 const now = Date.now();
 
 async function totalDistance() {
@@ -37,16 +38,129 @@ async function totalDistance() {
         const min = Math.floor(avgPace);
         const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');        
 
-        document.getElementById('goal-percent').textContent = (totalDistanceMeters / 100);
-        document.getElementById('bar').style.width = (totalDistanceMeters / 100) + '%';
-        document.getElementById('week-current').textContent = totalDistanceKm;
         document.getElementById('total').textContent = totalDistanceKm;
         document.getElementById('thisMonth').textContent = totalDistanceKm;
         document.getElementById('totalRuns').textContent = totalRuns;
         document.getElementById('recentLogged').textContent = totalRuns;
-        document.getElementById('weeklyRuns').textContent = totalRuns;
         document.getElementById('avgPace').textContent = `${min}:${sec}`;
+        
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+async function fetchWeekStats() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const currentWeek = data.filter(week => week.week === `${weekRn}`)
+
+        const totalDistanceMeters = currentWeek.reduce((sum, run) => {
+            return sum + parseInt(run.distance);
+        }, 0);
+
+        const totalDistanceKm = (totalDistanceMeters / 1000).toFixed(2);
+        const totalRuns = currentWeek.length;
+
+        let totalTime = 0;
+        let totalDistance = 0;
+    
+        data.forEach(run => {
+            totalTime += parseFloat(run.time);
+            totalDistance += parseFloat(run.distance);
+        });
+
+        const avgPace = (totalTime / totalDistance) * 1000 / 60;
+        const min = Math.floor(avgPace);
+        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0'); 
+
+        document.getElementById('goal-percent').textContent = (totalDistanceMeters / 100);
+        document.getElementById('bar').style.width = (totalDistanceMeters / 100) + '%';
+        document.getElementById('week-current').textContent = totalDistanceKm;
+        document.getElementById('weeklyRuns').textContent = totalRuns;
         document.getElementById('weeklyAvg').textContent = `${min}:${sec}/km`;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+async function weeklyProgress() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const current = data.filter(week => week.week === `${weekRn - 1}`);
+        const last = data.filter(week => week.week === `${weekRn - 2}`);
+
+        let currentDistance = 0;
+        let currentRuns = current.length;
+        let currentTime = 0;
+
+        let lastDistance = 0;
+        let lastRuns = last.length;
+        let lastTime = 0;
+
+        current.forEach(run => {
+            currentDistance += parseFloat(run.distance);
+            currentTime += parseFloat(run.time);
+        })
+
+        last.forEach(run => {
+            lastDistance += parseFloat(run.distance);
+            lastTime += parseFloat(run.time);
+        })
+
+        const distancePercent = (((currentDistance - lastDistance) / lastDistance) * 100).toFixed(0);
+        const runsPercent = (((currentRuns - lastRuns) / lastRuns) * 100).toFixed(0);
+        const timePercent = (((currentTime - lastTime) / lastTime) * 100).toFixed(0);
+        console.log(distancePercent);
+        console.log(timePercent);
+        console.log(runsPercent);
+
+        if(currentDistance >= lastDistance) {
+            document.getElementById('distanceProgress').innerHTML = 
+            `
+            <img src="./assets/trending.svg">
+            <p>${distancePercent}% from last week</p>
+            `;
+        } else if (currentDistance < lastDistance) {
+            document.getElementById('distanceProgress').innerHTML = 
+            `
+            <img src="./assets/trending-red.svg">
+            <p class="down">${distancePercent}% from last week</p>
+            `;
+        }
+
+        if(currentRuns >= lastRuns) {
+            document.getElementById('runsProgress').innerHTML = 
+            `
+            <img src="./assets/trending.svg">
+            <p>${runsPercent}% from last week</p>
+            `;
+        } else if (currentRuns < lastRuns) {
+            document.getElementById('runsProgress').innerHTML = 
+            `
+            <img src="./assets/trending-red.svg">
+            <p class="down">${runsPercent}% from last week</p>
+            `;
+        }
+
+        if(currentTime >= lastTime) {
+            document.getElementById('paceProgress').innerHTML = 
+            `
+            <img src="./assets/trending.svg">
+            <p>${timePercent}% from last week</p>
+            `;
+        } else if (currentTime < lastTime) {
+            document.getElementById('paceProgress').innerHTML = 
+            `
+            <img src="./assets/trending-red.svg">
+            <p class="down">${timePercent}% from last week</p>
+            `;
+        }
+
+        console.log(current);
+        console.log(last);
     } catch(err) {
         console.error(err);
     }
@@ -124,12 +238,16 @@ async function getRuns() {
     }
 }
 
+fetchWeekStats();
 totalDistance();
 getRuns();
+weeklyProgress();
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
 //         totalDistance();
 //         getRuns();
+//         fetchWeekStats();
+//         weeklyProgress();
 //     }
 // })
