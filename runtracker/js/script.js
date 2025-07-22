@@ -15,6 +15,9 @@ const week = getWeekNumber();
 const weekRn = getWeekNumber();
 const now = Date.now();
 
+const t = new Date();
+const m = t.getMonth();
+
 async function totalDistance() {
     try {
         const res = await fetch(url);
@@ -39,7 +42,6 @@ async function totalDistance() {
         const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');        
 
         document.getElementById('total').textContent = totalDistanceKm;
-        document.getElementById('thisMonth').textContent = totalDistanceKm;
         document.getElementById('totalRuns').textContent = totalRuns;
         document.getElementById('recentLogged').textContent = totalRuns;
         document.getElementById('avgPace').textContent = `${min}:${sec}`;
@@ -113,9 +115,6 @@ async function weeklyProgress() {
         const distancePercent = (((currentDistance - lastDistance) / lastDistance) * 100).toFixed(0);
         const runsPercent = (((currentRuns - lastRuns) / lastRuns) * 100).toFixed(0);
         const timePercent = (((currentTime - lastTime) / lastTime) * 100).toFixed(0);
-        console.log(distancePercent);
-        console.log(timePercent);
-        console.log(runsPercent);
 
         if(currentDistance >= lastDistance) {
             document.getElementById('distanceProgress').innerHTML = 
@@ -158,9 +157,6 @@ async function weeklyProgress() {
             <p class="down">${timePercent}% from last week</p>
             `;
         }
-
-        console.log(current);
-        console.log(last);
     } catch(err) {
         console.error(err);
     }
@@ -238,6 +234,34 @@ async function getRuns() {
     }
 }
 
+async function lastMonth() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const lastM = data.filter(month => month.month === `${m}`)
+        const thisM = data.filter(month => month.month === `${m + 1}`)
+
+        let totalDistance = 0;
+        let totalDistanceThis = 0;
+
+        lastM.forEach(run => {
+            totalDistance += parseFloat(run.distance);
+        })
+
+        thisM.forEach(run => {
+            totalDistanceThis += parseFloat(run.distance);
+        })
+
+        const thisMonthDistance = (totalDistanceThis / 1000).toFixed(2);
+        const lastMonthDistance = (totalDistance / 1000).toFixed(2);
+        document.getElementById('lastMonth').textContent = lastMonthDistance;
+        document.getElementById('thisMonth').textContent = thisMonthDistance;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+lastMonth();
 fetchWeekStats();
 totalDistance();
 getRuns();
