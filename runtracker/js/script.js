@@ -1,7 +1,5 @@
 const url = 'https://api.sheetbest.com/sheets/109b7a91-894b-4cdc-bab7-7ff030c05688';
-
-let weekGoal = 10000;
-document.getElementById('goal').textContent = weekGoal / 1000;
+const plan_url = 'https://api.sheetbest.com/sheets/5e55269f-12e0-474f-8122-18e4e2cf1574';
 
 function getWeekNumber(date = new Date()) {
     const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -38,8 +36,15 @@ async function totalDistance() {
         });
 
         const avgPace = (totalTime / totalDistance) * 1000 / 60;
-        const min = Math.floor(avgPace);
-        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');        
+        let min = Math.floor(avgPace);
+        let sec = Math.round((avgPace - min) * 60);
+
+        if(sec === 60) {
+            min += 1;
+            sec = 0;
+        }
+
+        sec = String(sec).padStart(2, '0');
 
         document.getElementById('total').textContent = totalDistanceKm;
         document.getElementById('totalRuns').textContent = totalRuns;
@@ -73,14 +78,42 @@ async function fetchWeekStats() {
         });
 
         const avgPace = (totalTime / totalDistance) * 1000 / 60;
-        const min = Math.floor(avgPace);
-        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0'); 
+        let min = Math.floor(avgPace);
+        let sec = Math.round((avgPace - min) * 60);
 
-        document.getElementById('goal-percent').textContent = (totalDistanceMeters / 100);
-        document.getElementById('bar').style.width = (totalDistanceMeters / 100) + '%';
+        if(sec === 60) {
+            min += 1;
+            sec = 0;
+        }
+
+        sec = String(sec).padStart(2, '0');
+
+        const weekGoal = await getWeeklyGoal();
+        const percentage = ((totalDistanceMeters / weekGoal) * 100).toFixed(2);
+
+        document.getElementById('goal-percent').textContent = percentage;
+        document.getElementById('bar').style.width = percentage + '%';
         document.getElementById('week-current').textContent = totalDistanceKm;
         document.getElementById('weeklyRuns').textContent = totalRuns;
         document.getElementById('weeklyAvg').textContent = `${min}:${sec}/km`;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+async function getWeeklyGoal() {
+    try {
+        const res = await fetch(plan_url);
+        const data = await res.json();
+        const asdasd = data.filter(test => test.actualWeek === String(weekRn));
+
+        let weekDistance = 0;
+
+        asdasd.forEach(runs => {
+            weekDistance += parseFloat(runs.distance);
+        })
+
+        return weekDistance;
     } catch(err) {
         console.error(err);
     }
@@ -143,12 +176,12 @@ async function weeklyProgress() {
         if(currentTime >= lastTime) {
             document.getElementById('paceProgress').innerHTML = 
             `
-            <p class="down">&#x25B2; ${timePercent}% from last week</p>
+            <p>&#x25BC; ${timePercent}% from last week</p>
             `;
         } else if (currentTime < lastTime) {
             document.getElementById('paceProgress').innerHTML = 
             `
-            <p>&#x25BC; ${timePercent}% from last week</p>
+            <p class="down">&#x25B2; ${timePercent}% from last week</p>
             `;
         }
     } catch(err) {
@@ -185,7 +218,7 @@ async function getRuns() {
             d.innerHTML = 
             `
             <div class="card-header">
-                <h4>${run.distance / 1000} km run</h4>
+                <h4>${(run.distance / 1000).toFixed(2)} km run</h4>
                 <img onclick="deleteRun(${run.id})" class="delete" src="./assets/delete.svg">
             </div>
             <div class="time">
@@ -282,7 +315,7 @@ async function bestRuns() {
         const min = Math.floor(avgPace);
         const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
 
-        document.getElementById('longestRunDistance').textContent = `${longestDistance} km run`;
+        document.getElementById('longestRunDistance').textContent = `${(longestDistance).toFixed(2)} km run`;
         document.getElementById('longestRunDate').textContent = formatted;
         document.getElementById('longestRunTime').textContent = `${runMin}:${runSec}`;
         document.getElementById('longestRunAvg').textContent = `${min}:${sec}/km`;
@@ -301,11 +334,8 @@ async function bestRuns() {
         const timestampFast = Number(fastestRun.date);
         const dateFast = new Date(timestampFast);
 
-        const weekdaysFast = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-        const monthsFast = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        const weekdayFast = weekdaysFast[dateFast.getDay()];
-        const monthFast = monthsFast[dateFast.getMonth()];
+        const weekdayFast = weekdays[dateFast.getDay()];
+        const monthFast = months[dateFast.getMonth()];
         const dayFast = dateFast.getDate();
         const formattedFast = `${weekdayFast}, ${monthFast} ${dayFast}`;
 
@@ -317,7 +347,7 @@ async function bestRuns() {
         const minFast = Math.floor(avgPaceFast);
         const secFast = String(Math.round((avgPaceFast - minFast) * 60)).padStart(2, '0');
 
-        document.getElementById('fastestRunDistance').textContent = `${fastestDistance} km run`;
+        document.getElementById('fastestRunDistance').textContent = `${(fastestDistance).toFixed(2)} km run`;
         document.getElementById('fastestRunDate').textContent = formattedFast;
         document.getElementById('fastestRunTime').textContent = `${runMinFast}:${runSecFast}`;
         document.getElementById('fastestRunAvg').textContent = `${minFast}:${secFast}/km`;
@@ -328,17 +358,126 @@ async function bestRuns() {
     }
 }
 
+async function weeklyGoal() {
+    try {
+        const res = await fetch('https://api.sheetbest.com/sheets/5e55269f-12e0-474f-8122-18e4e2cf1574');
+        const data = await res.json();
+        const weekly = data.filter(week => week.actualWeek === String(weekRn));
+        let weeklyGoal = 0;
+
+        weekly.forEach(run => {
+            weeklyGoal += parseFloat(run.distance);
+        })
+
+        document.getElementById('goal').textContent = (weeklyGoal / 1000);
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+async function best3k() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const test = data.filter(run => run.distance >= 3000 && run.distance < 3250);
+
+        if(test.length >= 1) {
+            document.querySelector('.threeK').style.display = 'block';
+        }
+        
+        const longestRun = test.sort((a, b) => b.distance - a.distance)[0];
+        const longestDistance = Number((longestRun.distance / 1000))
+        
+        const timestamp = Number(longestRun.date);
+        const date = new Date(timestamp);
+
+        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        const weekday = weekdays[date.getDay()];
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const formatted = `${weekday}, ${month} ${day}`;
+
+        const avgPace = (longestRun.time / longestRun.distance) * 1000 / 60;
+        const totalTime = (longestRun.time / 60);
+        const runMin = Math.floor(totalTime);
+        const runSec = String(Math.round((totalTime - runMin) * 60)).padStart(2, '0');
+
+        const min = Math.floor(avgPace);
+        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
+
+        document.getElementById('fast3kDistance').textContent = `${(longestDistance).toFixed(2)} km run`;
+        document.getElementById('fast3kDate').textContent = formatted;
+        document.getElementById('fast3k').textContent = `${runMin}:${runSec}`;
+        document.getElementById('fast3kAvg').textContent = `${min}:${sec}/km`;
+        document.getElementById('fast3kLocation').textContent = `${longestRun.location}`;
+        document.getElementById('fast3kDesc').textContent = `${longestRun.desc}`;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+async function best5k() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const test = data.filter(run => run.distance >= 5000 && run.distance < 5250);
+
+        if(test.length >= 1) {
+            document.querySelector('.fiveK').style.display = 'block';
+        }
+
+        console.log(test);
+        
+        const longestRun = test.sort((a, b) => b.distance - a.distance)[0];
+        const longestDistance = Number((longestRun.distance / 1000))
+        
+        const timestamp = Number(longestRun.date);
+        const date = new Date(timestamp);
+
+        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        const weekday = weekdays[date.getDay()];
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const formatted = `${weekday}, ${month} ${day}`;
+
+        const avgPace = (longestRun.time / longestRun.distance) * 1000 / 60;
+        const totalTime = (longestRun.time / 60);
+        const runMin = Math.floor(totalTime);
+        const runSec = String(Math.round((totalTime - runMin) * 60)).padStart(2, '0');
+
+        const min = Math.floor(avgPace);
+        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
+
+        document.getElementById('fast5kDistance').textContent = `${(longestDistance).toFixed(2)} km run`;
+        document.getElementById('fast5kDate').textContent = formatted;
+        document.getElementById('fast5k').textContent = `${runMin}:${runSec}`;
+        document.getElementById('fast5kAvg').textContent = `${min}:${sec}/km`;
+        document.getElementById('fast5kLocation').textContent = `${longestRun.location}`;
+        document.getElementById('fast5kDesc').textContent = `${longestRun.desc}`;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
-//         fetchWeekStats();
+//         getRuns();
 //     }
 // })
+
 bestRuns();
 lastMonth();
 fetchWeekStats();
 totalDistance();
 getRuns();
 weeklyProgress();
+weeklyGoal();
+best3k();
+best5k();
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
