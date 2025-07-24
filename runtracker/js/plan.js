@@ -87,7 +87,7 @@ async function getWeeks() {
             <div class="run-stats location">
                 <div class="run-time">
                     <img src="../assets/location-70.svg">
-                    <p>Sognsvann</p>
+                    <p>${run.location}</p>
                 </div>
             </div>
             <div class="desc">
