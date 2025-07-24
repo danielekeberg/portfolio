@@ -473,6 +473,92 @@ async function best5k() {
     }
 }
 
+async function reminder() {
+    try {
+        const res = await fetch(plan_url);
+        const data = await res.json();
+
+        const today = new Date();
+        const todayY = today.getFullYear();
+        const todayM = today.getMonth();
+        const todayD = today.getDate();
+
+        const todayRuns = data.filter(run => {
+            const runDate = new Date(Number(run.date));
+            return (
+                runDate.getFullYear() === todayY &&
+                runDate.getMonth() === todayM &&
+                runDate.getDate() === todayD
+            )
+        });
+
+        const runs = todayRuns[0];
+
+        const avgPace = (runs.time / runs.distance) * 1000 / 60;
+        const totalTime = (runs.time / 60);
+        const runMin = Math.floor(totalTime);
+        const runSec = String(Math.round((totalTime - runMin) * 60)).padStart(2, '0');
+
+        const min = Math.floor(avgPace);
+        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
+
+        if(todayRuns.length > 0) {
+            const d = document.createElement('div');
+            d.className = 'reminder';
+            d.innerHTML = 
+            `
+            <div class="reminder-header">
+                <div class="reminder-header-text">
+                    <h3>Today's Run Reminder</h3>
+                    <p class="${runs.session}">${runs.session}</p>
+                </div>
+                <div class="cancel">
+                    <p id="remove-reminder">X</p>
+                </div>
+            </div>
+            <div class="reminder-stats">
+                <div class="reminder-stat">
+                    <img style="transform: scaleX(-1)" src="./assets/path-81.svg">
+                    <p>${runs.distance / 1000} km</p>
+                </div>
+                <div class="reminder-stat">
+                    <img src="./assets/clock-81.svg">
+                    <p>${runMin}:${runSec}</p>
+                </div>
+                <div class="reminder-stat">
+                    <img src="./assets/growth-81.svg">
+                    <p>${min}:${sec}/km</p>
+                </div>
+            </div>
+            <div class="reminder-loc">
+                <div class="reminder-stat">
+                    <img src="./assets/location-81.svg">
+                    <p style="font-weight: 400;">${runs.location}</p>
+                </div>
+                <p>${runs.notes}</p>
+            </div>
+            `;
+            document.querySelector('.home').prepend(d);
+            document.getElementById('remove-reminder').addEventListener('click', () => {
+                document.querySelector('.reminder').style.opacity = 0;
+                setTimeout(() => {
+                    document.querySelector('.reminder').remove();
+                }, 300)
+            });
+        }
+
+        
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+// document.body.addEventListener('keydown', (e) => {
+//     if(e.key === 'Enter') {
+//         reminder();
+//     }
+// })
+
 bestRuns();
 lastMonth();
 fetchWeekStats();
@@ -482,6 +568,7 @@ weeklyProgress();
 weeklyGoal();
 best3k();
 best5k();
+reminder();
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
