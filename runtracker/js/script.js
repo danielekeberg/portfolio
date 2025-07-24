@@ -384,35 +384,41 @@ async function best3k() {
         if(test.length >= 1) {
             document.querySelector('.threeK').style.display = 'block';
         }
-        
-        const longestRun = test.sort((a, b) => b.distance - a.distance)[0];
-        const longestDistance = Number((longestRun.distance / 1000))
-        
-        const timestamp = Number(longestRun.date);
-        const date = new Date(timestamp);
+
+        const sortedPace = test.slice().sort((a, b) => {
+            const paceA = (a.time / 60) / a.distance;
+            const paceB = (b.time / 60) / b.distance;
+            return paceA - paceB;
+        });
 
         const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        
+        const fastestRun = sortedPace[0];
+        const fastestDistance = Number((fastestRun.distance / 1000))
 
-        const weekday = weekdays[date.getDay()];
-        const month = months[date.getMonth()];
-        const day = date.getDate();
-        const formatted = `${weekday}, ${month} ${day}`;
+        const timestampFast = Number(fastestRun.date);
+        const dateFast = new Date(timestampFast);
 
-        const avgPace = (longestRun.time / longestRun.distance) * 1000 / 60;
-        const totalTime = (longestRun.time / 60);
-        const runMin = Math.floor(totalTime);
-        const runSec = String(Math.round((totalTime - runMin) * 60)).padStart(2, '0');
+        const weekdayFast = weekdays[dateFast.getDay()];
+        const monthFast = months[dateFast.getMonth()];
+        const dayFast = dateFast.getDate();
+        const formattedFast = `${weekdayFast}, ${monthFast} ${dayFast}`;
 
-        const min = Math.floor(avgPace);
-        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
+        const avgPaceFast = (fastestRun.time / fastestRun.distance) * 1000 / 60;
+        const totalTimeFast = (fastestRun.time / 60);
+        const runMinFast = Math.floor(totalTimeFast);
+        const runSecFast = String(Math.round((totalTimeFast - runMinFast) * 60)).padStart(2, '0');
 
-        document.getElementById('fast3kDistance').textContent = `${(longestDistance).toFixed(2)} km run`;
-        document.getElementById('fast3kDate').textContent = formatted;
-        document.getElementById('fast3k').textContent = `${runMin}:${runSec}`;
-        document.getElementById('fast3kAvg').textContent = `${min}:${sec}/km`;
-        document.getElementById('fast3kLocation').textContent = `${longestRun.location}`;
-        document.getElementById('fast3kDesc').textContent = `${longestRun.desc}`;
+        const minFast = Math.floor(avgPaceFast);
+        const secFast = String(Math.round((avgPaceFast - minFast) * 60)).padStart(2, '0');
+
+        document.getElementById('fast3kDistance').textContent = `${(fastestDistance).toFixed(2)} km run`;
+        document.getElementById('fast3kDate').textContent = formattedFast;
+        document.getElementById('fast3k').textContent = `${runMinFast}:${runSecFast}`;
+        document.getElementById('fast3kAvg').textContent = `${minFast}:${secFast}/km`;
+        document.getElementById('fast3kLocation').textContent = `${fastestRun.location}`;
+        document.getElementById('fast3kDesc').textContent = `${fastestRun.desc}`;
     } catch(err) {
         console.error(err);
     }
@@ -428,46 +434,44 @@ async function best5k() {
             document.querySelector('.fiveK').style.display = 'block';
         }
 
-        console.log(test);
-        
-        const longestRun = test.sort((a, b) => b.distance - a.distance)[0];
-        const longestDistance = Number((longestRun.distance / 1000))
-        
-        const timestamp = Number(longestRun.date);
-        const date = new Date(timestamp);
+        const sortedPace = test.slice().sort((a, b) => {
+            const paceA = (a.time / 60) / a.distance;
+            const paceB = (b.time / 60) / b.distance;
+            return paceA - paceB;
+        });
 
         const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        
+        const fastestRun = sortedPace[0];
+        const fastestDistance = Number((fastestRun.distance / 1000))
 
-        const weekday = weekdays[date.getDay()];
-        const month = months[date.getMonth()];
-        const day = date.getDate();
-        const formatted = `${weekday}, ${month} ${day}`;
+        const timestampFast = Number(fastestRun.date);
+        const dateFast = new Date(timestampFast);
 
-        const avgPace = (longestRun.time / longestRun.distance) * 1000 / 60;
-        const totalTime = (longestRun.time / 60);
-        const runMin = Math.floor(totalTime);
-        const runSec = String(Math.round((totalTime - runMin) * 60)).padStart(2, '0');
+        const weekdayFast = weekdays[dateFast.getDay()];
+        const monthFast = months[dateFast.getMonth()];
+        const dayFast = dateFast.getDate();
+        const formattedFast = `${weekdayFast}, ${monthFast} ${dayFast}`;
 
-        const min = Math.floor(avgPace);
-        const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
+        const avgPaceFast = (fastestRun.time / fastestRun.distance) * 1000 / 60;
+        const totalTimeFast = (fastestRun.time / 60);
+        const runMinFast = Math.floor(totalTimeFast);
+        const runSecFast = String(Math.round((totalTimeFast - runMinFast) * 60)).padStart(2, '0');
 
-        document.getElementById('fast5kDistance').textContent = `${(longestDistance).toFixed(2)} km run`;
-        document.getElementById('fast5kDate').textContent = formatted;
-        document.getElementById('fast5k').textContent = `${runMin}:${runSec}`;
-        document.getElementById('fast5kAvg').textContent = `${min}:${sec}/km`;
-        document.getElementById('fast5kLocation').textContent = `${longestRun.location}`;
-        document.getElementById('fast5kDesc').textContent = `${longestRun.desc}`;
+        const minFast = Math.floor(avgPaceFast);
+        const secFast = String(Math.round((avgPaceFast - minFast) * 60)).padStart(2, '0');
+
+        document.getElementById('fast5kDistance').textContent = `${(fastestDistance).toFixed(2)} km run`;
+        document.getElementById('fast5kDate').textContent = formattedFast;
+        document.getElementById('fast5k').textContent = `${runMinFast}:${runSecFast}`;
+        document.getElementById('fast5kAvg').textContent = `${minFast}:${secFast}/km`;
+        document.getElementById('fast5kLocation').textContent = `${fastestRun.location}`;
+        document.getElementById('fast5kDesc').textContent = `${fastestRun.desc}`;
     } catch(err) {
         console.error(err);
     }
 }
-
-// document.body.addEventListener('keydown', (e) => {
-//     if(e.key === 'Enter') {
-//         getRuns();
-//     }
-// })
 
 bestRuns();
 lastMonth();
