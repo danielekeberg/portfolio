@@ -379,7 +379,7 @@ async function best3k() {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        const test = data.filter(run => run.distance >= 3000 && run.distance < 3250);
+        const test = data.filter(run => run.distance >= 3000 && run.distance < 3990);
 
         if(test.length >= 1) {
             document.querySelector('.threeK').style.display = 'block';
@@ -428,7 +428,7 @@ async function best5k() {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        const test = data.filter(run => run.distance >= 5000 && run.distance < 5250);
+        const test = data.filter(run => run.distance >= 5000 && run.distance < 5990);
 
         if(test.length >= 1) {
             document.querySelector('.fiveK').style.display = 'block';
