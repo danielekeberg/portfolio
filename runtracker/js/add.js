@@ -35,6 +35,7 @@ function addRun() {
                 <p>Type</p>
                 <select id="runType" name="runType">
                     <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
                     <option value="tempo">Tempo</option>
                     <option value="interval">Interval</option>
                     <option value="long">Long Run</option>
