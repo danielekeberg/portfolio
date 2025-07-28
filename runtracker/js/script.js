@@ -73,29 +73,42 @@ async function fetchWeekStats() {
         let totalDistance = 0;
     
         currentWeek.forEach(run => {
-            totalTime += parseFloat(run.time);
-            totalDistance += parseFloat(run.distance);
+            totalTime += parseFloat(run.time) || 0;
+            totalDistance += parseFloat(run.distance) || 0;
         });
 
-        const avgPace = (totalTime / totalDistance) * 1000 / 60;
-        let min = Math.floor(avgPace);
-        let sec = Math.round((avgPace - min) * 60);
+        let min = 0;
+        let sec = '00';
 
-        if(sec === 60) {
-            min += 1;
-            sec = 0;
+        if(totalDistance > 0 && totalTime > 0) {
+            const avgPace = (totalTime / totalDistance) * 1000 / 60;
+            min = Math.floor(avgPace);
+            sec = Math.round((avgPace - min) * 60);
+
+            if(sec === 60) {
+                min += 1;
+                sec = 0;
+            }
+
+            sec = String(sec).padStart(2, '0');
         }
 
-        sec = String(sec).padStart(2, '0');
 
         const weekGoal = await getWeeklyGoal();
         const percentage = ((totalDistanceMeters / weekGoal) * 100).toFixed(2);
 
-        document.getElementById('goal-percent').textContent = percentage;
+        console.log(sec);
+        console.log(typeof sec);
+        console.log(min);
+        console.log(typeof min);
+
+        console.log(sec);
+
+        document.getElementById('goal-percent').textContent = Number(percentage).toFixed(0);
         document.getElementById('bar').style.width = percentage + '%';
         document.getElementById('week-current').textContent = totalDistanceKm;
         document.getElementById('weeklyRuns').textContent = totalRuns;
-        document.getElementById('weeklyAvg').textContent = `${min}:${sec}/km`;
+        document.getElementById('weeklyAvg').textContent = `${min ? min : '0'}:${sec}/km`;
     } catch(err) {
         console.error(err);
     }
@@ -555,7 +568,7 @@ async function reminder() {
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
-//         reminder();
+//         fetchWeekStats();
 //     }
 // })
 
