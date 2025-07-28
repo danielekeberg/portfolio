@@ -1,5 +1,19 @@
 const url = 'https://api.sheetbest.com/sheets/109b7a91-894b-4cdc-bab7-7ff030c05688';
 
+async function getCurrentId() {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const rowLength = data.length + 1;
+        
+        localStorage.setItem('u98yej876dj87sa6dj8asd6jasd8967', rowLength);
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+getCurrentId();
+
 function getWeekNumber(date = new Date()) {
     const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
     const dayNum = d.getUTCDay() || 7;
@@ -175,10 +189,15 @@ function post(distance, time, date, diff, desc, location) {
 
     const d = document.createElement('div');
 
+    const getId = localStorage.getItem('u98yej876dj87sa6dj8asd6jasd8967')
+
     d.className = 'card enter';
     d.innerHTML = 
     `
-    <h4>${distance / 1000} km run</h4>
+    <div class="card-header">
+        <h4>${distance / 1000} km run</h4>
+        <img onclick="deleteRun(${getId})" class="delete" src="./assets/delete.svg">
+    </div>
     <div class="time">
         <div class="date">
             <img src="./assets/cal-70.svg">
