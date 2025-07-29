@@ -97,13 +97,6 @@ async function fetchWeekStats() {
         const weekGoal = await getWeeklyGoal();
         const percentage = ((totalDistanceMeters / weekGoal) * 100).toFixed(2);
 
-        console.log(sec);
-        console.log(typeof sec);
-        console.log(min);
-        console.log(typeof min);
-
-        console.log(sec);
-
         document.getElementById('goal-percent').textContent = Number(percentage).toFixed(0);
         document.getElementById('bar').style.width = percentage + '%';
         document.getElementById('week-current').textContent = totalDistanceKm;
@@ -160,7 +153,6 @@ async function weeklyProgress() {
 
         const distancePercent = (((currentDistance - lastDistance) / lastDistance) * 100).toFixed(0);
         const runsPercent = (((currentRuns - lastRuns) / lastRuns) * 100).toFixed(0);
-        const timePercent = (((currentTime - lastTime) / lastTime) * 100).toFixed(0);
 
         if(currentDistance >= lastDistance) {
             document.getElementById('distanceProgress').innerHTML = 
@@ -183,18 +175,6 @@ async function weeklyProgress() {
             document.getElementById('runsProgress').innerHTML = 
             `
             <p class="down">&#x25BC; ${runsPercent}% from last week</p>
-            `;
-        }
-
-        if(currentTime >= lastTime) {
-            document.getElementById('paceProgress').innerHTML = 
-            `
-            <p>&#x25BC; ${timePercent}% from last week</p>
-            `;
-        } else if (currentTime < lastTime) {
-            document.getElementById('paceProgress').innerHTML = 
-            `
-            <p class="down">&#x25B2; ${timePercent}% from last week</p>
             `;
         }
     } catch(err) {
@@ -280,7 +260,7 @@ async function lastMonth() {
         const data = await res.json();
         const lastM = data.filter(month => month.month === `${m}`)
         const thisM = data.filter(month => month.month === `${m + 1}`)
-
+        
         let totalDistance = 0;
         let totalDistanceThis = 0;
 
@@ -373,7 +353,7 @@ async function bestRuns() {
 
 async function weeklyGoal() {
     try {
-        const res = await fetch('https://api.sheetbest.com/sheets/5e55269f-12e0-474f-8122-18e4e2cf1574');
+        const res = await fetch(plan_url);
         const data = await res.json();
         const weekly = data.filter(week => week.actualWeek === String(weekRn));
         let weeklyGoal = 0;
