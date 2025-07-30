@@ -1,4 +1,5 @@
 const url = 'https://api.sheetbest.com/sheets/109b7a91-894b-4cdc-bab7-7ff030c05688';
+const plan_url = 'https://api.sheetbest.com/sheets/5e55269f-12e0-474f-8122-18e4e2cf1574';
 
 async function getCurrentId() {
     try {
@@ -236,10 +237,32 @@ function post(distance, time, date, diff, desc, location) {
     }, 50);
 }
 
+async function getWeeklyGoalNumber() {
+    try {
+        const res = await fetch(plan_url);
+        const data = await res.json();
+        const plan = data.filter(week => week.actualWeek === `${weekRn}`);
+
+        let distance = 0;
+
+        plan.forEach(run => {
+            distance += parseFloat(run.distance)
+        })
+
+        return distance;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
 async function update(distance) {
     try {
         const res = await fetch(url);
         const data = await res.json();
+
+        const weeklyGoal = await getWeeklyGoalNumber();
+
+        console.log(weeklyGoal);
 
         const currentWeek = data.filter(week => week.week === `${weekRn}`)
         const totalDistanceMeters = currentWeek.reduce((sum, run) => {
@@ -248,8 +271,14 @@ async function update(distance) {
 
         const totalRuns = data.length;
 
-        document.getElementById('goal-percent').textContent = ((totalDistanceMeters / 100) + (distance / 100));
-        document.getElementById('bar').style.width = ((totalDistanceMeters / 100) + (distance / 100)) + '%';
+        const newTotal = totalDistanceMeters + distance;
+        const newTotalPercent = (newTotal / weeklyGoal) * 100;
+
+        console.log(totalDistanceMeters);
+        console.log(distance);
+
+        document.getElementById('goal-percent').textContent = newTotalPercent.toFixed(0);
+        document.getElementById('bar').style.width = newTotalPercent.toFixed(0) + '%';
         document.getElementById('week-current').textContent = ((totalDistanceMeters + distance) / 1000).toFixed(2);
         document.getElementById('total').textContent = ((totalDistanceMeters + distance) / 1000).toFixed(2);
         document.getElementById('thisMonth').textContent = ((totalDistanceMeters + distance) / 1000).toFixed(2);
