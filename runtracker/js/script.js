@@ -1,5 +1,5 @@
-const url = 'https://api.sheetbest.com/sheets/109b7a91-894b-4cdc-bab7-7ff030c05688';
-const plan_url = 'https://api.sheetbest.com/sheets/5e55269f-12e0-474f-8122-18e4e2cf1574';
+const url = 'https://api.sheetbest.com/sheets/7bd324c2-1206-479d-82e1-1253bf9f45c6';
+const plan_url = 'https://api.sheetbest.com/sheets/e1865a4a-bc95-4df1-876a-388d6b535747';
 
 function getWeekNumber(date = new Date()) {
     const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
