@@ -119,7 +119,7 @@ async function getWeeklyGoal() {
             weekDistance += parseFloat(runs.distance);
         })
 
-        return weekDistance;
+        return weekDistance ? weekDistance : 10000;
     } catch(err) {
         console.error(err);
     }
@@ -362,7 +362,9 @@ async function weeklyGoal() {
             weeklyGoal += parseFloat(run.distance);
         })
 
-        document.getElementById('goal').textContent = (weeklyGoal / 1000);
+        const finalGoal = (weeklyGoal / 1000);
+
+        document.getElementById('goal').textContent = finalGoal ? finalGoal : 10;
     } catch(err) {
         console.error(err);
     }
@@ -466,7 +468,21 @@ async function best5k() {
     }
 }
 
+function setLocal() {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+
+    return `${day}${month}${year}`;
+}
+
 async function reminder() {
+    const dateNow = setLocal();
+    const checkLocal = localStorage.getItem('as9d7yma90sd76mq287d6ma897d6h896798a6sdj98a67asd');
+    if(checkLocal === dateNow) {
+        return;
+    }
     try {
         const res = await fetch(plan_url);
         const data = await res.json();
@@ -533,6 +549,7 @@ async function reminder() {
             `;
             document.querySelector('.home').prepend(d);
             document.getElementById('remove-reminder').addEventListener('click', () => {
+                localStorage.setItem('as9d7yma90sd76mq287d6ma897d6h896798a6sdj98a67asd', dateNow);
                 document.querySelector('.reminder').style.opacity = 0;
                 setTimeout(() => {
                     document.querySelector('.reminder').remove();
@@ -548,7 +565,7 @@ async function reminder() {
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
-//         fetchWeekStats();
+//         reminder();
 //     }
 // })
 
