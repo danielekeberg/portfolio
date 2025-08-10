@@ -131,6 +131,7 @@ document.getElementById('add').addEventListener('click', addRun)
 document.getElementById('add-mobile').addEventListener('click', addRun)
 
 async function newRun(distance, time, date, diff, desc, location) {
+    const getuid = localStorage.getItem('userid');
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -148,7 +149,8 @@ async function newRun(distance, time, date, diff, desc, location) {
                 desc: desc,
                 difficulty: diff,
                 location: location,
-                month: currentMonth
+                month: currentMonth,
+                uid: getuid
             })
         });
 

@@ -1,10 +1,11 @@
+const uid = localStorage.getItem('userid');
+
 function error() {
     const d = document.createElement('div');
     d.className = 'error';
     d.innerHTML = 
     `
-    <h1>Note:</h1>
-    <p><strong>Everything</strong> works as intended! :)</p>
+    <p><strong>UID</strong>: ${uid ? uid : 'Refresh the page'}</p>
     `;
     document.getElementById('nav').appendChild(d);
 }

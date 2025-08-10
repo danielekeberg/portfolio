@@ -1,5 +1,6 @@
 const url = 'https://api.sheetbest.com/sheets/7bd324c2-1206-479d-82e1-1253bf9f45c6';
 const plan_url = 'https://api.sheetbest.com/sheets/e1865a4a-bc95-4df1-876a-388d6b535747';
+const uid = localStorage.getItem('userid');
 
 function getWeekNumber(date = new Date()) {
     const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -19,7 +20,8 @@ const m = t.getMonth();
 async function totalDistance() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
         const totalDistanceMeters = data.reduce((sum, run) => {
             return sum + parseInt(run.distance);
         }, 0);
@@ -59,7 +61,8 @@ async function totalDistance() {
 async function fetchWeekStats() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
         const currentWeek = data.filter(week => week.week === `${weekRn}`)
 
         const totalDistanceMeters = currentWeek.reduce((sum, run) => {
@@ -128,7 +131,8 @@ async function getWeeklyGoal() {
 async function weeklyProgress() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
 
         const current = data.filter(week => week.week === `${weekRn}`);
         const last = data.filter(week => week.week === `${weekRn - 1}`);
@@ -190,7 +194,8 @@ async function weeklyProgress() {
 async function getRuns() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
         data.sort((a, b) => b.date - a.date);
         data.forEach(run => {
             const d = document.createElement('div');
@@ -262,7 +267,8 @@ async function getRuns() {
 async function lastMonth() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
         const lastM = data.filter(month => month.month === `${m}`)
         const thisM = data.filter(month => month.month === `${m + 1}`)
         
@@ -289,7 +295,8 @@ async function lastMonth() {
 async function bestRuns() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
 
         const longestRun = data.sort((a, b) => b.distance - a.distance)[0];
         const longestDistance = Number((longestRun.distance / 1000))
@@ -378,7 +385,8 @@ async function weeklyGoal() {
 async function best3k() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const data = results.filter(run => run.uid === uid);
         const test = data.filter(run => run.distance >= 3000 && run.distance < 3990);
 
         if(test.length >= 1) {
@@ -568,11 +576,11 @@ async function reminder() {
     }
 }
 
-document.body.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter') {
-        weeklyProgress();
-    }
-})
+// document.body.addEventListener('keydown', (e) => {
+//     if(e.key === 'Enter') {
+//         totalDistance();
+//     }
+// })
 
 bestRuns();
 lastMonth();
@@ -584,13 +592,3 @@ weeklyGoal();
 best3k();
 best5k();
 reminder();
-
-// document.body.addEventListener('keydown', (e) => {
-//     if(e.key === 'Enter') {
-//         totalDistance();
-//         getRuns();
-//         fetchWeekStats();
-//         weeklyProgress();
-//     }
-// })
-

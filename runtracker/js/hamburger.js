@@ -1,9 +1,11 @@
+const uid = localStorage.getItem('userid');
+
 function hamburger() {
     const d = document.createElement('div');
     d.className = 'dropdown';
     d.innerHTML = `
     <div class="menu">
-        <p>uid213890</p>
+        <p>${uid ? uid : 'refresh the page'}</p>
     </div>
     `;
     if(document.querySelector('.dropdown')) {
