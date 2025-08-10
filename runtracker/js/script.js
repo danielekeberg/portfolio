@@ -151,8 +151,13 @@ async function weeklyProgress() {
             lastTime += parseFloat(run.time);
         })
 
-        const distancePercent = (((currentDistance - lastDistance) / lastDistance) * 100).toFixed(0);
-        const runsPercent = (((currentRuns - lastRuns) / lastRuns) * 100).toFixed(0);
+        const distancePercent = lastDistance === 0
+        ? (currentDistance === 0 ? '0' : '100')
+        : (((currentDistance - lastDistance) / lastDistance) * 100).toFixed(0);
+
+        const runsPercent = lastRuns === 0
+        ? (currentRuns === 0 ? '0' : '100')
+        : (((currentRuns - lastRuns) / lastRuns) * 100).toFixed(0);
 
         if(currentDistance >= lastDistance) {
             document.getElementById('distanceProgress').innerHTML = 
@@ -563,11 +568,11 @@ async function reminder() {
     }
 }
 
-// document.body.addEventListener('keydown', (e) => {
-//     if(e.key === 'Enter') {
-//         reminder();
-//     }
-// })
+document.body.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        weeklyProgress();
+    }
+})
 
 bestRuns();
 lastMonth();
@@ -588,3 +593,4 @@ reminder();
 //         weeklyProgress();
 //     }
 // })
+

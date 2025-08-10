@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     
     <script type="module" src="./js/script.js" defer></script>
+    <script type="module" src="./js/hamburger.js" defer></script>
     <script type="module" src="./js/add.js" defer></script>
     <script type="module" src="./js/error.js" defer></script>
     <script src="./js/delete.js" defer></script>
@@ -32,6 +33,9 @@
             <div class="add" id="add">
                 <img src="./assets/plus.svg">
                 <p>Add Run</p>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <p>&#9776;</p>
             </div>
         </div>
     </header>
@@ -73,6 +77,13 @@
             </div>
         </section>
 
+        <div class="mobile-add">
+            <div class="mobile-btn" id="add-mobile">
+                <img src="./assets/plus.svg">
+                <p>Add Run</p>
+            </div>
+        </div>
+
         <div class="featured">
             <div class="card">
                 <h5>Total Distance</h5>
@@ -112,7 +123,7 @@
         </div>
 
         <div class="recent">
-            <div class="recent-header">
+            <div class="recent-header best">
                 <h3>Best Runs</h3>
             </div>
             <div class="runs" id="best">
@@ -281,6 +292,43 @@
             </div>
             <div class="runs" id="runs">
                 <!-- <div class="card">
+                    <div class="card-header">
+                        <h4>2.88 km run</h4>
+                        <img onclick="deleteRun(8)" class="delete" src="./assets/delete.svg">
+                    </div>
+                    <div class="time">
+                        <div class="date">
+                            <img src="./assets/cal-70.svg">
+                            <p>Sun, Jul 20</p>
+                        </div>
+                        <p class="difficulty easy">easy</p>
+                    </div>
+                    <div class="run-stats">
+                        <div class="run-time">
+                            <img src="./assets/clock-70.svg">
+                            <div>
+                                <span>17:10</span>
+                                <p>Duration</p>
+                            </div>
+                        </div>
+                        <div class="run-time">
+                            <div class="">
+                                <span>5:58/km</span>
+                                <p>Avg Pace</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="run-stats location">
+                        <div class="run-time">
+                            <img src="./assets/location-70.svg">
+                            <p>Sognsvann</p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p>Hello</p>
+                    </div>
+                </div>
+                <div class="card">
                     <div class="card-header">
                         <h4>2.88 km run</h4>
                         <img onclick="deleteRun(8)" class="delete" src="./assets/delete.svg">

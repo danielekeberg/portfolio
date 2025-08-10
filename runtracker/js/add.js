@@ -128,6 +128,7 @@ function addRun() {
 
 
 document.getElementById('add').addEventListener('click', addRun)
+document.getElementById('add-mobile').addEventListener('click', addRun)
 
 async function newRun(distance, time, date, diff, desc, location) {
     try {

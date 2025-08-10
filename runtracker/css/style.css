@@ -52,6 +52,10 @@ header .nav {
     gap: 25px;
 }
 
+header .hamburger {
+    display: none;
+}
+
 #nav {
     position: relative;
 }
@@ -673,6 +677,10 @@ section .runs .current .stats span {
     animation: rotation 1s linear infinite;
 }
 
+.mobile-add {
+    display: none;
+}
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -747,4 +755,104 @@ section .runs .current .stats span {
 
 .reminder .cancel:hover p {
     color: #181818;
+}
+
+.mobile-btn {
+    background: #577fd6;
+    color: #f9f6f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.mobile-btn img {
+    height: 20px;
+}
+
+.hamburger {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    border: 1px solid #bdbdbd;
+    padding: 0 5px;
+    background: #fff;
+}
+
+.dropdown .menu {
+    width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    header .logo p {
+        display: none;
+    }
+
+    header {
+        margin-bottom: 0;
+    }
+
+    header .logo h1 {
+        font-size: 24px;
+    }
+
+    header .logo h1::after {
+        content: ' Mobile';
+    }
+
+    .featured {
+        display: none;
+    }
+
+    section {
+        display: none;
+    }
+
+    .recent .best {
+        display: none;
+    }
+
+    .recent #best {
+        display: none;
+    }
+
+    .recent .runs {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+
+    header .nav .add {
+        display: none;
+    }
+
+    body {
+        padding: 0 5%;
+    }
+
+    header .hamburger {
+        display: block;
+    }
+
+    .mobile-add {
+        display: block;
+    }
+
+    .home {
+        animation: none;
+    }
+
+    .addRun {
+        width: 80%;
+    }
+
+    .addRun input {
+        width: 80%;
+    }
 }
