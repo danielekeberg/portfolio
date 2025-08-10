@@ -9,7 +9,7 @@ if(!uid) {
         <h3 style="text-align: center;">You need a username to continue!</h3>
         <div class="userid-forms">
             <input type="text" placeholder="Username" id="uidInput">
-            <button id="continue">Continue</button>
+            <button id="continueN">Continue</button>
         </div>
     </div>
     `;
@@ -20,6 +20,12 @@ if(!uid) {
                 localStorage.setItem('userid', document.getElementById('uidInput').value);
                 window.location.reload();
             }
+        })
+    });
+    setTimeout(() => {
+        document.getElementById('continueN').addEventListener('click', (e) => {
+            localStorage.setItem('userid', document.getElementById('uidInput').value);
+            window.location.reload();
         })
     });
 

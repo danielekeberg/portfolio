@@ -22,7 +22,10 @@ function hamburger() {
         d.innerHTML =
         `
         <div class="addRun">
-            <h3>Change username</h3>
+            <div class="username-header">
+                <h3>Change username</h3>
+                <p id="cancel">X</p>
+            </div>
             <div class="userid-forms">
                 <input type="text" placeholder="New username" id="newUsernameInput">
                 <button id="newUsernameBtn">Change username</button>
@@ -30,6 +33,11 @@ function hamburger() {
         </div>
         `;
         document.body.appendChild(d);
+
+        document.getElementById('cancel').addEventListener('click', () => {
+            document.querySelector('.overlay').remove();
+        })
+
         document.getElementById('newUsernameBtn').addEventListener('click', () => {
             localStorage.setItem('userid', document.getElementById('newUsernameInput').value);
             window.location.reload();
@@ -43,4 +51,39 @@ function hamburger() {
     })
 }
 
+function usernamePop() {
+    const d = document.createElement('div');
+    d.className = 'overlay';
+    d.innerHTML =
+    `
+    <div class="addRun">
+        <div class="username-header">
+            <h3>Change username</h3>
+            <p id="cancel">X</p>
+        </div>
+        <div class="userid-forms">
+            <input type="text" placeholder="New username" id="newUsernameInput">
+            <button id="newUsernameBtn">Change username</button>
+        </div>
+    </div>
+    `;
+    document.body.appendChild(d);
+
+    document.getElementById('cancel').addEventListener('click', () => {
+        document.querySelector('.overlay').remove();
+    })
+
+    document.getElementById('newUsernameBtn').addEventListener('click', () => {
+        localStorage.setItem('userid', document.getElementById('newUsernameInput').value);
+        window.location.reload();
+    });
+    document.getElementById('newUsernameInput').addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') {
+            localStorage.setItem('userid', document.getElementById('newUsernameInput').value);
+            window.location.reload();
+        }
+    })
+}
+
 document.getElementById('hamburger').addEventListener('click', hamburger);
+document.getElementById('newUsername').addEventListener('click', usernamePop);

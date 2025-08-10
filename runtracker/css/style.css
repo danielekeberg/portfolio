@@ -843,6 +843,16 @@ section .runs .current .stats span {
     background: #fff;
 }
 
+.username-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.username-header p {
+    cursor: pointer;
+    font-weight: 600;
+}
+
 @media (max-width: 480px) {
     header .logo p {
         display: none;
