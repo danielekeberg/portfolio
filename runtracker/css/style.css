@@ -790,11 +790,13 @@ section .runs .current .stats span {
 
 .userid-forms {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 10px;
 }
 
 .userid-forms input {
     background: #e7e7e7;
+    border: 1px solid #bdbdbd70;
 }
 
 .userid-forms input:focus {
@@ -816,6 +818,28 @@ section .runs .current .stats span {
 
 .userid-forms button:active {
     background: #97addd;
+}
+
+.new-form {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.new-form button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #bdbdbd;
+}
+
+.new-form button:hover {
+    background: #ececec;
+}
+
+.new-form button:active {
+    background: #fff;
 }
 
 @media (max-width: 480px) {
@@ -867,6 +891,8 @@ section .runs .current .stats span {
 
     header .hamburger {
         display: block;
+        font-size: 18px;
+        font-weight: 600;
     }
 
     .mobile-add {
