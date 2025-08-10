@@ -578,7 +578,7 @@ async function reminder() {
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
-//         totalDistance();
+//         fetchWeekStats();
 //     }
 // })
 

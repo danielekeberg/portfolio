@@ -786,6 +786,7 @@ section .runs .current .stats span {
 .dropdown .menu {
     width: 200px;
     text-align: center;
+    border-bottom: 1px solid #bdbdbd;
 }
 
 .userid-forms {
