@@ -21,6 +21,8 @@ async function totalDistance() {
     try {
         const res = await fetch(url);
         const results = await res.json();
+        const runs = results.filter(run => run.difficulty !== 'walk');
+        const dataRuns = runs.filter(run => run.uid === uid );
         const data = results.filter(run => run.uid === uid);
         const totalDistanceMeters = data.reduce((sum, run) => {
             return sum + parseInt(run.distance);
@@ -32,7 +34,7 @@ async function totalDistance() {
         let totalTime = 0;
         let totalDistance = 0;
     
-        data.forEach(run => {
+        dataRuns.forEach(run => {
             totalTime += parseFloat(run.time);
             totalDistance += parseFloat(run.distance);
         });
@@ -221,7 +223,7 @@ async function getRuns() {
             d.innerHTML = 
             `
             <div class="card-header">
-                <h4>${(run.distance / 1000).toFixed(2)} km run</h4>
+                <h4>${(run.distance / 1000).toFixed(2)} km ${run.difficulty}</h4>
                 <img onclick="deleteRun(${run.id})" class="delete" src="./assets/delete.svg">
             </div>
             <div class="time">
