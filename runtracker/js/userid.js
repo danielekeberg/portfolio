@@ -1,5 +1,7 @@
 const uid = localStorage.getItem('userid');
 
+document.getElementById('username').textContent = uid;
+
 if(!uid) {
     const d = document.createElement('div');
     d.className = 'overlay';
