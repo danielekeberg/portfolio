@@ -217,13 +217,19 @@ async function getRuns() {
             const day = date.getDate();
             const formatted = `${weekday}, ${month} ${day}`;
 
+            let walked = false;
+
+            if(run.difficulty === 'walk') {
+                walked = true;
+            }
+
             const min = Math.floor(avgPace);
             const sec = String(Math.round((avgPace - min) * 60)).padStart(2, '0');
             d.className = 'card';
             d.innerHTML = 
             `
             <div class="card-header">
-                <h4>${(run.distance / 1000).toFixed(2)} km ${run.difficulty}</h4>
+                <h4>${(run.distance / 1000).toFixed(2)} km ${walked ? 'walk' : 'run'}</h4>
                 <img onclick="deleteRun(${run.id})" class="delete" src="./assets/delete.svg">
             </div>
             <div class="time">
@@ -578,19 +584,19 @@ async function reminder() {
     }
 }
 
-// document.body.addEventListener('keydown', (e) => {
-//     if(e.key === 'Enter') {
-//         fetchWeekStats();
-//     }
-// })
+document.body.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        getRuns();
+    }
+})
 
-bestRuns();
-lastMonth();
-fetchWeekStats();
-totalDistance();
-getRuns();
-weeklyProgress();
-weeklyGoal();
-best3k();
-best5k();
-reminder();
+// bestRuns();
+// lastMonth();
+// fetchWeekStats();
+// totalDistance();
+// getRuns();
+// weeklyProgress();
+// weeklyGoal();
+// best3k();
+// best5k();
+// reminder();
