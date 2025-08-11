@@ -1,6 +1,8 @@
 const url = 'https://api.sheetbest.com/sheets/7bd324c2-1206-479d-82e1-1253bf9f45c6';
 const plan_url = 'https://api.sheetbest.com/sheets/e1865a4a-bc95-4df1-876a-388d6b535747';
 
+const getuid = localStorage.getItem('userid');
+
 async function getCurrentId() {
     try {
         const res = await fetch(url);
@@ -132,11 +134,9 @@ document.getElementById('add').addEventListener('click', addRun)
 document.getElementById('add-mobile').addEventListener('click', addRun)
 
 async function newRun(distance, time, date, diff, desc, location) {
-    const getuid = localStorage.getItem('userid');
     try {
         const response = await fetch(url);
         const data = await response.json();
-        const id = data.length + 1;
         const res = await fetch(url, {
             method: 'POST',
             headers: {
@@ -262,7 +262,8 @@ async function getWeeklyGoalNumber() {
 async function update(distance) {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const result = await res.json();
+        const data = result.filter(run => run.uid === getuid)
 
         const weeklyGoal = await getWeeklyGoalNumber();
 
