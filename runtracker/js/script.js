@@ -304,7 +304,8 @@ async function bestRuns() {
     try {
         const res = await fetch(url);
         const results = await res.json();
-        const data = results.filter(run => run.uid === uid);
+        const runsResults = results.filter(run => run.difficulty !== 'walk');
+        const data = runsResults.filter(run => run.uid === uid);
 
         const longestRun = data.sort((a, b) => b.distance - a.distance)[0];
         const longestDistance = Number((longestRun.distance / 1000))
@@ -394,7 +395,8 @@ async function best3k() {
     try {
         const res = await fetch(url);
         const results = await res.json();
-        const data = results.filter(run => run.uid === uid);
+        const runsResults = results.filter(run => run.difficulty !== 'walk');
+        const data = runsResults.filter(run => run.uid === uid);
         const test = data.filter(run => run.distance >= 3000 && run.distance < 3990);
 
         if(test.length >= 1) {
@@ -443,7 +445,9 @@ async function best3k() {
 async function best5k() {
     try {
         const res = await fetch(url);
-        const data = await res.json();
+        const results = await res.json();
+        const runsResults = results.filter(run => run.difficulty !== 'walk');
+        const data = runsResults.filter(run => run.uid === uid);
         const test = data.filter(run => run.distance >= 5000 && run.distance < 5990);
 
         if(test.length >= 1) {
@@ -586,7 +590,9 @@ async function reminder() {
 
 // document.body.addEventListener('keydown', (e) => {
 //     if(e.key === 'Enter') {
-//         getRuns();
+//         bestRuns();
+//         best3k();
+//         best5k();
 //     }
 // })
 
