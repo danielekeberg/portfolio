@@ -303,7 +303,8 @@ section .runs .current .stats span {
     border: 1px solid #3f9c5e;
 }
 
-.recovery {
+.recovery,
+.walk {
     color: #577fd6 !important;
     background: #cde8f3;
     border: 1px solid #577fd6;
