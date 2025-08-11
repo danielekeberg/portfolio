@@ -584,19 +584,19 @@ async function reminder() {
     }
 }
 
-document.body.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter') {
-        getRuns();
-    }
-})
+// document.body.addEventListener('keydown', (e) => {
+//     if(e.key === 'Enter') {
+//         getRuns();
+//     }
+// })
 
-// bestRuns();
-// lastMonth();
-// fetchWeekStats();
-// totalDistance();
-// getRuns();
-// weeklyProgress();
-// weeklyGoal();
-// best3k();
-// best5k();
-// reminder();
+bestRuns();
+lastMonth();
+fetchWeekStats();
+totalDistance();
+getRuns();
+weeklyProgress();
+weeklyGoal();
+best3k();
+best5k();
+reminder();
