@@ -7,7 +7,7 @@ async function fetchUser() {
         const res = await fetch(`https://api.chess.com/pub/player/${q}`);
         const data = await res.json();
 
-        document.getElementById('username').textContent = data.username;
+        document.getElementById('username').textContent = data.username ? data.username : 'Not Found';
         fetchCountry(data.country);
 
         const joined = data.joined;
@@ -19,9 +19,11 @@ async function fetchUser() {
         document.getElementById('chessLink').href = `https://www.chess.com/member/${data.username}`;
         document.getElementById('avatar').src = data.avatar ? data.avatar : 'https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif';
 
-        timeAgo(data.last_online);
+        const lastOnline = timeAgo(data.last_online);
+        document.getElementById('lastOnline').textContent = lastOnline;
 
         document.title = `ChessKnight - ${data.username}'s stats`;
+
 
         if(!data.title) {
             document.getElementById('title').remove();
@@ -70,8 +72,6 @@ async function totalGames() {
         const bulletLoss = data.chess_bullet ? data.chess_bullet.record.loss : 0;
         const allLoss = rapidLoss + blitzLoss + bulletLoss;
 
-        
-
         document.getElementById('total').textContent = newAllGames;
         document.getElementById('wins').textContent = allWins;
         document.getElementById('draws').textContent = allDraws;
@@ -92,7 +92,9 @@ async function fetchUserStats() {
         document.getElementById('blitzRating').textContent = data.chess_blitz ? data.chess_blitz.last.rating : 0;
         document.getElementById('bulletRating').textContent = data.chess_bullet ? data.chess_bullet.last.rating : 0;
 
-        document.getElementById('rapidPeak').textContent = `Best: ${data.chess_rapid ? data.chess_rapid.last.rating : 0}`;
+        console.log(data);
+
+        document.getElementById('rapidPeak').textContent = `Best: ${data.chess_rapid ? data.chess_rapid.best.rating : 0}`;
         document.getElementById('blitzPeak').textContent = `Best: ${data.chess_blitz ? data.chess_blitz.best.rating : 0}`;
         document.getElementById('bulletPeak').textContent = `Best: ${data.chess_bullet ? data.chess_bullet.best.rating : 0}`;
         document.getElementById('rapidGames').textContent = `${data.chess_rapid ? data.chess_rapid.record.win + data.chess_rapid.record.draw + data.chess_rapid.record.loss : 0} games`;
@@ -118,11 +120,11 @@ function timeAgo(timestamp) {
     for (const interval of intervals) {
         const count = Math.floor(seconds / interval.seconds);
         if(count >= 1) {
-            return document.getElementById('lastOnline').textContent = `${count} ${interval.label}${count > 1 ? "s" : ""} ago`;
+            return `${count} ${interval.label}${count > 1 ? "s" : ""} ago`;
         }
     }
 
-    return document.getElementById('lastOnline').textContent = 'just now';
+    return 'just now';
 }
 
 function newTitle(raw) {
@@ -204,6 +206,27 @@ function getOpening(raw) {
 
 let gameLength = 0;
 let openingId = 0;
+let prevRating;
+async function getPrevRating(url, g) {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const prevgame = data.games[g];
+
+        
+        const isWhite = prevgame.white.username.toLowerCase() === q;
+        const isBlack = prevgame.black.username.toLowerCase() === q;
+        if (isWhite) {
+            prevRating = prevgame.white.rating;
+        } else if (isBlack) {
+            prevRating = prevgame.black.rating;
+        }
+        return prevRating;
+    } catch(error) {
+        console.error(error);
+    }
+}
 
 async function fetch10Games(url) {
     try {
@@ -225,16 +248,17 @@ async function fetch10Games(url) {
 
             let finalOpening;
 
-            const rawOpening = data.games[gameLength].eco.replace('https://www.chess.com/openings/', '');
-            const cleanOpening = newTitle(rawOpening);
+            const whenPlayed = timeAgo(timestamp);
 
-            const maxChars = 14;
-            if(cleanOpening.length > maxChars) {
-                finalOpening = cleanOpening.slice(0, maxChars) + '...';
-            } else {
-                finalOpening = cleanOpening;
-            }
-            console.log(finalOpening)
+            // const rawOpening = data.games[gameLength].eco.replace('https://www.chess.com/openings/', '');
+            // const cleanOpening = newTitle(rawOpening);
+
+            // const maxChars = 14;
+            // if(cleanOpening.length > maxChars) {
+            //     finalOpening = cleanOpening.slice(0, maxChars) + '...';
+            // } else {
+            //     finalOpening = cleanOpening;
+            // }
 
             let result;
             let opponent;
@@ -243,38 +267,50 @@ async function fetch10Games(url) {
             const isWhite = currentGame.white.username.toLowerCase() === q;
             const isBlack = currentGame.black.username.toLowerCase() === q;
 
+
             if(isWhite) {
                 if(currentGame.white.result !== 'win') {
                     result = 'Loss';
+                    d.className = 'history-header game lost';
                 } else {
                     result = 'Win';
+                    d.className = 'history-header game gained';
                 }
                 rating = currentGame.white.rating;
                 opponent = currentGame.black.username;
             } else if (isBlack) {
                 if(currentGame.black.result !== 'win') {
                     result = 'Loss';
+                    d.className = 'history-header game lost';
                 } else {
                     result = 'Win';
+                    d.className = 'history-header game gained';
                 }
                 rating = currentGame.black.rating;
                 opponent = currentGame.white.username;
             }
 
-            
+            let gained;
+
+            const blah = await getPrevRating(url, (gameLength - 1));
+            const ratingDiff = rating - blah;
+            if(ratingDiff >= 0) {
+                gained = `+${ratingDiff}`;
+            } else if (ratingDiff < 0) {
+                gained = ratingDiff;
+            }
 
             d.innerHTML = 
             `
             <p>${result}</p>
             <p>${opponent}</p>
-            <p class="newRating">${rating}</p>
+            <p class="newRating">${rating} <span class="gains">${gained}</span></p>
             <p>${currentGame.time_class}</p>
             <p id="opening${openingId}">${finalOpening}</p>
             <p>${currentGame.time_control}</p>
-            <p>${months[mm]} ${dd}, ${yyyy}</p>
+            <p>${whenPlayed}</p>
             `;
             document.getElementById('new-games').appendChild(d);
-            document.getElementById(`opening${openingId}`).title = cleanOpening;
             openingId++;
             gameLength--;
         }
@@ -422,11 +458,7 @@ async function gamestats() {
                     </div>
                     <div>
                         <p>Peak rating</p>
-                        <p>HMM</p>
-                    </div>
-                    <div>
-                        <p>Avg rating</p>
-                        <p>0</p>
+                        <p>${data.chess_rapid ? data.chess_rapid.best.rating : 0}</p>
                     </div>
                 </div>
             </div>
@@ -462,10 +494,6 @@ async function gamestats() {
                         <p>Peak rating</p>
                         <p>${data.chess_blitz ? data.chess_blitz.best.rating : 0}</p>
                     </div>
-                    <div>
-                        <p>Avg rating</p>
-                        <p>0</p>
-                    </div>
                 </div>
             </div>
             <div class="profile-card">
@@ -499,10 +527,6 @@ async function gamestats() {
                     <div>
                         <p>Peak rating</p>
                         <p>${data.chess_bullet ? data.chess_bullet.best.rating : 0}</p>
-                    </div>
-                    <div>
-                        <p>Avg rating</p>
-                        <p>0</p>
                     </div>
                 </div>
             </div>
@@ -592,3 +616,58 @@ function loader() {
 document.getElementById('refresh').addEventListener('click', () => {
     window.location.href = `./?q=${q}&v=${page}`;
 })
+
+let achievements;
+async function getAchievements() {
+    try {
+        const res = await fetch(`https://api.chess.com/pub/player/${q}/tournaments`);
+        const data = await res.json();
+        const games = data.finished;
+        games.forEach(game => {
+            // console.log(game)
+            if(game.placement === 1) {
+                // console.log(game);
+            }
+        });
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+getAchievements();
+
+async function maxRating() {
+    try {
+        const res = await fetch(`https://api.chess.com/pub/player/${q}/games/archives`);
+        const data = await res.json();
+        const lastGames = data.archives.length;
+        console.log(data.archives[lastGames - 1]);
+        getGame(data.archives[lastGames - 1]);
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+async function getGame(url) {
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const lastGame = data.games.length;
+        console.log(data.games[lastGame - 1]);
+        const blackLowercase = data.games[lastGame - 1].black.username.toLowerCase();
+        const whiteLowercase = data.games[lastGame - 1].white.username.toLowerCase();
+        if(blackLowercase === q) {
+            console.log('Nice')
+        } else if (whiteLowercase === q) {
+            console.log('White')
+        }
+
+        console.log(data.games);
+        const sort = data.games.sort((a, b) => b.end_time - a.end_time);
+        console.log(sort);
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+maxRating();
